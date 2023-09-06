@@ -1,0 +1,270 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgres"
+  url      = env("DATABASE_URL")
+}
+
+model Applications {
+  id           String    @id @default(uuid()) @map("_id") @db.VarChar(36)
+  name         String
+  description  String?
+  createdAt    DateTime  @default(now())
+  enabled      Boolean?  @default(false)
+  global       Boolean?  @default(true)
+  private      Boolean?  @default(false)
+  icon_name    String?
+  icon         String?
+  slug         String?
+  externalLink String?
+  UserApp      UserApp[]
+}
+
+model BasicInformation {
+  id         String  @id @default(uuid()) @map("_id") @db.VarChar(36)
+  firstName  String
+  middleName String?
+  lastName   String
+  gender     String
+  age        Int
+  location   String
+  height     String
+  body_type  String
+  ethnicity  String
+  occupation String
+  userId     String
+  user       User    @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model Category {
+  id          String   @id @default(uuid()) @map("_id") @db.VarChar(36)
+  name        String
+  slug        String?
+  icon        String?
+  description String?
+  createdAt   DateTime @default(now())
+}
+
+model ContactInformation {
+  id            String      @id @default(uuid()) @map("_id") @db.VarChar(36)
+  email         String?
+  phone         String?
+  address1      String?
+  address2      String?
+  city          String?
+  state         String?
+  postalCode    Int?
+  type          String?
+  userProfileId String
+  UserProfile   UserProfile @relation(fields: [userProfileId], references: [id])
+}
+
+model EducationInformation {
+  id            String      @id @default(uuid()) @map("_id") @db.VarChar(36)
+  name          String
+  type          String
+  userProfileId String
+  UserProfile   UserProfile @relation(fields: [userProfileId], references: [id], onDelete: Cascade)
+}
+
+model Note {
+  id        String   @id @default(uuid()) @map("_id") @db.VarChar(36)
+  title     String
+  body      String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  userId    String
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model Page {
+  id        String   @id @default(uuid()) @map("_id") @db.VarChar(36)
+  title     String
+  content   String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  userId    String
+  type      String
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model Post {
+  id        String   @id @default(uuid()) @map("_id") @db.VarChar(36)
+  title     String
+  content   String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  viewCount Int
+  tweetId   Int
+  userId    String
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model Project {
+  id          String   @id @default(uuid()) @map("_id") @db.VarChar(36)
+  name        String
+  description String
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime
+  userId      String
+  type        String
+  user        User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model Role {
+  id          String  @id @default(uuid()) @map("_id") @db.VarChar(36)
+  name        String
+  description String?
+}
+
+model Tags {
+  id        String   @id @default(uuid()) @map("_id") @db.VarChar(36)
+  name      String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Organization {
+  id          String    @id @default(uuid()) @map("_id") @db.VarChar(36)
+  name        String
+  description String?
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime? @updatedAt
+  userId      String
+  user        User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model User {
+  id               String             @id @default(uuid()) @map("_id") @db.VarChar(36)
+  name             String?
+  email            String?            @unique
+  emailVerified    DateTime?
+  createdAt        DateTime           @default(now())
+  updatedAt        DateTime           @updatedAt
+  avatar           String?
+  image            String?
+  hashedPassword   String?
+  favoriteIds      String[]
+  BasicInformation BasicInformation[]
+  Note             Note[]
+  Page             Page[]
+  Post             Post[]
+  Project          Project[]
+  Accounts         Account[]
+  Listings         Listing[]
+  UserProfile      UserProfile[]
+  Reservation      Reservation[]
+  Organization     Organization[]
+}
+
+model UserProfile {
+  id                   String                 @id @default(uuid()) @map("_id") @db.VarChar(36)
+  private              Boolean?
+  interests            String?
+  music_preferences    String?
+  movie_preferences    String?
+  sports_interests     String?
+  hair_color           String?
+  eye_color            String?
+  piercings            Boolean?
+  tattoos              Boolean?
+  preferred_age_range  String?
+  preferred_gender     String?
+  relationship_status  String?
+  about_me             String?
+  createdAt            DateTime               @default(now())
+  updatedAt            DateTime               @updatedAt
+  userId               String
+  ContactInformation   ContactInformation[]
+  EducationInformation EducationInformation[]
+  user                 User                   @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model Account {
+  id                String  @id @default(uuid()) @map("_id") @db.VarChar(36)
+  userId            String
+  type              String
+  provider          String
+  providerAccountId String
+  refresh_token     String?
+  access_token      String?
+  expires_at        Int?
+  token_type        String?
+  scope             String?
+  id_token          String?
+  session_state     String?
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([provider, providerAccountId])
+}
+
+model Listing {
+  id            String   @id @default(uuid()) @map("_id") @db.VarChar(36)
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+  title         String
+  description   String
+  imageSrc      String?
+  category      String[]
+  roomCount     Int?
+  bathroomCount Int?
+  guestCount    Int?
+  locationValue String?
+  price         Int
+  userId        String
+
+  user         User?         @relation(fields: [userId], references: [id], onDelete: Cascade)
+  Reservations Reservation[]
+}
+
+model Reservation {
+  id         String    @id @default(uuid()) @map("_id") @db.VarChar(36)
+  createdAt  DateTime  @default(now())
+  updatedAt  DateTime  @updatedAt
+  startDate  DateTime?
+  endDate    DateTime?
+  totalPrice Int?
+  userId     String
+  listingId  String?
+
+  user    User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  Listing Listing? @relation(fields: [listingId], references: [id], onDelete: Cascade)
+}
+
+model UserApp {
+  createdAt      DateTime      @default(now())
+  userId         String
+  id             String        @id @default(uuid()) @map("_id") @db.VarChar(36)
+  applicationsId String
+  Applications   Applications? @relation(fields: [applicationsId], references: [id])
+}
+
+/// This model contains row level security and requires additional setup for migrations. Visit https://pris.ly/d/row-level-security for more info.
+model Logs {
+  id         String   @id @default(dbgenerated("gen_random_uuid()")) @db.VarChar(36)
+  created_at DateTime @default(now()) @db.Timestamptz(6)
+  log        String?
+  type       String?
+  json       Json?    @db.Json
+}
+
+model Template {
+  created_at DateTime @default(now()) @db.Timestamptz(6)
+  id         String   @id @default(uuid()) @map("_id") @db.VarChar(36)
+  jsx        String?
+  name       String?
+  type       String?
+  slug       String?
+}
+
+model Icon {
+  id         String   @id @default(uuid()) @map("_id") @db.VarChar(36)
+  created_at DateTime @default(now()) @db.Timestamptz(6)
+  name       String?
+  type       String?
+  icon       String?
+  slug       String?
+}

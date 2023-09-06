@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@tailwind variants;
+html,
+body,
+:root {
+  height: 100%
+}
+.navProfileDropdown > ul {
+  padding-bottom: 0 !important;
+  padding-top: 0 !important;
+}
+.navProfileDropdown > ul > .h-px {
+  margin-bottom: 0 !important;
+  margin-top: 0 !important;
+  padding-bottom: 0 !important;
+  padding-top: 0 !important;
+}
