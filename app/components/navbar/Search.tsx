@@ -1,5 +1,6 @@
 'use client';
 import { BiSearch } from "react-icons/bi";
+import IconComponent from "../icons/IconComponent";
 const Search = () => {
 
     return (
@@ -56,8 +57,8 @@ const Search = () => {
                     "    
                 >
                     <div className="hidden sm:block">Add Guests</div>
-                    <div className="p-2 bg-orange-500 rounded-full text-white">
-                        <BiSearch size={18} />
+                    <div className="p-1 rounded-full text-white">
+                        <IconComponent iconName="search" class_name="text-black"/>
                     </div>
                 </div>
         </div>

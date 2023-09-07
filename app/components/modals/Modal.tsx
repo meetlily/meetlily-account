@@ -190,8 +190,8 @@ const Modal: React.FC<ModalProps> = ({
                     
                     {showLogo && (
                         <>
-                        <div className="w-[120px] mx-auto mb-4 absolute -top-10 left-4 sm:w-[140px] sm:left-28 md:top-2 md:left-30 xl:left-40 md:w-[160px] xl:w-[200px]">
-                            <Logo width={200} height={100} onClick={() => {}}/>
+                        <div className="w-[120px] mx-auto sm:w-[140px] sm:left-28 md:top-2 md:left-30 xl:left-40 md:w-[160px] xl:w-[200px]">
+                            <Logo color={"black"} width={200} height={100} onClick={() => {}}/>
                         </div>
                         </>
                     )}

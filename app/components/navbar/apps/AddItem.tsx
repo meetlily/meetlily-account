@@ -8,20 +8,29 @@ interface AddItemProps {
     iconName?: string;
     fontSize?: number;
     iconSize?: number;
+    inline: boolean;
 }
 const AddItem: React.FC<AddItemProps> = ({
     title,
     onClick,
     iconName,
     fontSize,
-    iconSize
+    iconSize,
+    inline
 }) => {
     if(!iconName){
         iconName = 'ban'
     }
     return (
         <>
-           <div className="flex flex-col mx-auto cursor-pointer justify-center items-center">
+            <div className={`
+                flex
+                mx-auto
+                cursor-pointer
+                justify-center
+                items-center
+                ${inline ? 'flex-row' : 'flex-col'}
+            `}>
             <IconComponent 
                 size={iconSize ? iconSize : 36}
                 iconName={iconName}   

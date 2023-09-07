@@ -31,6 +31,15 @@ module.exports = {
     }
   },
   theme: {
+    "color": {
+      "failure": "fill-red-600",
+      "gray": "fill-gray-800",
+      "info": "fill-cyan-600",
+      "pink": "fill-pink-600",
+      "purple": "fill-purple-600",
+      "success": "fill-green-500",
+      "warning": "fill-yellow-400"
+    },
     fontFamily: {
       sans: ['Graphik', 'sans-serif'],
       serif: ['Merriweather', 'serif'],

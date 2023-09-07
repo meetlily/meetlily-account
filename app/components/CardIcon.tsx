@@ -46,8 +46,8 @@ const CardIcon: React.FC<CardIconProps> = ({
         <div 
             onClick={() => {}}
             className={`
-                block
-                relative
+                flex 
+                flex-col
                 py-2
                 px-4
                 text-center
@@ -67,7 +67,8 @@ const CardIcon: React.FC<CardIconProps> = ({
             <IconComponent 
                 size={iconSize ? iconSize : 36}
                 iconName={iconName}   
-                class_name="mt-2 mx-auto text-gray-600 hover:text-black transition" 
+                class_name="mt-2 mx-auto text-gray-600 hover:text-black transition text-center" 
+            
             />
             <Heading size='text-sm font-semibold text-gray-700 transition' title={label} center subtitle={description}/>
       </div>

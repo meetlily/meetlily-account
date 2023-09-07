@@ -18,12 +18,9 @@ const Content: React.FC<ContentProps> = ({
     children,
     currentUser
 }) => {
-    console.log(currentUser, `Content for ${title}`)
-    if(currentUser){
-        console.log(title)
-    }
     return (
-        <ClientOnly>
+    
+            <Container>
             <div
             className='
                 flex
@@ -34,27 +31,20 @@ const Content: React.FC<ContentProps> = ({
             '
             >
                 <div className='
-                    
-                    container
                     mx-auto
                     my-auto
                     w-full
                     h-full
                     mt-1
-                    absolute
-                    bottom-2
-                    right-0
-                    left-0
                 '>
                     <div className="
-                                overflow-hidden
                                 flex 
                                 flex-col 
                                 items-left
                                 justify-center
                                 gap-3
                                 md:gap-0
-                                px-3
+                    
                                 ">
                       
                             <div className="
@@ -67,8 +57,8 @@ const Content: React.FC<ContentProps> = ({
                                 className="
                                     flex 
                                     flex-col 
-                                    items-left
-                                    justify-start
+                                    items-center
+                                    justify-between
                                     gap-3
                                     md:gap-0
                                     mt-3
@@ -77,15 +67,14 @@ const Content: React.FC<ContentProps> = ({
                                     mb-2
                                 "
                             >
-                                
                                 {children}
                             </div>
                        
                     </div>
                 </div>
         </div>
-        
-      </ClientOnly>
+        </Container>
+
     )
 }
 

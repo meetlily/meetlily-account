@@ -1,44 +1,35 @@
-'use client';
-import { signIn } from 'next-auth/react';
-import axios from 'axios';
-import { AiFillGithub } from 'react-icons/ai';
+import '@/app/globals.css'
+import { useRouter } from "next/navigation";
+import { Metadata } from 'next'
+import ClientOnly from "@/app/components/ClientOnly";
+import ToasterProvider from "@/app/components/providers/ToasterProvider";
+import Button from '@/app/components/Button';
 import { FcGoogle } from 'react-icons/fc';
+import { AiFillGithub } from 'react-icons/ai';
+import { signIn } from 'next-auth/react';
 import { useCallback, useState } from 'react';
+import Input from '@/app/components/inputs/Input';
 import {
     FieldValues,
     SubmitHandler,
     useForm
 } from 'react-hook-form';
-import useRegisterModal
- from '@/app/hooks/useRegisterModal';
-import useLoginModal
- from '@/app/hooks/useLoginModal';
-import Modal from './Modal';
-import Input from '../inputs/Input';
 import toast from 'react-hot-toast';
-import Button from '../Button';
-import { useRouter } from 'next/navigation';
-import { SafeUser } from "@/app/types";
-
-interface LoginModalProps {
-    currentUser?: SafeUser | null
+import Logo from '@/app/components/navbar/Logo';
+interface MetaData {
+    title: string;
+    description: string;
 }
-const LoginModal: React.FC<LoginModalProps> = ({
-    currentUser
-}) => {
+export default function LoginPage() {
     const router = useRouter();
-    const registerModal = useRegisterModal();
-    const loginModal = useLoginModal();
     const [isLoading, setIsLoading] = useState(false);
-    // if(!currentUser){
-    //     if(!registerModal.isOpen){
-    //         loginModal.isOpen = true;
-    //     }
-    // }
+    const metaData: Metadata = {
+      title: 'Dashboard',
+      description: 'Welcome, Guest!'
+    }
     const toggle = useCallback(() => {
-        loginModal.onClose();
-        registerModal.onOpen();
-    }, [loginModal, registerModal])
+        
+    }, [])
     const {
         register,
         reset,
@@ -60,14 +51,10 @@ const LoginModal: React.FC<LoginModalProps> = ({
             redirect: false
         })
         .then((callback) =>{
-            
             setIsLoading(false);
             if (callback?.ok) {
-
                 toast.success('Logged in')
                 router.refresh();
-                return loginModal.onClose();
-                
             }
 
             if(callback?.error) {
@@ -79,12 +66,10 @@ const LoginModal: React.FC<LoginModalProps> = ({
         })
         .finally(()=>{
             reset(); 
-            loginModal.onClose();
             setIsLoading(false);
             router.push('/');
         })
     }
-
     const bodyContent = (
         <div
             className="
@@ -162,22 +147,89 @@ const LoginModal: React.FC<LoginModalProps> = ({
         </>
     )
     return (
-        <Modal 
-            disabled={isLoading}
-            isOpen={false}
-            title='Log In'
-            headerTitle='Log In'
-            subtitle='To use this application, please log in to your account'
-            actionLabel='Continue'
-            onClose={loginModal.onClose}
-            onSubmit={handleSubmit(onSubmit)}
-            body={bodyContent}
-            backgroundImage='/images/image.jpg'
-            footer={footerContent}
-            showLogo={false}
-            hideClose={!currentUser ? true : false}
-        />
+
+        <ClientOnly>
+        <div 
+            className="
+                justify-center
+                items-center
+                flex
+                fixed
+                inset-0
+                z-50
+                outline-none
+                top-0
+                focus:outline-none"
+        >
+            
+            <div
+                className={`
+                    relative 
+                    flex 
+                    flex-col 
+                    bg-white
+                    shadow-2xl 
+                    rounded-2xl 
+                    md:flex-row 
+                    md:space-y-0 
+                    md:m-0
+                    
+                `}
+            >
+                
+                <div
+                    className="
+                        translate
+                        flex
+                        flex-col
+                        my-auto
+                        px-20
+                        pt-10
+                    "
+                >
+                    <Logo color='black' width={140} height={140} onClick={()=>{}} />
+                    <div className='form-wrapper pb-20 pt-10'>
+                        <h2 className={`
+                            mb-2
+                            text-xl
+                            sm:text-2xl
+                            md:text-3xl
+                            xl:text-4xl
+                            font-light
+                            md:font-semibold
+                        `}>Log In</h2>
+                        <p 
+                        className={`
+                            max-w-sm 
+                            mb-8
+                            font-sans 
+                            font-light 
+                            text-gray-600
+                        `}
+                        >
+                            To use this application, please log in to your account
+                        </p>
+                        {/* Body */ }
+                        <div
+                            className="
+
+                                relative
+                                flex-auto
+                            "   
+                        >
+                            {bodyContent}
+                            <div>
+                                {footerContent}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </ClientOnly>
     )
 }
 
-export default LoginModal;
+
+
+

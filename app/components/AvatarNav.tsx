@@ -9,7 +9,7 @@ interface AvatarProps {
     height?:number
     width?:number
 }
-const Avatar: React.FC<AvatarProps> = ({
+const AvatarNav: React.FC<AvatarProps> = ({
     image,
     currentUser,
     height,
@@ -38,4 +38,4 @@ const Avatar: React.FC<AvatarProps> = ({
     )
 }
 
-export default Avatar;
+export default AvatarNav;

@@ -9,13 +9,12 @@ const Container: React.FC<ContainerProps> = ({
 }) => {
     return (
         <div className="
-            max-w-[2520px] 
+            container
             mx-auto 
             xl:px-100
             md:px-5
             sm:px-2
-            px-4
-            bg-white
+            px-2
             ">
             {children}
         </div>

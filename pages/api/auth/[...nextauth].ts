@@ -8,6 +8,33 @@ import prisma from '@/app/libs/prismadb';
 
 export const authOptions: AuthOptions = {
     adapter: PrismaAdapter(prisma),
+    callbacks: {
+        async signIn({ user, account, profile, email, credentials }) {
+            console.log(user, account)
+          const isAllowedToSignIn = true
+          if (isAllowedToSignIn) {
+            return true
+          } else {
+            // Return false to display a default error message
+            return false
+            // Or you can return a URL to redirect to:
+            // return '/unauthorized'
+          }
+        },
+        async redirect({ url, baseUrl }) {
+            console.log(url, baseUrl)
+            // Allows relative callback URLs
+            if (url.startsWith("/")) return `${baseUrl}${url}`
+            // Allows callback URLs on the same origin
+            else if (new URL(url).origin === baseUrl) return url
+            return baseUrl
+        },
+        async session({ session, token, user }) {
+            console.log(session, token)
+            // Send properties to the client, like an access_token and user id from a provider.
+            return session
+        }
+    },
     providers: [
         GithubProvider({
             clientId: process.env.GITHUB_ID as string,

@@ -6,10 +6,13 @@ import {HiHomeModern,} from 'react-icons/hi2'
 import {LuCalendarClock, LuLayoutGrid } from 'react-icons/lu'
 import { BsDatabaseAdd,BsPersonAdd, BsBuildingAdd, BsFillHouseAddFill } from 'react-icons/bs'
 import { BiAddToQueue, BiSolidBookContent } from 'react-icons/bi'
-import { MdSwitchAccessShortcutAdd } from 'react-icons/md'
+import { MdSwitchAccessShortcutAdd, MdOutlineAdminPanelSettings } from 'react-icons/md'
 import { GiLovers } from "react-icons/gi";
 
 import { 
+    FaArrowUpFromBracket,
+    FaRightToBracket,
+    FaRightFromBracket,
     FaBlogger,
     FaBots,
     FaReadme,
@@ -125,12 +128,27 @@ import {
     FaWpforms,
     FaPersonChalkboard,
     FaCodeBranch,
-    FaCode
+    FaCode,
+    FaPowerOff,
+    FaChartSimple,
+    FaChartArea,
+    FaChartBar,
+    FaQuestion,
 } from "react-icons/fa6";
 
 
 
 const AppIcons: { [key: string]: IconType } = {
+    admin: MdOutlineAdminPanelSettings,
+    chartCol: FaChartColumn,
+    chartPie: FaChartPie,
+    chartLine: FaChartLine,
+    chartBar: FaChartBar,
+    chartArea: FaChartArea,
+    chartSimple: FaChartSimple,
+    signUp: FaArrowUpFromBracket,
+    signOut: FaPowerOff,
+    signIn: FaRightToBracket,
     toolsUtils: TbTools,
     addCompany: BsBuildingAdd,
     addHome: BsFillHouseAddFill,
@@ -185,9 +203,7 @@ const AppIcons: { [key: string]: IconType } = {
     timesheet: LuCalendarClock,
     documentation: FaBook,
     pos: FaCashRegister,
-    chartBar: FaChartColumn,
-    chartPie: FaChartPie,
-    chartLine: FaChartLine,
+    help: FaQuestion,
     weather: FaCloudSunRain,
     dashboard: FaDesktop,
     email: FaEnvelope,

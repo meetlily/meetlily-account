@@ -11,12 +11,14 @@ interface IconComponentProps {
     iconName: string;
     size?: number;
     class_name?: string;
+    color?: string;
 }
 
 const IconComponent: React.FC<IconComponentProps> =  ({
     iconName,
     size,
     class_name,
+    color
 }) => {
     
     
@@ -34,13 +36,13 @@ const IconComponent: React.FC<IconComponentProps> =  ({
   return (
         <>
             {Icon && (
-                <div className="text-neutral-800">
-                    <Icon  size={size} className={class_name} />
+                <div className={class_name}>
+                    <Icon  size={size} color={color} />
                 </div>
             )}
             {!Icon && (
                 <div className="text-neutral-400 text-center block mx-auto">
-                    <FaBan size={36} />
+                    <FaBan size={size} />
                 </div>
             )}
         </>

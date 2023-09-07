@@ -1,14 +1,7 @@
-import Image from 'next/image'
-import styles from './page.module.css'
-import Content from '@/app/components/Content'
-import Dashboard from '@/app/components/Dashboard'
-import getCurrentUser from './actions/getCurrentUser'
-import { Metadata } from 'next'
+import PageLayout from '@/layouts/Pages';
+import Dashboard from './components/Dashboard';
+import getCurrentUser from './actions/getCurrentUser';
 
-export const metadata: Metadata = {
-  title: 'Meetlily Page',
-  description: 'Simplify Data Management',
-}
 
 export default async function Home() {
   const currentUser = await getCurrentUser();
@@ -20,10 +13,13 @@ export default async function Home() {
     metaData.subtitle = `Welcome back, ${currentUser.name}!`;
   }
   return (
-    <div>
-      <Content currentUser={currentUser} title={metaData.title} subtitle={metaData.subtitle}>
-        <Dashboard currentUser={currentUser}/>
-      </Content>
+    <div className="fluid max-w-[2500px] flex flex-col items-center mx-auto justify-center border bg-gray-50 h-full">
+      <PageLayout metadata={metaData} showSidebar={true} hideNavbar={true}>
+        <div className="flex flex-col w-full border-l h-full bg-white">
+            <Dashboard currentUser={currentUser}/>
+        </div>
+      </PageLayout>
     </div>
   )
 }
+

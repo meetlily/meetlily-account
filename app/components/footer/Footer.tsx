@@ -10,8 +10,8 @@ const Footer: React.FC<FooterProps> = ({
     children
 }) => {
     return (
-        <div className="fixed w-full bg-white z-10 shadow-sm bottom-0">
-            <div className="py-1 border-b-[1px]">
+        <div className="fluid w-full bg-white z-10 shadow-sm bottom-0">
+            <div className="py-1">
                 <Container>
                     {children}
                 </Container>

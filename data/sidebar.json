@@ -1,0 +1,293 @@
+{
+    "administration": [
+      {
+        "name": "Servers",
+        "slug": "servers",
+        "icon_name": "server",
+        "description": "Easily manage your servers and ensure their smooth operation. Monitor server performance, track resource usage, and handle server configurations effortlessly",
+        "category": ["fb94112a-f10b-48ff-aa24-0583d366f898"]
+      },
+      {
+        "name": "Databases",
+        "slug": "databases",
+        "icon_name": "database",
+        "description": "Seamlessly integrate with databases to efficiently manage and organize your data. Create and modify database schemas, execute queries, and optimize performance.",
+        "category": ["fb94112a-f10b-48ff-aa24-0583d366f898"]
+      },
+      {
+        "name": "Development",
+        "slug": "develop",
+        "icon_name": "develop",
+        "description": "Extend the functionality of Meetlily Apps (ERP) by building custom applications that cater to your unique business processes. Leverage the suite's development capabilities to create tailored solutions.",
+        "category": ["fb94112a-f10b-48ff-aa24-0583d366f898"]
+      },
+      {
+        "name": "Integrations",
+        "slug": "integrations",
+        "icon_name": "integration",
+        "description": "Seamlessly integrate with various third-party services and applications. Connect and synchronize data with CRM systems, payment gateways, marketing platforms, and more.",
+        "category": ["fb94112a-f10b-48ff-aa24-0583d366f898"]
+      },
+      {
+        "name": "Organization",
+        "slug": "organization",
+        "icon_name": "organization",
+        "description": "Manage your company details, including profile, contact information, and legal documents. Customize the suite to align with your company's branding and requirements.",
+        "category": ["fb94112a-f10b-48ff-aa24-0583d366f898"]
+      },
+      {
+        "name": "User Management",
+        "slug": "users",
+        "icon_name": "users",
+        "description": "Comprehensive user management capabilities. Create and manage user accounts, assign roles and permissions, and control access to features and modules.",
+        "category": ["fb94112a-f10b-48ff-aa24-0583d366f898"]
+      },
+      {
+        "name": "Settings",
+        "slug": "settings",
+        "icon_name": "gears",
+        "description": "Customize Meetlily Apps (ERP) to suit your business needs. Configure preferences, adjust system behavior, and tailor the suite to your specific requirements.",
+        "category": ["fb94112a-f10b-48ff-aa24-0583d366f898"]
+      }
+    ],
+    "applications": [
+        {
+          "name": "Accounting",
+          "slug": "accounting",
+          "icon_name": "accounting",
+          "description": "Efficiently manage your company's financial records, track expenses, generate invoices, and handle payroll with the accounting module of Meetlily Apps (ERP). Gain insights into your financial health and make informed decisions to drive your business forward.",
+          "category": ["19000002-c458-487b-b7a7-261753499465"]
+        },
+        {
+          "name": "Point of Sale (PoS)",
+          "slug": "pos",
+          "description": "Simplify your retail operations with the Point of Sale module of Meetlily Apps (ERP). Process sales transactions, manage inventory, and track customer orders seamlessly. Improve customer experience and streamline your sales processes.",
+          "category": ["19000002-c458-487b-b7a7-261753499465"],
+          "icon_name": "pos"
+        },
+        {
+          "name": "Website",
+          "slug": "website",
+          "description": "Create and manage your company's website with the Website module of Meetlily Apps (ERP). Design and customize your website, publish content, and engage with your online audience. Enhance your online presence and drive business growth.",
+          "category": ["19000002-c458-487b-b7a7-261753499465"],
+          "icon_name": "website"
+        },
+        {
+          "name": "Shop (e-Commerce)",
+          "slug": "pos",
+          "description": "Set up and manage your online store with the e-Commerce module of Meetlily Apps (ERP). Easily add products, handle orders, process payments, and track inventory. Expand your reach and boost your sales in the digital marketplace.",
+          "category": ["19000002-c458-487b-b7a7-261753499465"],
+          "icon_name": "pos"
+        },
+        {
+          "name": "Invoicing",
+          "slug": "invoice",
+          "description": "Effortlessly generate professional invoices, track payments, and manage billing processes with the Invoicing module of Meetlily Apps (ERP). Streamline your invoicing workflows and ensure timely payments from your customers.",
+          "category": ["19000002-c458-487b-b7a7-261753499465"],
+          "icon_name": "invoice"
+        },
+        {
+          "name": "Sales",
+          "slug": "sales",
+          "description": "Optimize your sales processes with the Sales module of Meetlily Apps (ERP). Track leads, manage opportunities, and streamline your sales pipeline. Gain insights into your sales performance and drive revenue growth.",
+          "category": ["19000002-c458-487b-b7a7-261753499465"],
+          "icon_name": "sales"
+        },
+        {
+            "name": "Subscription",
+            "slug": "subscription",
+            "description": "Manage subscription-based services and recurring payments with the Subscription module of Meetlily Apps (ERP). Handle subscription plans, track subscriptions, and automate billing processes. Ensure seamless subscription management.",
+            "category": ["19000002-c458-487b-b7a7-261753499465"],
+            "icon_name": "subscription"
+          },
+          {
+            "name": "Club/Restaurant",
+            "slug": "club-restaurant",
+            "description": "Efficiently manage club or restaurant operations with the Club/Restaurant module of Meetlily Apps (ERP). Handle reservations, track table availability, manage menus, and streamline order processing. Enhance customer dining experiences.",
+            "category": ["19000002-c458-487b-b7a7-261753499465"],
+            "icon_name": "club"
+          },
+          {
+            "name": "Payments",
+            "slug": "payments",
+            "description": "Streamline payment processes and handle online transactions with the Payments module of Meetlily Apps (ERP). Accept various payment methods, track payment status, and ensure secure and efficient payment processing.",
+            "category": ["19000002-c458-487b-b7a7-261753499465"],
+            "icon_name": "payments"
+          },
+          {
+            "name": "Contract",
+            "slug": "contract",
+            "description": "Manage contracts and agreements with the Contract module of Meetlily Apps (ERP). Create and store contract templates, track contract status, and handle contract renewals. Simplify contract management processes.",
+            "category": ["19000002-c458-487b-b7a7-261753499465"],
+            "icon_name": "contract"
+          },
+          {
+            "name": "Jobs",
+            "slug": "jobs",
+            "description": "Efficiently manage job postings, candidate applications, and recruitment processes with the Jobs module of Meetlily Apps (ERP). Streamline hiring workflows and ensure efficient talent acquisition.",
+            "category": ["19000002-c458-487b-b7a7-261753499465"],
+            "icon_name": "jobs"
+          },
+          {
+            "name": "Hosting",
+            "slug": "hosting",
+            "description": "Manage your hosting services, including virtual, dedicated, cloud servers, web, email, and database hosting, with the Hosting module of Meetlily Apps (ERP). Track server resources, handle configurations, and ensure reliable hosting services.",
+            "category": ["19000002-c458-487b-b7a7-261753499465"],
+            "icon_name": "hosting"
+          },
+          {
+            "name": "Forms",
+            "slug": "forms",
+            "description": "Create and manage custom forms and surveys with the Forms module of Meetlily Apps (ERP). Collect data, analyze responses, and gain insights into customer preferences. Streamline data collection processes.",
+            "category": ["19000002-c458-487b-b7a7-261753499465"],
+            "icon_name": "forms"
+          }
+      ],
+      "tools": [
+        {
+            "name": "Music",
+            "slug": "music",
+            "description": "Enjoy a built-in music player that allows you to listen to your favorite tunes while working. Create playlists, shuffle songs, and adjust volume settings without leaving Meetlily Apps (ERP). Stay focused and motivated with your personalized music selection.",
+            "category": [
+                "d3415084-ed6b-403c-bf67-8131bd0dad4c"
+            ],
+            "icon_name": "music"
+        },
+        {
+            "name": "Movies",
+            "slug": "movies",
+            "description": "Access a curated collection of movies within Meetlily Apps (ERP). Browse through different genres, watch trailers, and stream movies directly from the platform. Enjoy your favorite films during your downtime or as a source of inspiration.",
+            "category": [
+                "d3415084-ed6b-403c-bf67-8131bd0dad4c"
+            ],
+            "icon_name": "movies"
+        },
+        {
+            "name": "Sign",
+            "slug": "sign",
+            "description": "Easily create and manage digital signatures with the Sign tool in Meetlily Apps (ERP). Sign documents electronically, securely store your signatures, and streamline the signing process. Ensure efficient and legally binding document workflows.",
+            "category": [
+                "d3415084-ed6b-403c-bf67-8131bd0dad4c"
+            ],
+            "icon_name": "sign"
+        },
+        {
+            "name": "Contacts",
+            "slug": "contacts",
+            "description": "Manage your contacts efficiently with the Contacts feature in Meetlily Apps (ERP). Store contact details, categorize contacts, and easily search for specific individuals or organizations. Keep your contact information organized and accessible.",
+            "category": [
+                "d3415084-ed6b-403c-bf67-8131bd0dad4c"
+            ],
+            "icon_name": "contacts"
+        },
+        {
+            "name": "Dashboard",
+            "slug": "dashboard",
+            "description": "Access a customizable dashboard within Meetlily Apps (ERP) to get an overview of your key metrics and important information. Configure widgets, charts, and graphs to display data relevant to your business. Stay informed and make data-driven decisions.",
+            "category": [
+                "d3415084-ed6b-403c-bf67-8131bd0dad4c"
+            ],
+            "icon_name": "dashboard"
+        },
+        {
+            "name": "File Management",
+            "slug": "file-management",
+            "description": "Effortlessly manage your files and documents with the File Management tool in Meetlily Apps (ERP). Upload, organize, and share files securely. Collaborate with team members and ensure easy access to important documents.",
+            "category": [
+                "d3415084-ed6b-403c-bf67-8131bd0dad4c"
+            ],
+            "icon_name": "file-management"
+        },
+        {
+            "name": "Blocks, Components, and Templates",
+            "slug": "blocks",
+            "description": "Access a library of pre-designed blocks, components, and templates within Meetlily Apps (ERP). Easily create professional-looking websites, landing pages, and email templates. Customize and reuse these elements to save time and maintain consistency.",
+            "category": [
+                "d3415084-ed6b-403c-bf67-8131bd0dad4c"
+            ],
+            "icon_name": "blocks"
+        },
+        {
+            "name": "Gallery",
+            "slug": "gallery",
+            "description": "Organize and showcase your images and media files with the Gallery feature in Meetlily Apps (ERP). Create albums, add descriptions, and share your visual content with others. Present your work or memories in a visually appealing manner.",
+            "category": [
+                "d3415084-ed6b-403c-bf67-8131bd0dad4c"
+            ],
+            "icon_name": "gallery"
+        },
+        {
+            "name": "Todo List",
+            "slug": "todolist",
+            "description": "Stay organized and manage your tasks effectively with the Todo List feature in Meetlily Apps (ERP). Create to-do lists, set deadlines, and track your progress. Prioritize your tasks and ensure nothing falls through the cracks.",
+            "category": [
+                "d3415084-ed6b-403c-bf67-8131bd0dad4c"
+            ],
+            "icon_name": "todolist"
+        },
+        {
+            "name": "Draw",
+            "slug": "draw",
+            "description": "Unleash your creativity with the Draw tool in Meetlily Apps (ERP). Sketch, doodle, and create digital artwork directly within the platform. Express your ideas visually and collaborate with others on design projects.",
+            "category": [
+                "d3415084-ed6b-403c-bf67-8131bd0dad4c"
+            ],
+            "icon_name": "draw"
+        },
+        {
+            "name": "Icons",
+            "slug": "icons",
+            "description": "Access a wide range of icons within Meetlily Apps (ERP) to enhance your user interfaces and visual elements. Choose from a diverse collection of icons and easily integrate them into your projects. Customize the appearance and style of the icons to match your branding.",
+            "category": [
+                "d3415084-ed6b-403c-bf67-8131bd0dad4c"
+            ],
+            "icon_name": "icons"
+        },
+        {
+            "name": "Notes/Markdown Editor",
+            "slug": "notes",
+            "description": "Take notes and write in Markdown format with the Notes/Markdown Editor in Meetlily Apps (ERP). Create rich-text documents, format text, and add images. Organize your notes and access them whenever you need to reference or share information.",
+            "category": [
+                "d3415084-ed6b-403c-bf67-8131bd0dad4c"
+            ],
+            "icon_name": "notes"
+        },
+        {
+            "name": "Flow",
+            "slug": "flow",
+            "description": "Visualize your data and processes with the Flow and Diagrams tool in Meetlily Apps (ERP). Create flowcharts, diagrams, and visual representations of your workflows. Gain insights and communicate complex ideas effectively.",
+            "category": [
+                "d3415084-ed6b-403c-bf67-8131bd0dad4c"
+            ],
+            "icon_name": "flow"
+        },
+        {
+            "name": "Connect",
+            "slug": "connect",
+            "description": "Collaborate with team members and clients through chat and video conferences within Meetlily Apps (ERP). Initiate real-time conversations, share screens, and hold virtual meetings. Foster effective communication and enhance collaboration.",
+            "category": [
+                "d3415084-ed6b-403c-bf67-8131bd0dad4c"
+            ],
+            "icon_name": "connect"
+        },
+        {
+            "name": "Fonts",
+            "slug": "fonts",
+            "description": "Manage your fonts and typography within Meetlily Apps (ERP). Upload and organize your font files, preview different fonts, and apply them to your projects. Ensure consistent and visually appealing typography across your designs.",
+            "category": [
+                "d3415084-ed6b-403c-bf67-8131bd0dad4c"
+            ],
+            "icon_name": "fonts"
+        },
+        {
+            "name": "AI",
+            "slug": "ai",
+            "description": "Leverage the power of artificial intelligence within Meetlily Apps (ERP). Generate content using AI algorithms, implement machine learning models, and utilize a bot assistant for automated tasks. Enhance efficiency and explore innovative solutions.",
+            "category": [
+                "d3415084-ed6b-403c-bf67-8131bd0dad4c"
+            ],
+            "icon_name": "ai"
+        }
+    ]
+  }
+  
