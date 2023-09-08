@@ -99,10 +99,10 @@ const UserMenu: React.FC<UserMenuProps> = ({
             {!currentUser && (
             <>
                 <div className="text-xs font-light">
-                    <Button  small label={"Log In"} onClick={ loginModal.onOpen } />
+                    <Button  label={"Log In"} onClick={ loginModal.onOpen } />
                 </div>
                 <div className="text-xs font-light">
-                    <Button  small label={"Sign Up"} onClick={ registerModal.onOpen } />
+                    <Button  label={"Sign Up"} onClick={ registerModal.onOpen } />
                 </div>
             </>
             )}

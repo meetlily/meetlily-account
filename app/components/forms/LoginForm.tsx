@@ -1,13 +1,15 @@
 'use client'
 import { SafeUser } from "@/app/types";
 import { signIn, useSession } from 'next-auth/react';
-import Button from "../Button";
+import ButtonComponent from "../Button";
 import SocialButton from "../SocialButton";
 import Input from "../inputs/Input";
 import { redirect, useRouter } from "next/navigation";
 import { useForm, FieldValues, SubmitHandler } from "react-hook-form";
 import toast from "react-hot-toast";
 import Logo from "../navbar/Logo";
+import { useState } from "react";
+import AppIcons from "../icons/AppIcons";
 interface LoginFormProps {
     currentUser: SafeUser | null
 }
@@ -15,7 +17,7 @@ const LoginForm: React.FC<LoginFormProps> = ({
     currentUser
 }) => {
     const router = useRouter();
-
+    const [isLoading, setIsLoading] = useState(false);
     if(currentUser){
         redirect('/dashboard')
     }
@@ -215,10 +217,29 @@ const LoginForm: React.FC<LoginFormProps> = ({
                                     items-center
                                     gap-4
                                     w-full
-                                    my-5
+                                    my-7
                                 "   
                             >
-                                <Button label={"Continue"} onClick={handleSubmit(onSubmit)} />
+                                
+                                <ButtonComponent 
+                                    isProcessing={isLoading} 
+                                    label={"Continue"} 
+                                    onClick={handleSubmit(onSubmit)} 
+                                    classNames="w-full px-4 pl-2" 
+                                    color="dark" 
+                                    size="xl" 
+                                    icon={AppIcons['signIn']} 
+                                    iconSize={24}
+                                />
+                                <ButtonComponent 
+                                    label={"Cancel"} 
+                                    onClick={()=>router.push('/')} 
+                                    classNames="w-full px-4 pl-2 text-gray-600" 
+                                    color="gray" 
+                                    size="xl" 
+                                    icon={AppIcons['close']} 
+                                    iconSize={24}
+                                />
                             </div>
                             <div className='justify-center flex flex-row items-center gap-2 text-sm'>
                                 <div className='text-neutral-400'>

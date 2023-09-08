@@ -1,12 +1,12 @@
 'use client'
 import { IconType } from "react-icons";
-import {RiVideoChatFill, RiSecurePaymentFill, RiRefund2Fill} from 'react-icons/ri'
-import { TbApi,TbMovie, TbServer2, TbLayoutGridAdd, TbTools, TbCurrencyRiyal, TbCurrencyDirham, TbCurrencyDinar, TbCurrencyCent, TbCurrencyAfghani, TbCurrencyBahraini, TbCurrencyDogecoin, TbCurrencyWon, TbCurrencyTenge, TbCurrencyZloty, TbCurrencyDram, TbCurrencyEthereum, TbCurrencyLitecoin, TbCurrencyLari, TbHexagonLetterF, TbCircleLetterC, TbSquareLetterB, TbLetterM } from 'react-icons/tb'
-import {HiHomeModern,} from 'react-icons/hi2'
-import {LuCalendarClock, LuLayoutGrid, LuRefreshCw, LuCog } from 'react-icons/lu'
-import { BsDatabaseAdd,BsPersonAdd, BsBuildingAdd, BsFillHouseAddFill, BsDatabaseUp, BsChevronRight, BsFileRichtextFill, BsFillCalendar2WeekFill, BsFillCalendar2PlusFill, BsFillCalendarXFill, BsFillCalendar2CheckFill, BsCalendarRange, BsCash, BsCashCoin, BsCurrencyEuro, BsMarkdown } from 'react-icons/bs'
-import { BiAddToQueue, BiSolidBookContent, BiRestaurant, BiSolidBusiness } from 'react-icons/bi'
-import { MdSwitchAccessShortcutAdd, MdOutlineAdminPanelSettings, MdWorkspacePremium, MdOutlineAddBusiness, MdCardMembership, MdApi, MdOutlineMeetingRoom, MdCurrencyPound, MdOutlineCurrencyLira, MdOutlineCurrencyFranc, MdOutlineCurrencyBitcoin, MdCurrencyRuble, MdCurrencyRupee, MdSupport, MdOutlineLocalShipping } from 'react-icons/md'
+import {RiVideoChatFill, RiSecurePaymentFill, RiRefund2Fill, RiPagesLine, RiSurveyLine, RiNftFill, RiBook3Line, RiFolderSettingsFill, RiCodeBoxLine, RiPagesFill, RiMoneyDollarBoxLine} from 'react-icons/ri'
+import { TbApi,TbMovie, TbServer2, TbLayoutGridAdd, TbTools, TbCurrencyRiyal, TbCurrencyDirham, TbCurrencyDinar, TbCurrencyCent, TbCurrencyAfghani, TbCurrencyBahraini, TbCurrencyDogecoin, TbCurrencyWon, TbCurrencyTenge, TbCurrencyZloty, TbCurrencyDram, TbCurrencyEthereum, TbCurrencyLitecoin, TbCurrencyLari, TbHexagonLetterF, TbCircleLetterC, TbSquareLetterB, TbLetterM, TbCurrency, TbCurrencyBitcoin, TbCash, TbBuildingWarehouse, TbRobot, TbKey, TbHomeCog } from 'react-icons/tb'
+import {HiGlobeAlt, HiHomeModern,} from 'react-icons/hi2'
+import {LuCalendarClock, LuLayoutGrid, LuRefreshCw, LuCog, LuFileClock, LuFolderClock } from 'react-icons/lu'
+import { BsDatabaseAdd,BsPersonAdd, BsBuildingAdd, BsFillHouseAddFill, BsDatabaseUp, BsChevronRight, BsFileRichtextFill, BsFillCalendar2WeekFill, BsFillCalendar2PlusFill, BsFillCalendarXFill, BsFillCalendar2CheckFill, BsCalendarRange, BsCash, BsCashCoin, BsCurrencyEuro, BsMarkdown, BsCashStack, BsNewspaper, BsFillHousesFill } from 'react-icons/bs'
+import { BiAddToQueue, BiSolidBookContent, BiRestaurant, BiSolidBusiness, BiGlobe } from 'react-icons/bi'
+import { MdSwitchAccessShortcutAdd, MdOutlineAdminPanelSettings, MdWorkspacePremium, MdOutlineAddBusiness, MdCardMembership, MdApi, MdOutlineMeetingRoom, MdCurrencyPound, MdOutlineCurrencyLira, MdOutlineCurrencyFranc, MdOutlineCurrencyBitcoin, MdCurrencyRuble, MdCurrencyRupee, MdSupport, MdOutlineLocalShipping, MdOutlinePunchClock, MdInventory, MdOutlineCopyAll, MdOutlineWeb, MdOutlineLocalGroceryStore } from 'react-icons/md'
 import { GiLovers, GiVideoConference, GiCash } from "react-icons/gi";
 
 import { 
@@ -151,9 +151,13 @@ import {
     FaRegistered,
     FaPesoSign,
     FaYenSign,
-    FaCartFlatbed
+    FaCartFlatbed,
+    FaMoneyCheck,
+    FaSwatchbook,
+    FaUserGraduate,
+    FaCar
 } from "react-icons/fa6";
-import { SiCoinmarketcap } from "react-icons/si";
+import { SiBlockchaindotcom, SiCampaignmonitor, SiCoinmarketcap, SiHiveBlockchain, SiSurveymonkey } from "react-icons/si";
 
 
 
@@ -273,7 +277,7 @@ const AppIcons: { [key: string]: IconType } = {
     cart: FaCartPlus,
     board: FaChalkboardUser,
     sales: FaMoneyBillTrendUp,
-    inventory: FaDolly,
+    inventory: MdInventory,
     delivery: FaTruckFast,
     moving: FaTruckRampBox,
     fileManagement: FaDownload,
@@ -357,7 +361,36 @@ const AppIcons: { [key: string]: IconType } = {
     blocks: TbSquareLetterB,
     letterM: TbLetterM,
     markdown: BsMarkdown,
-    markedit: SiCoinmarketcap
+    markedit: SiCoinmarketcap,
+    diagrams: FaDiagramProject,
+    pages: RiPagesLine,
+    surveys: RiSurveyLine,
+    crypto: TbCurrencyBitcoin,
+    currency: BsCashStack,
+    blockchain: SiHiveBlockchain,
+    blockDot: SiBlockchaindotcom,
+    nfts: RiNftFill,
+    campaign: SiCampaignmonitor,
+    marketing: BsNewspaper,
+    payroll: FaMoneyCheck,
+    checkDollar: FaMoneyCheckDollar,
+    attendance: LuFolderClock,
+    leave: LuFileClock,
+    clockin: MdOutlinePunchClock,
+    elearning: FaUserGraduate,
+    lms: RiBook3Line,
+    rentals: TbKey,
+    documents: RiFolderSettingsFill,
+    coding: RiCodeBoxLine,
+    aiAssistant: TbRobot,
+    pageBuilder: RiPagesFill,
+    webDesign: MdOutlineWeb,
+    vehicle: FaCar,
+    maintenance: TbHomeCog,
+    groceries: MdOutlineLocalGroceryStore,
+    budget: RiMoneyDollarBoxLine,
+    listings: BsFillHousesFill,
+    domains: BiGlobe
 }
 
 export default AppIcons;

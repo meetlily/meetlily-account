@@ -1,59 +1,57 @@
 'use client';
 
 import { IconType } from "react-icons";
-
+import { Button } from "flowbite-react";
 interface ButtonProps {
     label: string;
-    onClick: (e:React.MouseEvent<HTMLButtonElement>)=>void;
+    onClick?: (e:React.MouseEvent<HTMLButtonElement>)=>void;
     disabled?: boolean;
     outline?: boolean;
-    small?: boolean;
-    icon?: IconType
+    size?: string;
+    icon?: IconType,
+    isProcessing?: boolean,
+    color?: string;
+    classNames?: string;
+    pill?: boolean;
+    iconSize?: number;
 }
-const Button: React.FC<ButtonProps> = ({
+const ButtonComponent: React.FC<ButtonProps> = ({
     label,
     onClick,
     disabled,
     outline,
-    small,
-    icon: Icon
+    size,
+    icon: Icon,
+    isProcessing,
+    color,
+    classNames,
+    pill,
+    iconSize
 }) => {
 
     return (
-      <button 
+      <Button 
+        color={color}
+        size={size}
+        isProcessing={isProcessing}
         onClick={onClick}
         disabled={disabled}
-        className={`
-            relative
-            disabled:cursor-not-allowed
-            disabled:opacity-70
-            rounded-md
-            hover:opacity-80
-            transition
-            w-full
-            ${outline ? 'bg-white' : 'bg-orange-500'}
-            ${outline ? 'border-gray-300' : 'border-orange-600'}
-            ${outline ? 'text-gray-700' : 'text-white'}
-            ${outline ? 'border-[1px]' : 'border-[1px]'}
-            ${small ? 'py-1' : 'py-2'}
-            ${small ? 'px-4' : 'px-4'}
-            ${small ? 'text-sm' : 'text-md'}
-            ${small ? 'font-light' : 'font-semibold'}
-        `}
+        className={classNames}
+        pill={pill}
+        outline={outline}
       >
         {Icon && (
             <Icon 
-                size={24}
-                className="
-                    absolute
-                    left-2
-                    top-2
-                "
+                size={iconSize}
+                className="mr-2 ml-0 pl-0"
             />
         )}
+        <p>
         {label}
-      </button>
+        </p>
+        
+      </Button>
     )
 }
 
-export default Button;
+export default ButtonComponent;

@@ -6,7 +6,6 @@ import { useEffect, useRef, useState } from "react";
 import Heading from "./Heading";
 import Loader from "./Loader";
 import administrationData from "@/data/administration.json" 
-import AppIcons from "./icons/AppIcons";
 
 interface DashboardProps {
     currentUser?: SafeUser | null
@@ -58,8 +57,18 @@ const Dashboard: React.FC<DashboardProps> = ({
                         2xl:max-w-[2500px]
                     "
                 >
-                    {administrationData.administration.map((admin) => (
-                        <CardIcon key={admin.slug} iconSize={iconSize} label={admin.name} iconName={admin.icon_name} onClick={() => {}} />
+                    {administrationData.administration.map((admin, i) => (
+
+                        <CardIcon 
+                            key={admin.slug} 
+                            iconSize={iconSize} 
+                            label={admin.name} 
+                            iconName={admin.icon_name} 
+                            buttonId={`${admin.slug}-button`} 
+                            contentId={`${admin.slug}-content`} 
+                            description={admin.description} 
+                            onClick={() => {}} 
+                        />
                     ))}
                 </div>
             </div>
@@ -88,35 +97,9 @@ const Dashboard: React.FC<DashboardProps> = ({
                     "
                 >
                     {administrationData.applications.map((item) => (
-                        <CardIcon key={item.slug} iconSize={iconSize} label={item.name} iconName={item.icon_name} onClick={() => {}} />
+                        <CardIcon key={item.slug} iconSize={iconSize} label={item.name} iconName={item.icon_name} buttonId={`${item.slug}-button`} contentId={`${item.slug}-content`}  description={item.description} onClick={() => {}} />
                     ))}
-                    {/* 
-
-                    <CardIcon iconSize={iconSize} label="Clock In/Out" iconName="clockInOut" onClick={() => {}} />
-                    <CardIcon iconSize={iconSize} label="Ticketing" iconName="ticket" onClick={() => {}} />
-                    <CardIcon iconSize={iconSize} label="Events" iconName="events" onClick={() => {}} />
-                    <CardIcon iconSize={iconSize} label="Travel" iconName="booking" onClick={() => {}} />
-                    <CardIcon iconSize={iconSize} label="Inventory" iconName="inventory" onClick={() => {}} />
-                    <CardIcon iconSize={iconSize} label="CRM" iconName="crm" onClick={() => {}} />
-                    <CardIcon iconSize={iconSize} label="Blogs" iconName="blogs" onClick={() => {}} />
-                    <CardIcon iconSize={iconSize} label="Vacation" iconName="homeRentals" onClick={() => {}} />
-                    <CardIcon iconSize={iconSize} label="Rentals" iconName="carRental" onClick={() => {}} />
-                    <CardIcon iconSize={iconSize} label="Campaign" iconName="emailCampaign" onClick={() => {}} />
-                    <CardIcon iconSize={iconSize} label="Appointment" iconName="calendar" onClick={() => {}} />
-                    <CardIcon iconSize={iconSize} label="Repair" iconName="repair" onClick={() => {}} />
-                    <CardIcon iconSize={iconSize} label="CMS" iconName="cms" onClick={() => {}} />
-                    <CardIcon iconSize={iconSize} label="Learn" iconName="learn" onClick={() => {}} />
-                    <CardIcon iconSize={iconSize} label="Dating" iconName="dating" onClick={() => {}} />
-                    <CardIcon iconSize={iconSize} label="Booking" iconName="hotel" onClick={() => {}} />
-                    <CardIcon iconSize={iconSize} label="Trucking" iconName="delivery" onClick={() => {}} />
-                    <CardIcon iconSize={iconSize} label="Moving" iconName="moving" onClick={() => {}} />
-                    <CardIcon iconSize={iconSize} label="HR" iconName="hr" onClick={() => {}} />
-                    <CardIcon iconSize={iconSize} label="Financial" iconName="bank" onClick={() => {}} />
-                    <CardIcon iconSize={iconSize} label="Entertainment" iconName="entertainment" onClick={() => {}} />
-                    <CardIcon iconSize={iconSize} label="Awards" iconName="awards" onClick={() => {}} />
-                    <CardIcon iconSize={iconSize} label="Advertising" iconName="advertising" onClick={() => {}} />
-                    <CardIcon iconSize={iconSize} label="Hosting" iconName="hosting" onClick={() => {}} />
-                    <CardIcon iconSize={iconSize} label="Forms" iconName="forms" onClick={() => {}} /> */}
+                    
                 </div>
             </div>
         
@@ -124,7 +107,6 @@ const Dashboard: React.FC<DashboardProps> = ({
                 <Heading title="Tools and Utilities" size="text-lg text-gray-700 text-center font-semibold"/>
             </div>
             <div className="w-full flex flex-col items-start justify-center mx-auto mb-4 p-4">
-            
                 <div 
                     className="
                         grid
@@ -144,33 +126,9 @@ const Dashboard: React.FC<DashboardProps> = ({
                         2xl:max-w-[2500px]
                     "
                 >
-                    <CardIcon iconSize={iconSize} label="Music" iconName="music" onClick={() => {}} />
-                    <CardIcon iconSize={iconSize} label="Movies" iconName="movies" onClick={() => {}} />
-                    <CardIcon iconSize={iconSize} label="Sign" iconName="sign" onClick={() => {}} />
-                    <CardIcon iconSize={iconSize} label="Contacts" iconName="contacts" onClick={() => {}} />
-                    <CardIcon iconSize={iconSize} label="Dashboard" iconName="dashboard" onClick={() => {}} />
-                    <CardIcon iconSize={iconSize} label="Files" iconName="fileManagement" onClick={() => {}} />
-                    <CardIcon iconSize={iconSize} label="Weather" iconName="weather" onClick={() => {}} />
-                    <CardIcon iconSize={iconSize} label="Docs" iconName="documentation" onClick={() => {}} />
-                    <CardIcon iconSize={iconSize} label="Blocks" iconName="blocks" onClick={() => {}} />
-                    <CardIcon iconSize={iconSize} label="Gallery" iconName="gallery" onClick={() => {}} />
-                    
-                    <CardIcon iconSize={iconSize} label="Todo List" iconName="todo" onClick={() => {}} />
-                    <CardIcon iconSize={iconSize} label="Draw" iconName="draw" onClick={() => {}} />
-                    <CardIcon iconSize={iconSize} label="Icons" iconName="icons" onClick={() => {}} />
-                    <CardIcon iconSize={iconSize} label="Notes" iconName="notes" onClick={() => {}} />
-                    <CardIcon iconSize={iconSize} label="Flow" iconName="flow" onClick={() => {}} />
-                    <CardIcon iconSize={iconSize} label="Email" iconName="email" onClick={() => {}} />
-                    <CardIcon iconSize={iconSize} label="Connect" iconName="connect" onClick={() => {}} />
-                    <CardIcon iconSize={iconSize} label="Fonts" iconName="fonts" onClick={() => {}} />
-                    <CardIcon iconSize={iconSize} label="Map" iconName="map" onClick={() => {}} />
-                    <CardIcon iconSize={iconSize} label="AI" iconName="robot" onClick={() => {}} />
-                    <CardIcon iconSize={iconSize} label="KB" iconName="knowledge" onClick={() => {}} />
-                    <CardIcon iconSize={iconSize} label="Archive" iconName="archive" onClick={() => {}} />
-                    <CardIcon iconSize={iconSize} label="Notifications" iconName="notification" onClick={() => {}} />
-                    <CardIcon iconSize={iconSize} label="Board" iconName="board" onClick={() => {}} />
-                    <CardIcon iconSize={iconSize} label="Coding" iconName="code" onClick={() => {}} />
-                    <CardIcon iconSize={iconSize} label="Support" iconName="support" onClick={() => {}} />
+                    {administrationData.tools.map((item) => (
+                        <CardIcon key={item.slug} iconSize={iconSize} label={item.name} iconName={item.icon_name} buttonId={`${item.slug}-button`} contentId={`${item.slug}-content`}  onClick={() => {}} description={item.description} />
+                    ))}
                 </div>
             </div>
      

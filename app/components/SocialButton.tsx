@@ -1,4 +1,5 @@
 'use client';
+import ButtonComponent from "@/app/components/Button";
 import Button from "@/app/components/Button";
 import AppIcons from "@/app/components/icons/AppIcons";
 import { signIn } from "next-auth/react";
@@ -6,17 +7,23 @@ import { signIn } from "next-auth/react";
 const SocialButton = () => {
     return (
         <>
-            <Button 
-                outline
-                label='Google'
-                icon={AppIcons['google']}
+            <ButtonComponent 
+                label={"Google"} 
                 onClick={() => signIn('google')}
+                classNames="w-full px-4 pl-2  text-gray-600" 
+                color="gray" 
+                size="lg" 
+                icon={AppIcons['google']} 
+                iconSize={24}
             />
-            <Button 
-                outline
-                label='Github'
-                icon={AppIcons['github']}
+            <ButtonComponent 
+                label={"Github"} 
                 onClick={() => signIn('github')}
+                classNames="w-full px-4 pl-2 text-gray-600" 
+                color="gray" 
+                size="lg" 
+                icon={AppIcons['github']} 
+                iconSize={24}
             />
         </>
     )

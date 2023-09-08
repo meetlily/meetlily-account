@@ -16,7 +16,7 @@ export default async function DashboardPage() {
           <SideBarLayout showSidebar={true} />
         </aside>
 
-        <main className="md:ml-64 h-auto mt-[58px] bg-white border-l border-r overflow-hidden">
+        <main className="relative md:ml-64 h-auto mt-[58px] z-40 bg-white border-l border-r overflow-hidden">
           <Dashboard currentUser={currentUser}/>
         </main>
       </>
