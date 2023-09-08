@@ -5,14 +5,15 @@ import Logo from "./Logo";
 import { SafeUser } from "@/app/types";
 import { signIn, signOut } from "next-auth/react";
 import useAccountModal from "@/app/hooks/useAccountModal";
-import { useCallback, useEffect, useState } from "react";
+import { MouseEvent, useCallback, useEffect, useState } from "react";
 import NavSearch from "./NavSearch";
 import Notification from './notification/Notification';
 import { FaUser,FaInfo} from "react-icons/fa6";
 import AppIcons from "../icons/AppIcons";
-import { useRouter } from "next/navigation";
+import { redirect } from "next/navigation";
 import IconComponent from "../icons/IconComponent";
 import AddItem from "./apps/AddItem";
+import LoginButton from "../LoginButton";
 interface ContentData {
     id: string;
     name: string;
@@ -27,7 +28,9 @@ interface MainNavbarProps {
 const MainNavbar: React.FC<MainNavbarProps> = ({
     currentUser
 }) => {
-    const router = useRouter()
+    if(!currentUser){
+        redirect('/sign-in')
+    }
     const accountModal = useAccountModal();
     const [tabContent, setTabContent] = useState<ContentData[]>([]);
     const [isLoading, setIsLoading] = useState(false);
@@ -44,14 +47,14 @@ const MainNavbar: React.FC<MainNavbarProps> = ({
 
     return (
         <>
-        <div className="bg-gray-700 flex flex-col items-center">
-            <Navbar fluid className="max-w-[2500px] w-full bg-gray-700">
+        <div className="bg-gray-800 flex flex-col items-center">
+            <Navbar fluid className="max-w-[2500px] w-full bg-gray-800">
                     <div className="flex md:order-0 gap-4 pr-2">
-                        <Navbar.Brand href="/" className="gap-4 pl-2 w-[300px]">
+                        <Navbar.Brand href="/" className="gap-4 pl-2  w-[120px] md:w-[280px]">
                             <Logo color={"white"} onClick={() => {}} height={120} width={120} />
                             
                         </Navbar.Brand>
-                        <NavSearch />
+                        {/* <NavSearch /> */}
                     </div>
                     
                     <div className="flex md:order-2 gap-4 pr-2">
@@ -61,7 +64,7 @@ const MainNavbar: React.FC<MainNavbarProps> = ({
                         <Notification currentUser={currentUser}/>
                         
                                 <Dropdown
-                                    className="overflow-hidden w-[320px] py-0 rounded-xl justify-start z-50 my-4 max-w-sm text-base list-none bg-white divide-y divide-gray-100 shadow-lg dark:divide-gray-700 dark:bg-gray-700"
+                                    className="overflow-hidden w-[320px] py-0 rounded-xl justify-start z-50 my-4 max-w-sm text-base list-none bg-white divide-y divide-gray-100 shadow-lg dark:divide-gray-700 dark:bg-gray-800"
                                     placement="bottom"
                                     inline
                                     label={
@@ -139,7 +142,7 @@ const MainNavbar: React.FC<MainNavbarProps> = ({
                                 <AvatarNav currentUser={currentUser} width={30} height={30} image={currentUser?.image ? currentUser?.image : '/images/placeholder.jpg'}/>
                             }
                         >
-                        <Dropdown.Header className="bg-gray-700 py-4 px-10 -mt-1 text-center rounded-t-md  border-t border-gray-400 text-white">
+                        <Dropdown.Header className="bg-gray-800 py-4 px-10 -mt-1 text-center rounded-t-md  border-t border-gray-400 text-white">
                                 <AvatarNav currentUser={currentUser} width={30} height={30} image={currentUser?.image ? currentUser?.image : '/images/placeholder.jpg'}/>
                             <span className="block text-sm mt-2">{currentUser?.name}</span>
                             <span className="block truncate text-sm font-medium">
@@ -154,6 +157,11 @@ const MainNavbar: React.FC<MainNavbarProps> = ({
                                 <Dropdown.Item onClick={ signOut } icon={AppIcons['signOut']} className="py-3 font-semibold border-t transition rounded-b-md">Sign out</Dropdown.Item>
                             </div>
                         </Dropdown>
+                        </>
+                    )}
+                    {!currentUser && (
+                        <>
+                        <LoginButton />
                         </>
                     )}
                     </div>

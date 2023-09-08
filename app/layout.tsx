@@ -3,16 +3,14 @@ import { Metadata } from 'next'
 import { Inter, Nunito, Open_Sans } from 'next/font/google'
 import ClientOnly from '@/app/components/ClientOnly'
 import getCurrentUser from './actions/getCurrentUser'
-import MainNavbar from './components/navbar/MainNavbar'
-import  Footer  from '@/app/components/footer/Footer'
-
+import ToasterProvider from './components/providers/ToasterProvider'
 
 export const metadata: Metadata = {
   title: 'Meetlily Dashboard',
   description: 'Simplify Data Management',
 }
 
-const font = Open_Sans({
+const font = Nunito({
   subsets: ["latin"]
 })
 
@@ -33,7 +31,7 @@ export default async function RootLayout({
         `}
       >
         <ClientOnly>
-          <MainNavbar currentUser={currentUser}/>
+        <ToasterProvider />
           {children}
         </ClientOnly>
       </body> 

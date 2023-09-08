@@ -8,23 +8,26 @@ import AppIcons from "./AppIcons";
 import { FaBan } from "react-icons/fa6";
 
 interface IconComponentProps {
-    iconName: string;
+    iconName?: string;
     size?: number;
     class_name?: string;
     color?: string;
+    customIcon?: IconType | null;
 }
 
 const IconComponent: React.FC<IconComponentProps> =  ({
     iconName,
     size,
     class_name,
-    color
+    color,
+    customIcon: CustomIcon
 }) => {
     
     
     if (!iconName) {
         iconName = "ban";
     }
+
     const Icon = AppIcons[iconName];
 
     if (!size) {
@@ -35,9 +38,14 @@ const IconComponent: React.FC<IconComponentProps> =  ({
     }
   return (
         <>
-            {Icon && (
+            {Icon && !CustomIcon && (
                 <div className={class_name}>
-                    <Icon  size={size} color={color} />
+                    <Icon size={size} color={color} />
+                </div>
+            )}
+            {CustomIcon && (
+                <div className={class_name}>
+                    <CustomIcon size={size} color={color} />
                 </div>
             )}
             {!Icon && (

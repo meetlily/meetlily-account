@@ -1,6 +1,8 @@
-import PageLayout from '@/layouts/Pages';
-import Dashboard from './components/Dashboard';
+import PageLayout from '@/app/layouts/page';
+import Dashboard from '@/app/components/Dashboard';
 import getCurrentUser from './actions/getCurrentUser';
+import HomeLandingPage from './components/landingpages/HomeLandingPage';
+import PageNavbar from './components/navbar/PageNavbar';
 
 
 export default async function Home() {
@@ -13,13 +15,17 @@ export default async function Home() {
     metaData.subtitle = `Welcome back, ${currentUser.name}!`;
   }
   return (
-    <div className="fluid max-w-[2500px] flex flex-col items-center mx-auto justify-center border bg-gray-50 h-full">
-      <PageLayout metadata={metaData} showSidebar={true} hideNavbar={true}>
-        <div className="flex flex-col w-full border-l h-full bg-white">
-            <Dashboard currentUser={currentUser}/>
-        </div>
-      </PageLayout>
-    </div>
+    <>
+      <PageNavbar currentUser={currentUser} />
+      <div className="fluid flex flex-col items-center mx-auto justify-center bg-gray-50 h-full">
+        <PageLayout metadata={metaData} showSidebar={false} hideNavbar={true}>
+          <div className="flex flex-col w-full h-ful">
+              <HomeLandingPage />
+              {/* <Dashboard currentUser={currentUser}/> */}
+          </div>
+        </PageLayout>
+      </div>
+    </>
   )
 }
 

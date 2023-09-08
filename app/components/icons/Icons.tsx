@@ -111,8 +111,6 @@ import {
     HiOutlineChartBar,
     HiMiniChartBar,
 } from "react-icons/hi2";
-import AppIcons from "./AppIcons";
-
 
 const Icons: { [key: string]: IconType } = {
     heart: FiHeart,

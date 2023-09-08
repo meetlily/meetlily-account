@@ -2,8 +2,9 @@ import prisma from "@/app/libs/prismadb"
 import { NextResponse } from "next/server";
 import getSession from '@/app/actions/getCurrentUser'
 
+
 export async function POST(
-    request: any,
+    request: Request,
 ) {
     try {
         const session = await getSession(); 

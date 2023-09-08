@@ -1,0 +1,48 @@
+{
+    "solutions": [
+      { "name": "Marketing", "href": "#" },
+      { "name": "Analytics", "href": "#" },
+      { "name": "Commerce", "href": "#" },
+      { "name": "Insights", "href": "#" }
+    ],
+    "support": [
+      { "name": "Pricing", "href": "#" },
+      { "name": "Documentation", "href": "#" },
+      { "name": "Guides", "href": "#" },
+      { "name": "API Status", "href": "#" }
+    ],
+    "company": [
+      { "name": "About", "href": "#" },
+      { "name": "Blog", "href": "#" },
+      { "name": "Jobs", "href": "#" },
+      { "name": "Press", "href": "#" },
+      { "name": "Partners", "href": "#" }
+    ],
+    "legal": [
+      { "name": "Claim", "href": "#" },
+      { "name": "Privacy", "href": "#" },
+      { "name": "Terms", "href": "#" }
+    ],
+    "social": [
+      {
+        "name": "Facebook",
+        "href": "https://facebook.com/meetmylily",
+        "icon": "facebook"
+    },
+    {
+      "name": "Instagram",
+      "href": "https://instagram.com/meetmylily",
+      "icon": "instagram"
+    },
+    {
+      "name": "Twitter",
+      "href": "https://twitter.com/meetmylily",
+      "icon": "twitter"
+    },
+    {
+      "name": "GitHub",
+      "href": "https://github.com/meetlily",
+      "icon": "github"
+    }
+  ]
+}

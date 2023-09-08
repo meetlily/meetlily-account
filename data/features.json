@@ -1,0 +1,32 @@
+[
+    {
+        "name": "Mobile App for Sustainable Living",
+        "description": "Create an interactive mobile application that encourages and educates users about sustainable practices in daily life. Include features like carbon footprint tracking, tips for reducing waste, and a community forum for sharing ideas and success stories.",
+        "icon": "cloud"
+    },
+    {
+        "name": "SSL Certificates",
+        "description": "SSL (Secure Socket Layer) certificates are digital certificates that establish a secure encrypted connection between a user's browser and a web server.",
+        "icon": "lock"
+    },
+    {
+        "name": "Simple Queues",
+        "description": "Simple queues are a fundamental data structure that follows the First-In-First-Out (FIFO) principle. In simple terms, they are a linear collection where new elements are added to the back and removal happens from the front.",
+        "icon": "refresh"
+    },
+    {
+        "name": "Advanced Security",
+        "description": "Advanced security refers to the implementation of robust measures, technologies, and strategies to protect digital systems, networks, and data from sophisticated cyber threats, ensuring confidentiality, integrity, and availability.",
+        "icon": "shield"
+    },
+    {
+        "name": "Powerful API",
+        "description": "A powerful API (Application Programming Interface) allows software applications to seamlessly communicate and interact with each other, enabling efficient data exchange, integration, and functionality expansion for developers and users.",
+        "icon": "cog"
+    },
+    {
+        "name": "Database Backups",
+        "description": "Database backups are essential measures that create copies of a database's data, ensuring its protection against data loss, corruption, or system failures. Backups safeguard critical information and enable recovery in case of emergencies.",
+        "icon": "dbBackup"
+    }
+]

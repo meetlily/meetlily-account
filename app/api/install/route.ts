@@ -79,11 +79,6 @@ export async function GET(
             }
             return NextResponse.json(data);
         }
-
-
-
-        
-        
     } catch (error) {
         const errorMessage = "An error occurred while fetching listings";
         return new NextResponse(errorMessage, { status: 500 });
