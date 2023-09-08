@@ -1,6 +1,6 @@
 ## Meetlily Apps (ERP) - Business Suite Applications
 
-<img src="screenshot.png" alt="Meetlily Apps" />
+<img src="screenshot-2.png" alt="Meetlily Apps" />
 
 Meetlily Apps (ERP) is a comprehensive suite of business applications built on top of React, Next.js, Prisma, and PostgreSQL. It is designed to streamline and optimize various aspects of your business operations, providing you with powerful tools to manage different departments and processes.
 

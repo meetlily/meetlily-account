@@ -225,14 +225,14 @@ const LoginForm: React.FC<LoginFormProps> = ({
                                     Don&apos;t have an account?
                                 </div>
                                 <div
-                                    onClick={() => router.push('/register')}
+                                    onClick={() => router.push('/sign-up')}
                                     className='
                                         text-neutral-800
                                         cursor-pointer
                                         hover:underline
                                     '   
                                 >
-                                    Sign Up
+                                    Create an account
                                 </div>
                             </div>
                         </div>

@@ -1,10 +1,10 @@
 'use client'
 import { IconType } from "react-icons";
 import {RiVideoChatFill, RiSecurePaymentFill, RiRefund2Fill} from 'react-icons/ri'
-import { TbApi,TbMovie, TbServer2, TbLayoutGridAdd, TbTools, TbCurrencyRiyal, TbCurrencyDirham, TbCurrencyDinar, TbCurrencyCent, TbCurrencyAfghani, TbCurrencyBahraini, TbCurrencyDogecoin, TbCurrencyWon, TbCurrencyTenge, TbCurrencyZloty, TbCurrencyDram, TbCurrencyEthereum, TbCurrencyLitecoin, TbCurrencyLari } from 'react-icons/tb'
+import { TbApi,TbMovie, TbServer2, TbLayoutGridAdd, TbTools, TbCurrencyRiyal, TbCurrencyDirham, TbCurrencyDinar, TbCurrencyCent, TbCurrencyAfghani, TbCurrencyBahraini, TbCurrencyDogecoin, TbCurrencyWon, TbCurrencyTenge, TbCurrencyZloty, TbCurrencyDram, TbCurrencyEthereum, TbCurrencyLitecoin, TbCurrencyLari, TbHexagonLetterF, TbCircleLetterC, TbSquareLetterB, TbLetterM } from 'react-icons/tb'
 import {HiHomeModern,} from 'react-icons/hi2'
 import {LuCalendarClock, LuLayoutGrid, LuRefreshCw, LuCog } from 'react-icons/lu'
-import { BsDatabaseAdd,BsPersonAdd, BsBuildingAdd, BsFillHouseAddFill, BsDatabaseUp, BsChevronRight, BsFileRichtextFill, BsFillCalendar2WeekFill, BsFillCalendar2PlusFill, BsFillCalendarXFill, BsFillCalendar2CheckFill, BsCalendarRange, BsCash, BsCashCoin, BsCurrencyEuro } from 'react-icons/bs'
+import { BsDatabaseAdd,BsPersonAdd, BsBuildingAdd, BsFillHouseAddFill, BsDatabaseUp, BsChevronRight, BsFileRichtextFill, BsFillCalendar2WeekFill, BsFillCalendar2PlusFill, BsFillCalendarXFill, BsFillCalendar2CheckFill, BsCalendarRange, BsCash, BsCashCoin, BsCurrencyEuro, BsMarkdown } from 'react-icons/bs'
 import { BiAddToQueue, BiSolidBookContent, BiRestaurant, BiSolidBusiness } from 'react-icons/bi'
 import { MdSwitchAccessShortcutAdd, MdOutlineAdminPanelSettings, MdWorkspacePremium, MdOutlineAddBusiness, MdCardMembership, MdApi, MdOutlineMeetingRoom, MdCurrencyPound, MdOutlineCurrencyLira, MdOutlineCurrencyFranc, MdOutlineCurrencyBitcoin, MdCurrencyRuble, MdCurrencyRupee, MdSupport, MdOutlineLocalShipping } from 'react-icons/md'
 import { GiLovers, GiVideoConference, GiCash } from "react-icons/gi";
@@ -153,6 +153,7 @@ import {
     FaYenSign,
     FaCartFlatbed
 } from "react-icons/fa6";
+import { SiCoinmarketcap } from "react-icons/si";
 
 
 
@@ -212,7 +213,7 @@ const AppIcons: { [key: string]: IconType } = {
     awards: FaMedal,
     vacation: FaHouseTsunami,
     accounting: FaHandHoldingDollar,
-    blocks: FaDiceD6,
+    blockDice: FaDiceD6,
     homeRentals: HiHomeModern,
     archive: FaBoxArchive,
     advertising: FaAdversal,
@@ -235,7 +236,7 @@ const AppIcons: { [key: string]: IconType } = {
     video: FaInfo,
     about: FaInfo,
     info: BiSolidBusiness,
-    connect: RiVideoChatFill,
+    connectVideo: RiVideoChatFill,
     bank: FaBuildingColumns,
     timeline: FaTimeline,
     clockInOut: FaUserClock,
@@ -271,7 +272,6 @@ const AppIcons: { [key: string]: IconType } = {
     taxi: FaTaxi,
     cart: FaCartPlus,
     board: FaChalkboardUser,
-    flow: FaDiagramProject,
     sales: FaMoneyBillTrendUp,
     inventory: FaDolly,
     delivery: FaTruckFast,
@@ -352,6 +352,12 @@ const AppIcons: { [key: string]: IconType } = {
     products: FaCartFlatbed,
     shipping: MdOutlineLocalShipping,
     financial: GiCash,
+    flow: TbHexagonLetterF,
+    connect: TbCircleLetterC,
+    blocks: TbSquareLetterB,
+    letterM: TbLetterM,
+    markdown: BsMarkdown,
+    markedit: SiCoinmarketcap
 }
 
 export default AppIcons;

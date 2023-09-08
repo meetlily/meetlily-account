@@ -223,17 +223,17 @@ const RegisterForm: React.FC<RegisterFormProps> = ({
                             </div>
                             <div className='justify-center flex flex-row items-center gap-2 text-sm'>
                                 <div className='text-neutral-400'>
-                                    Don&apos;t have an account?
+                                    Already have an account?
                                 </div>
                                 <div
-                                    onClick={() => router.push('/register')}
+                                    onClick={() => router.push('/sign-in')}
                                     className='
                                         text-neutral-800
                                         cursor-pointer
                                         hover:underline
                                     '   
                                 >
-                                    Sign Up
+                                    Sign In
                                 </div>
                             </div>
                         </div>

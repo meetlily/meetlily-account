@@ -85,28 +85,28 @@ const SideBarLayout: React.FC<SideBarLayoutProps> = ({
                         label="My Apps"
                     >
                         <Sidebar.Item 
-                            href="#"
-                            icon={AppIcons['products']}
+                            href="https://flow.meetlily.net"
+                            icon={AppIcons['flow']}
                         >
-                        Products
+                        Flow
                         </Sidebar.Item>
                         <Sidebar.Item 
                             href="#"
-                            icon={AppIcons['sales']}
+                            icon={AppIcons['connect']}
                         >
-                        Sales
+                        Connect
                         </Sidebar.Item>
                         <Sidebar.Item 
                             href="#"
-                            icon={AppIcons['refunds']}
+                            icon={AppIcons['blocks']}
                         >
-                        Refunds
+                        Blocks
                         </Sidebar.Item>
                         <Sidebar.Item 
                             href="#"
-                            icon={AppIcons['shipping']}
+                            icon={AppIcons['markedit']}
                         >
-                        Shipping
+                        MarkEdit
                         </Sidebar.Item>
                     </Sidebar.Collapse>
                     
