@@ -8,7 +8,6 @@ import { BiDollar } from "react-icons/bi";
 import { TbPhotoPlus } from "react-icons/tb";
 import getSession from '@/app/actions/getCurrentUser'
 import { NextResponse } from "next/server";
-import Icons from "@/app/components/icons/Icons";
 import AppIcons from "@/app/components/icons/AppIcons";
 
 

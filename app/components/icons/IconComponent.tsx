@@ -1,9 +1,6 @@
 'use client';
-import { useState, useEffect } from "react";
+
 import { IconType } from "react-icons";
-import axios, { AxiosResponse } from "axios";
-import toast from "react-hot-toast";
-import Icons from "./Icons";
 import AppIcons from "./AppIcons";
 import { FaBan } from "react-icons/fa6";
 
@@ -49,7 +46,7 @@ const IconComponent: React.FC<IconComponentProps> =  ({
                 </div>
             )}
             {!Icon && (
-                <div className="text-neutral-400 text-center block mx-auto">
+                <div className="text-neutral-400 text-center block mx-auto mb-1">
                     <FaBan size={size} />
                 </div>
             )}

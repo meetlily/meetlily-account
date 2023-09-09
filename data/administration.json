@@ -2,75 +2,177 @@
   "administration": [
     {
       "name": "Servers",
-      "slug": "servers",
-      "icon_name": "server",
-      "description": "Easily manage your servers and ensure their smooth operation. Monitor server performance, track resource usage, and handle server configurations effortlessly",
+      "slug": "server",
+      "short_description": "Build scalable and robust server applications.",
+      "description": "The Server module provides tools and libraries for building scalable and robust server applications. It includes features such as routing, middleware, authentication, and database integration. Whether you're building a RESTful API, a web server, or a backend system, the Server module simplifies the process of handling HTTP requests, managing server resources, and interacting with databases. Easily manage your servers and ensure their smooth operation. Monitor server performance, track resource usage, and handle server configurations effortlessly",
       "category": [
-        "fb94112a-f10b-48ff-aa24-0583d366f898"
-      ]
+        {
+          "name": "Web Development",
+          "id": "19000065-9e8b-4b7f-9f6f-7c7d1b6b0c4d"
+        }
+      ],
+      "tags": [
+        "Server",
+        "Web Development",
+        "Scalability",
+        "Middleware",
+        "Authentication",
+        "Database Integration"
+      ],
+      "icon_name": "server",
+      "module": "Server"
     },
     {
       "name": "Databases",
-      "slug": "databases",
-      "icon_name": "database",
-      "description": "Seamlessly integrate with databases to efficiently manage and organize your data. Create and modify database schemas, execute queries, and optimize performance.",
+      "slug": "database",
+      "short_description": "Manage and interact with databases.",
+      "description": "The Database module provides tools and libraries for managing and interacting with databases. It includes features such as query builders, ORM (Object-Relational Mapping) frameworks, and database migration tools. Whether you're working with SQL databases like MySQL or PostgreSQL, NoSQL databases like MongoDB or Redis, or cloud-based databases like Amazon RDS or Google Cloud Firestore, the Database module simplifies the process of connecting to databases, executing queries, and handling data.",
       "category": [
-        "fb94112a-f10b-48ff-aa24-0583d366f898"
-      ]
+        {
+          "name": "Web Development",
+          "id": "19000065-9e8b-4b7f-9f6f-7c7d1b6b0c4d"
+        }
+      ],
+      "tags": [
+        "Database",
+        "Web Development",
+        "SQL",
+        "NoSQL",
+        "ORM",
+        "Query Builder",
+        "Migration"
+      ],
+      "icon_name": "database",
+      "module": "Database"
     },
     {
       "name": "Development",
-      "slug": "develop",
-      "icon_name": "develop",
-      "description": "Extend the functionality of Meetlily Apps (ERP) by building custom applications that cater to your unique business processes. Leverage the suite's development capabilities to create tailored solutions.",
+      "slug": "development",
+      "short_description": "Enhance your development workflow.",
+      "description": "The Development module provides tools and utilities to enhance your development workflow. It includes features such as code editors, debugging tools, version control integration, task automation, and testing frameworks. Whether you're a frontend developer, backend developer, or full-stack developer, the Development module helps you write, test, and deploy your code more efficiently.",
       "category": [
-        "fb94112a-f10b-48ff-aa24-0583d366f898"
-      ]
+        {
+          "name": "Web Development",
+          "id": "19000065-9e8b-4b7f-9f6f-7c7d1b6b0c4d"
+        }
+      ],
+      "tags": [
+        "Development",
+        "Web Development",
+        "Code Editor",
+        "Debugging",
+        "Version Control",
+        "Task Automation",
+        "Testing"
+      ],
+      "icon_name": "develop",
+      "module": "Development"
     },
     {
       "name": "Integrations",
-      "slug": "integrations",
-      "icon_name": "integration",
-      "description": "Seamlessly integrate with various third-party services and applications. Connect and synchronize data with CRM systems, payment gateways, marketing platforms, and more.",
+      "slug": "api-integrations",
+      "short_description": "Integrate with third-party APIs.",
+      "description": "The API Integrations module provides tools and libraries for integrating with third-party APIs. It includes features such as API clients, authentication mechanisms, request/response handling, and data mapping. Whether you need to connect to social media APIs, payment gateways, geolocation services, or any other external API, the API Integrations module simplifies the process of making API requests, handling authentication, and processing API responses.",
       "category": [
-        "fb94112a-f10b-48ff-aa24-0583d366f898"
-      ]
+        {
+          "name": "Web Development",
+          "id": "19000065-9e8b-4b7f-9f6f-7c7d1b6b0c4d"
+        }
+      ],
+      "tags": [
+        "API Integrations",
+        "Web Development",
+        "API Clients",
+        "Authentication",
+        "Request/Response Handling",
+        "Data Mapping"
+      ],
+      "icon_name": "integration",
+      "module": "API Integrations"
     },
     {
-      "name": "Organization",
-      "slug": "organization",
-      "icon_name": "company",
-      "description": "Manage your company details, including profile, contact information, and legal documents. Customize the suite to align with your company's branding and requirements.",
+      "name": "Organizations",
+      "slug": "organizations",
+      "short_description": "Manage and organize groups of users.",
+      "description": "The Organizations module provides tools and functionality for managing and organizing groups of users within an application. It includes features such as creating, editing, and deleting organizations, assigning users to organizations, and managing permissions and roles within organizations. Whether you're building a multi-tenant application, a collaborative platform, or an enterprise system, the Organizations module simplifies the process of managing user groups and their associated settings.",
       "category": [
-        "fb94112a-f10b-48ff-aa24-0583d366f898"
-      ]
+        {
+          "name": "User Management",
+          "id": "c8e5b2a2-8c7a-4a9a-9e2c-6c3f3e9f6e1d"
+        }
+      ],
+      "tags": [
+        "Organizations",
+        "User Management",
+        "User Groups",
+        "Permissions",
+        "Roles"
+      ],
+      "icon_name": "company",
+      "module": "Organizations"
     },
     {
       "name": "Users",
       "slug": "users",
+      "short_description": "Manage user accounts and profiles.",
+      "description": "The Users module provides tools and functionality for managing user accounts and profiles within an application. It includes features such as user registration, login, authentication, password reset, profile management, and user-related settings. Whether you're building a social networking platform, an e-commerce website, or a content management system, the Users module simplifies the process of handling user-related operations and ensuring a secure and personalized user experience.",
+      "category": [
+        {
+          "name": "User Management",
+          "id": "c8e5b2a2-8c7a-4a9a-9e2c-6c3f3e9f6e1d"
+        }
+      ],
+      "tags": [
+        "Users",
+        "User Management",
+        "Authentication",
+        "Profile Management",
+        "Security"
+      ],
       "icon_name": "users",
-      "description": "Comprehensive user management capabilities. Create and manage user accounts, assign roles and permissions, and control access to features and modules.",
-      "category": [
-        "fb94112a-f10b-48ff-aa24-0583d366f898"
-      ]
-    },
-    {
-      "name": "Themes",
-      "slug": "theme",
-      "icon_name": "theme",
-      "description": "Comprehensive user management capabilities. Create and manage user accounts, assign roles and permissions, and control access to features and modules.",
-      "category": [
-        "fb94112a-f10b-48ff-aa24-0583d366f898"
-      ]
+      "module": "Users"
     },
     {
       "name": "Settings",
       "slug": "settings",
-      "icon_name": "gears",
-      "description": "Customize Meetlily Apps (ERP) to suit your business needs. Configure preferences, adjust system behavior, and tailor the suite to your specific requirements.",
+      "short_description": "Manage application settings and configurations.",
+      "description": "The Settings module provides tools and functionality for managing application settings and configurations. It includes features such as dynamic settings management, configuration files, environment variables, and settings UI. Whether you need to handle global settings, user-specific settings, or application-wide configurations, the Settings module simplifies the process of managing and accessing various settings within your application.",
       "category": [
-        "fb94112a-f10b-48ff-aa24-0583d366f898"
-      ]
+        {
+          "name": "Application Management",
+          "id": "a3b5f4d6-7e8f-9a0b-c1d2e3f4a5b6"
+        }
+      ],
+      "tags": [
+        "Settings",
+        "Application Management",
+        "Configuration",
+        "Environment Variables",
+        "Settings UI"
+      ],
+      "icon_name": "gears",
+      "module": "Settings"
+    },
+    {
+      "name": "Analytics",
+      "slug": "analytics",
+      "short_description": "Track and analyze user behavior and application metrics.",
+      "description": "The Analytics module provides tools and functionality for tracking and analyzing user behavior and application metrics. It includes features such as event tracking, user segmentation, funnel analysis, and performance monitoring. Whether you want to understand how users interact with your application, measure the effectiveness of your marketing campaigns, or identify areas for optimization, the Analytics module simplifies the process of collecting and analyzing data to gain valuable insights.",
+      "category": [
+        {
+          "name": "Data Analysis",
+          "id": "d1e2a3d4-5a6n7a8l9y0s"
+        }
+      ],
+      "tags": [
+        "Analytics",
+        "Data Analysis",
+        "User Behavior",
+        "Metrics",
+        "Performance Monitoring"
+      ],
+      "icon_name": "analytics",
+      "module": "Analytics"
     }
   ],
   "applications": [
@@ -422,21 +524,24 @@
     {
       "name": "Timesheet",
       "slug": "timesheet",
-      "description": "Capture and manage employee work hours with the Timesheet module of Meetlily Apps. Keep track of time spent on projects, tasks, or clients. Streamline payroll processes.",
+      "short_description": "Track and manage employee working hours.",
+      "description": "The Timesheet module provides tools and functionality for tracking and managing employee working hours. It includes features such as clock-in/clock-out functionality, timesheet entry and editing, overtime calculation, and reporting. Whether you need to monitor employee attendance, calculate payroll, or analyze productivity, the Timesheet module simplifies the process of tracking and managing working hours for your organization.",
       "category": [
         {
-          "name": "Project Management",
-          "id": "19000001-9e8b-4b7f-9f6f-7c7d1b6b0c4d"
+          "name": "Human Resources",
+          "id": "h1u2m3a4n5r6e7s8o9u0r1c2e3s4"
         }
       ],
       "tags": [
-        "Project Management",
-        "Time Management"
+        "Timesheet",
+        "Employee Attendance",
+        "Working Hours",
+        "Overtime Calculation",
+        "Productivity"
       ],
       "icon_name": "timesheet",
       "module": "Timesheet"
     },
-    
     {
       "name": "HR",
       "slug": "hr",
@@ -1293,7 +1398,27 @@
       ],
       "icon_name": "listings",
       "module": "Listings"
-    }
+    },
+    {
+      "name": "Companies",
+      "slug": "companies",
+      "short_description": "Manage and organize companies or organizations.",
+      "description": "The Companies module provides tools and functionality for managing and organizing companies or organizations within an application. It includes features such as creating, editing, and deleting companies, managing company profiles, and associating users with companies. Whether you're building a business directory, a CRM system, or an enterprise platform, the Companies module simplifies the process of managing company-related data and relationships.",
+      "category": [
+        {
+          "name": "Business Management",
+          "id": "b1u2s3i4n5e6s7s8m9a0n1a2g3e4m5e6n7t8"
+        }
+      ],
+      "tags": [
+        "Companies",
+        "Business Management",
+        "Company Profiles",
+        "User Associations"
+      ],
+      "icon_name": "company",
+      "module": "Companies"
+    }    
   ],
   "tools": [
     {
@@ -1638,6 +1763,28 @@
       ],
       "icon_name": "forms",
       "module": "Forms"
+    },
+    {
+      "name": "Notifications",
+      "slug": "notifications",
+      "short_description": "Send notifications to users through various channels.",
+      "description": "The Notifications module provides tools and functionality for sending notifications to users through various channels such as email, SMS, push notifications, and in-app messages. It includes features such as message templates, targeting and segmentation, delivery scheduling, and analytics. Whether you need to send transactional notifications, marketing campaigns, or real-time updates, the Notifications module simplifies the process of engaging and communicating with your users.",
+      "category": [
+        {
+          "name": "User Engagement",
+          "id": "e1n2g3a4g5e6m7e8n9t0"
+        }
+      ],
+      "tags": [
+        "Notifications",
+        "User Engagement",
+        "Email",
+        "SMS",
+        "Push Notifications",
+        "In-App Messages"
+      ],
+      "icon_name": "notification",
+      "module": "Notifications"
     }
   ]
 }

@@ -1,12 +1,12 @@
 'use client'
 import { IconType } from "react-icons";
 import {RiVideoChatFill, RiSecurePaymentFill, RiRefund2Fill, RiPagesLine, RiSurveyLine, RiNftFill, RiBook3Line, RiFolderSettingsFill, RiCodeBoxLine, RiPagesFill, RiMoneyDollarBoxLine} from 'react-icons/ri'
-import { TbApi,TbMovie, TbServer2, TbLayoutGridAdd, TbTools, TbCurrencyRiyal, TbCurrencyDirham, TbCurrencyDinar, TbCurrencyCent, TbCurrencyAfghani, TbCurrencyBahraini, TbCurrencyDogecoin, TbCurrencyWon, TbCurrencyTenge, TbCurrencyZloty, TbCurrencyDram, TbCurrencyEthereum, TbCurrencyLitecoin, TbCurrencyLari, TbHexagonLetterF, TbCircleLetterC, TbSquareLetterB, TbLetterM, TbCurrency, TbCurrencyBitcoin, TbCash, TbBuildingWarehouse, TbRobot, TbKey, TbHomeCog } from 'react-icons/tb'
+import { TbApi,TbMovie, TbServer2, TbLayoutGridAdd, TbTools, TbCurrencyRiyal, TbCurrencyDirham, TbCurrencyDinar, TbCurrencyCent, TbCurrencyAfghani, TbCurrencyBahraini, TbCurrencyDogecoin, TbCurrencyWon, TbCurrencyTenge, TbCurrencyZloty, TbCurrencyDram, TbCurrencyEthereum, TbCurrencyLitecoin, TbCurrencyLari, TbHexagonLetterF, TbCircleLetterC, TbSquareLetterB, TbLetterM, TbCurrency, TbCurrencyBitcoin, TbCash, TbBuildingWarehouse, TbRobot, TbKey, TbHomeCog, TbEdit } from 'react-icons/tb'
 import {HiGlobeAlt, HiHomeModern,} from 'react-icons/hi2'
 import {LuCalendarClock, LuLayoutGrid, LuRefreshCw, LuCog, LuFileClock, LuFolderClock } from 'react-icons/lu'
 import { BsDatabaseAdd,BsPersonAdd, BsBuildingAdd, BsFillHouseAddFill, BsDatabaseUp, BsChevronRight, BsFileRichtextFill, BsFillCalendar2WeekFill, BsFillCalendar2PlusFill, BsFillCalendarXFill, BsFillCalendar2CheckFill, BsCalendarRange, BsCash, BsCashCoin, BsCurrencyEuro, BsMarkdown, BsCashStack, BsNewspaper, BsFillHousesFill } from 'react-icons/bs'
 import { BiAddToQueue, BiSolidBookContent, BiRestaurant, BiSolidBusiness, BiGlobe } from 'react-icons/bi'
-import { MdSwitchAccessShortcutAdd, MdOutlineAdminPanelSettings, MdWorkspacePremium, MdOutlineAddBusiness, MdCardMembership, MdApi, MdOutlineMeetingRoom, MdCurrencyPound, MdOutlineCurrencyLira, MdOutlineCurrencyFranc, MdOutlineCurrencyBitcoin, MdCurrencyRuble, MdCurrencyRupee, MdSupport, MdOutlineLocalShipping, MdOutlinePunchClock, MdInventory, MdOutlineCopyAll, MdOutlineWeb, MdOutlineLocalGroceryStore } from 'react-icons/md'
+import { MdSwitchAccessShortcutAdd, MdOutlineAdminPanelSettings, MdWorkspacePremium, MdOutlineAddBusiness, MdCardMembership, MdApi, MdOutlineMeetingRoom, MdCurrencyPound, MdOutlineCurrencyLira, MdOutlineCurrencyFranc, MdOutlineCurrencyBitcoin, MdCurrencyRuble, MdCurrencyRupee, MdSupport, MdOutlineLocalShipping, MdOutlinePunchClock, MdInventory, MdOutlineCopyAll, MdOutlineWeb, MdOutlineLocalGroceryStore, MdOutlineEditNote, MdModeEdit } from 'react-icons/md'
 import { GiLovers, GiVideoConference, GiCash } from "react-icons/gi";
 
 import { 
@@ -162,6 +162,7 @@ import { SiBlockchaindotcom, SiCampaignmonitor, SiCoinmarketcap, SiHiveBlockchai
 
 
 const AppIcons: { [key: string]: IconType } = {
+    edit: MdModeEdit,
     proposals: BsFileRichtextFill,
     payments: RiSecurePaymentFill,
     restaurant:BiRestaurant,
