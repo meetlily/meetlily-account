@@ -6,11 +6,13 @@ import footerNavigation from '@/data/footer.json' assert { type: 'json' };
 import Image from 'next/image';
 import Link from 'next/link';
 import { IconType } from 'react-icons';
+import ContactForm from '../forms/ContactForm';
+import NewsletterForm from '../forms/Newsletter';
 import AppIcons from '../icons/AppIcons';
 import IconComponent from '../icons/IconComponent';
 
 interface HomeLandingPageProps {
-	currentUser?: SafeUser | null;
+	currentUser?: any;
 	icon?: IconType;
 }
 const HomeLandingPage: React.FC<HomeLandingPageProps> = ({ currentUser, icon: Icon }) => {
@@ -41,22 +43,25 @@ const HomeLandingPage: React.FC<HomeLandingPageProps> = ({ currentUser, icon: Ic
 								<div className="lg:grid lg:grid-cols-2 lg:gap-8">
 									<div className="mx-auto max-w-md px-4 sm:max-w-2xl sm:px-6 sm:text-center lg:px-0 lg:text-left lg:flex lg:items-center">
 										<div className="lg:py-24">
-											<Link
-												href="/sign-up"
-												className="inline-flex items-center text-white bg-black rounded-full p-2  pr-1 sm:text-base lg:text-sm xl:text-base hover:text-cyan-300 shadow-sm shadow-gray-700 hover:shadow-sm hover:shadow-black hover:bg-gray-900 transition h-10 min-w-[340px] lg:min-w-[400px]"
-											>
-												<span className="px-4 py-1 ml-0.3  text-white text-xs md:text-sm leading-5 uppercase tracking-wide bg-gradient-to-r from-teal-500 to-cyan-600 rounded-full">
-													Get Started
-												</span>
-												<span className="ml-2 mr-2 text-xs md:text-sm">
-													Login or create your account now
-												</span>
-												<IconComponent
-													class_name="h-4 w-5 py-0"
-													aria-hidden="true"
-													iconName={'chevNext'}
-												/>
-											</Link>
+											{!currentUser && (
+												<Link
+													href="/sign-up"
+													className="inline-flex items-center text-white bg-black rounded-full p-2  pr-1 sm:text-base lg:text-sm xl:text-base hover:text-cyan-300 shadow-sm shadow-gray-700 hover:shadow-sm hover:shadow-black hover:bg-gray-900 transition h-10 min-w-[340px] lg:min-w-[400px]"
+												>
+													<span className="px-4 py-1 ml-0.3  text-white text-xs md:text-sm leading-5 uppercase tracking-wide bg-gradient-to-r from-teal-500 to-cyan-600 rounded-full">
+														Get Started
+													</span>
+													<span className="ml-2 mr-2 text-xs md:text-sm">
+														Login or create your account now
+													</span>
+													<IconComponent
+														class_name="h-4 w-5 py-0"
+														aria-hidden="true"
+														iconName={'chevNext'}
+													/>
+												</Link>
+											)}
+
 											<h1 className="mt-8 text-3xl tracking-tight font-extrabold text-white sm:mt-8 sm:text-4xl lg:mt-6 xl:text-5xl">
 												<span className="block">Building the Future</span>
 												<span className="pb-3 block bg-clip-text text-transparent bg-gradient-to-r from-teal-200 to-cyan-400 sm:pb-5">
@@ -69,39 +74,7 @@ const HomeLandingPage: React.FC<HomeLandingPageProps> = ({ currentUser, icon: Ic
 												processes.
 											</p>
 											<div className="mt-10 sm:mt-12">
-												<form action="#" className="sm:max-w-xl sm:mx-auto lg:mx-0">
-													<div className="sm:flex">
-														<div className="min-w-0 flex-1">
-															<label htmlFor="email" className="sr-only">
-																Email address
-															</label>
-															<input
-																id="email"
-																type="email"
-																placeholder="Enter your email"
-																className="block w-full px-4 py-3 rounded-md border-0 text-base text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-cyan-400 focus:ring-offset-gray-900"
-															/>
-														</div>
-														<div className="mt-3 sm:mt-0 sm:ml-3">
-															<button
-																type="submit"
-																className="block w-full py-3 px-4 rounded-md shadow bg-gradient-to-r from-teal-500 to-cyan-600 text-white font-medium hover:from-teal-600 hover:to-cyan-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-cyan-400 focus:ring-offset-gray-900"
-															>
-																Subscribe
-															</button>
-														</div>
-													</div>
-													<p className="mt-3 text-sm text-gray-300 sm:mt-4">
-														Our newsletter covers a wide range of topics, including AI, machine
-														learning, web and mobile development, cloud computing, and much more.
-														Stay ahead of the curve with our expert articles, tutorials, case
-														studies, and industry news. By providing your email, you agree to our{' '}
-														<Link href="#" className="font-medium text-white">
-															terms of service
-														</Link>
-														.
-													</p>
-												</form>
+												<NewsletterForm />
 											</div>
 										</div>
 									</div>
@@ -186,16 +159,11 @@ const HomeLandingPage: React.FC<HomeLandingPageProps> = ({ currentUser, icon: Ic
 								</div>
 							</div>
 						</div>
-
 						{/* Testimonial section */}
-						<div className="pb-16 bg-gradient-to-r from-teal-500 to-cyan-600 lg:pb-0 lg:z-10 lg:relative">
+						<div className="pb-16 pt-4 bg-gradient-to-r from-teal-500 to-cyan-600 lg:pb-0 lg:z-10 lg:relative">
 							<div className="lg:mx-auto lg:max-w-7xl lg:px-8 lg:grid lg:grid-cols-3 lg:gap-8">
 								<div className="relative lg:-my-8">
-									<div
-										aria-hidden="true"
-										className="absolute inset-x-0 top-0 h-1/2 bg-white lg:hidden"
-									/>
-									<div className="mx-auto max-w-md px-4 sm:max-w-3xl sm:px-6 lg:p-0 lg:h-full">
+									<div className="mx-auto max-w-md px-4 py-4sm:max-w-3xl sm:px-6 lg:p-0 lg:h-full">
 										<div className="aspect-w-10 aspect-h-6 rounded-xl shadow-xl overflow-hidden sm:aspect-w-16 sm:aspect-h-7 lg:aspect-none lg:h-full">
 											<Image
 												className="object-cover lg:h-full lg:w-full"
@@ -208,20 +176,8 @@ const HomeLandingPage: React.FC<HomeLandingPageProps> = ({ currentUser, icon: Ic
 									</div>
 								</div>
 								<div className="mt-12 lg:m-0 lg:col-span-2 lg:pl-8">
-									<div className="mx-auto max-w-md px-4 sm:max-w-2xl sm:px-6 lg:px-0 lg:py-20 lg:max-w-none">
-										<blockquote>
-											<div>
-												<p className="mt-6 text-2xl font-medium text-white">
-													Tailor your dashboard to your specific needs with customizable widgets.
-													Choose from a variety of pre-built widgets or create your own, allowing
-													you to focus on the metrics and data that matter most to your business.
-												</p>
-											</div>
-											<footer className="mt-6">
-												<p className="text-white">Judith Black</p>
-												<p className="text-cyan-100">CEO at PureInsights</p>
-											</footer>
-										</blockquote>
+									<div className="mx-auto max-w-md px-0 sm:max-w-2xl sm:px-6 md:px-6 lg:px-8 lg:py-20 lg:max-w-none">
+										<ContactForm />
 									</div>
 								</div>
 							</div>

@@ -1,0 +1,412 @@
+[
+    {
+        "label": "Accounting Information",
+        "group": "Financial Information",
+        "fields": [
+            {
+                "label": "Account Name",
+                "name": "accountName",
+                "type": "text",
+                "placeholder": "Enter account name"
+            },
+            {
+                "label": "Account Number",
+                "name": "accountNumber",
+                "type": "text",
+                "placeholder": "Enter account number"
+            },
+            {
+                "label": "Account Type",
+                "name": "accountType",
+                "type": "dropdown",
+                "options": [
+                    "Savings",
+                    "Checking",
+                    "Credit Card",
+                    "Investment"
+                ],
+                "placeholder": "Select account type"
+            },
+            {
+                "label": "Balance",
+                "name": "balance",
+                "type": "number",
+                "placeholder": "Enter balance"
+            },
+            {
+                "label": "Currency",
+                "name": "currency",
+                "type": "dropdown",
+                "options": [
+                    "USD",
+                    "EUR",
+                    "JPY",
+                    "GBP",
+                    "AUD"
+                ],
+                "placeholder": "Select currency"
+            },
+            {
+                "label": "Date Opened",
+                "name": "dateOpened",
+                "type": "date",
+                "placeholder": "Select date"
+            },
+            {
+                "label": "Interest Rate",
+                "name": "interestRate",
+                "type": "number",
+                "placeholder": "Enter interest rate"
+            },
+            {
+                "label": "Account Status",
+                "name": "accountStatus",
+                "type": "dropdown",
+                "options": [
+                    "Active",
+                    "Inactive",
+                    "Closed"
+                ],
+                "placeholder": "Select account status"
+            },
+            {
+                "label": "Account Holder Name",
+                "name": "accountHolderName",
+                "type": "text",
+                "placeholder": "Enter account holder name"
+            },
+            {
+                "label": "Account Holder Address",
+                "name": "accountHolderAddress",
+                "type": "text",
+                "placeholder": "Enter account holder address"
+            },
+            {
+                "label": "Account Holder Contact Number",
+                "name": "accountHolderContactNumber",
+                "type": "text",
+                "placeholder": "Enter account holder contact number"
+            },
+            {
+                "label": "Account Holder Email",
+                "name": "accountHolderEmail",
+                "type": "email",
+                "placeholder": "Enter account holder email"
+            }
+        ]
+    },
+    {
+        "label": "Transaction Information",
+        "group": "Financial Information",
+        "fields": [
+            {
+                "label": "Transaction Date",
+                "name": "transactionDate",
+                "type": "date",
+                "placeholder": "Select transaction date"
+            },
+            {
+                "label": "Transaction Type",
+                "name": "transactionType",
+                "type": "dropdown",
+                "options": [
+                    "Deposit",
+                    "Withdrawal",
+                    "Transfer"
+                ],
+                "placeholder": "Select transaction type"
+            },
+            {
+                "label": "Transaction Amount",
+                "name": "transactionAmount",
+                "type": "number",
+                "placeholder": "Enter transaction amount"
+            },
+            {
+                "label": "Transaction Description",
+                "name": "transactionDescription",
+                "type": "text",
+                "placeholder": "Enter transaction description"
+            }
+        ]
+    },
+    {
+        "label": "Tax Information",
+        "group": "Financial Information",
+        "fields": [
+            {
+                "label": "Tax Year",
+                "name": "taxYear",
+                "type": "number",
+                "placeholder": "Enter tax year"
+            },
+            {
+                "label": "Taxable Income",
+                "name": "taxableIncome",
+                "type": "number",
+                "placeholder": "Enter taxable income"
+            },
+            {
+                "label": "Tax Paid",
+                "name": "taxPaid",
+                "type": "number",
+                "placeholder": "Enter tax paid"
+            },
+            {
+                "label": "Tax Rate",
+                "name": "taxRate",
+                "type": "number",
+                "placeholder": "Enter tax rate"
+            }
+        ]
+    },
+    {
+        "label": "Budget Information",
+        "group": "Financial Information",
+        "fields": [
+            {
+                "label": "Budget Category",
+                "name": "budgetCategory",
+                "type": "text",
+                "placeholder": "Enter budget category"
+            },
+            {
+                "label": "Budget Amount",
+                "name": "budgetAmount",
+                "type": "number",
+                "placeholder": "Enter budget amount"
+            },
+            {
+                "label": "Actual Amount",
+                "name": "actualAmount",
+                "type": "number",
+                "placeholder": "Enter actual amount"
+            },
+            {
+                "label": "Budget Start Date",
+                "name": "budgetStartDate",
+                "type": "date",
+                "placeholder": "Select budget start date"
+            },
+            {
+                "label": "Budget End Date",
+                "name": "budgetEndDate",
+                "type": "date",
+                "placeholder": "Select budget end date"
+            }
+        ]
+    },
+    {
+        "label": "Loan Information",
+        "group": "Financial Information",
+        "fields": [
+            {
+                "label": "Loan Type",
+                "name": "loanType",
+                "type": "dropdown",
+                "options": [
+                    "Home Loan",
+                    "Personal Loan",
+                    "Car Loan",
+                    "Student Loan"
+                ],
+                "placeholder": "Select loan type"
+            },
+            {
+                "label": "Loan Amount",
+                "name": "loanAmount",
+                "type": "number",
+                "placeholder": "Enter loan amount"
+            },
+            {
+                "label": "Loan Duration",
+                "name": "loanDuration",
+                "type": "number",
+                "placeholder": "Enter loan duration in months"
+            },
+            {
+                "label": "Interest Rate",
+                "name": "loanInterestRate",
+                "type": "number",
+                "placeholder": "Enter interest rate"
+            },
+            {
+                "label": "Loan Status",
+                "name": "loanStatus",
+                "type": "dropdown",
+                "options": [
+                    "Active",
+                    "Paid",
+                    "Default"
+                ],
+                "placeholder": "Select loan status"
+            },
+            {
+                "label": "Loan Start Date",
+                "name": "loanStartDate",
+                "type": "date",
+                "placeholder": "Select loan start date"
+            },
+            {
+                "label": "Loan End Date",
+                "name": "loanEndDate",
+                "type": "date",
+                "placeholder": "Select loan end date"
+            },
+            {
+                "label": "Monthly Installment",
+                "name": "monthlyInstallment",
+                "type": "number",
+                "placeholder": "Enter monthly installment"
+            },
+            {
+                "label": "Total Amount Paid",
+                "name": "totalAmountPaid",
+                "type": "number",
+                "placeholder": "Enter total amount paid"
+            }
+        ]
+    },
+    {
+        "label": "Investment Information",
+        "group": "Financial Information",
+        "fields": [
+            {
+                "label": "Investment Type",
+                "name": "investmentType",
+                "type": "dropdown",
+                "options": [
+                    "Stocks",
+                    "Bonds",
+                    "Mutual Funds",
+                    "Real Estate"
+                ],
+                "placeholder": "Select investment type"
+            },
+            {
+                "label": "Investment Amount",
+                "name": "investmentAmount",
+                "type": "number",
+                "placeholder": "Enter investment amount"
+            },
+            {
+                "label": "Investment Date",
+                "name": "investmentDate",
+                "type": "date",
+                "placeholder": "Select investment date"
+            },
+            {
+                "label": "Investment Status",
+                "name": "investmentStatus",
+                "type": "dropdown",
+                "options": [
+                    "Active",
+                    "Sold",
+                    "Matured"
+                ],
+                "placeholder": "Select investment status"
+            },
+            {
+                "label": "Investment Return Rate",
+                "name": "investmentReturnRate",
+                "type": "number",
+                "placeholder": "Enter investment return rate"
+            },
+            {
+                "label": "Investment Maturity Date",
+                "name": "investmentMaturityDate",
+                "type": "date",
+                "placeholder": "Select investment maturity date"
+            },
+            {
+                "label": "Investment Broker",
+                "name": "investmentBroker",
+                "type": "text",
+                "placeholder": "Enter investment broker"
+            },
+            {
+                "label": "Broker Contact Number",
+                "name": "brokerContactNumber",
+                "type": "text",
+                "placeholder": "Enter broker contact number"
+            }
+        ]
+    },
+    {
+        "label": "Expense Information",
+        "group": "Financial Information",
+        "fields": [
+            {
+                "label": "Expense Category",
+                "name": "expenseCategory",
+                "type": "dropdown",
+                "options": [
+                    "Food",
+                    "Rent",
+                    "Utilities",
+                    "Entertainment"
+                ],
+                "placeholder": "Select expense category"
+            },
+            {
+                "label": "Expense Amount",
+                "name": "expenseAmount",
+                "type": "number",
+                "placeholder": "Enter expense amount"
+            },
+            {
+                "label": "Expense Date",
+                "name": "expenseDate",
+                "type": "date",
+                "placeholder": "Select expense date"
+            },
+            {
+                "label": "Expense Status",
+                "name": "expenseStatus",
+                "type": "dropdown",
+                "options": [
+                    "Paid",
+                    "Pending",
+                    "Overdue"
+                ],
+                "placeholder": "Select expense status"
+            },
+            {
+                "label": "Expense Recurrence",
+                "name": "expenseRecurrence",
+                "type": "dropdown",
+                "options": [
+                    "One-time",
+                    "Weekly",
+                    "Monthly",
+                    "Yearly"
+                ],
+                "placeholder": "Select expense recurrence"
+            },
+            {
+                "label": "Payment Method",
+                "name": "paymentMethod",
+                "type": "dropdown",
+                "options": [
+                    "Cash",
+                    "Credit Card",
+                    "Debit Card",
+                    "Online Transfer"
+                ],
+                "placeholder": "Select payment method"
+            },
+            {
+                "label": "Payment Reference Number",
+                "name": "paymentReferenceNumber",
+                "type": "text",
+                "placeholder": "Enter payment reference number"
+            },
+            {
+                "label": "Expense Note",
+                "name": "expenseNote",
+                "type": "text",
+                "placeholder": "Enter expense note"
+            }
+        ]
+    }
+]

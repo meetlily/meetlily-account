@@ -1,0 +1,574 @@
+{
+    "label": "Resume Information",
+    "group": "Resume Details",
+    "fields": [
+        {
+            "label": "Full Name",
+            "name": "fullName",
+            "type": "text",
+            "placeholder": "Enter full name"
+        },
+        {
+            "label": "Contact Number",
+            "name": "contactNumber",
+            "type": "text",
+            "placeholder": "Enter contact number"
+        },
+        {
+            "label": "Email Address",
+            "name": "emailAddress",
+            "type": "email",
+            "placeholder": "Enter email address"
+        },
+        {
+            "label": "Address",
+            "name": "address",
+            "type": "text",
+            "placeholder": "Enter address"
+        },
+        {
+            "label": "Objective",
+            "name": "objective",
+            "type": "textarea",
+            "placeholder": "Enter objective"
+        },
+        {
+            "label": "Education",
+            "name": "education",
+            "type": "textarea",
+            "placeholder": "Enter education"
+        },
+        {
+            "label": "Skills",
+            "name": "skills",
+            "type": "textarea",
+            "placeholder": "Enter skills"
+        },
+        {
+            "label": "Experience",
+            "name": "experience",
+            "type": "textarea",
+            "placeholder": "Enter experience"
+        },
+        {
+            "label": "References",
+            "name": "references",
+            "type": "textarea",
+            "placeholder": "Enter references"
+        },
+        {
+            "label": "Languages",
+            "name": "languages",
+            "type": "textarea",
+            "placeholder": "Enter languages"
+        },
+        {
+            "label": "Certifications",
+            "name": "certifications",
+            "type": "textarea",
+            "placeholder": "Enter certifications"
+        },
+        {
+            "label": "Publications",
+            "name": "publications",
+            "type": "textarea",
+            "placeholder": "Enter publications"
+        },
+        {
+            "label": "Awards",
+            "name": "awards",
+            "type": "textarea",
+            "placeholder": "Enter awards"
+        },
+        {
+            "label": "Hobbies",
+            "name": "hobbies",
+            "type": "textarea",
+            "placeholder": "Enter hobbies"
+        },
+        {
+            "label": "Volunteer Work",
+            "name": "volunteerWork",
+            "type": "textarea",
+            "placeholder": "Enter volunteer work"
+        },
+        {
+            "label": "Internships",
+            "name": "internships",
+            "type": "textarea",
+            "placeholder": "Enter internships"
+        },
+        {
+            "label": "Projects",
+            "name": "projects",
+            "type": "textarea",
+            "placeholder": "Enter projects"
+        },
+        {
+            "label": "Professional Affiliations",
+            "name": "professionalAffiliations",
+            "type": "textarea",
+            "placeholder": "Enter professional affiliations"
+        },
+        {
+            "label": "References Available Upon Request",
+            "name": "referencesAvailable",
+            "type": "checkbox",
+            "placeholder": "Check if references are available upon request"
+        },
+        {
+            "label": "Professional Affiliations",
+            "name": "professionalAffiliations",
+            "type": "textarea",
+            "placeholder": "Enter professional affiliations"
+        },
+        {
+            "label": "Courses",
+            "name": "courses",
+            "type": "textarea",
+            "placeholder": "Enter courses"
+        },
+        {
+            "label": "Education",
+            "name": "education",
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "institution": {
+                        "type": "string",
+                        "placeholder": "Enter institution name"
+                    },
+                    "degree": {
+                        "type": "string",
+                        "placeholder": "Enter degree"
+                    },
+                    "fieldOfStudy": {
+                        "type": "string",
+                        "placeholder": "Enter field of study"
+                    },
+                    "startDate": {
+                        "type": "date",
+                        "placeholder": "Enter start date"
+                    },
+                    "endDate": {
+                        "type": "date",
+                        "placeholder": "Enter end date"
+                    }
+                }
+            }
+        },
+        {
+            "label": "Employment",
+            "name": "employment",
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "employer": {
+                        "type": "string",
+                        "placeholder": "Enter employer name"
+                    },
+                    "jobTitle": {
+                        "type": "string",
+                        "placeholder": "Enter job title"
+                    },
+                    "startDate": {
+                        "type": "date",
+                        "placeholder": "Enter start date"
+                    },
+                    "endDate": {
+                        "type": "date",
+                        "placeholder": "Enter end date"
+                    },
+                    "jobDescription": {
+                        "type": "string",
+                        "placeholder": "Enter job description"
+                    }
+                }
+            }
+        },
+        {
+            "label": "Skills",
+            "name": "skills",
+            "type": "array",
+            "items": {
+                "type": "string",
+                "placeholder": "Enter a skill"
+            }
+        },
+        {
+            "label": "References",
+            "name": "references",
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "type": "string",
+                        "placeholder": "Enter reference's name"
+                    },
+                    "title": {
+                        "type": "string",
+                        "placeholder": "Enter reference's title"
+                    },
+                    "contact": {
+                        "type": "string",
+                        "placeholder": "Enter reference's contact information"
+                    }
+                }
+            }
+        },
+        {
+            "label": "Personal Information",
+            "name": "personalInformation",
+            "fields": [
+                {
+                    "label": "First Name",
+                    "name": "firstName",
+                    "type": "text",
+                    "placeholder": "Enter first name"
+                },
+                {
+                    "label": "Last Name",
+                    "name": "lastName",
+                    "type": "text",
+                    "placeholder": "Enter last name"
+                },
+                {
+                    "label": "Email",
+                    "name": "email",
+                    "type": "email",
+                    "placeholder": "Enter email"
+                },
+                {
+                    "label": "Phone Number",
+                    "name": "phoneNumber",
+                    "type": "tel",
+                    "placeholder": "Enter phone number"
+                },
+                {
+                    "label": "Address",
+                    "name": "address",
+                    "type": "text",
+                    "placeholder": "Enter address"
+                }
+            ]
+        },
+        {
+            "label": "Skills",
+            "name": "skills",
+            "type": "array",
+            "items": {
+                "type": "string",
+                "placeholder": "Enter a skill"
+            }
+        },
+        {
+            "label": "References",
+            "name": "references",
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "type": "string",
+                        "placeholder": "Enter reference's name"
+                    },
+                    "title": {
+                        "type": "string",
+                        "placeholder": "Enter reference's title"
+                    },
+                    "contact": {
+                        "type": "string",
+                        "placeholder": "Enter reference's contact information"
+                    }
+                }
+            }
+        },
+        {
+            "label": "Certifications",
+            "name": "certifications",
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "type": "string",
+                        "placeholder": "Enter certification name"
+                    },
+                    "issuer": {
+                        "type": "string",
+                        "placeholder": "Enter issuer"
+                    },
+                    "date": {
+                        "type": "date",
+                        "placeholder": "Enter date"
+                    }
+                }
+            }
+        },
+        {
+            "label": "Languages",
+            "name": "languages",
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "language": {
+                        "type": "string",
+                        "placeholder": "Enter language"
+                    },
+                    "proficiency": {
+                        "type": "string",
+                        "placeholder": "Enter proficiency level"
+                    }
+                }
+            }
+        },
+        {
+            "label": "Projects",
+            "name": "projects",
+            "fields": [
+                {
+                    "label": "Project Name",
+                    "name": "projectName",
+                    "type": "text",
+                    "placeholder": "Enter project name"
+                },
+                {
+                    "label": "Project Description",
+                    "name": "projectDescription",
+                    "type": "text",
+                    "placeholder": "Enter project description"
+                },
+                {
+                    "label": "Project URL",
+                    "name": "projectUrl",
+                    "type": "url",
+                    "placeholder": "Enter project URL"
+                }
+            ]
+        },
+        {
+            "label": "Portfolio",
+            "name": "portfolio",
+            "fields": [
+                {
+                    "label": "Portfolio URL",
+                    "name": "portfolioUrl",
+                    "type": "url",
+                    "placeholder": "Enter portfolio URL"
+                },
+                {
+                    "label": "Description",
+                    "name": "description",
+                    "type": "text",
+                    "placeholder": "Enter portfolio description"
+                },
+                {
+                    "label": "Projects",
+                    "name": "projects",
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "projectName": {
+                                "type": "string",
+                                "placeholder": "Enter project name"
+                            },
+                            "projectUrl": {
+                                "type": "url",
+                                "placeholder": "Enter project URL"
+                            },
+                            "projectDescription": {
+                                "type": "string",
+                                "placeholder": "Enter project description"
+                            },
+                            "projectStartDate": {
+                                "type": "date",
+                                "placeholder": "Enter project start date"
+                            },
+                            "projectEndDate": {
+                                "type": "date",
+                                "placeholder": "Enter project end date"
+                            },
+                            "projectTechnologies": {
+                                "type": "array",
+                                "items": {
+                                    "type": "string",
+                                    "placeholder": "Enter technology used"
+                                }
+                            }
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "label": "Skills",
+            "name": "skills",
+            "type": "array",
+            "items": {
+                "type": "string",
+                "placeholder": "Enter skill"
+            }
+        },
+        {
+            "label": "Interests",
+            "name": "interests",
+            "type": "array",
+            "items": {
+                "type": "string",
+                "placeholder": "Enter interest"
+            }
+        },
+        {
+            "label": "References",
+            "name": "references",
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "type": "string",
+                        "placeholder": "Enter reference name"
+                    },
+                    "contact": {
+                        "type": "string",
+                        "placeholder": "Enter contact information"
+                    }
+                }
+            }
+        },
+        {
+            "label": "Publications",
+            "name": "publications",
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "title": {
+                        "type": "string",
+                        "placeholder": "Enter publication title"
+                    },
+                    "url": {
+                        "type": "url",
+                        "placeholder": "Enter publication URL"
+                    }
+                }
+            }
+        },
+        {
+            "label": "Awards",
+            "name": "awards",
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "awardName": {
+                        "type": "string",
+                        "placeholder": "Enter award name"
+                    },
+                    "awardDate": {
+                        "type": "date",
+                        "placeholder": "Enter award date"
+                    }
+                }
+            }
+        },
+        {
+            "label": "Volunteer Experience",
+            "name": "volunteerExperience",
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "organization": {
+                        "type": "string",
+                        "placeholder": "Enter organization name"
+                    },
+                    "role": {
+                        "type": "string",
+                        "placeholder": "Enter role"
+                    },
+                    "duration": {
+                        "type": "string",
+                        "placeholder": "Enter duration"
+                    },
+                    "description": {
+                        "type": "string",
+                        "placeholder": "Enter description"
+                    }
+                }
+            }
+        },
+        {
+            "label": "Hobbies",
+            "name": "hobbies",
+            "type": "array",
+            "items": {
+                "type": "string",
+                "placeholder": "Enter hobby"
+            }
+        },
+        {
+            "label": "Professional Memberships",
+            "name": "professionalMemberships",
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "organization": {
+                        "type": "string",
+                        "placeholder": "Enter organization name"
+                    },
+                    "membershipDuration": {
+                        "type": "string",
+                        "placeholder": "Enter membership duration"
+                    }
+                }
+            }
+        },
+        {
+            "label": "Courses",
+            "name": "courses",
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "courseName": {
+                        "type": "string",
+                        "placeholder": "Enter course name"
+                    },
+                    "courseProvider": {
+                        "type": "string",
+                        "placeholder": "Enter course provider"
+                    },
+                    "completionDate": {
+                        "type": "date",
+                        "placeholder": "Enter completion date"
+                    }
+                }
+            }
+        },
+        {
+            "label": "Patents",
+            "name": "patents",
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "patentName": {
+                        "type": "string",
+                        "placeholder": "Enter patent name"
+                    },
+                    "patentUrl": {
+                        "type": "url",
+                        "placeholder": "Enter patent URL"
+                    }
+                }
+            }
+        }
+    ]
+}

@@ -1,0 +1,380 @@
+[
+    {
+        "label": "User Information",
+        "group": "Personal Information",
+        "fields": [
+            {
+                "label": "First Name",
+                "name": "firstName",
+                "type": "text",
+                "placeholder": "Enter first name"
+            },
+            {
+                "label": "Last Name",
+                "name": "lastName",
+                "type": "text",
+                "placeholder": "Enter last name"
+            },
+            {
+                "label": "Email Address",
+                "name": "email",
+                "type": "email",
+                "placeholder": "Enter email address"
+            },
+            {
+                "label": "Username",
+                "name": "username",
+                "type": "text",
+                "placeholder": "Enter username"
+            },
+            {
+                "label": "Phone Number",
+                "name": "phoneNumber",
+                "type": "tel",
+                "placeholder": "Enter phone number"
+            },
+            {
+                "label": "Address",
+                "name": "address",
+                "type": "text",
+                "placeholder": "Enter address"
+            },
+            {
+                "label": "City",
+                "name": "city",
+                "type": "text",
+                "placeholder": "Enter city"
+            },
+            {
+                "label": "State",
+                "name": "state",
+                "type": "text",
+                "placeholder": "Enter state"
+            },
+            {
+                "label": "Country",
+                "name": "country",
+                "type": "text",
+                "placeholder": "Enter country"
+            },
+            {
+                "label": "Zip Code",
+                "name": "zipCode",
+                "type": "text",
+                "placeholder": "Enter zip code"
+            },
+            {
+                "label": "Date of Birth",
+                "name": "dob",
+                "type": "date",
+                "placeholder": "Enter date of birth"
+            },
+            {
+                "label": "Gender",
+                "name": "gender",
+                "type": "text",
+                "placeholder": "Enter gender"
+            },
+            {
+                "label": "Profile Picture",
+                "name": "profilePicture",
+                "type": "file",
+                "placeholder": "Upload profile picture"
+            }
+        ]
+    },
+    {
+        "label": "Website Information",
+        "group": "Website Details",
+        "fields": [
+            {
+                "label": "Website Name",
+                "name": "websiteName",
+                "type": "text",
+                "placeholder": "Enter website name"
+            },
+            {
+                "label": "Website URL",
+                "name": "websiteUrl",
+                "type": "url",
+                "placeholder": "Enter website URL"
+            },
+            {
+                "label": "Website Description",
+                "name": "websiteDescription",
+                "type": "textarea",
+                "placeholder": "Enter website description"
+            },
+            {
+                "label": "Website Logo",
+                "name": "websiteLogo",
+                "type": "file",
+                "placeholder": "Upload website logo"
+            },
+            {
+                "label": "Website Favicon",
+                "name": "websiteFavicon",
+                "type": "file",
+                "placeholder": "Upload website favicon"
+            },
+            {
+                "label": "Website Theme Color",
+                "name": "websiteThemeColor",
+                "type": "color",
+                "placeholder": "Choose website theme color"
+            },
+            {
+                "label": "Website Language",
+                "name": "websiteLanguage",
+                "type": "text",
+                "placeholder": "Enter website language"
+            },
+            {
+                "label": "Website Timezone",
+                "name": "websiteTimezone",
+                "type": "text",
+                "placeholder": "Enter website timezone"
+            },
+            {
+                "label": "Website Currency",
+                "name": "websiteCurrency",
+                "type": "text",
+                "placeholder": "Enter website currency"
+            },
+            {
+                "label": "Website Analytics Code",
+                "name": "websiteAnalyticsCode",
+                "type": "text",
+                "placeholder": "Enter website analytics code"
+            },
+            {
+                "label": "Website SEO Keywords",
+                "name": "websiteSeoKeywords",
+                "type": "text",
+                "placeholder": "Enter website SEO keywords"
+            },
+            {
+                "label": "Website SEO Description",
+                "name": "websiteSeoDescription",
+                "type": "textarea",
+                "placeholder": "Enter website SEO description"
+            }
+        ]
+    },
+    {
+        "label": "Security Information",
+        "group": "Security Details",
+        "fields": [
+            {
+                "label": "Password",
+                "name": "password",
+                "type": "password",
+                "placeholder": "Enter password"
+            },
+            {
+                "label": "Confirm Password",
+                "name": "confirmPassword",
+                "type": "password",
+                "placeholder": "Confirm password"
+            },
+            {
+                "label": "Security Question",
+                "name": "securityQuestion",
+                "type": "text",
+                "placeholder": "Enter security question"
+            },
+            {
+                "label": "Security Answer",
+                "name": "securityAnswer",
+                "type": "text",
+                "placeholder": "Enter security answer"
+            },
+            {
+                "label": "Two Factor Authentication",
+                "name": "twoFactorAuthentication",
+                "type": "checkbox",
+                "placeholder": "Enable two factor authentication"
+            },
+            {
+                "label": "Backup Email",
+                "name": "backupEmail",
+                "type": "email",
+                "placeholder": "Enter backup email"
+            },
+            {
+                "label": "Backup Phone Number",
+                "name": "backupPhoneNumber",
+                "type": "tel",
+                "placeholder": "Enter backup phone number"
+            },
+            {
+                "label": "Account Recovery Options",
+                "name": "accountRecoveryOptions",
+                "type": "text",
+                "placeholder": "Enter account recovery options"
+            },
+            {
+                "label": "Last Password Change",
+                "name": "lastPasswordChange",
+                "type": "date",
+                "placeholder": "Enter last password change date"
+            },
+            {
+                "label": "Last Account Activity",
+                "name": "lastAccountActivity",
+                "type": "date",
+                "placeholder": "Enter last account activity date"
+            },
+            {
+                "label": "Account Active Status",
+                "name": "accountActiveStatus",
+                "type": "checkbox",
+                "placeholder": "Is account active"
+            },
+            {
+                "label": "Account Suspension Reason",
+                "name": "accountSuspensionReason",
+                "type": "textarea",
+                "placeholder": "Enter account suspension reason"
+            }
+        ]
+    },
+    {
+        "label": "Billing Information",
+        "group": "Billing Details",
+        "fields": [
+            {
+                "label": "Billing Address",
+                "name": "billingAddress",
+                "type": "text",
+                "placeholder": "Enter billing address"
+            },
+            {
+                "label": "Billing Zip/Postal Code",
+                "name": "billingZipCode",
+                "type": "text",
+                "placeholder": "Enter billing zip/postal code"
+            },
+            {
+                "label": "Billing Country",
+                "name": "billingCountry",
+                "type": "text",
+                "placeholder": "Enter billing country"
+            },
+            {
+                "label": "Billing City",
+                "name": "billingCity",
+                "type": "text",
+                "placeholder": "Enter billing city"
+            },
+            {
+                "label": "Billing Email",
+                "name": "billingEmail",
+                "type": "email",
+                "placeholder": "Enter billing email"
+            },
+            {
+                "label": "Billing Phone Number",
+                "name": "billingPhoneNumber",
+                "type": "tel",
+                "placeholder": "Enter billing phone number"
+            },
+            {
+                "label": "Credit Card Number",
+                "name": "creditCardNumber",
+                "type": "text",
+                "placeholder": "Enter credit card number"
+            },
+            {
+                "label": "Card Expiry Date",
+                "name": "cardExpiryDate",
+                "type": "date",
+                "placeholder": "Enter card expiry date"
+            },
+            {
+                "label": "Card CVV",
+                "name": "cardCVV",
+                "type": "text",
+                "placeholder": "Enter card CVV"
+            },
+            {
+                "label": "Name on Card",
+                "name": "nameOnCard",
+                "type": "text",
+                "placeholder": "Enter name on card"
+            }
+        ]
+    },
+    {
+        "label": "Social Media Information",
+        "group": "Social Media Details",
+        "fields": [
+            {
+                "label": "Facebook Profile",
+                "name": "facebookProfile",
+                "type": "url",
+                "placeholder": "Enter Facebook profile URL"
+            },
+            {
+                "label": "Twitter Handle",
+                "name": "twitterHandle",
+                "type": "text",
+                "placeholder": "Enter Twitter handle"
+            },
+            {
+                "label": "LinkedIn Profile",
+                "name": "linkedinProfile",
+                "type": "url",
+                "placeholder": "Enter LinkedIn profile URL"
+            },
+            {
+                "label": "Instagram Handle",
+                "name": "instagramHandle",
+                "type": "text",
+                "placeholder": "Enter Instagram handle"
+            },
+            {
+                "label": "YouTube Channel",
+                "name": "youtubeChannel",
+                "type": "url",
+                "placeholder": "Enter YouTube channel URL"
+            }
+        ]
+    },
+    {
+        "label": "Preferences",
+        "group": "Preference Details",
+        "fields": [
+            {
+                "label": "Preferred Language",
+                "name": "preferredLanguage",
+                "type": "text",
+                "placeholder": "Enter preferred language"
+            },
+            {
+                "label": "Preferred Currency",
+                "name": "preferredCurrency",
+                "type": "text",
+                "placeholder": "Enter preferred currency"
+            },
+            {
+                "label": "Newsletter Subscription",
+                "name": "newsletterSubscription",
+                "type": "checkbox",
+                "placeholder": "Subscribe to newsletter"
+            },
+            {
+                "label": "Email Notifications",
+                "name": "emailNotifications",
+                "type": "checkbox",
+                "placeholder": "Enable email notifications"
+            },
+            {
+                "label": "SMS Notifications",
+                "name": "smsNotifications",
+                "type": "checkbox",
+                "placeholder": "Enable SMS notifications"
+            }
+        ]
+    }
+]

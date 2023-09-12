@@ -38,7 +38,11 @@ module.exports = {
       "pink": "fill-pink-600",
       "purple": "fill-purple-600",
       "success": "fill-green-500",
-      "warning": "fill-yellow-400"
+      "warning": "fill-yellow-400",
+      meetlily: {
+        "primary": '#FF0080',
+        "secondary": '#0070F3',
+      }
     },
     fontFamily: {
       sans: ['Graphik', 'sans-serif'],

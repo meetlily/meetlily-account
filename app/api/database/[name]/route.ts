@@ -32,9 +32,6 @@ export async function GET(
         password: process.env.DATABASE_PASSWORD,
         port: process.env.DATABASE_PORT ? parseInt(process.env.DATABASE_PORT, 10) : undefined, 
     });
-
-    
-
     const client = await pool.connect();
 
     // Fetch all tables

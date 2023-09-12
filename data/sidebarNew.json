@@ -1,0 +1,41 @@
+[
+  {
+    "group": "cta",
+    "items": []
+  },
+  {
+    "group": "dashboard",
+    "items": [
+      "Dashboard"
+    ]
+  },
+  {
+    "group": "my-apps",
+    "items": [
+      "Flow",
+      "Connect",
+      "Blocks",
+      "MarkEdit"
+    ]
+  },
+  {
+    "group": "administration",
+    "items": []
+  },
+  {
+    "group": "applications",
+    "items": []
+  },
+  {
+    "group": "tools",
+    "items": []
+  },
+  {
+    "group": "miscellaneous",
+    "items": [
+      "Documentations",
+      "Support",
+      "Upgrade to Pro"
+    ]
+  }
+]

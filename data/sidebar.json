@@ -1,293 +1,303 @@
-{
-    "administration": [
+[
+  {
+    "group": "cta",
+    "items": []
+  },
+  {
+    "group": "dashboard",
+    "items": [
+      {
+        "name": "Dashboard",
+        "slug": "dashboard",
+        "short_description": "Get an overview of your app's key metrics and data.",
+        "description": "Get an overview of your app's key metrics and data with the Dashboard module of Meetlily Apps. Visualize data through charts, graphs, and customizable widgets. Monitor performance, track user engagement, and make data-driven decisions to optimize your app.",
+        "category": [
+          {
+            "name": "Analytics",
+            "id": "19000053-9e8b-4b7f-9f6f-7c7d1b6b0c4d"
+          }
+        ],
+        "tags": [
+          "Dashboard",
+          "Analytics",
+          "Metrics"
+        ],
+        "icon_name": "dashboard",
+        "module": "Dashboard"
+      }
+    ]
+  },
+  {
+    "group": "myApps",
+    "name": "My Apps",
+    "collapse": true,
+    "items": [
+      {
+        "name": "Flow",
+        "slug": "flow",
+        "icon_name": "flow",
+        "module": "Flow"
+      },
+      {
+        "name": "Connect",
+        "slug": "connect",
+        "icon_name": "connect",
+        "module": "Connect"
+      },
+      {
+        "name": "Blocks",
+        "slug": "blocks",
+        "icon_name": "blocks",
+        "module": "Blocks"
+      },
+      {
+        "name": "MarkEdit",
+        "slug": "markEdit",
+        "icon_name": "markedit",
+        "module": "MarkEdit"
+      }
+    ]
+  },
+  {
+    "group": "administration",
+    "items": [
       {
         "name": "Servers",
-        "slug": "servers",
+        "slug": "server",
+        "short_description": "Build scalable and robust server applications.",
+        "description": "The Server module provides tools and libraries for building scalable and robust server applications. It includes features such as routing, middleware, authentication, and database integration. Whether you're building a RESTful API, a web server, or a backend system, the Server module simplifies the process of handling HTTP requests, managing server resources, and interacting with databases. Easily manage your servers and ensure their smooth operation. Monitor server performance, track resource usage, and handle server configurations effortlessly",
+        "category": [
+          {
+            "name": "Web Development",
+            "id": "19000065-9e8b-4b7f-9f6f-7c7d1b6b0c4d"
+          }
+        ],
+        "tags": [
+          "Server",
+          "Web Development",
+          "Scalability",
+          "Middleware",
+          "Authentication",
+          "Database Integration"
+        ],
         "icon_name": "server",
-        "description": "Easily manage your servers and ensure their smooth operation. Monitor server performance, track resource usage, and handle server configurations effortlessly",
-        "category": ["fb94112a-f10b-48ff-aa24-0583d366f898"]
+        "module": "Server"
       },
       {
         "name": "Databases",
-        "slug": "databases",
+        "slug": "database",
+        "short_description": "Manage and interact with databases.",
+        "description": "The Database module provides tools and libraries for managing and interacting with databases. It includes features such as query builders, ORM (Object-Relational Mapping) frameworks, and database migration tools. Whether you're working with SQL databases like MySQL or PostgreSQL, NoSQL databases like MongoDB or Redis, or cloud-based databases like Amazon RDS or Google Cloud Firestore, the Database module simplifies the process of connecting to databases, executing queries, and handling data.",
+        "category": [
+          {
+            "name": "Web Development",
+            "id": "19000065-9e8b-4b7f-9f6f-7c7d1b6b0c4d"
+          }
+        ],
+        "tags": [
+          "Database",
+          "Web Development",
+          "SQL",
+          "NoSQL",
+          "ORM",
+          "Query Builder",
+          "Migration"
+        ],
         "icon_name": "database",
-        "description": "Seamlessly integrate with databases to efficiently manage and organize your data. Create and modify database schemas, execute queries, and optimize performance.",
-        "category": ["fb94112a-f10b-48ff-aa24-0583d366f898"]
+        "module": "Database"
       },
       {
         "name": "Development",
-        "slug": "develop",
-        "icon_name": "develop",
-        "description": "Extend the functionality of Meetlily Apps (ERP) by building custom applications that cater to your unique business processes. Leverage the suite's development capabilities to create tailored solutions.",
-        "category": ["fb94112a-f10b-48ff-aa24-0583d366f898"]
-      },
-      {
-        "name": "Integrations",
-        "slug": "integrations",
-        "icon_name": "integration",
-        "description": "Seamlessly integrate with various third-party services and applications. Connect and synchronize data with CRM systems, payment gateways, marketing platforms, and more.",
-        "category": ["fb94112a-f10b-48ff-aa24-0583d366f898"]
-      },
-      {
-        "name": "Organization",
-        "slug": "organization",
-        "icon_name": "organization",
-        "description": "Manage your company details, including profile, contact information, and legal documents. Customize the suite to align with your company's branding and requirements.",
-        "category": ["fb94112a-f10b-48ff-aa24-0583d366f898"]
-      },
-      {
-        "name": "User Management",
-        "slug": "users",
-        "icon_name": "users",
-        "description": "Comprehensive user management capabilities. Create and manage user accounts, assign roles and permissions, and control access to features and modules.",
-        "category": ["fb94112a-f10b-48ff-aa24-0583d366f898"]
-      },
-      {
-        "name": "Settings",
-        "slug": "settings",
-        "icon_name": "gears",
-        "description": "Customize Meetlily Apps (ERP) to suit your business needs. Configure preferences, adjust system behavior, and tailor the suite to your specific requirements.",
-        "category": ["fb94112a-f10b-48ff-aa24-0583d366f898"]
-      }
-    ],
-    "applications": [
-        {
-          "name": "Accounting",
-          "slug": "accounting",
-          "icon_name": "accounting",
-          "description": "Efficiently manage your company's financial records, track expenses, generate invoices, and handle payroll with the accounting module of Meetlily Apps (ERP). Gain insights into your financial health and make informed decisions to drive your business forward.",
-          "category": ["19000002-c458-487b-b7a7-261753499465"]
-        },
-        {
-          "name": "Point of Sale (PoS)",
-          "slug": "pos",
-          "description": "Simplify your retail operations with the Point of Sale module of Meetlily Apps (ERP). Process sales transactions, manage inventory, and track customer orders seamlessly. Improve customer experience and streamline your sales processes.",
-          "category": ["19000002-c458-487b-b7a7-261753499465"],
-          "icon_name": "pos"
-        },
-        {
-          "name": "Website",
-          "slug": "website",
-          "description": "Create and manage your company's website with the Website module of Meetlily Apps (ERP). Design and customize your website, publish content, and engage with your online audience. Enhance your online presence and drive business growth.",
-          "category": ["19000002-c458-487b-b7a7-261753499465"],
-          "icon_name": "website"
-        },
-        {
-          "name": "Shop (e-Commerce)",
-          "slug": "pos",
-          "description": "Set up and manage your online store with the e-Commerce module of Meetlily Apps (ERP). Easily add products, handle orders, process payments, and track inventory. Expand your reach and boost your sales in the digital marketplace.",
-          "category": ["19000002-c458-487b-b7a7-261753499465"],
-          "icon_name": "pos"
-        },
-        {
-          "name": "Invoicing",
-          "slug": "invoice",
-          "description": "Effortlessly generate professional invoices, track payments, and manage billing processes with the Invoicing module of Meetlily Apps (ERP). Streamline your invoicing workflows and ensure timely payments from your customers.",
-          "category": ["19000002-c458-487b-b7a7-261753499465"],
-          "icon_name": "invoice"
-        },
-        {
-          "name": "Sales",
-          "slug": "sales",
-          "description": "Optimize your sales processes with the Sales module of Meetlily Apps (ERP). Track leads, manage opportunities, and streamline your sales pipeline. Gain insights into your sales performance and drive revenue growth.",
-          "category": ["19000002-c458-487b-b7a7-261753499465"],
-          "icon_name": "sales"
-        },
-        {
-            "name": "Subscription",
-            "slug": "subscription",
-            "description": "Manage subscription-based services and recurring payments with the Subscription module of Meetlily Apps (ERP). Handle subscription plans, track subscriptions, and automate billing processes. Ensure seamless subscription management.",
-            "category": ["19000002-c458-487b-b7a7-261753499465"],
-            "icon_name": "subscription"
-          },
+        "slug": "development",
+        "short_description": "Enhance your development workflow.",
+        "description": "The Development module provides tools and utilities to enhance your development workflow. It includes features such as code editors, debugging tools, version control integration, task automation, and testing frameworks. Whether you're a frontend developer, backend developer, or full-stack developer, the Development module helps you write, test, and deploy your code more efficiently.",
+        "category": [
           {
-            "name": "Club/Restaurant",
-            "slug": "club-restaurant",
-            "description": "Efficiently manage club or restaurant operations with the Club/Restaurant module of Meetlily Apps (ERP). Handle reservations, track table availability, manage menus, and streamline order processing. Enhance customer dining experiences.",
-            "category": ["19000002-c458-487b-b7a7-261753499465"],
-            "icon_name": "club"
-          },
-          {
-            "name": "Payments",
-            "slug": "payments",
-            "description": "Streamline payment processes and handle online transactions with the Payments module of Meetlily Apps (ERP). Accept various payment methods, track payment status, and ensure secure and efficient payment processing.",
-            "category": ["19000002-c458-487b-b7a7-261753499465"],
-            "icon_name": "payments"
-          },
-          {
-            "name": "Contract",
-            "slug": "contract",
-            "description": "Manage contracts and agreements with the Contract module of Meetlily Apps (ERP). Create and store contract templates, track contract status, and handle contract renewals. Simplify contract management processes.",
-            "category": ["19000002-c458-487b-b7a7-261753499465"],
-            "icon_name": "contract"
-          },
-          {
-            "name": "Jobs",
-            "slug": "jobs",
-            "description": "Efficiently manage job postings, candidate applications, and recruitment processes with the Jobs module of Meetlily Apps (ERP). Streamline hiring workflows and ensure efficient talent acquisition.",
-            "category": ["19000002-c458-487b-b7a7-261753499465"],
-            "icon_name": "jobs"
-          },
-          {
-            "name": "Hosting",
-            "slug": "hosting",
-            "description": "Manage your hosting services, including virtual, dedicated, cloud servers, web, email, and database hosting, with the Hosting module of Meetlily Apps (ERP). Track server resources, handle configurations, and ensure reliable hosting services.",
-            "category": ["19000002-c458-487b-b7a7-261753499465"],
-            "icon_name": "hosting"
-          },
-          {
-            "name": "Forms",
-            "slug": "forms",
-            "description": "Create and manage custom forms and surveys with the Forms module of Meetlily Apps (ERP). Collect data, analyze responses, and gain insights into customer preferences. Streamline data collection processes.",
-            "category": ["19000002-c458-487b-b7a7-261753499465"],
-            "icon_name": "forms"
+            "name": "Web Development",
+            "id": "19000065-9e8b-4b7f-9f6f-7c7d1b6b0c4d"
           }
-      ],
-      "tools": [
-        {
-            "name": "Music",
-            "slug": "music",
-            "description": "Enjoy a built-in music player that allows you to listen to your favorite tunes while working. Create playlists, shuffle songs, and adjust volume settings without leaving Meetlily Apps (ERP). Stay focused and motivated with your personalized music selection.",
-            "category": [
-                "d3415084-ed6b-403c-bf67-8131bd0dad4c"
-            ],
-            "icon_name": "music"
-        },
-        {
-            "name": "Movies",
-            "slug": "movies",
-            "description": "Access a curated collection of movies within Meetlily Apps (ERP). Browse through different genres, watch trailers, and stream movies directly from the platform. Enjoy your favorite films during your downtime or as a source of inspiration.",
-            "category": [
-                "d3415084-ed6b-403c-bf67-8131bd0dad4c"
-            ],
-            "icon_name": "movies"
-        },
-        {
-            "name": "Sign",
-            "slug": "sign",
-            "description": "Easily create and manage digital signatures with the Sign tool in Meetlily Apps (ERP). Sign documents electronically, securely store your signatures, and streamline the signing process. Ensure efficient and legally binding document workflows.",
-            "category": [
-                "d3415084-ed6b-403c-bf67-8131bd0dad4c"
-            ],
-            "icon_name": "sign"
-        },
-        {
-            "name": "Contacts",
-            "slug": "contacts",
-            "description": "Manage your contacts efficiently with the Contacts feature in Meetlily Apps (ERP). Store contact details, categorize contacts, and easily search for specific individuals or organizations. Keep your contact information organized and accessible.",
-            "category": [
-                "d3415084-ed6b-403c-bf67-8131bd0dad4c"
-            ],
-            "icon_name": "contacts"
-        },
-        {
-            "name": "Dashboard",
-            "slug": "dashboard",
-            "description": "Access a customizable dashboard within Meetlily Apps (ERP) to get an overview of your key metrics and important information. Configure widgets, charts, and graphs to display data relevant to your business. Stay informed and make data-driven decisions.",
-            "category": [
-                "d3415084-ed6b-403c-bf67-8131bd0dad4c"
-            ],
-            "icon_name": "dashboard"
-        },
-        {
-            "name": "File Management",
-            "slug": "file-management",
-            "description": "Effortlessly manage your files and documents with the File Management tool in Meetlily Apps (ERP). Upload, organize, and share files securely. Collaborate with team members and ensure easy access to important documents.",
-            "category": [
-                "d3415084-ed6b-403c-bf67-8131bd0dad4c"
-            ],
-            "icon_name": "file-management"
-        },
-        {
-            "name": "Blocks, Components, and Templates",
-            "slug": "blocks",
-            "description": "Access a library of pre-designed blocks, components, and templates within Meetlily Apps (ERP). Easily create professional-looking websites, landing pages, and email templates. Customize and reuse these elements to save time and maintain consistency.",
-            "category": [
-                "d3415084-ed6b-403c-bf67-8131bd0dad4c"
-            ],
-            "icon_name": "blocks"
-        },
-        {
-            "name": "Gallery",
-            "slug": "gallery",
-            "description": "Organize and showcase your images and media files with the Gallery feature in Meetlily Apps (ERP). Create albums, add descriptions, and share your visual content with others. Present your work or memories in a visually appealing manner.",
-            "category": [
-                "d3415084-ed6b-403c-bf67-8131bd0dad4c"
-            ],
-            "icon_name": "gallery"
-        },
-        {
-            "name": "Todo List",
-            "slug": "todolist",
-            "description": "Stay organized and manage your tasks effectively with the Todo List feature in Meetlily Apps (ERP). Create to-do lists, set deadlines, and track your progress. Prioritize your tasks and ensure nothing falls through the cracks.",
-            "category": [
-                "d3415084-ed6b-403c-bf67-8131bd0dad4c"
-            ],
-            "icon_name": "todolist"
-        },
-        {
-            "name": "Draw",
-            "slug": "draw",
-            "description": "Unleash your creativity with the Draw tool in Meetlily Apps (ERP). Sketch, doodle, and create digital artwork directly within the platform. Express your ideas visually and collaborate with others on design projects.",
-            "category": [
-                "d3415084-ed6b-403c-bf67-8131bd0dad4c"
-            ],
-            "icon_name": "draw"
-        },
-        {
-            "name": "Icons",
-            "slug": "icons",
-            "description": "Access a wide range of icons within Meetlily Apps (ERP) to enhance your user interfaces and visual elements. Choose from a diverse collection of icons and easily integrate them into your projects. Customize the appearance and style of the icons to match your branding.",
-            "category": [
-                "d3415084-ed6b-403c-bf67-8131bd0dad4c"
-            ],
-            "icon_name": "icons"
-        },
-        {
-            "name": "Notes/Markdown Editor",
-            "slug": "notes",
-            "description": "Take notes and write in Markdown format with the Notes/Markdown Editor in Meetlily Apps (ERP). Create rich-text documents, format text, and add images. Organize your notes and access them whenever you need to reference or share information.",
-            "category": [
-                "d3415084-ed6b-403c-bf67-8131bd0dad4c"
-            ],
-            "icon_name": "notes"
-        },
-        {
-            "name": "Flow",
-            "slug": "flow",
-            "description": "Visualize your data and processes with the Flow and Diagrams tool in Meetlily Apps (ERP). Create flowcharts, diagrams, and visual representations of your workflows. Gain insights and communicate complex ideas effectively.",
-            "category": [
-                "d3415084-ed6b-403c-bf67-8131bd0dad4c"
-            ],
-            "icon_name": "flow"
-        },
-        {
-            "name": "Connect",
-            "slug": "connect",
-            "description": "Collaborate with team members and clients through chat and video conferences within Meetlily Apps (ERP). Initiate real-time conversations, share screens, and hold virtual meetings. Foster effective communication and enhance collaboration.",
-            "category": [
-                "d3415084-ed6b-403c-bf67-8131bd0dad4c"
-            ],
-            "icon_name": "connect"
-        },
-        {
-            "name": "Fonts",
-            "slug": "fonts",
-            "description": "Manage your fonts and typography within Meetlily Apps (ERP). Upload and organize your font files, preview different fonts, and apply them to your projects. Ensure consistent and visually appealing typography across your designs.",
-            "category": [
-                "d3415084-ed6b-403c-bf67-8131bd0dad4c"
-            ],
-            "icon_name": "fonts"
-        },
-        {
-            "name": "AI",
-            "slug": "ai",
-            "description": "Leverage the power of artificial intelligence within Meetlily Apps (ERP). Generate content using AI algorithms, implement machine learning models, and utilize a bot assistant for automated tasks. Enhance efficiency and explore innovative solutions.",
-            "category": [
-                "d3415084-ed6b-403c-bf67-8131bd0dad4c"
-            ],
-            "icon_name": "ai"
-        }
+        ],
+        "tags": [
+          "Development",
+          "Web Development",
+          "Code Editor",
+          "Debugging",
+          "Version Control",
+          "Task Automation",
+          "Testing"
+        ],
+        "icon_name": "develop",
+        "module": "Development"
+      },
+      {
+        "name": "Users",
+        "slug": "users",
+        "short_description": "Manage user accounts and profiles.",
+        "description": "The Users module provides tools and functionality for managing user accounts and profiles within an application. It includes features such as user registration, login, authentication, password reset, profile management, and user-related settings. Whether you're building a social networking platform, an e-commerce website, or a content management system, the Users module simplifies the process of handling user-related operations and ensuring a secure and personalized user experience.",
+        "category": [
+          {
+            "name": "User Management",
+            "id": "c8e5b2a2-8c7a-4a9a-9e2c-6c3f3e9f6e1d"
+          }
+        ],
+        "tags": [
+          "Users",
+          "User Management",
+          "Authentication",
+          "Profile Management",
+          "Security"
+        ],
+        "icon_name": "users",
+        "module": "Users"
+      }
+    ]
+  },
+  {
+    "group": "applications",
+    "items": [
+      {
+        "name": "Website",
+        "slug": "website",
+        "short_description": "Create and manage your website.",
+        "description": "Build and customize your website with ease using the Website module of Meetlily Apps. Choose from a variety of templates, add content, and personalize your site. Showcase your products, services, and brand effectively.",
+        "category": [
+          {
+            "name": "Web Development",
+            "id": "19000008-9e8b-4b7f-9f6f-7c7d1b6b0c4d"
+          }
+        ],
+        "tags": [
+          "Website",
+          "Web Development",
+          "Content Management"
+        ],
+        "icon_name": "website",
+        "module": "Website"
+      },
+      {
+        "name": "Projects",
+        "slug": "projects",
+        "short_description": "Manage projects and collaborate with teams.",
+        "description": "Efficiently manage projects and collaborate with teams using the Projects module of Meetlily Apps. Create project plans, assign tasks, and track progress. Enhance team collaboration and deliver successful projects.",
+        "category": [
+          {
+            "name": "Project Management",
+            "id": "19000016-9e8b-4b7f-9f6f-7c7d1b6b0c4d"
+          }
+        ],
+        "tags": [
+          "Projects",
+          "Project Management",
+          "Task Tracking"
+        ],
+        "icon_name": "projects",
+        "module": "Projects"
+      },
+      {
+        "name": "Point of Sale",
+        "slug": "point-of-sale",
+        "short_description": "Efficiently manage sales transactions.",
+        "description": "Streamline your sales process and manage transactions with the Point of Sale module of Meetlily Apps. Handle customer orders, process payments, and generate sales reports. Improve your retail operations.",
+        "category": [
+          {
+            "name": "Sales Management",
+            "id": "19000007-9e8b-4b7f-9f6f-7c7d1b6b0c4d"
+          }
+        ],
+        "tags": [
+          "Point of Sale",
+          "Sales Management",
+          "Retail"
+        ],
+        "icon_name": "pos",
+        "module": "Point of Sale"
+      }
+    ]
+  },
+  {
+    "group": "tools",
+    "items": [
+      {
+        "name": "AI Assistant",
+        "slug": "ai-assistant",
+        "short_description": "Get assistance and automate tasks with our AI-powered assistant.",
+        "description": "Get assistance and automate tasks with our AI-powered assistant. Interact with our intelligent virtual assistant to get answers to your questions, perform actions, and streamline your workflow. Our AI assistant module leverages the power of artificial intelligence to enhance your productivity and provide personalized support.",
+        "category": [
+          {
+            "name": "Productivity",
+            "id": "19000060-9e8b-4b7f-9f6f-7c7d1b6b0c4d"
+          }
+        ],
+        "tags": [
+          "AI Assistant",
+          "Virtual Assistant",
+          "Productivity"
+        ],
+        "icon_name": "aiAssistant",
+        "module": "AI Assistant"
+      },
+      {
+        "name": "Music",
+        "slug": "music",
+        "short_description": "Discover and listen to your favorite music.",
+        "description": "Discover and listen to your favorite music with the Music module of Meetlily Apps. Explore a vast library of songs, create playlists, and enjoy personalized recommendations. Enhance your music experience and enjoy seamless streaming on any device.",
+        "category": [
+          {
+            "name": "Entertainment",
+            "id": "19000054-9e8b-4b7f-9f6f-7c7d1b6b0c4d"
+          }
+        ],
+        "tags": [
+          "Music",
+          "Streaming",
+          "Entertainment"
+        ],
+        "icon_name": "music",
+        "module": "Music"
+      },
+      {
+        "name": "Movies",
+        "slug": "movies",
+        "short_description": "Discover and watch your favorite movies and TV shows.",
+        "description": "Discover and watch your favorite movies and TV shows with the Movies module of Meetlily Apps. Browse a vast collection of films, explore genres, and enjoy personalized recommendations. Immerse yourself in the world of entertainment and enjoy seamless streaming on any device.",
+        "category": [
+          {
+            "name": "Entertainment",
+            "id": "19000054-9e8b-4b7f-9f6f-7c7d1b6b0c4d"
+          }
+        ],
+        "tags": [
+          "Movies",
+          "TV Shows",
+          "Streaming",
+          "Entertainment"
+        ],
+        "icon_name": "movies",
+        "module": "Movies"
+      }
+    ]
+  },
+  {
+    "group": "miscellaneous",
+    "items": [
+      {
+        "name": "Documentation",
+        "slug": "documentation",
+        "icon_name": "documentation",
+        "module": "Documentation"
+      },
+      {
+        "name": "Support",
+        "slug": "support",
+        "icon_name": "support",
+        "module": "Support"
+      },
+      {
+        "name": "Upgrade",
+        "slug": "upgrade",
+        "icon_name": "upgrade",
+        "module": "Upgrade"
+      }
     ]
   }
-  
+]

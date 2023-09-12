@@ -17,8 +17,9 @@ const Loader: React.FC<LoaderProps> = ({
 }) => {
     return (
       <>
-        <div className={`text-${align}`}>
-          <Spinner color={color} size={size} title={title} aria-label={ariaLabel} />
+
+        <div className="fixed z-40 flex flex-col items-center justify-center mx-auto h-full w-full bg-transparent">
+          <Spinner color={color} size={"lg"} title={title} aria-label={ariaLabel} />
         </div>
       </>
     )

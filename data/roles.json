@@ -1,0 +1,82 @@
+{
+    "SuperAdministrator": {
+        "name": "Super Administrator",
+        "description": "",
+        "slug": "super-administrator",
+        "icon_name": "superAdministrator",
+        "permissions": {
+            "global": {
+                "view": true,
+                "create": true,
+                "update": true,
+                "delete": true
+            }
+        }
+    },
+    "Administrator": {
+        "name": "Administrator",
+        "description": "",
+        "slug": "administrator",
+        "icon_name": "administrator",
+        "permissions": {
+            "global": {
+                "view": true,
+                "create": false,
+                "update": false,
+                "delete": false
+            },
+            "modules": {
+                "view": true,
+                "create": true,
+                "update": true,
+                "delete": true
+            }
+        }
+    },
+    "Authenticated": {
+        "name": "Authenticated",
+        "description": "",
+        "slug": "authenticated",
+        "icon_name": "authenticated",
+        "permissions": {
+            "global": {
+                "view": false,
+                "create": false,
+                "update": false,
+                "delete": false
+            },
+            "modules": {
+                "view": true,
+                "create": false,
+                "update": false,
+                "delete": false
+            },
+            "owned": {
+                "view": true,
+                "create": true,
+                "update": true,
+                "delete": true
+            }
+        }
+    },
+    "Public": {
+        "name": "Public",
+        "description": "",
+        "slug": "public",
+        "icon_name": "public",
+        "permissions": {
+            "global": {
+                "view": false,
+                "create": false,
+                "update": false,
+                "delete": false
+            },
+            "modules": {
+                "view": false,
+                "create": false,
+                "update": false,
+                "delete": false
+            }
+        }
+    }
+}

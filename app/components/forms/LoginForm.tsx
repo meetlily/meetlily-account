@@ -11,7 +11,7 @@ import Logo from "../navbar/Logo";
 import { useState } from "react";
 import AppIcons from "../icons/AppIcons";
 interface LoginFormProps {
-    currentUser: SafeUser | null
+    currentUser?: any
 }
 const LoginForm: React.FC<LoginFormProps> = ({
     currentUser

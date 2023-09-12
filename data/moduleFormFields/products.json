@@ -1,0 +1,212 @@
+[
+    {
+        "label": "Products Information",
+        "group": "Products Details",
+        "fields": [
+            {
+                "label": "Product Name",
+                "name": "productName",
+                "type": "text",
+                "placeholder": "Enter product name"
+            },
+            {
+                "label": "Product SKU",
+                "name": "productSKU",
+                "type": "text",
+                "placeholder": "Enter product SKU"
+            },
+            {
+                "label": "Product Description",
+                "name": "productDescription",
+                "type": "textarea",
+                "placeholder": "Enter product description"
+            },
+            {
+                "label": "Product Price",
+                "name": "productPrice",
+                "type": "number",
+                "placeholder": "Enter product price"
+            }
+        ]
+    },
+    {
+        "label": "Product Category Information",
+        "group": "Product Category Details",
+        "fields": [
+            {
+                "label": "Category Name",
+                "name": "categoryName",
+                "type": "text",
+                "placeholder": "Enter category name"
+            },
+            {
+                "label": "Category Description",
+                "name": "categoryDescription",
+                "type": "textarea",
+                "placeholder": "Enter category description"
+            }
+        ]
+    },
+    {
+        "label": "Product Manufacturer Information",
+        "group": "Product Manufacturer Details",
+        "fields": [
+            {
+                "label": "Manufacturer Name",
+                "name": "manufacturerName",
+                "type": "text",
+                "placeholder": "Enter manufacturer name"
+            },
+            {
+                "label": "Manufacturer Location",
+                "name": "manufacturerLocation",
+                "type": "text",
+                "placeholder": "Enter manufacturer location"
+            }
+        ]
+    },
+    {
+        "label": "Product Supplier Information",
+        "group": "Product Supplier Details",
+        "fields": [
+            {
+                "label": "Supplier Name",
+                "name": "supplierName",
+                "type": "text",
+                "placeholder": "Enter supplier name"
+            },
+            {
+                "label": "Supplier Contact",
+                "name": "supplierContact",
+                "type": "text",
+                "placeholder": "Enter supplier contact"
+            }
+        ]
+    },
+    {
+        "label": "Product Pricing Information",
+        "group": "Product Pricing Details",
+        "fields": [
+            {
+                "label": "Retail Price",
+                "name": "retailPrice",
+                "type": "number",
+                "placeholder": "Enter retail price"
+            },
+            {
+                "label": "Discount Price",
+                "name": "discountPrice",
+                "type": "number",
+                "placeholder": "Enter discount price"
+            }
+        ]
+    },
+    {
+        "label": "Product Shipping Information",
+        "group": "Product Shipping Details",
+        "fields": [
+            {
+                "label": "Shipping Weight",
+                "name": "shippingWeight",
+                "type": "number",
+                "placeholder": "Enter shipping weight"
+            },
+            {
+                "label": "Shipping Cost",
+                "name": "shippingCost",
+                "type": "number",
+                "placeholder": "Enter shipping cost"
+            }
+        ]
+    },
+    {
+        "label": "Product Warranty Information",
+        "group": "Product Warranty Details",
+        "fields": [
+            {
+                "label": "Warranty Period",
+                "name": "warrantyPeriod",
+                "type": "text",
+                "placeholder": "Enter warranty period"
+            },
+            {
+                "label": "Warranty Provider",
+                "name": "warrantyProvider",
+                "type": "text",
+                "placeholder": "Enter warranty provider"
+            }
+        ]
+    },
+    {
+        "label": "Product Review Information",
+        "group": "Product Review Details",
+        "fields": [
+            {
+                "label": "Average Review Score",
+                "name": "averageReviewScore",
+                "type": "number",
+                "placeholder": "Enter average review score"
+            },
+            {
+                "label": "Number of Reviews",
+                "name": "numberOfReviews",
+                "type": "number",
+                "placeholder": "Enter number of reviews"
+            }
+        ]
+    },
+    {
+        "label": "Product Sales Information",
+        "group": "Product Sales Details",
+        "fields": [
+            {
+                "label": "Total Units Sold",
+                "name": "totalUnitsSold",
+                "type": "number",
+                "placeholder": "Enter total units sold"
+            },
+            {
+                "label": "Sales Revenue",
+                "name": "salesRevenue",
+                "type": "number",
+                "placeholder": "Enter sales revenue"
+            }
+        ]
+    },
+    {
+        "label": "Product Return Information",
+        "group": "Product Return Details",
+        "fields": [
+            {
+                "label": "Return Policy",
+                "name": "returnPolicy",
+                "type": "text",
+                "placeholder": "Enter return policy"
+            },
+            {
+                "label": "Number of Returns",
+                "name": "numberOfReturns",
+                "type": "number",
+                "placeholder": "Enter number of returns"
+            }
+        ]
+    },
+    {
+        "label": "Product Safety Information",
+        "group": "Product Safety Details",
+        "fields": [
+            {
+                "label": "Safety Certification",
+                "name": "safetyCertification",
+                "type": "text",
+                "placeholder": "Enter safety certification"
+            },
+            {
+                "label": "Recall Information",
+                "name": "recallInformation",
+                "type": "text",
+                "placeholder": "Enter recall information"
+            }
+        ]
+    }
+]

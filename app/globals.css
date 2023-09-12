@@ -17,3 +17,7 @@ body,
   padding-bottom: 0 !important;
   padding-top: 0 !important;
 }
+.token.plain {
+  padding: 0;
+  width: 0 !important;
+}

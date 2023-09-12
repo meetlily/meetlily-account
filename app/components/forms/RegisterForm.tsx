@@ -11,7 +11,7 @@ import Logo from "../navbar/Logo";
 import { useState } from "react";
 import AppIcons from "../icons/AppIcons";
 interface RegisterFormProps {
-    currentUser: SafeUser | null
+    currentUser: any
 }
 const RegisterForm: React.FC<RegisterFormProps> = ({
     currentUser

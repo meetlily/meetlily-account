@@ -7,7 +7,8 @@ interface HeadingProps {
     center?: boolean;
     fontColor?: string;
     bold?: boolean;
-    size?: string
+    size?: string;
+    icon?: React.ReactElement;
 }
 const Heading: React.FC<HeadingProps> = ({
     title,
@@ -16,7 +17,8 @@ const Heading: React.FC<HeadingProps> = ({
     center,
     fontColor,
     bold,
-    size
+    size,
+    icon
 }) => {
     return (
       <div 
@@ -31,7 +33,18 @@ const Heading: React.FC<HeadingProps> = ({
               text-gray-700
               ${size ? size : 'text-2xl'}
               ${bold ? `font-bold` : `font-light`}
-        `}>{title}</h2>
+        `}>
+          <div className="flex flex-row items-center">
+          {icon && (
+            <>
+            <div className="mr-4">
+            {icon}
+            </div>
+            </>
+          )}
+          {title}
+          </div>
+          </h2>
         <p 
           className={`
             max-w-sm 

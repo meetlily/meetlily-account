@@ -3,6 +3,7 @@
         "cloudinary",
         "flowbite",
         "latlng",
+        "nextauth",
         "prismadb",
         "topbar"
     ]

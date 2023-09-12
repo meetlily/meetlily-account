@@ -1,0 +1,1788 @@
+{
+  "userModules": {},
+  "modules": {},
+  "administration": [
+    {
+      "name": "Servers",
+      "slug": "server",
+      "short_description": "Build scalable and robust server applications.",
+      "description": "The Server module provides tools and libraries for building scalable and robust server applications. It includes features such as routing, middleware, authentication, and database integration. Whether you're building a RESTful API, a web server, or a backend system, the Server module simplifies the process of handling HTTP requests, managing server resources, and interacting with databases. Easily manage your servers and ensure their smooth operation. Monitor server performance, track resource usage, and handle server configurations effortlessly",
+      "category": [
+        {
+          "name": "Web Development",
+          "id": "19000065-9e8b-4b7f-9f6f-7c7d1b6b0c4d"
+        }
+      ],
+      "tags": [
+        "Server",
+        "Web Development",
+        "Scalability",
+        "Middleware",
+        "Authentication",
+        "Database Integration"
+      ],
+      "icon_name": "server",
+      "module": "Server"
+    },
+    {
+      "name": "Databases",
+      "slug": "database",
+      "short_description": "Manage and interact with databases.",
+      "description": "The Database module provides tools and libraries for managing and interacting with databases. It includes features such as query builders, ORM (Object-Relational Mapping) frameworks, and database migration tools. Whether you're working with SQL databases like MySQL or PostgreSQL, NoSQL databases like MongoDB or Redis, or cloud-based databases like Amazon RDS or Google Cloud Firestore, the Database module simplifies the process of connecting to databases, executing queries, and handling data.",
+      "category": [
+        {
+          "name": "Web Development",
+          "id": "19000065-9e8b-4b7f-9f6f-7c7d1b6b0c4d"
+        }
+      ],
+      "tags": [
+        "Database",
+        "Web Development",
+        "SQL",
+        "NoSQL",
+        "ORM",
+        "Query Builder",
+        "Migration"
+      ],
+      "icon_name": "database",
+      "module": "Database"
+    },
+    {
+      "name": "Development",
+      "slug": "development",
+      "short_description": "Enhance your development workflow.",
+      "description": "The Development module provides tools and utilities to enhance your development workflow. It includes features such as code editors, debugging tools, version control integration, task automation, and testing frameworks. Whether you're a frontend developer, backend developer, or full-stack developer, the Development module helps you write, test, and deploy your code more efficiently.",
+      "category": [
+        {
+          "name": "Web Development",
+          "id": "19000065-9e8b-4b7f-9f6f-7c7d1b6b0c4d"
+        }
+      ],
+      "tags": [
+        "Development",
+        "Web Development",
+        "Code Editor",
+        "Debugging",
+        "Version Control",
+        "Task Automation",
+        "Testing"
+      ],
+      "icon_name": "develop",
+      "module": "Development"
+    },
+    {
+      "name": "Integrations",
+      "slug": "api-integrations",
+      "short_description": "Integrate with third-party APIs.",
+      "description": "The API Integrations module provides tools and libraries for integrating with third-party APIs. It includes features such as API clients, authentication mechanisms, request/response handling, and data mapping. Whether you need to connect to social media APIs, payment gateways, geolocation services, or any other external API, the API Integrations module simplifies the process of making API requests, handling authentication, and processing API responses.",
+      "category": [
+        {
+          "name": "Web Development",
+          "id": "19000065-9e8b-4b7f-9f6f-7c7d1b6b0c4d"
+        }
+      ],
+      "tags": [
+        "API Integrations",
+        "Web Development",
+        "API Clients",
+        "Authentication",
+        "Request/Response Handling",
+        "Data Mapping"
+      ],
+      "icon_name": "integration",
+      "module": "API Integrations"
+    },
+    {
+      "name": "Organizations",
+      "slug": "organizations",
+      "short_description": "Manage and organize groups of users.",
+      "description": "The Organizations module provides tools and functionality for managing and organizing groups of users within an application. It includes features such as creating, editing, and deleting organizations, assigning users to organizations, and managing permissions and roles within organizations. Whether you're building a multi-tenant application, a collaborative platform, or an enterprise system, the Organizations module simplifies the process of managing user groups and their associated settings.",
+      "category": [
+        {
+          "name": "User Management",
+          "id": "c8e5b2a2-8c7a-4a9a-9e2c-6c3f3e9f6e1d"
+        }
+      ],
+      "tags": [
+        "Organizations",
+        "User Management",
+        "User Groups",
+        "Permissions",
+        "Roles"
+      ],
+      "icon_name": "company",
+      "module": "Organizations"
+    },
+    {
+      "name": "Users",
+      "slug": "users",
+      "short_description": "Manage user accounts and profiles.",
+      "description": "The Users module provides tools and functionality for managing user accounts and profiles within an application. It includes features such as user registration, login, authentication, password reset, profile management, and user-related settings. Whether you're building a social networking platform, an e-commerce website, or a content management system, the Users module simplifies the process of handling user-related operations and ensuring a secure and personalized user experience.",
+      "category": [
+        {
+          "name": "User Management",
+          "id": "c8e5b2a2-8c7a-4a9a-9e2c-6c3f3e9f6e1d"
+        }
+      ],
+      "tags": [
+        "Users",
+        "User Management",
+        "Authentication",
+        "Profile Management",
+        "Security"
+      ],
+      "icon_name": "users",
+      "module": "Users"
+    },
+    {
+      "name": "Settings",
+      "slug": "settings",
+      "short_description": "Manage application settings and configurations.",
+      "description": "The Settings module provides tools and functionality for managing application settings and configurations. It includes features such as dynamic settings management, configuration files, environment variables, and settings UI. Whether you need to handle global settings, user-specific settings, or application-wide configurations, the Settings module simplifies the process of managing and accessing various settings within your application.",
+      "category": [
+        {
+          "name": "Application Management",
+          "id": "a3b5f4d6-7e8f-9a0b-c1d2e3f4a5b6"
+        }
+      ],
+      "tags": [
+        "Settings",
+        "Application Management",
+        "Configuration",
+        "Environment Variables",
+        "Settings UI"
+      ],
+      "icon_name": "gears",
+      "module": "Settings"
+    },
+    {
+      "name": "Analytics",
+      "slug": "analytics",
+      "short_description": "Track and analyze user behavior and application metrics.",
+      "description": "The Analytics module provides tools and functionality for tracking and analyzing user behavior and application metrics. It includes features such as event tracking, user segmentation, funnel analysis, and performance monitoring. Whether you want to understand how users interact with your application, measure the effectiveness of your marketing campaigns, or identify areas for optimization, the Analytics module simplifies the process of collecting and analyzing data to gain valuable insights.",
+      "category": [
+        {
+          "name": "Data Analysis",
+          "id": "d1e2a3d4-5a6n7a8l9y0s"
+        }
+      ],
+      "tags": [
+        "Analytics",
+        "Data Analysis",
+        "User Behavior",
+        "Metrics",
+        "Performance Monitoring"
+      ],
+      "icon_name": "analytics",
+      "module": "Analytics"
+    }
+  ],
+  "applications": [
+    {
+      "name": "Website",
+      "slug": "website",
+      "short_description": "Create and manage your website.",
+      "description": "Build and customize your website with ease using the Website module of Meetlily Apps. Choose from a variety of templates, add content, and personalize your site. Showcase your products, services, and brand effectively.",
+      "category": [
+        {
+          "name": "Web Development",
+          "id": "19000008-9e8b-4b7f-9f6f-7c7d1b6b0c4d"
+        }
+      ],
+      "tags": [
+        "Website",
+        "Web Development",
+        "Content Management"
+      ],
+      "icon_name": "website",
+      "module": "Website"
+    },
+    {
+      "name": "e-Commerce",
+      "slug": "ecommerce",
+      "short_description": "Sell products online with ease.",
+      "description": "Set up an online store and start selling products with the e-Commerce module of Meetlily Apps. Manage inventory, process orders, and accept secure payments. Reach a wider audience and grow your business online.",
+      "category": [
+        {
+          "name": "Sales Management",
+          "id": "19000007-9e8b-4b7f-9f6f-7c7d1b6b0c4d"
+        }
+      ],
+      "tags": [
+        "e-Commerce",
+        "Online Store",
+        "Sales Management"
+      ],
+      "icon_name": "ecommerce",
+      "module": "e-Commerce"
+    },
+    {
+      "name": "Point of Sale",
+      "slug": "point-of-sale",
+      "short_description": "Efficiently manage sales transactions.",
+      "description": "Streamline your sales process and manage transactions with the Point of Sale module of Meetlily Apps. Handle customer orders, process payments, and generate sales reports. Improve your retail operations.",
+      "category": [
+        {
+          "name": "Sales Management",
+          "id": "19000007-9e8b-4b7f-9f6f-7c7d1b6b0c4d"
+        }
+      ],
+      "tags": [
+        "Point of Sale",
+        "Sales Management",
+        "Retail"
+      ],
+      "icon_name": "pos",
+      "module": "Point of Sale"
+    },
+    {
+      "name": "Refunds",
+      "slug": "refunds",
+      "short_description": "Manage customer refunds and returns.",
+      "description": "Efficiently manage customer refunds and returns with the Refunds module of Meetlily Apps. Process refund requests, track return shipments, and issue refunds. Streamline your refund management process and enhance customer satisfaction.",
+      "category": [
+        {
+          "name": "Customer Service",
+          "id": "19000027-9e8b-4b7f-9f6f-7c7d1b6b0c4d"
+        }
+      ],
+      "tags": [
+        "Refunds",
+        "Returns",
+        "Customer Service"
+      ],
+      "icon_name": "refunds",
+      "module": "Refunds"
+    },
+    {
+      "name": "Products",
+      "slug": "products",
+      "short_description": "Manage and organize your product catalog.",
+      "description": "Efficiently manage and organize your product catalog with the Products module of Meetlily Apps. Add, edit, and categorize products, manage inventory levels, and track sales performance. Streamline your product management process and optimize your online store.",
+      "category": [
+        {
+          "name": "E-commerce",
+          "id": "19000028-9e8b-4b7f-9f6f-7c7d1b6b0c4d"
+        }
+      ],
+      "tags": [
+        "Products",
+        "E-commerce",
+        "Inventory Management"
+      ],
+      "icon_name": "products",
+      "module": "Products"
+    },
+    {
+      "name": "Shipping",
+      "slug": "shipping",
+      "short_description": "Manage shipping and delivery processes.",
+      "description": "Efficiently manage shipping and delivery processes with the Shipping module of Meetlily Apps. Generate shipping labels, track packages, and manage delivery schedules. Streamline your shipping operations and provide a seamless delivery experience to your customers.",
+      "category": [
+        {
+          "name": "Logistics",
+          "id": "19000029-9e8b-4b7f-9f6f-7c7d1b6b0c4d"
+        }
+      ],
+      "tags": [
+        "Shipping",
+        "Logistics",
+        "Delivery"
+      ],
+      "icon_name": "shipping",
+      "module": "Shipping"
+    },
+    {
+      "name": "Invoicing",
+      "slug": "invoicing",
+      "short_description": "Efficiently manage invoices and payments.",
+      "description": "Simplify your invoicing process and manage payments with the Invoicing module of Meetlily Apps. Create professional invoices, track payments, and send reminders. Stay organized and get paid faster.",
+      "category": [
+        {
+          "name": "Financial Management",
+          "id": "19000006-9e8b-4b7f-9f6f-7c7d1b6b0c4d"
+        }
+      ],
+      "tags": [
+        "Invoicing",
+        "Financial Management",
+        "Payment Tracking"
+      ],
+      "icon_name": "invoicing",
+      "module": "Invoicing"
+    },
+    {
+      "name": "CRM",
+      "slug": "crm",
+      "short_description": "Manage customer relationships and interactions.",
+      "description": "Efficiently manage customer relationships and interactions with the CRM module of Meetlily Apps. Keep track of customer information, manage leads and opportunities, and streamline your sales process. Enhance customer satisfaction and drive business growth.",
+      "category": [
+        {
+          "name": "Customer Relationship Management",
+          "id": "19000020-9e8b-4b7f-9f6f-7c7d1b6b0c4d"
+        }
+      ],
+      "tags": [
+        "CRM",
+        "Customer Relationship Management",
+        "Sales"
+      ],
+      "icon_name": "crm",
+      "module": "CRM"
+    },
+    {
+      "name": "Accounting",
+      "slug": "accounting",
+      "short_description": "Manage finances, invoices, and reports.",
+      "description": "Manage financial transactions and track company's financial health with the Accounting module of Meetlily Apps. Handle invoices, expenses, and generate financial reports. Streamline your financial management processes.",
+      "category": [
+        {
+          "name": "Financial Management",
+          "id": "19000006-9e8b-4b7f-9f6f-7c7d1b6b0c4d"
+        }
+      ],
+      "tags": [
+        "Accounting",
+        "Financial Management",
+        "Invoicing"
+      ],
+      "icon_name": "accounting",
+      "module": "Accounting"
+    },
+    {
+      "name": "Sales",
+      "slug": "sales",
+      "short_description": "Manage your sales process efficiently.",
+      "description": "Optimize your sales process and track your revenue with the Sales module of Meetlily Apps. Capture leads, manage opportunities, and close deals. Gain insights into your sales performance and drive growth.",
+      "category": [
+        {
+          "name": "Sales Management",
+          "id": "19000007-9e8b-4b7f-9f6f-7c7d1b6b0c4d"
+        }
+      ],
+      "tags": [
+        "Sales",
+        "Sales Management",
+        "Revenue Tracking"
+      ],
+      "icon_name": "sales",
+      "module": "Sales"
+    },
+    {
+      "name": "Subscriptions",
+      "slug": "subscriptions",
+      "short_description": "Manage recurring subscriptions effortlessly.",
+      "description": "Offer subscription-based services and manage recurring payments with the Subscriptions module of Meetlily Apps. Create subscription plans, handle billing cycles, and automate subscription management. Retain customers and grow your subscription business.",
+      "category": [
+        {
+          "name": "Sales Management",
+          "id": "19000007-9e8b-4b7f-9f6f-7c7d1b6b0c4d"
+        }
+      ],
+      "tags": [
+        "Subscriptions",
+        "Recurring Payments",
+        "Subscription Management"
+      ],
+      "icon_name": "subscriptions",
+      "module": "Subscriptions"
+    },
+    {
+      "name": "Warehouse",
+      "slug": "warehouse",
+      "short_description": "Efficiently manage your inventory.",
+      "description": "Streamline your inventory management process with the Warehouse module of Meetlily Apps. Track stock levels, manage suppliers, and optimize warehouse operations. Gain real-time visibility into your inventory and reduce costs.",
+      "category": [
+        {
+          "name": "Inventory Management",
+          "id": "19000009-9e8b-4b7f-9f6f-7c7d1b6b0c4d"
+        }
+      ],
+      "tags": [
+        "Warehouse",
+        "Inventory Management",
+        "Stock Tracking"
+      ],
+      "icon_name": "warehouse",
+      "module": "Warehouse"
+    },
+    {
+      "name": "Club",
+      "slug": "club",
+      "short_description": "Manage your club and membership.",
+      "description": "Efficiently manage your club and membership with the Club module of Meetlily Apps. Track member details, handle membership renewals, and organize club events. Enhance member engagement and streamline administrative tasks.",
+      "category": [
+        {
+          "name": "Membership Management",
+          "id": "19000010-9e8b-4b7f-9f6f-7c7d1b6b0c4d"
+        }
+      ],
+      "tags": [
+        "Club",
+        "Membership Management",
+        "Event Organization"
+      ],
+      "icon_name": "club",
+      "module": "Club"
+    },
+    {
+      "name": "Restaurant",
+      "slug": "restaurant",
+      "short_description": "Manage your restaurant operations.",
+      "description": "Efficiently manage your restaurant operations with the Restaurant module of Meetlily Apps. Handle table reservations, track orders, and streamline kitchen operations. Enhance customer experience and optimize your restaurant's efficiency.",
+      "category": [
+        {
+          "name": "Restaurant Management",
+          "id": "19000011-9e8b-4b7f-9f6f-7c7d1b6b0c4d"
+        }
+      ],
+      "tags": [
+        "Restaurant",
+        "Restaurant Management",
+        "Order Tracking"
+      ],
+      "icon_name": "restaurant",
+      "module": "Restaurant"
+    },
+    {
+      "name": "Payments",
+      "slug": "payments",
+      "short_description": "Manage payments and transactions.",
+      "description": "Simplify payment processing and transaction management with the Payments module of Meetlily Apps. Accept online payments, handle refunds, and track financial transactions. Ensure secure and seamless payment experiences for your customers.",
+      "category": [
+        {
+          "name": "Financial Management",
+          "id": "19000012-9e8b-4b7f-9f6f-7c7d1b6b0c4d"
+        }
+      ],
+      "tags": [
+        "Payments",
+        "Transaction Management",
+        "Payment Processing"
+      ],
+      "icon_name": "payments",
+      "module": "Payments"
+    },
+    {
+      "name": "Contracts",
+      "slug": "contracts",
+      "short_description": "Manage contracts and agreements.",
+      "description": "Efficiently manage contracts and agreements with the Contracts module of Meetlily Apps. Create and store contracts, track key dates, and automate contract workflows. Streamline your contract management process and improve compliance.",
+      "category": [
+        {
+          "name": "Document Management",
+          "id": "19000013-9e8b-4b7f-9f6f-7c7d1b6b0c4d"
+        }
+      ],
+      "tags": [
+        "Contracts",
+        "Agreement Management",
+        "Contract Workflows"
+      ],
+      "icon_name": "contracts",
+      "module": "Contracts"
+    },
+    {
+      "name": "Proposals",
+      "slug": "proposals",
+      "short_description": "Create and manage business proposals.",
+      "description": "Create professional business proposals and manage the proposal lifecycle with the Proposals module of Meetlily Apps. Customize proposal templates, track proposal status, and collaborate with stakeholders. Streamline your proposal management process and win more business.",
+      "category": [
+        {
+          "name": "Sales Management",
+          "id": "19000007-9e8b-4b7f-9f6f-7c7d1b6b0c4d"
+        }
+      ],
+      "tags": [
+        "Proposals",
+        "Business Proposals",
+        "Proposal Management"
+      ],
+      "icon_name": "proposals",
+      "module": "Proposals"
+    },
+    {
+      "name": "Employee",
+      "slug": "employee",
+      "short_description": "Manage employee information and records.",
+      "description": "Efficiently manage employee information and records with the Employee module of Meetlily Apps. Store employee profiles, track attendance, and manage leave requests. Streamline your HR processes and improve employee management.",
+      "category": [
+        {
+          "name": "Human Resources",
+          "id": "19000014-9e8b-4b7f-9f6f-7c7d1b6b0c4d"
+        }
+      ],
+      "tags": [
+        "Employee",
+        "HR Management",
+        "Attendance Tracking"
+      ],
+      "icon_name": "employee",
+      "module": "Employee"
+    },
+    {
+      "name": "Timesheet",
+      "slug": "timesheet",
+      "short_description": "Track and manage employee working hours.",
+      "description": "The Timesheet module provides tools and functionality for tracking and managing employee working hours. It includes features such as clock-in/clock-out functionality, timesheet entry and editing, overtime calculation, and reporting. Whether you need to monitor employee attendance, calculate payroll, or analyze productivity, the Timesheet module simplifies the process of tracking and managing working hours for your organization.",
+      "category": [
+        {
+          "name": "Human Resources",
+          "id": "h1u2m3a4n5r6e7s8o9u0r1c2e3s4"
+        }
+      ],
+      "tags": [
+        "Timesheet",
+        "Employee Attendance",
+        "Working Hours",
+        "Overtime Calculation",
+        "Productivity"
+      ],
+      "icon_name": "timesheet",
+      "module": "Timesheet"
+    },
+    {
+      "name": "HR",
+      "slug": "hr",
+      "short_description": "Manage human resources processes.",
+      "description": "Streamline your human resources processes with the HR module of Meetlily Apps. Handle employee onboarding, performance reviews, and HR workflows. Simplify HR tasks and improve employee engagement.",
+      "category": [
+        {
+          "name": "Human Resources",
+          "id": "19000014-9e8b-4b7f-9f6f-7c7d1b6b0c4d"
+        }
+      ],
+      "tags": [
+        "HR",
+        "Human Resources",
+        "HR Workflows"
+      ],
+      "icon_name": "hr",
+      "module": "HR"
+    },
+    {
+      "name": "Leave",
+      "slug": "leave",
+      "short_description": "Manage employee leave requests and approvals.",
+      "description": "Efficiently manage employee leave requests and approvals with the Leave module of Meetlily Apps. Streamline the leave application process, track leave balances, and generate comprehensive reports. Simplify leave management and ensure smooth operations in your organization.",
+      "category": [
+        {
+          "name": "Human Resources",
+          "id": "19000041-9e8b-4b7f-9f6f-7c7d1b6b0c4d"
+        }
+      ],
+      "tags": [
+        "Leave",
+        "Time Off",
+        "HR"
+      ],
+      "icon_name": "leave",
+      "module": "Leave"
+    },
+    {
+      "name": "Payroll",
+      "slug": "payroll",
+      "short_description": "Effortlessly manage employee payroll and compensation.",
+      "description": "Effortlessly manage employee payroll and compensation with the Payroll module of Meetlily Apps. Automate payroll calculations, generate payslips, and handle tax deductions. Ensure accurate and timely salary processing while complying with legal requirements.",
+      "category": [
+        {
+          "name": "Human Resources",
+          "id": "19000041-9e8b-4b7f-9f6f-7c7d1b6b0c4d"
+        }
+      ],
+      "tags": [
+        "Payroll",
+        "Compensation",
+        "HR"
+      ],
+      "icon_name": "payroll",
+      "module": "Payroll"
+    },
+    {
+      "name": "Attendance",
+      "slug": "attendance",
+      "short_description": "Track employee attendance and working hours.",
+      "description": "Efficiently track employee attendance and working hours with the Attendance module of Meetlily Apps. Capture clock-in and clock-out times, manage shifts, and monitor attendance patterns. Streamline attendance management and improve workforce productivity.",
+      "category": [
+        {
+          "name": "Human Resources",
+          "id": "19000041-9e8b-4b7f-9f6f-7c7d1b6b0c4d"
+        }
+      ],
+      "tags": [
+        "Attendance",
+        "Time Tracking",
+        "HR"
+      ],
+      "icon_name": "attendance",
+      "module": "Attendance"
+    },
+    {
+      "name": "Clock In",
+      "slug": "clock-in",
+      "short_description": "Record employee clock-in and clock-out times.",
+      "description": "Effortlessly record employee clock-in and clock-out times with the Clock In module of Meetlily Apps. Enable employees to log their working hours accurately, view their timesheets, and track their attendance. Simplify time tracking and ensure accurate payroll processing.",
+      "category": [
+        {
+          "name": "Human Resources",
+          "id": "19000041-9e8b-4b7f-9f6f-7c7d1b6b0c4d"
+        }
+      ],
+      "tags": [
+        "Clock In",
+        "Time Tracking",
+        "HR"
+      ],
+      "icon_name": "clockin",
+      "module": "Clock In"
+    },
+    {
+      "name": "Projects",
+      "slug": "projects",
+      "short_description": "Manage projects and collaborate with teams.",
+      "description": "Efficiently manage projects and collaborate with teams using the Projects module of Meetlily Apps. Create project plans, assign tasks, and track progress. Enhance team collaboration and deliver successful projects.",
+      "category": [
+        {
+          "name": "Project Management",
+          "id": "19000016-9e8b-4b7f-9f6f-7c7d1b6b0c4d"
+        }
+      ],
+      "tags": [
+        "Projects",
+        "Project Management",
+        "Task Tracking"
+      ],
+      "icon_name": "projects",
+      "module": "Projects"
+    },
+    {
+      "name": "Conference",
+      "slug": "conference",
+      "short_description": "Organize and manage conferences and events.",
+      "description": "Efficiently organize and manage conferences and events with the Conference module of Meetlily Apps. Create event schedules, manage registrations, and facilitate attendee communication. Streamline your conference planning process and deliver successful events.",
+      "category": [
+        {
+          "name": "Event Management",
+          "id": "19000017-9e8b-4b7f-9f6f-7c7d1b6b0c4d"
+        }
+      ],
+      "tags": [
+        "Conference",
+        "Event Management",
+        "Registration"
+      ],
+      "icon_name": "conference",
+      "module": "Conference"
+    },
+    {
+      "name": "Meetings",
+      "slug": "meetings",
+      "short_description": "Schedule and manage meetings with ease.",
+      "description": "Efficiently schedule and manage meetings with the Meetings module of Meetlily Apps. Create meeting invitations, send reminders, and track attendance. Streamline your meeting management process and improve collaboration.",
+      "category": [
+        {
+          "name": "Collaboration",
+          "id": "19000018-9e8b-4b7f-9f6f-7c7d1b6b0c4d"
+        }
+      ],
+      "tags": [
+        "Meetings",
+        "Collaboration",
+        "Meeting Management"
+      ],
+      "icon_name": "meetings",
+      "module": "Meetings"
+    },
+    {
+      "name": "Appointments",
+      "slug": "appointments",
+      "short_description": "Schedule and manage appointments with clients.",
+      "description": "Efficiently schedule and manage appointments with clients using the Appointments module of Meetlily Apps. Set availability, send appointment reminders, and track client information. Simplify your appointment scheduling process and enhance customer service.",
+      "category": [
+        {
+          "name": "Appointment Management",
+          "id": "19000019-9e8b-4b7f-9f6f-7c7d1b6b0c4d"
+        }
+      ],
+      "tags": [
+        "Appointments",
+        "Appointment Management",
+        "Client Scheduling"
+      ],
+      "icon_name": "appointments",
+      "module": "Appointments"
+    },
+    {
+      "name": "Events",
+      "slug": "events",
+      "short_description": "Organize and manage events of any scale.",
+      "description": "Efficiently organize and manage events of any scale with the Events module of Meetlily Apps. Create event schedules, manage registrations, and facilitate attendee communication. Streamline your event planning process and deliver memorable experiences.",
+      "category": [
+        {
+          "name": "Event Management",
+          "id": "19000017-9e8b-4b7f-9f6f-7c7d1b6b0c4d"
+        }
+      ],
+      "tags": [
+        "Events",
+        "Event Management",
+        "Registration"
+      ],
+      "icon_name": "events",
+      "module": "Events"
+    },
+    {
+      "name": "Jobs",
+      "slug": "jobs",
+      "short_description": "Manage job postings and applications.",
+      "description": "Efficiently manage job postings and applications with the Jobs module of Meetlily Apps. Create job listings, track applications, and streamline the hiring process. Attract top talent and make informed hiring decisions.",
+      "category": [
+        {
+          "name": "Recruitment",
+          "id": "19000015-9e8b-4b7f-9f6f-7c7d1b6b0c4d"
+        }
+      ],
+      "tags": [
+        "Jobs",
+        "Recruitment",
+        "Job Applications"
+      ],
+      "icon_name": "jobs",
+      "module": "Jobs"
+    },
+    {
+      "name": "Inventory",
+      "slug": "inventory",
+      "short_description": "Track and manage inventory efficiently.",
+      "description": "Efficiently track and manage inventory with the Inventory module of Meetlily Apps. Monitor stock levels, track product movement, and streamline your supply chain. Optimize inventory management and reduce costs.",
+      "category": [
+        {
+          "name": "Inventory Management",
+          "id": "19000021-9e8b-4b7f-9f6f-7c7d1b6b0c4d"
+        }
+      ],
+      "tags": [
+        "Inventory",
+        "Inventory Management",
+        "Supply Chain"
+      ],
+      "icon_name": "inventory",
+      "module": "Inventory"
+    },
+    {
+      "name": "Financial",
+      "slug": "financial",
+      "short_description": "Manage financial operations and transactions.",
+      "description": "Efficiently manage financial operations and transactions with the Financial module of Meetlily Apps. Track income and expenses, generate financial reports, and streamline your accounting processes. Gain insights into your financial health and make informed decisions.",
+      "category": [
+        {
+          "name": "Financial Management",
+          "id": "19000022-9e8b-4b7f-9f6f-7c7d1b6b0c4d"
+        }
+      ],
+      "tags": [
+        "Financial",
+        "Financial Management",
+        "Accounting"
+      ],
+      "icon_name": "financial",
+      "module": "Financial"
+    },
+    {
+      "name": "Expenses",
+      "slug": "expenses",
+      "short_description": "Track and manage business expenses.",
+      "description": "Efficiently track and manage business expenses with the Expenses module of Meetlily Apps. Capture receipts, categorize expenses, and generate expense reports. Streamline your expense management process and gain control over your business spending.",
+      "category": [
+        {
+          "name": "Expense Management",
+          "id": "19000023-9e8b-4b7f-9f6f-7c7d1b6b0c4d"
+        }
+      ],
+      "tags": [
+        "Expenses",
+        "Expense Management",
+        "Receipts"
+      ],
+      "icon_name": "expenses",
+      "module": "Expenses"
+    },
+    {
+      "name": "Ticketing",
+      "slug": "ticketing",
+      "short_description": "Manage and track customer tickets.",
+      "description": "Efficiently manage and track customer tickets with the Ticketing module of Meetlily Apps. Create support tickets, assign agents, and track ticket status. Streamline your customer support process and enhance customer satisfaction.",
+      "category": [
+        {
+          "name": "Customer Support",
+          "id": "19000024-9e8b-4b7f-9f6f-7c7d1b6b0c4d"
+        }
+      ],
+      "tags": [
+        "Ticketing",
+        "Customer Support",
+        "Helpdesk"
+      ],
+      "icon_name": "ticketing",
+      "module": "Ticketing"
+    },
+    {
+      "name": "Travel",
+      "slug": "travel",
+      "short_description": "Plan and manage travel arrangements.",
+      "description": "Efficiently plan and manage travel arrangements with the Travel module of Meetlily Apps. Book flights, hotels, and rental cars, track itineraries, and manage travel expenses. Simplify your travel planning process and ensure a smooth travel experience.",
+      "category": [
+        {
+          "name": "Travel Management",
+          "id": "19000025-9e8b-4b7f-9f6f-7c7d1b6b0c4d"
+        }
+      ],
+      "tags": [
+        "Travel",
+        "Travel Management",
+        "Itinerary"
+      ],
+      "icon_name": "travel",
+      "module": "Travel"
+    },
+    {
+      "name": "Booking",
+      "slug": "booking",
+      "short_description": "Manage bookings and reservations.",
+      "description": "Efficiently manage bookings and reservations with the Booking module of Meetlily Apps. Accept online bookings, manage availability, and send booking confirmations. Streamline your booking process and improve customer satisfaction.",
+      "category": [
+        {
+          "name": "Booking Management",
+          "id": "19000026-9e8b-4b7f-9f6f-7c7d1b6b0c4d"
+        }
+      ],
+      "tags": [
+        "Booking",
+        "Booking Management",
+        "Reservations"
+      ],
+      "icon_name": "booking",
+      "module": "Booking"
+    },
+    {
+      "name": "Pages",
+      "slug": "pages",
+      "short_description": "Create and manage web pages with ease.",
+      "description": "Effortlessly create and manage web pages with the Page module of Meetlily Apps. Design visually appealing pages, add content sections, and customize layouts. Build stunning websites without coding and showcase your brand effectively.",
+      "category": [
+        {
+          "name": "Web Development",
+          "id": "19000032-9e8b-4b7f-9f6f-7c7d1b6b0c4d"
+        }
+      ],
+      "tags": [
+        "Page",
+        "Website",
+        "Web Development"
+      ],
+      "icon_name": "pages",
+      "module": "Pages"
+    },
+    {
+      "name": "Domains",
+      "slug": "domains",
+      "short_description": "Manage and track your domain names with our module.",
+      "description": "Manage and track your domain names with our module. Keep a record of your registered domains, including registration dates, expiration dates, and DNS settings. Receive reminders for upcoming renewals and easily update your domain settings. Our domains module helps you stay organized and in control of your online presence.",
+      "category": [
+        {
+          "name": "Web Development",
+          "id": "19000065-9e8b-4b7f-9f6f-7c7d1b6b0c4d"
+        }
+      ],
+      "tags": [
+        "Domains",
+        "Web Development",
+        "Online Presence"
+      ],
+      "icon_name": "domains",
+      "module": "Domains"
+    },
+    {
+      "name": "e-Learning",
+      "slug": "e-learning",
+      "short_description": "Create and deliver online courses and educational content.",
+      "description": "Create and deliver online courses and educational content with the e-Learning module of Meetlily Apps. Build interactive lessons, track learner progress, and facilitate assessments. Empower learners with a flexible and engaging online learning experience.",
+      "category": [
+        {
+          "name": "Education",
+          "id": "19000043-9e8b-4b7f-9f6f-7c7d1b6b0c4d"
+        }
+      ],
+      "tags": [
+        "e-Learning",
+        "Online Courses",
+        "Education"
+      ],
+      "icon_name": "elearning",
+      "module": "e-Learning"
+    },
+    {
+      "name": "LMS",
+      "slug": "lms",
+      "short_description": "Manage and deliver online learning programs.",
+      "description": "Manage and deliver online learning programs with the LMS (Learning Management System) module of Meetlily Apps. Organize courses, enroll learners, and track their progress. Streamline administration and enhance the learning experience for your audience.",
+      "category": [
+        {
+          "name": "Education",
+          "id": "19000043-9e8b-4b7f-9f6f-7c7d1b6b0c4d"
+        }
+      ],
+      "tags": [
+        "LMS",
+        "Learning Management System",
+        "Education"
+      ],
+      "icon_name": "lms",
+      "module": "LMS"
+    },
+    {
+      "name": "CMS",
+      "slug": "cms",
+      "short_description": "Manage and publish content on your website.",
+      "description": "Manage and publish content on your website with the CMS (Content Management System) module of Meetlily Apps. Create and edit web pages, organize media assets, and collaborate with your team. Simplify content management and maintain a dynamic online presence.",
+      "category": [
+        {
+          "name": "Web Development",
+          "id": "19000044-9e8b-4b7f-9f6f-7c7d1b6b0c4d"
+        }
+      ],
+      "tags": [
+        "CMS",
+        "Content Management System",
+        "Web Development"
+      ],
+      "icon_name": "cms",
+      "module": "CMS"
+    },
+    {
+      "name": "Hosting",
+      "slug": "hosting",
+      "short_description": "Host your website and applications with reliable infrastructure.",
+      "description": "Host your website and applications with reliable infrastructure using the Hosting module of Meetlily Apps. Benefit from scalable and secure hosting solutions, high-performance servers, and robust security measures. Ensure your online presence is always accessible and responsive.",
+      "category": [
+        {
+          "name": "Web Development",
+          "id": "19000044-9e8b-4b7f-9f6f-7c7d1b6b0c4d"
+        }
+      ],
+      "tags": [
+        "Hosting",
+        "Web Hosting",
+        "Infrastructure"
+      ],
+      "icon_name": "hosting",
+      "module": "Hosting"
+    },
+    {
+      "name": "Marketing",
+      "slug": "marketing",
+      "short_description": "Promote your products and reach your target audience.",
+      "description": "Effectively promote your products and reach your target audience with the Marketing module of Meetlily Apps. Create marketing campaigns, track performance, and analyze results. Maximize your marketing efforts and drive business growth with powerful marketing tools.",
+      "category": [
+        {
+          "name": "Digital Marketing",
+          "id": "19000033-9e8b-4b7f-9f6f-7c7d1b6b0c4d"
+        }
+      ],
+      "tags": [
+        "Marketing",
+        "Promotion",
+        "Campaigns"
+      ],
+      "icon_name": "marketing",
+      "module": "Marketing"
+    },
+    {
+      "name": "Campaign",
+      "slug": "email-campaign",
+      "short_description": "Create and manage email marketing campaigns.",
+      "description": "Effortlessly create and manage email marketing campaigns with the Email Campaign module of Meetlily Apps. Design engaging emails, segment your audience, and track campaign performance. Boost customer engagement and drive conversions with targeted email campaigns.",
+      "category": [
+        {
+          "name": "Email Marketing",
+          "id": "19000034-9e8b-4b7f-9f6f-7c7d1b6b0c4d"
+        }
+      ],
+      "tags": [
+        "Email Campaign",
+        "Email Marketing",
+        "Automation"
+      ],
+      "icon_name": "campaign",
+      "module": "Email Campaign"
+    },
+    {
+      "name": "Surveys",
+      "slug": "surveys",
+      "short_description": "Collect feedback and insights with online surveys.",
+      "description": "Effortlessly collect feedback and insights with online surveys using the Surveys module of Meetlily Apps. Create customizable surveys, distribute them to your target audience, and analyze responses. Gather valuable data and make informed decisions with user-friendly online surveys.",
+      "category": [
+        {
+          "name": "Market Research",
+          "id": "19000035-9e8b-4b7f-9f6f-7c7d1b6b0c4d"
+        }
+      ],
+      "tags": [
+        "Surveys",
+        "Feedback",
+        "Market Research"
+      ],
+      "icon_name": "surveys",
+      "module": "Surveys"
+    },
+    {
+      "name": "Advertising",
+      "slug": "advertising",
+      "short_description": "Manage online advertising campaigns and budgets.",
+      "description": "Effortlessly manage online advertising campaigns and budgets with the Advertising module of Meetlily Apps. Create ad campaigns, target specific audiences, and track ad performance. Optimize your advertising efforts and maximize your return on investment with powerful advertising tools.",
+      "category": [
+        {
+          "name": "Digital Advertising",
+          "id": "19000036-9e8b-4b7f-9f6f-7c7d1b6b0c4d"
+        }
+      ],
+      "tags": [
+        "Advertising",
+        "Campaigns",
+        "Digital Marketing"
+      ],
+      "icon_name": "advertising",
+      "module": "Advertising"
+    },
+    {
+      "name": "Currency",
+      "slug": "currency",
+      "short_description": "Convert and manage currencies with ease.",
+      "description": "Effortlessly convert and manage currencies with the Currency module of Meetlily Apps. Access real-time exchange rates, perform currency conversions, and track historical data. Simplify international transactions and stay up-to-date with global currency markets.",
+      "category": [
+        {
+          "name": "Finance",
+          "id": "19000037-9e8b-4b7f-9f6f-7c7d1b6b0c4d"
+        }
+      ],
+      "tags": [
+        "Currency",
+        "Exchange Rates",
+        "Finance"
+      ],
+      "icon_name": "currency",
+      "module": "Currency"
+    },
+    {
+      "name": "Crypto",
+      "slug": "crypto",
+      "short_description": "Manage and trade cryptocurrencies securely.",
+      "description": "Securely manage and trade cryptocurrencies with the Crypto module of Meetlily Apps. Monitor crypto prices, track your portfolio, and execute trades on popular exchanges. Stay informed about the crypto market and make informed investment decisions.",
+      "category": [
+        {
+          "name": "Cryptocurrency",
+          "id": "19000038-9e8b-4b7f-9f6f-7c7d1b6b0c4d"
+        }
+      ],
+      "tags": [
+        "Crypto",
+        "Cryptocurrency",
+        "Trading"
+      ],
+      "icon_name": "crypto",
+      "module": "Crypto"
+    },
+    {
+      "name": "Blockchain",
+      "slug": "blockchain",
+      "short_description": "Explore the power of blockchain technology.",
+      "description": "Explore the power of blockchain technology with the Blockchain module of Meetlily Apps. Learn about decentralized systems, smart contracts, and distributed ledgers. Discover innovative use cases and unlock the potential of blockchain for various industries.",
+      "category": [
+        {
+          "name": "Blockchain",
+          "id": "19000039-9e8b-4b7f-9f6f-7c7d1b6b0c4d"
+        }
+      ],
+      "tags": [
+        "Blockchain",
+        "Decentralization",
+        "Smart Contracts"
+      ],
+      "icon_name": "blockchain",
+      "module": "Blockchain"
+    },
+    {
+      "name": "NFT's",
+      "slug": "nfts",
+      "short_description": "Create, buy, and sell non-fungible tokens.",
+      "description": "Create, buy, and sell non-fungible tokens (NFTs) with the NFT's module of Meetlily Apps. Showcase your digital art, collectibles, and virtual assets on blockchain platforms. Explore the world of NFTs and participate in the growing digital collectibles market.",
+      "category": [
+        {
+          "name": "Digital Assets",
+          "id": "19000040-9e8b-4b7f-9f6f-7c7d1b6b0c4d"
+        }
+      ],
+      "tags": [
+        "NFTs",
+        "Digital Art",
+        "Collectibles"
+      ],
+      "icon_name": "nfts",
+      "module": "NFT's"
+    },
+    {
+      "name": "Rentals",
+      "slug": "rentals",
+      "short_description": "Find and rent properties, vehicles, and equipment.",
+      "description": "Find and rent properties, vehicles, and equipment with the Rentals module of Meetlily Apps. Discover a wide range of rental options, view availability, and make reservations. Simplify the process of finding and securing rentals for your needs.",
+      "category": [
+        {
+          "name": "Real Estate",
+          "id": "19000045-9e8b-4b7f-9f6f-7c7d1b6b0c4d"
+        }
+      ],
+      "tags": [
+        "Rentals",
+        "Property Rentals",
+        "Vehicle Rentals",
+        "Equipment Rentals"
+      ],
+      "icon_name": "rentals",
+      "module": "Rentals"
+    },
+    {
+      "name": "Dating",
+      "slug": "dating",
+      "short_description": "Connect with like-minded individuals and build meaningful relationships.",
+      "description": "Connect with like-minded individuals and build meaningful relationships with the Dating module of Meetlily Apps. Discover potential matches, engage in conversations, and plan exciting dates. Foster connections and create lasting memories with our dating platform.",
+      "category": [
+        {
+          "name": "Social",
+          "id": "19000046-9e8b-4b7f-9f6f-7c7d1b6b0c4d"
+        }
+      ],
+      "tags": [
+        "Dating",
+        "Relationships",
+        "Social"
+      ],
+      "icon_name": "dating",
+      "module": "Dating"
+    },
+    {
+      "name": "Moving",
+      "slug": "moving",
+      "short_description": "Plan and manage your move with ease.",
+      "description": "Plan and manage your move with ease using the Moving module of Meetlily Apps. Organize tasks, create checklists, and track progress. Access resources and tips to ensure a smooth and successful relocation.",
+      "category": [
+        {
+          "name": "Lifestyle",
+          "id": "19000047-9e8b-4b7f-9f6f-7c7d1b6b0c4d"
+        }
+      ],
+      "tags": [
+        "Moving",
+        "Relocation",
+        "Lifestyle"
+      ],
+      "icon_name": "moving",
+      "module": "Moving"
+    },
+    {
+      "name": "Blogs",
+      "slug": "blogs",
+      "short_description": "Create and publish engaging blog posts.",
+      "description": "Create and publish engaging blog posts with the Blogs module of Meetlily Apps. Write and format articles, add images and videos, and manage comments. Share your thoughts, insights, and stories with the world through your own blog.",
+      "category": [
+        {
+          "name": "Content Creation",
+          "id": "19000048-9e8b-4b7f-9f6f-7c7d1b6b0c4d"
+        }
+      ],
+      "tags": [
+        "Blogs",
+        "Content Creation",
+        "Writing"
+      ],
+      "icon_name": "blogs",
+      "module": "Blogs"
+    },
+    {
+      "name": "Repair",
+      "slug": "repair",
+      "short_description": "Find repair services for various products and equipment.",
+      "description": "Find repair services for various products and equipment with the Repair module of Meetlily Apps. Locate trusted repair professionals, request quotes, and schedule appointments. Get your items repaired quickly and efficiently.",
+      "category": [
+        {
+          "name": "Services",
+          "id": "19000049-9e8b-4b7f-9f6f-7c7d1b6b0c4d"
+        }
+      ],
+      "tags": [
+        "Repair",
+        "Maintenance",
+        "Services"
+      ],
+      "icon_name": "repair",
+      "module": "Repair"
+    },
+    {
+      "name": "Todolist",
+      "slug": "todolist",
+      "short_description": "Organize and manage your tasks and to-do lists.",
+      "description": "Organize and manage your tasks and to-do lists with the Todolist module of Meetlily Apps. Create tasks, set due dates, and track progress. Prioritize your work and stay productive with our intuitive task management system.",
+      "category": [
+        {
+          "name": "Productivity",
+          "id": "19000050-9e8b-4b7f-9f6f-7c7d1b6b0c4d"
+        }
+      ],
+      "tags": [
+        "Todolist",
+        "Task Management",
+        "Productivity"
+      ],
+      "icon_name": "todo",
+      "module": "Todolist"
+    },
+    {
+      "name": "Notes",
+      "slug": "notes",
+      "short_description": "Capture and organize your thoughts and ideas.",
+      "description": "Capture and organize your thoughts and ideas with the Notes module of Meetlily Apps. Create notes, add tags, and categorize your content. Keep your information structured and easily accessible for future reference.",
+      "category": [
+        {
+          "name": "Productivity",
+          "id": "19000050-9e8b-4b7f-9f6f-7c7d1b6b0c4d"
+        }
+      ],
+      "tags": [
+        "Notes",
+        "Note-taking",
+        "Productivity"
+      ],
+      "icon_name": "notes",
+      "module": "Notes"
+    },
+    {
+      "name": "Sign",
+      "slug": "sign",
+      "short_description": "Create and manage digital signatures.",
+      "description": "Create and manage digital signatures with the Sign module of Meetlily Apps. Sign documents electronically, securely store signatures, and streamline your signing process. Simplify paperwork and save time with our digital signature solution.",
+      "category": [
+        {
+          "name": "Business",
+          "id": "19000051-9e8b-4b7f-9f6f-7c7d1b6b0c4d"
+        }
+      ],
+      "tags": [
+        "Sign",
+        "Digital Signatures",
+        "Business"
+      ],
+      "icon_name": "sign",
+      "module": "Sign"
+    },
+    {
+      "name": "Board",
+      "slug": "board",
+      "short_description": "Collaborate and share ideas on a virtual board.",
+      "description": "Collaborate and share ideas on a virtual board with the Board module of Meetlily Apps. Create boards, add sticky notes, and collaborate with team members in real-time. Visualize your ideas and enhance teamwork with our virtual board solution.",
+      "category": [
+        {
+          "name": "Collaboration",
+          "id": "19000052-9e8b-4b7f-9f6f-7c7d1b6b0c4d"
+        }
+      ],
+      "tags": [
+        "Board",
+        "Collaboration",
+        "Teamwork"
+      ],
+      "icon_name": "board",
+      "module": "Board"
+    },
+    {
+      "name": "Vehicle",
+      "slug": "vehicle",
+      "short_description": "Manage and track your vehicle information with our module.",
+      "description": "Manage and track your vehicle information with our module. Keep a record of your vehicles, including make, model, year, and maintenance history. Stay on top of maintenance schedules, track fuel consumption, and receive reminders for service appointments. Our vehicle module helps you keep your vehicles in optimal condition.",
+      "category": [
+        {
+          "name": "Automotive",
+          "id": "19000061-9e8b-4b7f-9f6f-7c7d1b6b0c4d"
+        }
+      ],
+      "tags": [
+        "Vehicle",
+        "Automotive",
+        "Maintenance"
+      ],
+      "icon_name": "vehicle",
+      "module": "Vehicle"
+    },
+    {
+      "name": "Maintenance",
+      "slug": "maintenance",
+      "short_description": "Track and schedule maintenance tasks with our module.",
+      "description": "Track and schedule maintenance tasks with our module. Create maintenance schedules, set reminders, and keep a log of completed tasks. Whether it's for your vehicle, home, or other equipment, our maintenance module helps you stay organized and ensures that important maintenance activities are performed on time.",
+      "category": [
+        {
+          "name": "Productivity",
+          "id": "19000060-9e8b-4b7f-9f6f-7c7d1b6b0c4d"
+        }
+      ],
+      "tags": [
+        "Maintenance",
+        "Tasks",
+        "Productivity"
+      ],
+      "icon_name": "maintenance",
+      "module": "Maintenance"
+    },
+    {
+      "name": "Groceries",
+      "slug": "groceries",
+      "short_description": "Manage your grocery shopping with our module.",
+      "description": "Manage your grocery shopping with our module. Create shopping lists, track items, and set reminders for upcoming purchases. Organize your grocery items by categories, add notes, and easily check off items as you shop. Our groceries module helps you stay organized and streamline your shopping experience.",
+      "category": [
+        {
+          "name": "Lifestyle",
+          "id": "19000062-9e8b-4b7f-9f6f-7c7d1b6b0c4d"
+        }
+      ],
+      "tags": [
+        "Groceries",
+        "Shopping",
+        "Lifestyle"
+      ],
+      "icon_name": "groceries",
+      "module": "Groceries"
+    },
+    {
+      "name": "Budget",
+      "slug": "budget",
+      "short_description": "Track and manage your finances with our budgeting module.",
+      "description": "Track and manage your finances with our budgeting module. Set budget goals, categorize expenses, and monitor your spending habits. Get insights into your financial health with visualizations and reports. Our budget module helps you make informed financial decisions and achieve your financial goals.",
+      "category": [
+        {
+          "name": "Finance",
+          "id": "19000063-9e8b-4b7f-9f6f-7c7d1b6b0c4d"
+        }
+      ],
+      "tags": [
+        "Budget",
+        "Finance",
+        "Personal Finance"
+      ],
+      "icon_name": "budget",
+      "module": "Budget"
+    },
+    {
+      "name": "Listings",
+      "slug": "listings",
+      "short_description": "Create and manage listings with our module.",
+      "description": "Create and manage listings with our module. Whether you're selling products, renting properties, or offering services, our listings module provides a platform to showcase your offerings. Customize your listings with images, descriptions, and pricing details. Reach a wider audience and manage inquiries efficiently with our listings module.",
+      "category": [
+        {
+          "name": "Business",
+          "id": "19000064-9e8b-4b7f-9f6f-7c7d1b6b0c4d"
+        }
+      ],
+      "tags": [
+        "Listings",
+        "E-commerce",
+        "Business"
+      ],
+      "icon_name": "listings",
+      "module": "Listings"
+    },
+    {
+      "name": "Companies",
+      "slug": "companies",
+      "short_description": "Manage and organize companies or organizations.",
+      "description": "The Companies module provides tools and functionality for managing and organizing companies or organizations within an application. It includes features such as creating, editing, and deleting companies, managing company profiles, and associating users with companies. Whether you're building a business directory, a CRM system, or an enterprise platform, the Companies module simplifies the process of managing company-related data and relationships.",
+      "category": [
+        {
+          "name": "Business Management",
+          "id": "b1u2s3i4n5e6s7s8m9a0n1a2g3e4m5e6n7t8"
+        }
+      ],
+      "tags": [
+        "Companies",
+        "Business Management",
+        "Company Profiles",
+        "User Associations"
+      ],
+      "icon_name": "company",
+      "module": "Companies"
+    }
+  ],
+  "tools": [
+    {
+      "name": "Dashboard",
+      "slug": "dashboard",
+      "short_description": "Get an overview of your app's key metrics and data.",
+      "description": "Get an overview of your app's key metrics and data with the Dashboard module of Meetlily Apps. Visualize data through charts, graphs, and customizable widgets. Monitor performance, track user engagement, and make data-driven decisions to optimize your app.",
+      "category": [
+        {
+          "name": "Analytics",
+          "id": "19000053-9e8b-4b7f-9f6f-7c7d1b6b0c4d"
+        }
+      ],
+      "tags": [
+        "Dashboard",
+        "Analytics",
+        "Metrics"
+      ],
+      "icon_name": "dashboard",
+      "module": "Dashboard"
+    },
+    {
+      "name": "Music",
+      "slug": "music",
+      "short_description": "Discover and listen to your favorite music.",
+      "description": "Discover and listen to your favorite music with the Music module of Meetlily Apps. Explore a vast library of songs, create playlists, and enjoy personalized recommendations. Enhance your music experience and enjoy seamless streaming on any device.",
+      "category": [
+        {
+          "name": "Entertainment",
+          "id": "19000054-9e8b-4b7f-9f6f-7c7d1b6b0c4d"
+        }
+      ],
+      "tags": [
+        "Music",
+        "Streaming",
+        "Entertainment"
+      ],
+      "icon_name": "music",
+      "module": "Music"
+    },
+    {
+      "name": "Movies",
+      "slug": "movies",
+      "short_description": "Discover and watch your favorite movies and TV shows.",
+      "description": "Discover and watch your favorite movies and TV shows with the Movies module of Meetlily Apps. Browse a vast collection of films, explore genres, and enjoy personalized recommendations. Immerse yourself in the world of entertainment and enjoy seamless streaming on any device.",
+      "category": [
+        {
+          "name": "Entertainment",
+          "id": "19000054-9e8b-4b7f-9f6f-7c7d1b6b0c4d"
+        }
+      ],
+      "tags": [
+        "Movies",
+        "TV Shows",
+        "Streaming",
+        "Entertainment"
+      ],
+      "icon_name": "movies",
+      "module": "Movies"
+    },
+    {
+      "name": "Documents",
+      "slug": "documents",
+      "short_description": "Create, edit, and manage your documents online.",
+      "description": "Create, edit, and manage your documents online with the Documents module of Meetlily Apps. Write reports, collaborate with team members, and store files securely in the cloud. Access your documents from anywhere and streamline your document workflow.",
+      "category": [
+        {
+          "name": "Productivity",
+          "id": "19000050-9e8b-4b7f-9f6f-7c7d1b6b0c4d"
+        }
+      ],
+      "tags": [
+        "Documents",
+        "Collaboration",
+        "Productivity"
+      ],
+      "icon_name": "documents",
+      "module": "Documents"
+    },
+    {
+      "name": "Support",
+      "slug": "support",
+      "short_description": "Get assistance and resolve issues with our support module.",
+      "description": "Get assistance and resolve issues with our support module. Submit support tickets, access knowledge base articles, and communicate with our support team. We're here to help you with any questions or problems you may have.",
+      "category": [
+        {
+          "name": "Customer Support",
+          "id": "19000055-9e8b-4b7f-9f6f-7c7d1b6b0c4d"
+        }
+      ],
+      "tags": [
+        "Support",
+        "Customer Service",
+        "Helpdesk"
+      ],
+      "icon_name": "support",
+      "module": "Support"
+    },
+    {
+      "name": "Email",
+      "slug": "email",
+      "short_description": "Manage your email communication with our email module.",
+      "description": "Manage your email communication with our email module. Send, receive, and organize your emails in one place. Stay connected and stay organized with our intuitive email management solution.",
+      "category": [
+        {
+          "name": "Communication",
+          "id": "19000056-9e8b-4b7f-9f6f-7c7d1b6b0c4d"
+        }
+      ],
+      "tags": [
+        "Email",
+        "Communication",
+        "Inbox"
+      ],
+      "icon_name": "email",
+      "module": "Email"
+    },
+    {
+      "name": "Gallery",
+      "slug": "gallery",
+      "short_description": "Showcase and share your photos with our gallery module.",
+      "description": "Showcase and share your photos with our gallery module. Create albums, organize your images, and customize the display. Share your memories with friends, family, or clients with our elegant gallery solution.",
+      "category": [
+        {
+          "name": "Media",
+          "id": "19000057-9e8b-4b7f-9f6f-7c7d1b6b0c4d"
+        }
+      ],
+      "tags": [
+        "Gallery",
+        "Photos",
+        "Images"
+      ],
+      "icon_name": "gallery",
+      "module": "Gallery"
+    },
+    {
+      "name": "Fonts",
+      "slug": "fonts",
+      "short_description": "Access a wide range of fonts for your design projects.",
+      "description": "Access a wide range of fonts for your design projects with our fonts module. Browse and preview fonts, and easily integrate them into your designs. Enhance your creativity and make your designs stand out with our extensive font collection.",
+      "category": [
+        {
+          "name": "Design",
+          "id": "19000058-9e8b-4b7f-9f6f-7c7d1b6b0c4d"
+        }
+      ],
+      "tags": [
+        "Fonts",
+        "Typography",
+        "Design"
+      ],
+      "icon_name": "fonts",
+      "module": "Fonts"
+    },
+    {
+      "name": "API",
+      "slug": "api",
+      "short_description": "Integrate and consume APIs with our module.",
+      "description": "Integrate and consume APIs with our module. Easily connect to external APIs, retrieve data, and perform actions. Our API module provides a streamlined interface for handling API requests, authentication, and response parsing. Whether you're building a web application, mobile app, or backend system, our API module simplifies the process of working with APIs.",
+      "category": [
+        {
+          "name": "Web Development",
+          "id": "19000065-9e8b-4b7f-9f6f-7c7d1b6b0c4d"
+        }
+      ],
+      "tags": [
+        "API",
+        "Web Development",
+        "Integration"
+      ],
+      "icon_name": "api",
+      "module": "API"
+    },
+    {
+      "name": "Templates",
+      "slug": "app-templates",
+      "short_description": "Kickstart your app development with pre-designed templates.",
+      "description": "Kickstart your app development with pre-designed templates. Choose from a variety of app templates for different industries and use cases. Save time and effort by starting with a solid foundation and customize it to fit your specific needs.",
+      "category": [
+        {
+          "name": "Development",
+          "id": "19000059-9e8b-4b7f-9f6f-7c7d1b6b0c4d"
+        }
+      ],
+      "tags": [
+        "Templates",
+        "Mobile Apps",
+        "Development"
+      ],
+      "icon_name": "templates",
+      "module": "App Templates"
+    },
+    {
+      "name": "Design",
+      "slug": "web-templates",
+      "short_description": "Build stunning websites with pre-designed templates.",
+      "description": "Build stunning websites with pre-designed templates. Choose from a wide range of web templates for different industries and purposes. Get a head start on your web development projects and create professional-looking websites with ease.",
+      "category": [
+        {
+          "name": "Development",
+          "id": "19000059-9e8b-4b7f-9f6f-7c7d1b6b0c4d"
+        }
+      ],
+      "tags": [
+        "Web Templates",
+        "Website Design",
+        "Development"
+      ],
+      "icon_name": "webDesign",
+      "module": "Web Templates"
+    },
+    {
+      "name": "Builder",
+      "slug": "page-builder",
+      "short_description": "Create custom web pages without coding using our intuitive page builder.",
+      "description": "Create custom web pages without coding using our intuitive page builder. Drag and drop elements, customize layouts, and design beautiful web pages with ease. Build responsive and interactive pages that engage your audience and showcase your content effectively.",
+      "category": [
+        {
+          "name": "Development",
+          "id": "19000059-9e8b-4b7f-9f6f-7c7d1b6b0c4d"
+        }
+      ],
+      "tags": [
+        "Page Builder",
+        "Web Design",
+        "Development"
+      ],
+      "icon_name": "pageBuilder",
+      "module": "Page Builder"
+    },
+    {
+      "name": "Draw",
+      "slug": "draw",
+      "short_description": "Unleash your creativity with our drawing module.",
+      "description": "Unleash your creativity with our drawing module. Use a variety of brushes, colors, and tools to create stunning digital artwork. Whether you're a professional artist or just starting out, our drawing module provides a powerful and intuitive platform for expressing your artistic vision.",
+      "category": [
+        {
+          "name": "Design",
+          "id": "19000058-9e8b-4b7f-9f6f-7c7d1b6b0c4d"
+        }
+      ],
+      "tags": [
+        "Drawing",
+        "Art",
+        "Design"
+      ],
+      "icon_name": "draw",
+      "module": "Draw"
+    },
+    {
+      "name": "Icons",
+      "slug": "icons",
+      "short_description": "Enhance your designs with a vast collection of icons.",
+      "description": "Enhance your designs with a vast collection of icons. Browse through thousands of high-quality icons in various styles and categories. Easily integrate icons into your projects to add visual appeal and convey meaning. Our icons module provides a comprehensive library to meet your design needs.",
+      "category": [
+        {
+          "name": "Design",
+          "id": "19000058-9e8b-4b7f-9f6f-7c7d1b6b0c4d"
+        }
+      ],
+      "tags": [
+        "Icons",
+        "Design",
+        "Graphics"
+      ],
+      "icon_name": "icons",
+      "module": "Icons"
+    },
+    {
+      "name": "AI Assistant",
+      "slug": "ai-assistant",
+      "short_description": "Get assistance and automate tasks with our AI-powered assistant.",
+      "description": "Get assistance and automate tasks with our AI-powered assistant. Interact with our intelligent virtual assistant to get answers to your questions, perform actions, and streamline your workflow. Our AI assistant module leverages the power of artificial intelligence to enhance your productivity and provide personalized support.",
+      "category": [
+        {
+          "name": "Productivity",
+          "id": "19000060-9e8b-4b7f-9f6f-7c7d1b6b0c4d"
+        }
+      ],
+      "tags": [
+        "AI Assistant",
+        "Virtual Assistant",
+        "Productivity"
+      ],
+      "icon_name": "aiAssistant",
+      "module": "AI Assistant"
+    },
+    {
+      "name": "Coding",
+      "slug": "coding",
+      "short_description": "Write, edit, and debug code with our coding module.",
+      "description": "Write, edit, and debug code with our coding module. Benefit from syntax highlighting, code completion, and debugging tools to streamline your development process. Whether you're a beginner or an experienced programmer, our coding module provides a powerful environment to write clean and efficient code.",
+      "category": [
+        {
+          "name": "Development",
+          "id": "19000059-9e8b-4b7f-9f6f-7c7d1b6b0c4d"
+        }
+      ],
+      "tags": [
+        "Coding",
+        "Programming",
+        "Development"
+      ],
+      "icon_name": "coding",
+      "module": "Coding"
+    },
+    {
+      "name": "Diagrams",
+      "slug": "diagrams",
+      "short_description": "Create and visualize diagrams and flowcharts.",
+      "description": "Effortlessly create and visualize diagrams and flowcharts with the Diagrams module of Meetlily Apps. Drag and drop shapes, connect elements, and customize styles. Simplify complex concepts and communicate ideas effectively with professional diagrams.",
+      "category": [
+        {
+          "name": "Productivity",
+          "id": "19000030-9e8b-4b7f-9f6f-7c7d1b6b0c4d"
+        }
+      ],
+      "tags": [
+        "Diagrams",
+        "Flowcharts",
+        "Visualization"
+      ],
+      "icon_name": "diagrams",
+      "module": "Diagrams"
+    },
+    {
+      "name": "Forms",
+      "slug": "forms",
+      "short_description": "Create and manage online forms and surveys.",
+      "description": "Effortlessly create and manage online forms and surveys with the Forms module of Meetlily Apps. Customize form fields, collect responses, and analyze results. Streamline data collection and gather valuable insights with user-friendly online forms.",
+      "category": [
+        {
+          "name": "Data Collection",
+          "id": "19000031-9e8b-4b7f-9f6f-7c7d1b6b0c4d"
+        }
+      ],
+      "tags": [
+        "Forms",
+        "Surveys",
+        "Data Collection"
+      ],
+      "icon_name": "forms",
+      "module": "Forms"
+    },
+    {
+      "name": "Notifications",
+      "slug": "notifications",
+      "short_description": "Send notifications to users through various channels.",
+      "description": "The Notifications module provides tools and functionality for sending notifications to users through various channels such as email, SMS, push notifications, and in-app messages. It includes features such as message templates, targeting and segmentation, delivery scheduling, and analytics. Whether you need to send transactional notifications, marketing campaigns, or real-time updates, the Notifications module simplifies the process of engaging and communicating with your users.",
+      "category": [
+        {
+          "name": "User Engagement",
+          "id": "e1n2g3a4g5e6m7e8n9t0"
+        }
+      ],
+      "tags": [
+        "Notifications",
+        "User Engagement",
+        "Email",
+        "SMS",
+        "Push Notifications",
+        "In-App Messages"
+      ],
+      "icon_name": "notification",
+      "module": "Notifications"
+    }
+  ]
+}

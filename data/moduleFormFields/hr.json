@@ -1,0 +1,93 @@
+{
+    "HRForm": {
+        "PersonalInformation": {
+            "FirstName": "",
+            "LastName": "",
+            "MiddleName": "",
+            "DateOfBirth": "",
+            "Gender": "",
+            "Nationality": "",
+            "MaritalStatus": ""
+        },
+        "ContactInformation": {
+            "Email": "",
+            "PhoneNumber": "",
+            "Address": {
+                "Street": "",
+                "City": "",
+                "State": "",
+                "ZipCode": "",
+                "Country": ""
+            }
+        },
+        "EmergencyContact": {
+            "Name": "",
+            "Relationship": "",
+            "PhoneNumber": "",
+            "Email": ""
+        },
+        "JobInformation": {
+            "Position": "",
+            "Department": "",
+            "Manager": "",
+            "DateOfHire": "",
+            "EmploymentStatus": "", 
+            "EmploymentType": "" 
+        },
+        "PayrollInformation": {
+            "BankName": "",
+            "BankAccountNumber": "",
+            "PayFrequency": "", 
+            "Salary": ""
+        },
+        "Benefits": {
+            "HealthInsurance": "",
+            "RetirementPlan": "",
+            "StockOptions": ""
+        },
+        "EducationAndSkills": {
+            "HighestEducationLevel": "",
+            "Skills": "",
+            "Certifications": ""
+        },
+        "PreviousEmployment": {
+            "CompanyName": "",
+            "Position": "",
+            "DatesOfEmployment": "",
+            "ReasonForLeaving": ""
+        },
+        "References": {
+            "Name": "",
+            "Relationship": "",
+            "Company": "",
+            "ContactInformation": ""
+        },
+        "PerformanceReviews": {
+            "ReviewDate": "",
+            "Reviewer": "",
+            "PerformanceRating": "",
+            "Comments": ""
+        },
+        "DisciplinaryActions": {
+            "ActionDate": "",
+            "ActionTaken": "",
+            "Reason": "",
+            "Outcome": ""
+        },
+        "TrainingAndDevelopment": {
+            "TrainingProgram": "",
+            "CompletionDate": "",
+            "SkillsAcquired": ""
+        },
+        "WorkEligibility": {
+            "EligibleToWorkInCountry": "",
+            "WorkPermitDetails": "",
+            "VisaStatus": ""
+        },
+        "DiversityAndInclusion": {
+            "Ethnicity": "",
+            "DisabilityStatus": "",
+            "VeteranStatus": ""
+        }
+    }
+}

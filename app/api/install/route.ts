@@ -59,14 +59,14 @@ export async function GET(
                 "userId": ""
             }
         ];
-        const roles = await prisma.role.createMany({ data: userRoles });
+       
         let defaultUser = {
             "name": "Eddie Villanueva",
             "email": "edvillan15@gmail.com",
             "hashedPassword": hashedPassword
         };
-        if(roles){
-            const findAdminRole = await prisma.role.findMany({ where:{name: "Administrator"} });
+        
+            
 
             //const application = await prisma.applications.createMany({data: merge});
             const category = await prisma.category.createMany({ data: cat });
@@ -78,7 +78,7 @@ export async function GET(
                 user: user
             }
             return NextResponse.json(data);
-        }
+        
     } catch (error) {
         const errorMessage = "An error occurred while fetching listings";
         return new NextResponse(errorMessage, { status: 500 });

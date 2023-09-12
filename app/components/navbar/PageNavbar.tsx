@@ -22,7 +22,7 @@ interface ContentData {
     active: boolean;
 }
 interface PageNavbarProps {
-    currentUser?: SafeUser | null,
+    currentUser?: any,
     session?: Session
 }
 const PageNavbar: React.FC<PageNavbarProps> = ({

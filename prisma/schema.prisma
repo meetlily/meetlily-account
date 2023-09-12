@@ -8,178 +8,200 @@ datasource db {
 }
 
 model Applications {
-  id           String    @id @default(uuid()) @map("_id") @db.VarChar(36)
+  id           String         @id @default(uuid()) @map("_id") @db.VarChar(36)
   name         String
   description  String?
-  createdAt    DateTime  @default(now())
-  enabled      Boolean?  @default(false)
-  global       Boolean?  @default(true)
-  private      Boolean?  @default(false)
+  createdAt    DateTime       @default(now())
+  enabled      Boolean?       @default(false)
+  global       Boolean?       @default(true)
+  private      Boolean?       @default(false)
   icon_name    String?
   icon         String?
-  slug         String?
+  slug         String         @unique
   externalLink String?
-  UserApp      UserApp[]
+  User         User[]
+  Organization Organization[]
 }
 
-model BasicInformation {
-  id         String  @id @default(uuid()) @map("_id") @db.VarChar(36)
-  firstName  String
-  middleName String?
-  lastName   String
-  gender     String
-  age        Int
-  location   String
-  height     String
-  body_type  String
-  ethnicity  String
-  occupation String
-  userId     String
-  user       User    @relation(fields: [userId], references: [id], onDelete: Cascade)
+model Module {
+  id           String         @id @default(uuid()) @map("_id") @db.VarChar(36)
+  name         String
+  slug         String
+  createdAt    DateTime       @default(now())
+  enabled      Boolean?       @default(false)
+  installed    Boolean?       @default(false)
+  global       Boolean?       @default(true)
+  private      Boolean?       @default(false)
+  icon_name    String?
+  externalLink String?
+  User         User[]
+  Organization Organization[]
+}
+
+model Newsletter {
+  id        String   @id @default(uuid()) @map("_id") @db.VarChar(36)
+  email     String   @unique
+  createdAt DateTime @default(now())
+}
+
+model Contact {
+  id        String   @id @default(uuid()) @map("_id") @db.VarChar(36)
+  email     String
+  subject   String
+  message   String
+  createdAt DateTime @default(now())
 }
 
 model Category {
-  id          String   @id @default(uuid()) @map("_id") @db.VarChar(36)
-  name        String
-  slug        String?
-  icon        String?
-  description String?
-  createdAt   DateTime @default(now())
-}
-
-model ContactInformation {
-  id            String      @id @default(uuid()) @map("_id") @db.VarChar(36)
-  email         String?
-  phone         String?
-  address1      String?
-  address2      String?
-  city          String?
-  state         String?
-  postalCode    Int?
-  type          String?
-  userProfileId String
-  UserProfile   UserProfile @relation(fields: [userProfileId], references: [id])
-}
-
-model EducationInformation {
-  id            String      @id @default(uuid()) @map("_id") @db.VarChar(36)
-  name          String
-  type          String
-  userProfileId String
-  UserProfile   UserProfile @relation(fields: [userProfileId], references: [id], onDelete: Cascade)
+  id           String         @id @default(uuid()) @map("_id") @db.VarChar(36)
+  name         String
+  slug         String         @unique
+  createdAt    DateTime       @default(now())
+  icon         String?
+  description  String?
+  createId     String?
+  Organization Organization[]
 }
 
 model Note {
   id        String   @id @default(uuid()) @map("_id") @db.VarChar(36)
   title     String
   body      String
+  slug      String   @unique
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
   userId    String
-  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  User      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
 }
 
 model Page {
-  id        String   @id @default(uuid()) @map("_id") @db.VarChar(36)
-  title     String
-  content   String
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
-  userId    String
-  type      String
-  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  id             String   @id @default(uuid()) @map("_id") @db.VarChar(36)
+  title          String
+  content        String
+  slug           String   @unique
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+  userId         String
+  type           String
+  user           User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  global         Boolean? @default(true)
+  organizationId String?
 }
 
 model Post {
+  id             String   @id @default(uuid()) @map("_id") @db.VarChar(36)
+  title          String
+  slug           String   @unique
+  content        String
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+  viewCount      Int
+  userId         String
+  user           User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  global         Boolean? @default(true)
+  organizationId String?
+}
+
+model Configuration {
+  id             String       @id @default(uuid()) @map("_id") @db.VarChar(36)
+  name           String
+  createdAt      DateTime     @default(now())
+  data           Json?
+  global         Boolean?     @default(true)
+  createdId      String?
+  organizationId String
+  organization   Organization @relation(fields: [organizationId], references: [id], onDelete: Cascade)
+}
+
+model Variable {
   id        String   @id @default(uuid()) @map("_id") @db.VarChar(36)
-  title     String
-  content   String
+  name      String
+  code      Int      @unique
   createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
-  viewCount Int
-  tweetId   Int
-  userId    String
-  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
-}
-
-model Project {
-  id          String   @id @default(uuid()) @map("_id") @db.VarChar(36)
-  name        String
-  description String
-  createdAt   DateTime @default(now())
-  updatedAt   DateTime
-  userId      String
-  type        String
-  user        User     @relation(fields: [userId], references: [id], onDelete: Cascade)
-}
-
-model Role {
-  id          String  @id @default(uuid()) @map("_id") @db.VarChar(36)
-  name        String
-  description String?
+  global    Boolean? @default(true)
+  type      String?
+  message   String?
+  createdId String?
 }
 
 model Tags {
-  id        String   @id @default(uuid()) @map("_id") @db.VarChar(36)
-  name      String
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
+  id             String   @id @default(uuid()) @map("_id") @db.VarChar(36)
+  name           String
+  slug           String   @unique
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+  organizationId String?
 }
 
 model Organization {
-  id          String    @id @default(uuid()) @map("_id") @db.VarChar(36)
-  name        String
-  description String?
-  createdAt   DateTime  @default(now())
-  updatedAt   DateTime? @updatedAt
-  userId      String
-  user        User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  id            String          @id @default(uuid()) @map("_id") @db.VarChar(36)
+  name          String
+  slug          String?         @unique
+  description   String?
+  createdAt     DateTime        @default(now())
+  updatedAt     DateTime?       @updatedAt
+  Module        Module[]
+  Configuration Configuration[]
+  Category      Category[]
+  Role          Role[]
+  User          User[]
+  Notification  Notification[]
+  Applications  Applications[]
 }
 
 model User {
-  id               String             @id @default(uuid()) @map("_id") @db.VarChar(36)
-  name             String?
-  email            String?            @unique
-  emailVerified    DateTime?
-  createdAt        DateTime           @default(now())
-  updatedAt        DateTime           @updatedAt
-  avatar           String?
-  image            String?
-  hashedPassword   String?
-  favoriteIds      String[]
-  BasicInformation BasicInformation[]
-  Note             Note[]
-  Page             Page[]
-  Post             Post[]
-  Project          Project[]
-  Accounts         Account[]
-  Listings         Listing[]
-  UserProfile      UserProfile[]
-  Reservation      Reservation[]
-  Organization     Organization[]
+  id             String         @id @default(uuid()) @map("_id") @db.VarChar(36)
+  name           String?
+  email          String?        @unique
+  emailVerified  DateTime?
+  createdAt      DateTime       @default(now())
+  updatedAt      DateTime       @updatedAt
+  image          String?
+  avatar         String?
+  hashedPassword String?
+  favoriteIds    String[]
+  Note           Note[]
+  Page           Page[]
+  Post           Post[]
+  Accounts       Account[]
+  Organization   Organization[]
+  Module         Module[]
+  Role           Role[]
+  Notification   Notification[]
+  Device         Device[]
+  Applications   Applications[]
 }
 
-model UserProfile {
-  id                   String                 @id @default(uuid()) @map("_id") @db.VarChar(36)
-  private              Boolean?
-  interests            String?
-  music_preferences    String?
-  movie_preferences    String?
-  sports_interests     String?
-  hair_color           String?
-  eye_color            String?
-  piercings            Boolean?
-  tattoos              Boolean?
-  preferred_age_range  String?
-  preferred_gender     String?
-  relationship_status  String?
-  about_me             String?
-  createdAt            DateTime               @default(now())
-  updatedAt            DateTime               @updatedAt
-  userId               String
-  ContactInformation   ContactInformation[]
-  EducationInformation EducationInformation[]
-  user                 User                   @relation(fields: [userId], references: [id], onDelete: Cascade)
+model Role {
+  id           String         @id @default(uuid()) @map("_id") @db.VarChar(36)
+  name         String         @unique
+  description  String?
+  Organization Organization[]
+  User         User[]
+}
+
+model Default {
+  id        String   @id @default(uuid()) @map("_id") @db.VarChar(36)
+  createdAt DateTime @default(now())
+  json      Json?
+  type      String
+}
+
+model Notification {
+  id           String         @id @default(uuid()) @map("_id") @db.VarChar(36)
+  createdAt    DateTime       @default(now())
+  json         Json?
+  status       String?
+  type         String
+  User         User[]
+  Organization Organization[]
+}
+
+model Device {
+  id        String   @id @default(uuid()) @map("_id") @db.VarChar(36)
+  createdAt DateTime @default(now())
+  json      Json?
+  user      User[]
 }
 
 model Account {
@@ -199,47 +221,6 @@ model Account {
   user User @relation(fields: [userId], references: [id], onDelete: Cascade)
 
   @@unique([provider, providerAccountId])
-}
-
-model Listing {
-  id            String   @id @default(uuid()) @map("_id") @db.VarChar(36)
-  createdAt     DateTime @default(now())
-  updatedAt     DateTime @updatedAt
-  title         String
-  description   String
-  imageSrc      String?
-  category      String[]
-  roomCount     Int?
-  bathroomCount Int?
-  guestCount    Int?
-  locationValue String?
-  price         Int
-  userId        String
-
-  user         User?         @relation(fields: [userId], references: [id], onDelete: Cascade)
-  Reservations Reservation[]
-}
-
-model Reservation {
-  id         String    @id @default(uuid()) @map("_id") @db.VarChar(36)
-  createdAt  DateTime  @default(now())
-  updatedAt  DateTime  @updatedAt
-  startDate  DateTime?
-  endDate    DateTime?
-  totalPrice Int?
-  userId     String
-  listingId  String?
-
-  user    User     @relation(fields: [userId], references: [id], onDelete: Cascade)
-  Listing Listing? @relation(fields: [listingId], references: [id], onDelete: Cascade)
-}
-
-model UserApp {
-  createdAt      DateTime      @default(now())
-  userId         String
-  id             String        @id @default(uuid()) @map("_id") @db.VarChar(36)
-  applicationsId String
-  Applications   Applications? @relation(fields: [applicationsId], references: [id])
 }
 
 /// This model contains row level security and requires additional setup for migrations. Visit https://pris.ly/d/row-level-security for more info.
@@ -267,4 +248,12 @@ model Icon {
   type       String?
   icon       String?
   slug       String?
+}
+model Resume {
+  id        Int      @id @default(autoincrement())
+  firstName String
+  lastName  String
+  email     String
+  education String
+  experience String
 }

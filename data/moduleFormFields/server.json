@@ -1,0 +1,106 @@
+[
+    {
+        "label": "Server Information",
+        "group": "Server Details",
+        "fields": [
+            {
+                "label": "Server Provider",
+                "name": "serverProvider",
+                "type": "select",
+                "options": ["Vercel", "Netlify", "AWS", "Azure", "OVH", "Digital Ocean"],
+                "placeholder": "Select server provider"
+            },
+            {
+                "label": "Server Location",
+                "name": "serverLocation",
+                "type": "text",
+                "placeholder": "Enter server location"
+            },
+            {
+                "label": "Server Plan",
+                "name": "serverPlan",
+                "type": "text",
+                "placeholder": "Enter server plan"
+            },
+            {
+                "label": "Server Start Date",
+                "name": "serverStartDate",
+                "type": "date",
+                "placeholder": "Enter server start date"
+            },
+            {
+                "label": "Server End Date",
+                "name": "serverEndDate",
+                "type": "date",
+                "placeholder": "Enter server end date"
+            }
+            
+        ]
+    },
+    {
+        "label": "Additional Information",
+        "group": "Additional Details",
+        "fields": [
+            {
+                "label": "Project Manager",
+                "name": "projectManager",
+                "type": "text",
+                "placeholder": "Enter the name of the project manager"
+            },
+            {
+                "label": "Project Budget",
+                "name": "projectBudget",
+                "type": "number",
+                "placeholder": "Enter the project budget"
+            },
+            {
+                "label": "Project Start Date",
+                "name": "projectStartDate",
+                "type": "date",
+                "placeholder": "Enter the project start date"
+            },
+            {
+                "label": "Project End Date",
+                "name": "projectEndDate",
+                "type": "date",
+                "placeholder": "Enter the project end date"
+            },
+            {
+                "label": "Number of Team Members",
+                "name": "teamMembers",
+                "type": "number",
+                "placeholder": "Enter the number of team members"
+            },
+            {
+                "label": "Client Name",
+                "name": "clientName",
+                "type": "text",
+                "placeholder": "Enter the client's name"
+            },
+            {
+                "label": "Client Contact",
+                "name": "clientContact",
+                "type": "text",
+                "placeholder": "Enter the client's contact information"
+            },
+            {
+                "label": "Client Email",
+                "name": "clientEmail",
+                "type": "email",
+                "placeholder": "Enter the client's email"
+            },
+            {
+                "label": "Client Address",
+                "name": "clientAddress",
+                "type": "text",
+                "placeholder": "Enter the client's address"
+            },
+            {
+                "label": "Additional Notes",
+                "name": "additionalNotes",
+                "type": "textarea",
+                "placeholder": "Enter any additional notes"
+            }
+        ]
+    }
+]

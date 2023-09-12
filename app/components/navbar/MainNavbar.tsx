@@ -23,14 +23,12 @@ interface ContentData {
     active: boolean;
 }
 interface MainNavbarProps {
-    currentUser?: SafeUser | null
+    currentUser?: SafeUser | null;
 }
 const MainNavbar: React.FC<MainNavbarProps> = ({
     currentUser
 }) => {
-    if(!currentUser){
-        redirect('/sign-in')
-    }
+
     const accountModal = useAccountModal();
     const [tabContent, setTabContent] = useState<ContentData[]>([]);
     const [isLoading, setIsLoading] = useState(false);

@@ -6,7 +6,7 @@ import { useEffect, useRef, useState } from "react";
 import Heading from "./Heading";
 import Loader from "./Loader";
 import administrationData from "@/data/administration.json" 
-
+import { useRouter } from 'next/navigation';
 interface DashboardProps {
     currentUser?: SafeUser | null
 }
@@ -14,6 +14,7 @@ interface DashboardProps {
 const Dashboard: React.FC<DashboardProps> = ({
     currentUser
 }) => {
+    const router = useRouter();
     const [isLoading, setIsLoading] = useState(false);
     const iconSize = 36;
     const scrollRef = useRef<HTMLDivElement>(null);
@@ -33,11 +34,13 @@ const Dashboard: React.FC<DashboardProps> = ({
       }, []);
     return (
         <>
-
+            {isLoading && (
+				<Loader />
+			)}
             <div className="px-4 text-md flex flex-col items-center bg-gray-50 border-t border-b">
                 <Heading title="Administration" size="text-lg text-gray-700 text-center font-semibold"/>
             </div>
-            <div className="flex flex-col items-start justify-center mx-auto mb-4 p-4">
+            <div className="flex flex-col items-center justify-center mx-auto mb-4 p-4">
                 <div 
                     className="
                         grid
@@ -67,7 +70,7 @@ const Dashboard: React.FC<DashboardProps> = ({
                             buttonId={`${admin.slug}-button`} 
                             contentId={`${admin.slug}-content`} 
                             description={admin.description} 
-                            onClick={() => {}} 
+                            onClick={() => router.push(`/admin/${admin.slug}`)} 
                         />
                     ))}
                 </div>
@@ -76,7 +79,7 @@ const Dashboard: React.FC<DashboardProps> = ({
             <div className="px-4 text-md flex flex-col items-center bg-gray-50  border-t border-b">
                 <Heading title="Business Applications" size="text-lg text-gray-700 text-center font-semibold "/>
             </div>
-            <div className="flex flex-col items-start justify-center mx-auto mb-4 p-4">
+            <div className="flex flex-col items-center justify-center mx-auto mb-4 p-4">
                 <div 
                     className="
                         grid
@@ -97,7 +100,7 @@ const Dashboard: React.FC<DashboardProps> = ({
                     "
                 >
                     {administrationData.applications.map((item) => (
-                        <CardIcon key={item.slug} iconSize={iconSize} label={item.name} iconName={item.icon_name} buttonId={`${item.slug}-button`} contentId={`${item.slug}-content`}  description={item.description} onClick={() => {}} />
+                        <CardIcon onClick={() => router.push(`/admin/${item.slug}`)}  key={item.slug} iconSize={iconSize} label={item.name} iconName={item.icon_name} buttonId={`${item.slug}-button`} contentId={`${item.slug}-content`}  description={item.description} />
                     ))}
                     
                 </div>
@@ -106,7 +109,7 @@ const Dashboard: React.FC<DashboardProps> = ({
             <div className="px-4 text-md flex flex-col items-center bg-gray-50  border-t border-b">
                 <Heading title="Tools and Utilities" size="text-lg text-gray-700 text-center font-semibold"/>
             </div>
-            <div className="w-full flex flex-col items-start justify-center mx-auto mb-4 p-4">
+            <div className="w-full flex flex-col items-center justify-center mx-auto mb-4 p-4">
                 <div 
                     className="
                         grid
@@ -127,7 +130,7 @@ const Dashboard: React.FC<DashboardProps> = ({
                     "
                 >
                     {administrationData.tools.map((item) => (
-                        <CardIcon key={item.slug} iconSize={iconSize} label={item.name} iconName={item.icon_name} buttonId={`${item.slug}-button`} contentId={`${item.slug}-content`}  onClick={() => {}} description={item.description} />
+                        <CardIcon onClick={() => router.push(`/admin/${item.slug}`)} key={item.slug} iconSize={iconSize} label={item.name} iconName={item.icon_name} buttonId={`${item.slug}-button`} contentId={`${item.slug}-content`}  description={item.description} />
                     ))}
                 </div>
             </div>
@@ -137,3 +140,4 @@ const Dashboard: React.FC<DashboardProps> = ({
     )}
 
 export default Dashboard;
+

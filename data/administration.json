@@ -1,5 +1,29 @@
 {
+  "myApps": [],
+  "cta": [],
+  "dashboard": [
+    {
+      "name": "Dashboard",
+      "slug": "dashboard",
+      "short_description": "Get an overview of your app's key metrics and data.",
+      "description": "Get an overview of your app's key metrics and data with the Dashboard module of Meetlily Apps. Visualize data through charts, graphs, and customizable widgets. Monitor performance, track user engagement, and make data-driven decisions to optimize your app.",
+      "category": [
+        {
+          "name": "Analytics",
+          "id": "19000053-9e8b-4b7f-9f6f-7c7d1b6b0c4d"
+        }
+      ],
+      "tags": [
+        "Dashboard",
+        "Analytics",
+        "Metrics"
+      ],
+      "icon_name": "dashboard",
+      "module": "Dashboard"
+    }
+  ],
   "administration": [
+    
     {
       "name": "Servers",
       "slug": "server",
@@ -88,7 +112,7 @@
         "Data Mapping"
       ],
       "icon_name": "integration",
-      "module": "API Integrations"
+      "module": false
     },
     {
       "name": "Organizations",
@@ -108,8 +132,8 @@
         "Permissions",
         "Roles"
       ],
-      "icon_name": "company",
-      "module": "Organizations"
+      "icon_name": "organizations",
+      "module": false
     },
     {
       "name": "Users",
@@ -133,6 +157,26 @@
       "module": "Users"
     },
     {
+      "name": "My Apps",
+      "slug": "my-apps",
+      "short_description": "A collection of useful applications",
+      "description": "My Apps is a collection of versatile and user-friendly applications designed to simplify various tasks and enhance productivity. Each app within the collection offers unique features and functionalities tailored to specific use cases. Whether you need a project management tool, a note-taking app, or a task scheduler, My Apps has got you covered. With a clean and intuitive interface, seamless integration, and robust performance, these apps provide an exceptional user experience.",
+      "category": [
+        {
+          "name": "Productivity",
+          "id": "19000065-9e8b-4b7f-9f6f-7c7d1b6b0c4d"
+        }
+      ],
+      "tags": [
+        "Server",
+        "Web Development",
+        "Scalability",
+        "Database Integration"
+      ],
+      "icon_name": "myApps",
+      "module": false
+    },
+    {
       "name": "Settings",
       "slug": "settings",
       "short_description": "Manage application settings and configurations.",
@@ -151,7 +195,7 @@
         "Settings UI"
       ],
       "icon_name": "gears",
-      "module": "Settings"
+      "module": false
     },
     {
       "name": "Analytics",
@@ -173,6 +217,27 @@
       ],
       "icon_name": "analytics",
       "module": "Analytics"
+    },
+    {
+      "name": "LiveEdit",
+      "slug": "live_edit",
+      "short_description": "Track and analyze user behavior and application metrics.",
+      "description": "The Analytics module provides tools and functionality for tracking and analyzing user behavior and application metrics. It includes features such as event tracking, user segmentation, funnel analysis, and performance monitoring. Whether you want to understand how users interact with your application, measure the effectiveness of your marketing campaigns, or identify areas for optimization, the Analytics module simplifies the process of collecting and analyzing data to gain valuable insights.",
+      "category": [
+        {
+          "name": "Data Analysis",
+          "id": "d1e2a3d4-5a6n7a8l9y0s"
+        }
+      ],
+      "tags": [
+        "Analytics",
+        "Data Analysis",
+        "User Behavior",
+        "Metrics",
+        "Performance Monitoring"
+      ],
+      "icon_name": "liveEdit",
+      "module": "Live Editor"
     }
   ],
   "applications": [
@@ -214,7 +279,6 @@
       "icon_name": "ecommerce",
       "module": "e-Commerce"
     },
-    
     {
       "name": "Point of Sale",
       "slug": "point-of-sale",
@@ -234,7 +298,6 @@
       "icon_name": "pos",
       "module": "Point of Sale"
     },
-    
     {
       "name": "Refunds",
       "slug": "refunds",
@@ -387,7 +450,6 @@
       "icon_name": "subscriptions",
       "module": "Subscriptions"
     },
-    
     {
       "name": "Warehouse",
       "slug": "warehouse",
@@ -501,6 +563,78 @@
       ],
       "icon_name": "proposals",
       "module": "Proposals"
+    },
+    {
+      "name": "Resume",
+      "slug": "resume",
+      "short_description": "Create and manage your resume.",
+      "description": "Create and manage your professional resume with the Resume app of Meetlily Apps. Customize resume templates, track your employment history, and highlight your skills and achievements. Present yourself effectively and land your dream job.",
+      "category": [
+        {
+          "name": "Job Search",
+          "id": "19000008-9e8b-4b7f-9f6f-7c7d1b6b0c4d"
+        }
+      ],
+      "tags": [
+        "Resume",
+        "Job Search",
+        "Career Development"
+      ],
+      "icon_name": "resume"
+    },
+    {
+      "name": "Portfolio",
+      "slug": "portfolio",
+      "short_description": "Create and showcase your portfolio.",
+      "description": "Create and showcase your professional portfolio with the Portfolio app of Meetlily Apps. Customize portfolio templates, display your projects and achievements, and attract potential clients and employers. Stand out from the crowd and leave a lasting impression.",
+      "category": [
+        {
+          "name": "Creative",
+          "id": "19000009-9e8b-4b7f-9f6f-7c7d1b6b0c4d"
+        }
+      ],
+      "tags": [
+        "Portfolio",
+        "Creative",
+        "Professional Showcase"
+      ],
+      "icon_name": "portfolio"
+    },
+    {
+      "name": "Education",
+      "slug": "education",
+      "short_description": "Manage your education history and achievements.",
+      "description": "Manage your education history, track your academic achievements, and organize your certifications with the Education app of Meetlily Apps. Keep a record of your educational journey and showcase your qualifications with ease.",
+      "category": [
+        {
+          "name": "Education Management",
+          "id": "19000010-9e8b-4b7f-9f6f-7c7d1b6b0c4d"
+        }
+      ],
+      "tags": [
+        "Education",
+        "Academic",
+        "Certifications"
+      ],
+      "icon_name": "education"
+    },
+    {
+      "name": "Employment",
+      "slug": "employment",
+      "short_description": "Track your employment history and achievements.",
+      "description": "Track your employment history, record your job roles and responsibilities, and highlight your professional achievements with the Employment app of Meetlily Apps. Keep a comprehensive record of your work experience, showcase your skills, and demonstrate your career progression to potential employers.",
+      "category": [
+        {
+          "name": "Career Development",
+          "id": "19000011-9e8b-4b7f-9f6f-7c7d1b6b0c4d"
+        }
+      ],
+      "tags": [
+        "Employment",
+        "Work Experience",
+        "Career Progression"
+      ],
+      "icon_name": "employment"
     },
     {
       "name": "Employee",
@@ -751,7 +885,6 @@
       "icon_name": "jobs",
       "module": "Jobs"
     },
-    
     {
       "name": "Inventory",
       "slug": "inventory",
@@ -1055,7 +1188,7 @@
       ],
       "icon_name": "advertising",
       "module": "Advertising"
-    },  
+    },
     {
       "name": "Currency",
       "slug": "currency",
@@ -1418,28 +1551,9 @@
       ],
       "icon_name": "company",
       "module": "Companies"
-    }    
+    }
   ],
   "tools": [
-    {
-      "name": "Dashboard",
-      "slug": "dashboard",
-      "short_description": "Get an overview of your app's key metrics and data.",
-      "description": "Get an overview of your app's key metrics and data with the Dashboard module of Meetlily Apps. Visualize data through charts, graphs, and customizable widgets. Monitor performance, track user engagement, and make data-driven decisions to optimize your app.",
-      "category": [
-        {
-          "name": "Analytics",
-          "id": "19000053-9e8b-4b7f-9f6f-7c7d1b6b0c4d"
-        }
-      ],
-      "tags": [
-        "Dashboard",
-        "Analytics",
-        "Metrics"
-      ],
-      "icon_name": "dashboard",
-      "module": "Dashboard"
-    },
     {
       "name": "Music",
       "slug": "music",

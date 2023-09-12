@@ -1,0 +1,168 @@
+[
+    {
+        "label": "Website Information",
+        "group": "Website Details",
+        "fields": [
+            {
+                "label": "Website Name",
+                "name": "websiteName",
+                "type": "text",
+                "placeholder": "Enter website name"
+            },
+            {
+                "label": "Website URL",
+                "name": "websiteURL",
+                "type": "url",
+                "placeholder": "Enter website URL"
+            },
+            {
+                "label": "Website Description",
+                "name": "websiteDescription",
+                "type": "textarea",
+                "placeholder": "Enter website description"
+            },
+            {
+                "label": "Website Launch Date",
+                "name": "websiteLaunchDate",
+                "type": "date",
+                "placeholder": "Enter website launch date"
+            }
+        ]
+    },
+    {
+        "label": "e-Commerce Information",
+        "group": "eCommerce Details",
+        "fields": [
+            {
+                "label": "Number of Products",
+                "name": "numberOfProducts",
+                "type": "number",
+                "placeholder": "Enter number of products"
+            },
+            {
+                "label": "Payment Methods",
+                "name": "paymentMethods",
+                "type": "select",
+                "options": ["Credit Card", "PayPal", "Bank Transfer", "Cash on Delivery"],
+                "placeholder": "Select payment methods"
+            },
+            {
+                "label": "Shipping Methods",
+                "name": "shippingMethods",
+                "type": "select",
+                "options": ["Courier", "Postal Service", "In-Store Pickup"],
+                "placeholder": "Select shipping methods"
+            },
+            {
+                "label": "Average Monthly Sales",
+                "name": "averageMonthlySales",
+                "type": "number",
+                "placeholder": "Enter average monthly sales"
+            }
+        ]
+    },
+    {
+        "label": "CMS Information",
+        "group": "CMS Details",
+        "fields": [
+            {
+                "label": "CMS Platform",
+                "name": "cmsPlatform",
+                "type": "select",
+                "options": ["WordPress", "Joomla", "Drupal", "Magento", "Shopify", "Wix", "Squarespace"],
+                "placeholder": "Select CMS platform"
+            },
+            {
+                "label": "Number of Pages",
+                "name": "numberOfPages",
+                "type": "number",
+                "placeholder": "Enter number of pages"
+            },
+            {
+                "label": "Number of Posts",
+                "name": "numberOfPosts",
+                "type": "number",
+                "placeholder": "Enter number of posts"
+            },
+            {
+                "label": "Number of Users",
+                "name": "numberOfUsers",
+                "type": "number",
+                "placeholder": "Enter number of users"
+            }
+        ]
+    },
+    {
+        "label": "Hosting Information",
+        "group": "Hosting Details",
+        "fields": [
+            {
+                "label": "Hosting Provider",
+                "name": "hostingProvider",
+                "type": "text",
+                "placeholder": "Enter hosting provider"
+            },
+            {
+                "label": "Hosting Plan",
+                "name": "hostingPlan",
+                "type": "text",
+                "placeholder": "Enter hosting plan"
+            },
+            {
+                "label": "Hosting Start Date",
+                "name": "hostingStartDate",
+                "type": "date",
+                "placeholder": "Enter hosting start date"
+            },
+            {
+                "label": "Hosting End Date",
+                "name": "hostingEndDate",
+                "type": "date",
+                "placeholder": "Enter hosting end date"
+            },
+            {
+                "label": "Server Location",
+                "name": "serverLocation",
+                "type": "text",
+                "placeholder": "Enter server location"
+            }
+        ]
+    },
+    {
+        "label": "LMS Information",
+        "group": "LMS Details",
+        "fields": [
+            {
+                "label": "LMS Platform",
+                "name": "lmsPlatform",
+                "type": "select",
+                "options": ["Moodle", "Blackboard", "Canvas", "Schoology", "Google Classroom"],
+                "placeholder": "Select LMS platform"
+            },
+            {
+                "label": "Number of Courses",
+                "name": "numberOfCourses",
+                "type": "number",
+                "placeholder": "Enter number of courses"
+            },
+            {
+                "label": "Number of Students",
+                "name": "numberOfStudents",
+                "type": "number",
+                "placeholder": "Enter number of students"
+            },
+            {
+                "label": "Number of Instructors",
+                "name": "numberOfInstructors",
+                "type": "number",
+                "placeholder": "Enter number of instructors"
+            },
+            {
+                "label": "Average Course Completion Rate",
+                "name": "averageCourseCompletionRate",
+                "type": "number",
+                "placeholder": "Enter average course completion rate"
+            }
+        ]
+    }
+]

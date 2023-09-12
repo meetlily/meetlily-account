@@ -1,0 +1,106 @@
+{
+    "Personal Information": {
+        "Fields": [
+            {
+                "Label": "First Name",
+                "Type": "text",
+                "Value": ""
+            },
+            {
+                "Label": "Last Name",
+                "Type": "text",
+                "Value": ""
+            },
+            {
+                "Label": "Email",
+                "Type": "email",
+                "Value": ""
+            },
+            {
+                "Label": "Phone Number",
+                "Type": "tel",
+                "Value": ""
+            },
+            {
+                "Label": "LinkedIn",
+                "Type": "url",
+                "Value": ""
+            },
+            {
+                "Label": "Address",
+                "Type": "text",
+                "Value": ""
+            }
+        ]
+    },
+    "Objective": {
+        "Fields": [
+            {
+                "Label": "Objective",
+                "Type": "textarea",
+                "Value": ""
+            }
+        ]
+    },
+    "Skills": {
+        "Fields": [
+            {
+                "Label": "Skills",
+                "Type": "text",
+                "Value": ""
+            }
+        ]
+    },
+    "Experience": {
+        "Fields": [
+            {
+                "Label": "Job Title",
+                "Type": "text",
+                "Value": ""
+            },
+            {
+                "Label": "Company",
+                "Type": "text",
+                "Value": ""
+            },
+            {
+                "Label": "Start-End Dates",
+                "Type": "text",
+                "Value": ""
+            },
+            {
+                "Label": "Responsibilities",
+                "Type": "textarea",
+                "Value": ""
+            }
+        ]
+    },
+    "Education": {
+        "Fields": [
+            {
+                "Label": "Degree",
+                "Type": "text",
+                "Value": ""
+            },
+            {
+                "Label": "University",
+                "Type": "text",
+                "Value": ""
+            },
+            {
+                "Label": "Graduation Year",
+                "Type": "number",
+                "Value": ""
+            }
+        ]
+    },
+    "References": {
+        "Fields": [
+            {
+                "Label": "References",
+                "Type": "textarea",
+                "Value": ""
+            }
+        ]
+    }
+}

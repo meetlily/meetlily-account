@@ -1,0 +1,60 @@
+{
+    "Personal Information": {
+      "Fields": [
+        {
+          "Label": "First Name",
+          "Type": "text",
+          "Value": "John"
+        },
+        {
+          "Label": "Last Name",
+          "Type": "text",
+          "Value": "Doe"
+        },
+        {
+          "Label": "Email",
+          "Type": "email",
+          "Value": "john.doe@example.com"
+        }
+      ]
+    },
+    "Education": {
+      "Fields": [
+        {
+          "Label": "School Name",
+          "Type": "text",
+          "Value": "XYZ University"
+        },
+        {
+          "Label": "Degree",
+          "Type": "text",
+          "Value": "Bachelor's in Computer Science"
+        },
+        {
+          "Label": "Graduation Year",
+          "Type": "number",
+          "Value": "2022"
+        }
+      ]
+    },
+    "Work Experience": {
+      "Fields": [
+        {
+          "Label": "Company Name",
+          "Type": "text",
+          "Value": "ABC Corporation"
+        },
+        {
+          "Label": "Role",
+          "Type": "text",
+          "Value": "Software Engineer"
+        },
+        {
+          "Label": "Years of Experience",
+          "Type": "number",
+          "Value": "3"
+        }
+      ]
+    }
+  }
+  

@@ -20,7 +20,7 @@ export default async function Home() {
       <div className="fluid flex flex-col items-center mx-auto justify-center bg-gray-50 h-full">
         <PageLayout metadata={metaData} showSidebar={false} hideNavbar={true}>
           <div className="flex flex-col w-full h-ful">
-              <HomeLandingPage />
+              <HomeLandingPage currentUser={currentUser}/>
               {/* <Dashboard currentUser={currentUser}/> */}
           </div>
         </PageLayout>
