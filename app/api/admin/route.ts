@@ -31,10 +31,8 @@ export async function GET(
             // User is not authenticated, return an unauthorized response
             return new NextResponse("Unauthorized", { status: 401 });
         }
-        const result = await prisma.$queryRawUnsafe(`
-            SELECT * FROM "${u}"
-        `);
-
+        const result = await prisma.module.findMany();
+        console.log(result);
         return NextResponse.json(result);
         
     } catch (error) {

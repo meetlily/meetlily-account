@@ -23,7 +23,8 @@
           "Metrics"
         ],
         "icon_name": "dashboard",
-        "module": "Dashboard"
+        "module": "Dashboard",
+        "link": "/dashboard"
       }
     ]
   },

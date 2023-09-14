@@ -1,22 +1,19 @@
 
-import getCurrentUser from '@/app/actions/getCurrentUser';
-import AdminLayout from '@/app/components/AdminLayout';
-import ModulePage from '@/app/components/modules/ModulePage';
-import ModulesTable from '@/app/components/modules/ModulesTable';
-import ModuleForm from '@/app/components/modules/formFields/ModuleForm';
-import OrganizationFormPage from '@/app/components/modules/formFields/OrganizationFormPage';
-import { useParams } from 'next/navigation';
-import React from 'react';
+import getCurrentUser from "@/app/actions/getCurrentUser";
+import  getSession  from "@/app/actions/getCurrentUser";
+import AdminLayout from "@/app/components/AdminLayout";
+import ModulePage from "@/app/components/modules/ModulePage";
 
 
-const Page: React.FC = async () => {
-    let currentUser = await getCurrentUser();
-    
+export default async function ModulePageComponent() {
+  const session = await getSession();
+  const currentUser = await getCurrentUser();
+  console.log(currentUser)
   return (
-    <div>
-        <ModulePage />
-    </div>
-  );
-};
-export default Page;
-
+    <>
+      <AdminLayout currentUser={currentUser} showSidebar={false} showNavbar={true} showNavbarSearch={true}>
+        <ModulePage currentUser={currentUser}/>
+      </AdminLayout>
+    </>
+  )
+}

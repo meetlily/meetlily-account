@@ -19,21 +19,16 @@ interface Resume {
   id: number;
   firstName: string;
   lastName: string;
-  email: string;
+  email?: string;
   education: string;
   experience: string;
 }
 const ResumeView: React.FC<ResumeViewProps> = ({ formData }) => {
   const [resume, setResume] = useState<Resume | null>(null);
   const [isLoading, setIsLoading] = useState(false);
-
   const params = useParams();
   const slug = params?.slug;
 
-  useEffect(() => {
-    setIsLoading(true);
-
-  }, [slug]);
   return (
     <div className="p-8 space-y-4">
       {Object.keys(formData).map((sectionKey) => (

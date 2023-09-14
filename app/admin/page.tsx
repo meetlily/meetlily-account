@@ -1,20 +1,23 @@
+import { getSession } from "next-auth/react";
+import getCurrentUser from "../actions/getCurrentUser";
+import AdminLayout from "../components/AdminLayout";
+import ModulesTable from "../components/modules/ModulesTable";
+import Dashboard from "../components/Dashboard";
+import { getModuleLists } from "../actions/getModuleLists";
+import ModuleLists from "../components/modules/ModuleLists";
+import EmptyText from "../components/empty/EmptyText";
+import EmptyPage from "../components/empty/EmptyPage";
+import rolesData from "@/data/roles.json";
 
-import ModulesTable from '@/app/components/modules/ModulesTable';
-import ModuleForm from '@/app/components/modules/formFields/ModuleForm';
-import OrganizationFormPage from '@/app/components/modules/formFields/OrganizationFormPage';
-import React from 'react';
-import getCurrentUser from '../actions/getCurrentUser';
-import ModulePage from '../components/modules/ModulePage';
+export default async function AdminPage() {
+  
+  const currentUser = await getCurrentUser();
 
-
-const Page: React.FC = async () => {
-  let currentUser = await getCurrentUser();
-  console.log(currentUser)
   return (
-    <div>
-      <ModulePage currentUser={currentUser}/>
-    </div>
-  );
-};
-
-export default Page;
+    <>
+      <AdminLayout currentUser={currentUser} showSidebar={false} showNavbar={true} showNavbarSearch={true}>
+        <EmptyPage />
+      </AdminLayout>
+    </>
+  )
+}

@@ -18,7 +18,9 @@ interface FlowModalProps {
   modalHeaderIcon?: React.ReactElement;
   modalFooter?: boolean;
   modalFooterPrimaryAction: () => void;
+  modalFooterPrimaryLabel?: string;
   modalFooterSecondaryAction: () => void;
+  modalFooterSecondaryLabel?: string;
   isOpen?: string | undefined;
   modalId?: string | undefined;
   modalStyle?: string;
@@ -35,7 +37,9 @@ const FlowModal: React.FC<FlowModalProps> = ({
     modalHeaderIcon,
     modalFooter, 
     modalFooterPrimaryAction,
+    modalFooterPrimaryLabel,
     modalFooterSecondaryAction,
+    modalFooterSecondaryLabel,
     modalId, 
     isOpen, 
     size, 
@@ -68,15 +72,12 @@ const FlowModal: React.FC<FlowModalProps> = ({
             <FlowModalBody show={true} body={Body}/>
             {modalFooter && (
               <>
-              <FlowModalFooter 
-                show={true} 
-                footer={
-                  <ModalFooter 
-                    primaryActionLabel={"Accept"} 
-                    primaryAction={modalFooterPrimaryAction}
-                    secondaryAction={modalFooterSecondaryAction}
-                  />
-              }/>
+              <Modal.Footer>
+              <Button color="dark" onClick={modalFooterPrimaryAction}>{modalFooterPrimaryLabel}</Button>
+              {modalFooterSecondaryAction && (
+                  <Button color="gray" onClick={modalFooterSecondaryAction}>{modalFooterSecondaryLabel}</Button>
+              )}
+              </Modal.Footer>
               </>
             )}
             

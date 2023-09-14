@@ -24,7 +24,7 @@ export default async function RootLayout({
       <body 
         className={`
           ${font.className}
-          bg-gray-50
+          bg-white
         `}
       >
         <ClientOnly>

@@ -12,8 +12,8 @@ export default async function DashboardPage() {
 
   return (
     <>
-      <AdminLayout currentUser={currentUser}>
-        <Dashboard />
+      <AdminLayout currentUser={currentUser} showNavbar={true} showNavbarSearch={true}>
+        <Dashboard currentUser={currentUser} />
       </AdminLayout>
     </>
       

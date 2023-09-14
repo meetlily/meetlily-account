@@ -18,7 +18,6 @@ const OrganizationForm: React.FC<OrganizationFormProps> = ({ formFields, group }
 
 	const handleSubmit = (e: React.FormEvent) => {
 		e.preventDefault();
-		console.log(formData);
 		// Perform form submission logic here
 	};
 

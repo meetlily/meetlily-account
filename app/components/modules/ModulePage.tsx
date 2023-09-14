@@ -15,25 +15,30 @@ interface ModulePageProps {
 const ModulePage: React.FC<ModulePageProps> = ({currentUser, showSidebar}) => {
   const params = useParams();
   const [isLoading, setIsLoading] = useState(false);
-  
+  const [formData, setFormData] = useState();
   useEffect(() => {
-    // Code to run after component has rendered
     setIsLoading(true)
-    // Example: Fetch data from an API
-
-  }, [setIsLoading,params]); 
+    // Fetch the data from the API
+    // fetch(`/api/admin/${params?.slug}`)
+    // .then((response) => response.json())
+    // .then((data) => {
+    //   setFormData(data)
+    // })
+    // .catch((error) => console.error('Error fetching sections:', error))
+    // .finally(() => setIsLoading(false));
+}, [params]);
   return (
     <>
-      <AdminLayout showSidebar={showSidebar} currentUser={currentUser}>
-      <div>
+      <div className='h-full w-full flex flex-col'>
           {params?.slug && params?.slug === 'resume' && (
-              <><ResumeView formData={formStructure} /></>
+              <>
+              <ResumeView formData={formStructure} />
+              </>
           )}
           {params?.slug && params?.slug === 'live_edit' && (
               <PreviewComponent showEditor={true}/>
           )}
       </div>
-      </AdminLayout>
     </>
   )
 }

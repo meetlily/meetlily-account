@@ -18,7 +18,6 @@ const ModuleForm: React.FC<FormProps> = ({ formFields, group }) => {
 
 	const handleSubmit = (e: React.FormEvent) => {
 		e.preventDefault();
-		console.log(formData);
 		// Perform form submission logic here
 	};
 	console.log(group, 'group');

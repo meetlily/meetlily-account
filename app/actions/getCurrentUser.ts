@@ -4,11 +4,23 @@ import { authOptions } from "@/pages/api/auth/[...nextauth]";
 
 import prisma from "@/app/libs/prismadb";
 import { OrganizationType, SafeUser, VariableType } from "../types";
+import rolesData from "@/data/roles.json";
 
 export async function getSession() {
     return await getServerSession(authOptions);
 }
-
+export async function getCurrentRoles() {
+  try {
+    const currentUser = await getCurrentUser();
+    const roles = currentUser?.Role;
+    if(roles && roles?.length > 0){
+      return roles;
+    }
+  } catch (error) {
+    console.error(error);
+    throw error;
+  } 
+}
 export async function getAccountsByUserId(id: string) {
     try {
       const data = await prisma.account.findMany({
@@ -40,6 +52,7 @@ export async function getUserProfileByUserId(id: string) {
 export default async function getCurrentUser() {
     try {
         const session = await getSession();
+        let roles: any = rolesData;
         if (!session ) {
           return null
         }
@@ -103,6 +116,31 @@ export default async function getCurrentUser() {
             });
           }
         } 
+        let newRole: any = {};
+        if(currentUser && currentUser.Role.length > 0){
+          
+          currentUser.Role.map((role, i)=>{
+            const noSpaceRole = role.name.replace(/\s/g, "");
+            
+            if(roles[noSpaceRole]){
+              newRole[noSpaceRole] = roles[noSpaceRole].permissions
+              return newRole[noSpaceRole];
+            }
+          })
+        }
+        if(Object.keys(newRole).length > 0){
+          const currentRoleUser = {
+            ...currentUser,
+            permissions: newRole
+          }
+          return {
+              ...currentRoleUser,
+              createdAt: currentUser.createdAt.toISOString(),
+              updatedAt: currentUser.updatedAt.toISOString(),
+              emailVerified: currentUser.emailVerified?.toISOString() || null,
+          };
+        }
+        
         return {
             ...currentUser,
             createdAt: currentUser.createdAt.toISOString(),

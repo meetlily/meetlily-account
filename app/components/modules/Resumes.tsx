@@ -18,7 +18,6 @@ const Resumes = () => {
       const data = await res.json();
       setResumes(data);
     };
-
     fetchResumes();
   }, []);
 

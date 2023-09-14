@@ -1,7 +1,7 @@
 'use client';
 
 import Flowbite, { Badge, Button, Table } from 'flowbite-react';
-import administrationData from "@/data/administration.json" 
+import modules from "@/data/modules.json" 
 import IconComponent from '../icons/IconComponent';
 import Link from 'next/link';
 import ModulesHeader from './ModulesHeader';
@@ -18,21 +18,22 @@ export default function ModulesTable() {
     // Code to run after component has rendered
     setIsLoading(true)
     // Example: Fetch data from an API
-    fetch(`/api/admin/${params?.slug}`)
-      .then(response => response.json())
-      .then(data => {
-        // Process the fetched data
-        console.log(data);
-        setIsLoading(false)
-      }).catch((error)=>{
-        setIsLoading(false)
-      });
+    // fetch(`/api/admin/${params?.slug}`)
+    //   .then(response => response.json())
+    //   .then(data => {
+    //     // Process the fetched data
+    //     setIsLoading(false)
+    //   }).catch((error)=>{
+    //     setIsLoading(false)
+    //   });
   }, [setIsLoading,params]); 
   return (
     <>
-    
-      <ModulesHeader />
-      <div className='bg-white-50'>
+    <div className='relative w-full h-full flex flex-col'>
+      <div className='flex flex-col bg-white'>
+        <ModulesHeader />
+      </div>
+      <div className='flex flex-col items-start bg-white-50 overflow-auto'>
         <Table>
           <Table.Head>
             <Table.HeadCell>
@@ -58,7 +59,7 @@ export default function ModulesTable() {
             </Table.HeadCell>
           </Table.Head>
           <Table.Body className="divide-y">
-          {administrationData.applications.map((item) => (
+          {modules.data.map((item) => (
             <Table.Row key={item.slug} className="bg-white dark:border-gray-700 dark:bg-gray-800">
                 <>
                 <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
@@ -109,6 +110,7 @@ export default function ModulesTable() {
           </Table.Body>
         </Table>
         </div>
+      </div>
     </>
   )
 }

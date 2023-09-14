@@ -5,7 +5,8 @@
 html,
 body,
 :root {
-  height: 100%
+  height: 100%;
+  background: #fff;
 }
 .navProfileDropdown > ul {
   padding-bottom: 0 !important;
@@ -20,4 +21,8 @@ body,
 .token.plain {
   padding: 0;
   width: 0 !important;
+}
+.prism-code {
+  --tw-bg-opacity: 1;
+    background-color: rgb(31 41 55 / var(--tw-bg-opacity)) !important;
 }

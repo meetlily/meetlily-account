@@ -28,13 +28,17 @@ export type OrganizationType = Omit<
     createdAt: string;
     updatedAt: string;
 }
-export type ModuleType = Omit<
-    Module,
-    "createdAt" | "updatedAt"
-> & {
-    createdAt: string;
-    updatedAt: string;
-}
+
+export type ModuleType = {
+    name: string;
+    slug: string;
+    short_description: string;
+    description: string;
+    category: { name: string; id: string; }[];
+    tags: string[];
+    icon_name: string;
+    module: string;
+  }
 export type VariableType = Omit<
     Variable,
     "createdAt"

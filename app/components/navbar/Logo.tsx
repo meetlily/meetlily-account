@@ -17,9 +17,7 @@ const Logo: React.FC<LogoProps> = ({
     const router = useRouter();
     return (
    
-        <div className="flex flex-wrap justify-between lg:-ml-2 cursor-pointer"
-          onClick={() => router.push('/')}
-        >
+        <div className="flex flex-wrap justify-between lg:-ml-2 cursor-pointer">
             <Image
                 className=""
                 src={`https://www.meetlily.net/logo/${color}.svg`}

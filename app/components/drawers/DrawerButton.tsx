@@ -5,8 +5,8 @@ import IconComponent from "../icons/IconComponent";
 import AppIcons from "../icons/AppIcons";
 
 interface DrawerButtonProp {
-    buttonId: string;
-    drawerTargetId: string;
+    buttonId?: string;
+    drawerTargetId?: string;
     label: string;
     iconName?: string | 'ban' | undefined;
     primaryAction?: () => void;

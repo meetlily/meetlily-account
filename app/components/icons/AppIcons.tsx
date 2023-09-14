@@ -1,12 +1,12 @@
 'use client'
 import { IconType } from "react-icons";
-import {RiVideoChatFill, RiSecurePaymentFill, RiRefund2Fill, RiPagesLine, RiSurveyLine, RiNftFill, RiBook3Line, RiFolderSettingsFill, RiCodeBoxLine, RiPagesFill, RiMoneyDollarBoxLine, RiProfileLine} from 'react-icons/ri'
+import {RiVideoChatFill, RiSecurePaymentFill, RiRefund2Fill, RiPagesLine, RiSurveyLine, RiNftFill, RiBook3Line, RiFolderSettingsFill, RiCodeBoxLine, RiPagesFill, RiMoneyDollarBoxLine, RiProfileLine, RiUninstallFill, RiInstallLine} from 'react-icons/ri'
 import { TbApi,TbMovie, TbServer2, TbLayoutGridAdd, TbTools, TbCurrencyRiyal, TbCurrencyDirham, TbCurrencyDinar, TbCurrencyCent, TbCurrencyAfghani, TbCurrencyBahraini, TbCurrencyDogecoin, TbCurrencyWon, TbCurrencyTenge, TbCurrencyZloty, TbCurrencyDram, TbCurrencyEthereum, TbCurrencyLitecoin, TbCurrencyLari, TbHexagonLetterF, TbCircleLetterC, TbSquareLetterB, TbLetterM, TbCurrency, TbCurrencyBitcoin, TbCash, TbBuildingWarehouse, TbRobot, TbKey, TbHomeCog, TbEdit } from 'react-icons/tb'
 import {HiGlobeAlt, HiHomeModern,} from 'react-icons/hi2'
 import {LuCalendarClock, LuLayoutGrid, LuRefreshCw, LuCog, LuFileClock, LuFolderClock } from 'react-icons/lu'
-import { BsDatabaseAdd,BsPersonAdd, BsBuildingAdd, BsFillHouseAddFill, BsDatabaseUp, BsChevronRight, BsFileRichtextFill, BsFillCalendar2WeekFill, BsFillCalendar2PlusFill, BsFillCalendarXFill, BsFillCalendar2CheckFill, BsCalendarRange, BsCash, BsCashCoin, BsCurrencyEuro, BsMarkdown, BsCashStack, BsNewspaper, BsFillHousesFill, BsFillBuildingsFill, BsFillBoxFill, BsShieldLock } from 'react-icons/bs'
-import { BiAddToQueue, BiSolidBookContent, BiRestaurant, BiSolidBusiness, BiGlobe, BiSolidPhotoAlbum } from 'react-icons/bi'
-import { MdSwitchAccessShortcutAdd, MdOutlineAdminPanelSettings, MdWorkspacePremium, MdOutlineAddBusiness, MdCardMembership, MdApi, MdOutlineMeetingRoom, MdCurrencyPound, MdOutlineCurrencyLira, MdOutlineCurrencyFranc, MdOutlineCurrencyBitcoin, MdCurrencyRuble, MdCurrencyRupee, MdSupport, MdOutlineLocalShipping, MdOutlinePunchClock, MdInventory, MdOutlineCopyAll, MdOutlineWeb, MdOutlineLocalGroceryStore, MdOutlineEditNote, MdModeEdit, MdAdd, MdKeyboardArrowDown, MdKeyboardArrowLeft, MdKeyboardArrowRight, MdKeyboardArrowUp } from 'react-icons/md'
+import { BsDatabaseAdd,BsPersonAdd, BsBuildingAdd, BsFillHouseAddFill, BsDatabaseUp, BsChevronRight, BsFileRichtextFill, BsFillCalendar2WeekFill, BsFillCalendar2PlusFill, BsFillCalendarXFill, BsFillCalendar2CheckFill, BsCalendarRange, BsCash, BsCashCoin, BsCurrencyEuro, BsMarkdown, BsCashStack, BsNewspaper, BsFillHousesFill, BsFillBuildingsFill, BsFillBoxFill, BsShieldLock, BsFillCheckCircleFill } from 'react-icons/bs'
+import { BiAddToQueue, BiSolidBookContent, BiRestaurant, BiSolidBusiness, BiGlobe, BiSolidPhotoAlbum, BiShow } from 'react-icons/bi'
+import { MdSwitchAccessShortcutAdd, MdOutlineAdminPanelSettings, MdWorkspacePremium, MdOutlineAddBusiness, MdCardMembership, MdApi, MdOutlineMeetingRoom, MdCurrencyPound, MdOutlineCurrencyLira, MdOutlineCurrencyFranc, MdOutlineCurrencyBitcoin, MdCurrencyRuble, MdCurrencyRupee, MdSupport, MdOutlineLocalShipping, MdOutlinePunchClock, MdInventory, MdOutlineCopyAll, MdOutlineWeb, MdOutlineLocalGroceryStore, MdOutlineEditNote, MdModeEdit, MdAdd, MdKeyboardArrowDown, MdKeyboardArrowLeft, MdKeyboardArrowRight, MdKeyboardArrowUp, MdCastForEducation, MdOutlineMapsHomeWork, MdOutlineInstallDesktop } from 'react-icons/md'
 import { GiLovers, GiVideoConference, GiCash } from "react-icons/gi";
 
 import { 
@@ -156,13 +156,21 @@ import {
     FaSwatchbook,
     FaUserGraduate,
     FaCar,
-    FaStar
+    FaStar,
+    FaCircleInfo
 } from "react-icons/fa6";
 import { SiBlockchaindotcom, SiCampaignmonitor, SiCkeditor4, SiCoinmarketcap, SiHiveBlockchain, SiSurveymonkey } from "react-icons/si";
 
 
 
 const AppIcons: { [key: string]: IconType } = {
+    checked: BsFillCheckCircleFill,
+    infoCircle: FaCircleInfo,
+    uninstall: RiUninstallFill,
+    install: RiInstallLine,
+    employment: MdOutlineMapsHomeWork,
+    education: MdCastForEducation,
+    view: BiShow,
     star: FaStar,
     liveEdit: SiCkeditor4,
     agreement: BsShieldLock,

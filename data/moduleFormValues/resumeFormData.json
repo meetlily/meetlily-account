@@ -4,17 +4,17 @@
         {
           "Label": "First Name",
           "Type": "text",
-          "Value": "John"
+          "Value": "Eddie"
         },
         {
           "Label": "Last Name",
           "Type": "text",
-          "Value": "Doe"
+          "Value": "Villanueva"
         },
         {
           "Label": "Email",
           "Type": "email",
-          "Value": "john.doe@example.com"
+          "Value": "edvillan15@gmail.com"
         }
       ]
     },
