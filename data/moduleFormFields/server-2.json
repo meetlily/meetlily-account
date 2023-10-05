@@ -1,0 +1,105 @@
+[
+    {
+        "label": "Server Information",
+        "group": "Technical Information",
+        "fields": [
+            {
+                "label": "Server Name",
+                "name": "serverName",
+                "type": "text",
+                "placeholder": "Enter server name",
+                "value": ""
+            },
+            {
+                "label": "IP Address",
+                "name": "ipAddress",
+                "type": "text",
+                "placeholder": "Enter IP address",
+                "value": ""
+            },
+            {
+                "label": "Port Number",
+                "name": "portNumber",
+                "type": "number",
+                "placeholder": "Enter port number",
+                "value": ""
+            },
+            {
+                "label": "Operating System",
+                "name": "operatingSystem",
+                "type": "text",
+                "placeholder": "Enter operating system",
+                "value": ""
+            },
+            {
+                "label": "Server Location",
+                "name": "serverLocation",
+                "type": "text",
+                "placeholder": "Enter server location",
+                "value": ""
+            },
+            {
+                "label": "Server Status",
+                "name": "serverStatus",
+                "type": "text",
+                "placeholder": "Enter server status",
+                "value": ""
+            },
+            {
+                "label": "Last Maintenance Date",
+                "name": "lastMaintenanceDate",
+                "type": "date",
+                "placeholder": "Enter last maintenance date",
+                "value": ""
+            }
+        ]
+    },
+    {
+        "label": "Hardware Information",
+        "group": "Technical Information",
+        "fields": [
+            {
+                "label": "CPU Model",
+                "name": "cpuModel",
+                "type": "text",
+                "placeholder": "Enter CPU model",
+                "value": ""
+            },
+            {
+                "label": "CPU Cores",
+                "name": "cpuCores",
+                "type": "number",
+                "placeholder": "Enter number of CPU cores",
+                "value": ""
+            },
+            {
+                "label": "RAM Size",
+                "name": "ramSize",
+                "type": "number",
+                "placeholder": "Enter RAM size in GB",
+                "value": ""
+            },
+            {
+                "label": "Storage Type",
+                "name": "storageType",
+                "type": "text",
+                "placeholder": "Enter storage type",
+                "value": ""
+            },
+            {
+                "label": "Storage Size",
+                "name": "storageSize",
+                "type": "number",
+                "placeholder": "Enter storage size in GB",
+                "value": ""
+            },
+            {
+                "label": "Network Card Model",
+                "name": "networkCardModel",
+                "type": "text",
+                "placeholder": "Enter network card model",
+                "value": ""
+            }
+        ]
+    }
+]

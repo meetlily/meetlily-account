@@ -1,0 +1,42 @@
+{
+    "POST": [
+        {
+            "name": "Create an Auth Token",
+            "endpoint": "/v3/user/tokens",
+            "description": "Creates and returns a new authentication token for the currently authenticated User. The bearerToken property is only provided once, in the response body, so be sure to save it on the client for use with API requests.",
+            "query": {
+                "teamId": "SOME_STRING_VALUE"
+            },
+            "body": {
+                "name": "SOME_STRING_VALUE",
+                "expiresAt": "SOME_NUMBER_VALUE",
+                "clientId": "SOME_STRING_VALUE",
+                "installationId": "SOME_STRING_VALUE",
+                "type": "SOME_STRING_VALUE"
+            },
+            "sample": {
+                "curl": "curl -X POST \"https://api.vercel.com/v3/user/tokens?teamId=VERCEL_MEETLILY_TEAMID\" -H \"Authorization: Bearer VERCEL_TOKEN\" -d '{\"name\": \"SOME_STRING_VALUE\",\"expiresAt\": \"SOME_NUMBER_VALUE\"}'"
+            }
+        }
+    ],
+    "DELETE": [
+        {
+            "name": "Delete an authentication token",
+            "endpoint": "/v3/user/tokens/{tokenId}",
+            "description": "Invalidate an authentication token, such that it will no longer be valid for future HTTP requests.",
+            "path": {
+                "tokenId": "SOME_STRING_VALUE"
+            },
+            "body": {
+                "name": "SOME_STRING_VALUE",
+                "expiresAt": "SOME_NUMBER_VALUE",
+                "clientId": "SOME_STRING_VALUE",
+                "installationId": "SOME_STRING_VALUE",
+                "type": "SOME_STRING_VALUE"
+            },
+            "sample": {
+                "curl": "curl -X DELETE \"https://api.vercel.com/v3/user/tokens/5d9f2ebd38ddca62e5d51e9c1704c72530bdc8bfdd41e782a6687c48399e8391\" -H \"Authorization: Bearer <TOKEN>\""
+            }
+        }
+    ]
+}

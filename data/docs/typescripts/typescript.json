@@ -1,0 +1,31 @@
+[
+    {
+        "title": "Exporting TypeScript Interfaces",
+        "description": "This guide explains how to export interfaces from a TypeScript module and how to import them in other files.",
+        "steps": [
+          {
+            "title": "Define and Export Interfaces",
+            "instructions": [
+              {
+                "description": "Define your interfaces and export them from your TypeScript module.",
+                "code": "export interface Instruction {\n  description?: string;\n  code?: string;\n}\n\nexport interface Step {\n  title: string;\n  instructions: Instruction[];\n}\n\nexport interface Guide {\n  title: string;\n  description: string;\n  steps: Step[];\n  categories: string[];\n}"
+              }
+            ]
+          },
+          {
+            "title": "Import Interfaces in Other Files",
+            "instructions": [
+              {
+                "description": "Import the exported interfaces in other TypeScript files in your project.",
+                "code": "import { Guide, Step, Instruction } from './path-to-your-file';"
+              },
+              {
+                "description": "Replace './path-to-your-file' with the actual path to the file where you've defined these interfaces."
+              }
+            ]
+          }
+        ],
+        "categories": ["TypeScript", "Modules", "Interfaces"]
+      }
+      
+]

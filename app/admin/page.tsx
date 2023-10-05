@@ -1,23 +1,28 @@
-import { getSession } from "next-auth/react";
-import getCurrentUser from "../actions/getCurrentUser";
-import AdminLayout from "../components/AdminLayout";
-import ModulesTable from "../components/modules/ModulesTable";
-import Dashboard from "../components/Dashboard";
-import { getModuleLists } from "../actions/getModuleLists";
-import ModuleLists from "../components/modules/ModuleLists";
-import EmptyText from "../components/empty/EmptyText";
-import EmptyPage from "../components/empty/EmptyPage";
-import rolesData from "@/data/roles.json";
+import getCurrentUser from '../actions/getCurrentUser';
+import AdminLayout from '../components/AdminLayout';
+import EmptyPage from '../components/empty/EmptyPage';
+import ModulesTable from '../components/modules/ModulesTable';
 
 export default async function AdminPage() {
-  
-  const currentUser = await getCurrentUser();
-
-  return (
-    <>
-      <AdminLayout currentUser={currentUser} showSidebar={false} showNavbar={true} showNavbarSearch={true}>
-        <EmptyPage />
-      </AdminLayout>
-    </>
-  )
+	const currentUser = await getCurrentUser();
+	const supAdm = 'Super Administrator';
+	let isAdmin = false;
+	if (currentUser?.Role) {
+		const foundSupAdmin = currentUser.Role.find((obj) => obj.name === supAdm);
+		if (foundSupAdmin) {
+			isAdmin = true;
+		}
+	}
+	return (
+		<>
+			<AdminLayout
+				currentUser={currentUser}
+				showSidebar={true}
+				showNavbar={true}
+				showNavbarSearch={true}
+			>
+				{isAdmin ? <ModulesTable /> : <EmptyPage />}
+			</AdminLayout>
+		</>
+	);
 }

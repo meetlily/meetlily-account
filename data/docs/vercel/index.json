@@ -1,0 +1,57 @@
+{
+    "title": "How do I use a Vercel API Access Token?",
+    "description": "Vercel Access Tokens are required to authenticate and use the Vercel API. Tokens can be created and managed inside your account settings, and can be scoped to only allow access for specific Teams. This article covers how to create a token and use it with your account.",
+    "steps": [
+        {
+            "title": "Creating an Access Token",
+            "instructions": [
+                {
+                    "description": "Make sure that you are under Personal Account and not Teams in the dropdown at the top left in the Navigation bar. Navigate to the Account Tokens page, also found under the Settings area of your Personal Account."
+                },
+                {
+                    "description": "Click Create to open the create token modal."
+                },
+                {
+                    "description": "Enter a descriptive name and click Create Token."
+                },
+                {
+                    "description": "Choose the scope of access for the token from the dropdown."
+                },
+                {
+                    "description": "Make a note of the token created as it will not be shown again."
+                }
+            ]
+        },
+        {
+            "title": "Using the Access Token in Personal Account API Calls",
+            "instructions": [
+                {
+                    "description": "Identify the Vercel API endpoint you would like to call. For example, to list the deployments in your Personal Account, the endpoint is /v6/deployments. The access token token you created would need access to your Personal Account."
+                },
+                {
+                    "description": "Make a request to https://api.vercel.com/v6/deployments using your access token as the Authorization header."
+                },
+                {
+                    "code": "curl\"https://api.vercel.com/v6/deployments\" -H \"Authorization: Bearer TOKEN\""
+                },
+                {
+                    "code": "const result = await fetch(\n    'https://api.vercel.com/v6/deployments',\n    {\n        method: 'GET',\n        headers: {\n            Authorization: `Bearer ${process.env.VERCEL_ACCESS_TOKEN}`,\n        }\n    }\n);"
+                }
+            ]
+        },
+        {
+            "title": "Using the Access Token in Team API Calls",
+            "instructions": [
+                {
+                    "description": "If you are trying to retrieve deployments for a team, you will need to append ?teamId=<your-team-id> to the URL. Your Team ID can be found inside your team's general project settings on the dashboard."
+                },
+                {
+                    "description": "You will also need to ensure the access token created has the correct scope for the Team."
+                },
+                {
+                    "code": "const teamId = 'replace-me'\nconst result = await fetch(\n    `https://api.vercel.com/v6/deployments?teamId=${teamId}`,\n    {\n        method: 'GET',\n        headers: {\n            Authorization: `Bearer ${process.env.VERCEL_ACCESS_TOKEN}`,\n        }\n    }\n);"
+                }
+            ]
+        }
+    ]
+}

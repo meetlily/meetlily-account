@@ -1,3 +1,4 @@
+'use client';
 import { Button } from 'flowbite-react';
 import React, { useState } from 'react';
 interface ModalHeaderProps {

@@ -1,0 +1,111 @@
+[
+    {
+        "title": "GuideForm Component in React",
+        "description": "This document provides a basic implementation of the GuideForm component in React. This component creates a form with fields for the title, description, steps, and categories. Each step has a title and multiple instructions. The categories are joined into a single string with commas.",
+        "interfaces": [
+            {
+                "name": "Instruction",
+                "fields": [
+                    {
+                        "name": "description",
+                        "type": "string",
+                        "optional": true
+                    },
+                    {
+                        "name": "code",
+                        "type": "string",
+                        "optional": true
+                    }
+                ]
+            },
+            {
+                "name": "Step",
+                "fields": [
+                    {
+                        "name": "title",
+                        "type": "string",
+                        "optional": false
+                    },
+                    {
+                        "name": "instructions",
+                        "type": "Instruction[]",
+                        "optional": false
+                    }
+                ]
+            },
+            {
+                "name": "Guide",
+                "fields": [
+                    {
+                        "name": "title",
+                        "type": "string",
+                        "optional": false
+                    },
+                    {
+                        "name": "description",
+                        "type": "string",
+                        "optional": false
+                    },
+                    {
+                        "name": "steps",
+                        "type": "Step[]",
+                        "optional": false
+                    },
+                    {
+                        "name": "categories",
+                        "type": "string[]",
+                        "optional": false
+                    }
+                ]
+            }
+        ],
+        "steps": [
+            {
+                "title": "Import React and useState",
+                "instructions": [
+                    {
+                        "description": "Import React and the useState hook from the 'react' library.",
+                        "code": "import React, { useState } from 'react';"
+                    }
+                ]
+            },
+            {
+                "title": "Define the GuideForm Component",
+                "instructions": [
+                    {
+                        "description": "Define a function component called GuideForm that takes a single prop: 'guide'.",
+                        "code": "const GuideForm = ({ guide }) => { /* component definition */ };"
+                    },
+                    {
+                        "description": "Use the useState hook to create a state variable 'formState' and a function 'setFormState' to update it. The initial state is set to the 'guide' prop.",
+                        "code": "const [formState, setFormState] = useState(guide);"
+                    },
+                    {
+                        "description": "Define handler functions to update the state when the user types into the form fields.",
+                        "code": "const handleInputChange = (event) => { /* function definition */ };"
+                    },
+                    {
+                        "description": "Return a form element that includes input and textarea elements for the title, description, steps, and categories.",
+                        "code": "return ( /* form elements */ );"
+                    }
+                ]
+            },
+            {
+                "title": "Export the GuideForm Component",
+                "instructions": [
+                    {
+                        "description": "Export the GuideForm component as the default export of the module.",
+                        "code": "export default GuideForm;"
+                    }
+                ]
+            }
+        ],
+        "categories": [
+            "React",
+            "Components",
+            "Forms",
+            "useState",
+            "Controlled Components"
+        ]
+    }
+]

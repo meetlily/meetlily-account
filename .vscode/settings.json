@@ -1,10 +1,12 @@
 {
-    "cSpell.words": [
-        "cloudinary",
-        "flowbite",
-        "latlng",
-        "nextauth",
-        "prismadb",
-        "topbar"
-    ]
+	"cSpell.words": [
+		"cloudinary",
+		"emailaddress",
+		"flowbite",
+		"latlng",
+		"nextauth",
+		"prismadb",
+		"topbar"
+	],
+	"deepscan.ignoreConfirmWarning": true
 }

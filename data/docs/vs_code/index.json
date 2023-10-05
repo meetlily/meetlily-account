@@ -1,0 +1,142 @@
+[
+    {
+        "title": "Enabling Word Wrap in Visual Studio Code",
+        "description": "This guide explains how to enable word wrap in Visual Studio Code.",
+        "steps": [
+            {
+                "title": "Open Visual Studio Code",
+                "instructions": [
+                    {
+                        "description": "Open Visual Studio Code on your computer."
+                    }
+                ]
+            },
+            {
+                "title": "Open Settings",
+                "instructions": [
+                    {
+                        "description": "Press Ctrl + , (comma) to open the settings."
+                    }
+                ]
+            },
+            {
+                "title": "Search for Word Wrap Setting",
+                "instructions": [
+                    {
+                        "description": "In the search bar at the top, type 'word wrap' to filter the settings."
+                    }
+                ]
+            },
+            {
+                "title": "Modify Word Wrap Setting",
+                "instructions": [
+                    {
+                        "description": "Look for the 'Editor: Word Wrap' option and select one of the available options: 'off', 'on', or 'wordWrapColumn'."
+                    },
+                    {
+                        "description": "'off': Disables word wrap."
+                    },
+                    {
+                        "description": "'on': Enables word wrap at the viewport width."
+                    },
+                    {
+                        "description": "'wordWrapColumn': Enables word wrap at a specific column."
+                    },
+                    {
+                        "description": "Choose the option that suits your preference."
+                    },
+                    {
+                        "description": "If you select 'wordWrapColumn', you can specify the column number by modifying the 'Editor: Word Wrap Column' setting."
+                    }
+                ]
+            },
+            {
+                "title": "Save Settings",
+                "instructions": [
+                    {
+                        "description": "Save the settings."
+                    }
+                ]
+            },
+            {
+                "title": "Note",
+                "instructions": [
+                    {
+                        "description": "After enabling word wrap, lines in your code will automatically wrap based on the selected option. This can help improve readability, especially when working with long lines of code."
+                    },
+                    {
+                        "description": "The exact steps may vary slightly depending on your operating system and Visual Studio Code version."
+                    }
+                ]
+            }
+        ],
+        "categories": [
+            "Visual Studio Code",
+            "Settings",
+            "Word Wrap"
+        ]
+    },
+    {
+        "title": "Enabling Automatic Formatting on Save in Visual Studio Code",
+        "description": "This guide explains how to enable automatic formatting on save in Visual Studio Code.",
+        "steps": [
+            {
+                "title": "Open Visual Studio Code",
+                "instructions": [
+                    {
+                        "description": "Open Visual Studio Code on your computer."
+                    }
+                ]
+            },
+            {
+                "title": "Open Settings",
+                "instructions": [
+                    {
+                        "description": "Press Ctrl + , (comma) to open the settings."
+                    }
+                ]
+            },
+            {
+                "title": "Search for Format On Save Setting",
+                "instructions": [
+                    {
+                        "description": "In the search bar at the top, type 'format on save' to filter the settings."
+                    }
+                ]
+            },
+            {
+                "title": "Modify Format On Save Setting",
+                "instructions": [
+                    {
+                        "description": "Look for the 'Editor: Format On Save' option and check the box to enable it."
+                    },
+                    {
+                        "description": "By default, Visual Studio Code will use the formatting settings for the current file type. If you want to customize the formatting behavior, you can click on the 'Edit in settings.json' link below the option."
+                    },
+                    {
+                        "description": "In the settings.json file, you can specify the formatting provider and configure its options. For example, if you're working with JavaScript, you can set 'editor.defaultFormatter' to a specific formatter extension like 'esbenp.prettier-vscode' and customize its settings."
+                    },
+                    {
+                        "description": "Save the settings.json file."
+                    }
+                ]
+            },
+            {
+                "title": "Note",
+                "instructions": [
+                    {
+                        "description": "From now on, whenever you save a file, Visual Studio Code will automatically format it according to the specified formatting provider and its settings."
+                    },
+                    {
+                        "description": "The exact steps may vary slightly depending on your operating system and Visual Studio Code version."
+                    }
+                ]
+            }
+        ],
+        "categories": [
+            "Visual Studio Code",
+            "Settings",
+            "Automatic Formatting"
+        ]
+    }
+]

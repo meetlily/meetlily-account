@@ -1,91 +1,110 @@
 'use client';
 
-import { Button, Modal, Select } from 'flowbite-react';
-import { useState } from 'react';
-import FlowModalHeader from './FlowModalHeader';
-import FlowModalBody from './FlowModalBody';
-import FlowModalFooter from './FlowModalFooter';
-import ModalFooter from './ModalFooter';
-import ModalHeader from './ModalHeader';
-import Heading from '../Heading';
+import { Button, Modal } from 'flowbite-react';
+import { useEffect, useState } from 'react';
+import IconComponent from '../icons/IconComponent';
 interface FlowModalProps {
-  label?: string;
-  buttonIcon?: React.ReactElement;
-  buttonColor?: string;
-  modalBody?: React.ReactElement;
-  modalHeader?: React.ReactElement;
-  modalHeaderTitle?: string;
-  modalHeaderIcon?: React.ReactElement;
-  modalFooter?: boolean;
-  modalFooterPrimaryAction: () => void;
-  modalFooterPrimaryLabel?: string;
-  modalFooterSecondaryAction: () => void;
-  modalFooterSecondaryLabel?: string;
-  isOpen?: string | undefined;
-  modalId?: string | undefined;
-  modalStyle?: string;
-  size?: string;
-  placement?: string;
+	label?: string;
+	onClose?: () => void;
+	disabled?: boolean;
+	buttonIcon?: React.ReactElement;
+	buttonColor?: string;
+	modalBody?: React.ReactElement;
+	modalHeader?: React.ReactElement;
+	modalHeaderTitle?: string;
+	modalHeaderIcon?: React.ReactElement;
+	modalFooter?: boolean;
+	onSubmit: () => void;
+	modalFooterPrimaryLabel?: string;
+	modalFooterSecondaryAction: () => void;
+	modalFooterSecondaryLabel?: string;
+	isOpen?: boolean;
+	modalId?: string;
+	modalStyle?: string;
+	size?: string;
+	placement?: string;
 }
 const FlowModal: React.FC<FlowModalProps> = ({
-    label, 
-    buttonIcon, 
-    buttonColor,
-    modalBody: Body, 
-    modalHeader: Header, 
-    modalHeaderTitle,
-    modalHeaderIcon,
-    modalFooter, 
-    modalFooterPrimaryAction,
-    modalFooterPrimaryLabel,
-    modalFooterSecondaryAction,
-    modalFooterSecondaryLabel,
-    modalId, 
-    isOpen, 
-    size, 
-    placement 
-  }) => {
-  const [openModal, setOpenModal] = useState<string | undefined>('default');
-  const [modalPlacement, setModalPlacement] = useState<string>('center');
-  const [modalSize, setModalSize] = useState<string>('md');
-  const props = { modalPlacement, openModal, setModalPlacement, setOpenModal, modalSize, setModalSize };
-    if(!modalHeaderTitle){
-      modalHeaderTitle = "Sample Header Title"
-    }
-  return (
-    <>
-        <Button color={buttonColor} onClick={() => props.setOpenModal(modalId)}>
-          {buttonIcon && (
-            {buttonIcon}
-          )}
-          {label}
-        </Button>
-        <Modal size={size} show={props.openModal === modalId} onClose={() => props.setOpenModal(undefined)}>
-            <FlowModalHeader 
-              show={true} 
-              header={
-                <Heading 
-                  title={modalHeaderTitle}
-                  icon={modalHeaderIcon}
-                />}
-            />
-            <FlowModalBody show={true} body={Body}/>
-            {modalFooter && (
-              <>
-              <Modal.Footer>
-              <Button color="dark" onClick={modalFooterPrimaryAction}>{modalFooterPrimaryLabel}</Button>
-              {modalFooterSecondaryAction && (
-                  <Button color="gray" onClick={modalFooterSecondaryAction}>{modalFooterSecondaryLabel}</Button>
-              )}
-              </Modal.Footer>
-              </>
-            )}
-            
-        </Modal>
-    </>
-  )
-}
+	label,
+	onClose,
+	disabled,
+	buttonIcon,
+	buttonColor,
+	modalBody: Body,
+	modalHeader: Header,
+	modalHeaderTitle,
+	modalHeaderIcon,
+	modalFooter,
+	onSubmit,
+	modalFooterPrimaryLabel,
+	modalFooterSecondaryAction,
+	modalFooterSecondaryLabel,
+	modalId,
+	isOpen,
+	size,
+	placement
+}) => {
+	const [isLoading, setIsLoading] = useState(false);
+	const [openModal, setOpenModal] = useState<string | undefined>('default');
+	const [modalPlacement, setModalPlacement] = useState<string>('center');
+	const [modalSize, setModalSize] = useState<string>('md');
+	const props = {
+		modalPlacement,
+		openModal,
+		setModalPlacement,
+		setOpenModal,
+		modalSize,
+		setModalSize
+	};
+
+	const [showModal, setShowModal] = useState(isOpen);
+	useEffect(() => {
+		setShowModal(isOpen);
+	}, [isOpen]);
+
+	if (!modalHeaderTitle) {
+		modalHeaderTitle = 'Sample Header Title';
+	}
+	return (
+		<>
+			<Button color={buttonColor} onClick={() => setShowModal(true)}>
+				{label}
+			</Button>
+			<Modal size={size} show={showModal}>
+				<Modal.Header>{Header}</Modal.Header>
+				<Modal.Body>{Body}</Modal.Body>
+				<Modal.Footer>
+					<div className="flex flex-row">
+						<Button
+							color={'dark'}
+							size={size}
+							isProcessing={isLoading}
+							disabled={isLoading}
+							className={'w-full px-4 pl-2'}
+						>
+							<IconComponent iconName="signIn" size={24} />
+							<p className="hidden md:block" aria-hidden>
+								{modalFooterPrimaryLabel}
+							</p>
+						</Button>
+						<Button
+							color={'gray'}
+							size={size}
+							isProcessing={isLoading}
+							onClick={modalFooterSecondaryAction}
+							disabled={isLoading}
+							className={'w-full px-4 pl-2 text-gray-600'}
+						>
+							<IconComponent iconName="close" size={24} />
+							<p className="hidden md:block" aria-hidden>
+								{modalFooterSecondaryLabel}
+							</p>
+						</Button>
+					</div>
+				</Modal.Footer>
+			</Modal>
+		</>
+	);
+};
 
 export default FlowModal;
-
-

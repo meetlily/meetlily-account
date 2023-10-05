@@ -244,64 +244,106 @@
         "group": "Billing Details",
         "fields": [
             {
-                "label": "Billing Address",
-                "name": "billingAddress",
-                "type": "text",
-                "placeholder": "Enter billing address"
+                "name": "paymentMethod",
+                "label": "Payment Method",
+                "type": "select",
+                "options": [
+                    "Credit Card",
+                    "PayPal",
+                    "Bank Transfer"
+                ],
+                "required": true
             },
             {
-                "label": "Billing Zip/Postal Code",
-                "name": "billingZipCode",
+                "name": "cardNumber",
+                "label": "Card Number",
                 "type": "text",
-                "placeholder": "Enter billing zip/postal code"
+                "placeholder": "Enter your card number",
+                "required": false,
+                "displayCondition": "Credit Card"
             },
             {
-                "label": "Billing Country",
-                "name": "billingCountry",
+                "name": "cardholderName",
+                "label": "Cardholder Name",
                 "type": "text",
-                "placeholder": "Enter billing country"
+                "placeholder": "Enter the cardholder's name",
+                "required": false,
+                "displayCondition": "Credit Card"
             },
             {
-                "label": "Billing City",
-                "name": "billingCity",
+                "name": "expiryDate",
+                "label": "Expiry Date",
                 "type": "text",
-                "placeholder": "Enter billing city"
+                "placeholder": "MM/YY",
+                "required": false,
+                "displayCondition": "Credit Card"
             },
             {
-                "label": "Billing Email",
-                "name": "billingEmail",
+                "name": "cvv",
+                "label": "CVV",
+                "type": "text",
+                "placeholder": "Enter CVV",
+                "required": false,
+                "displayCondition": "Credit Card"
+            },
+            {
+                "name": "paypalEmail",
+                "label": "PayPal Email",
                 "type": "email",
-                "placeholder": "Enter billing email"
+                "placeholder": "Enter your PayPal email",
+                "required": false,
+                "displayCondition": "Paypal"
             },
             {
-                "label": "Billing Phone Number",
-                "name": "billingPhoneNumber",
-                "type": "tel",
-                "placeholder": "Enter billing phone number"
-            },
-            {
-                "label": "Credit Card Number",
-                "name": "creditCardNumber",
+                "name": "bankAccountNumber",
+                "label": "Bank Account Number",
                 "type": "text",
-                "placeholder": "Enter credit card number"
+                "placeholder": "Enter your bank account number",
+                "required": false,
+                "displayCondition": "Bank Transfer"
             },
             {
-                "label": "Card Expiry Date",
-                "name": "cardExpiryDate",
-                "type": "date",
-                "placeholder": "Enter card expiry date"
-            },
-            {
-                "label": "Card CVV",
-                "name": "cardCVV",
+                "name": "bankRoutingNumber",
+                "label": "Bank Routing Number",
                 "type": "text",
-                "placeholder": "Enter card CVV"
+                "placeholder": "Enter your bank routing number",
+                "required": false,
+                "displayCondition": "Bank Transfer"
             },
             {
-                "label": "Name on Card",
-                "name": "nameOnCard",
+                "name": "billingAddressStreet",
+                "label": "Street Address",
                 "type": "text",
-                "placeholder": "Enter name on card"
+                "placeholder": "Enter street address",
+                "required": true
+            },
+            {
+                "name": "billingAddressCity",
+                "label": "City",
+                "type": "text",
+                "placeholder": "Enter city",
+                "required": true
+            },
+            {
+                "name": "billingAddressState",
+                "label": "State/Province",
+                "type": "text",
+                "placeholder": "Enter state/province",
+                "required": true
+            },
+            {
+                "name": "billingAddressPostalCode",
+                "label": "Postal Code",
+                "type": "text",
+                "placeholder": "Enter postal code",
+                "required": true
+            },
+            {
+                "name": "billingAddressCountry",
+                "label": "Country",
+                "type": "text",
+                "placeholder": "Enter country",
+                "required": true
             }
         ]
     },

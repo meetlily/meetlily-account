@@ -1,0 +1,90 @@
+[
+    {
+        "title": "Integrating OpenAI's GPT-3 into a Next.js Application with TypeScript",
+        "description": "This document provides a step-by-step guide on how to integrate OpenAI's GPT-3 into a Next.js application using TypeScript.",
+        "steps": [
+            {
+                "title": "Install the OpenAI Node.js client library",
+                "instructions": [
+                    {
+                        "description": "Install the OpenAI Node.js client library by running the following command in your terminal:",
+                        "code": "npm install openai"
+                    }
+                ]
+            },
+            {
+                "title": "Create an API route in Next.js",
+                "instructions": [
+                    {
+                        "description": "Create a new file in the `pages/api` directory of your Next.js project. This file will define a new API route that your application can use to interact with the OpenAI API.",
+                        "code": "touch pages/api/generate-text.ts"
+                    },
+                    {
+                        "description": "Define the API route to interact with the OpenAI API.",
+                        "code": "import { NextApiRequest, NextApiResponse } from 'next';\nimport OpenAI from 'openai';\n\nconst openai = new OpenAI(process.env.OPENAI_API_KEY);\n\nexport default async function handler(req: NextApiRequest, res: NextApiResponse) {\n  if (req.method === 'POST') {\n    const prompt = req.body.prompt;\n    const response = await openai.complete({\n      engine: 'davinci-codex',\n      prompt: prompt,\n      max_tokens: 60,\n    });\n\n    res.status(200).json({ text: response.data.choices[0].text });\n  } else {\n    res.status(405).json({ message: 'Method Not Allowed' });\n  }\n}"
+                    }
+                ]
+            },
+            {
+                "title": "Use this API route in your Next.js pages or components",
+                "instructions": [
+                    {
+                        "description": "Use the new API route in your Next.js pages or components. Create a form that allows users to enter a prompt, and then sends a `POST` request to your new API route when the form is submitted.",
+                        "code": "import { useState } from 'react';\n\nexport default function TextGenerator() {\n  const [prompt, setPrompt] = useState('');\n  const [generatedText, setGeneratedText] = useState('');\n\n  const handleSubmit = async (event) => {\n    event.preventDefault();\n\n    const response = await fetch('/api/generate-text', {\n      method: 'POST',\n      headers: {\n        'Content-Type': 'application/json',\n      },\n      body: JSON.stringify({ prompt }),\n    });\n\n    const data = await response.json();\n\n    setGeneratedText(data.text);\n  };\n\n  return (\n    <div>\n      <form onSubmit={handleSubmit}>\n        <input\n          type=\"text\"\n          value={prompt}\n          onChange={(e) => setPrompt(e.target.value)}\n        />\n        <button type=\"submit\">Generate Text</button>\n      </form>\n      {generatedText && <p>{generatedText}</p>}\n    </div>\n  );\n}"
+                    }
+                ]
+            }
+        ],
+        "categories": [
+            "Next.js",
+            "TypeScript",
+            "OpenAI",
+            "GPT-3",
+            "API"
+        ]
+    },
+    {
+        "title": "OpenAI's GPT-3 into a Next.js Application with TypeScript",
+        "description": "This document provides a step-by-step guide on how to integrate OpenAI's GPT-3 into a Next.js application using TypeScript.",
+        "steps": [
+            {
+                "title": "Install the OpenAI Node.js client library",
+                "instructions": [
+                    {
+                        "description": "Install the OpenAI Node.js client library by running the following command in your terminal:",
+                        "code": "npm install openai"
+                    }
+                ]
+            },
+            {
+                "title": "Create an API route in Next.js",
+                "instructions": [
+                    {
+                        "description": "Create a new file in the `pages/api` directory of your Next.js project. This file will define a new API route that your application can use to interact with the OpenAI API.",
+                        "code": "touch pages/api/generate-text.ts"
+                    },
+                    {
+                        "description": "Define the API route to interact with the OpenAI API.",
+                        "code": "import { NextApiRequest, NextApiResponse } from 'next';\nimport OpenAI from 'openai';\n\nconst openai = new OpenAI(process.env.OPENAI_API_KEY);\n\nexport default async function handler(req: NextApiRequest, res: NextApiResponse) {\n  if (req.method === 'POST') {\n    const prompt = req.body.prompt;\n    const response = await openai.complete({\n      engine: 'davinci-codex',\n      prompt: prompt,\n      max_tokens: 60,\n    });\n\n    res.status(200).json({ text: response.data.choices[0].text });\n  } else {\n    res.status(405).json({ message: 'Method Not Allowed' });\n  }\n}"
+                    }
+                ]
+            },
+            {
+                "title": "Use this API route in your Next.js pages or components",
+                "instructions": [
+                    {
+                        "description": "Use the new API route in your Next.js pages or components. Create a form that allows users to enter a prompt, and then sends a `POST` request to your new API route when the form is submitted.",
+                        "code": "import { useState } from 'react';\n\nexport default function TextGenerator() {\n  const [prompt, setPrompt] = useState('');\n  const [generatedText, setGeneratedText] = useState('');\n\n  const handleSubmit = async (event) => {\n    event.preventDefault();\n\n    const response = await fetch('/api/generate-text', {\n      method: 'POST',\n      headers: {\n        'Content-Type': 'application/json',\n      },\n      body: JSON.stringify({ prompt }),\n    });\n\n    const data = await response.json();\n\n    setGeneratedText(data.text);\n  };\n\n  return (\n    <div>\n      <form onSubmit={handleSubmit}>\n        <input\n          type=\"text\"\n          value={prompt}\n          onChange={(e) => setPrompt(e.target.value)}\n        />\n        <button type=\"submit\">Generate Text</button>\n      </form>\n      {generatedText && <p>{generatedText}</p>}\n    </div>\n  );\n}"
+                    }
+                ]
+            }
+        ],
+        "categories": [
+            "Next.js",
+            "TypeScript",
+            "OpenAI",
+            "GPT-3",
+            "API"
+        ]
+    }
+]

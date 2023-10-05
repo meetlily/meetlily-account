@@ -1,12 +1,12 @@
 'use client';
-
+import sidebar from '@/data/sidebar.json';
 import { Sidebar } from 'flowbite-react';
-import DrawerButton from './drawers/DrawerButton';
-import ProductForm from './forms/ProductForm';
-import DrawerContent from './drawers/DrawerContent';
+import { useState } from 'react';
+import SidebarCTA from './sidebar/SidebarCTA';
+import SidebarItem from './sidebar/SidebarItem';
 
 interface SideBarLayoutProps {
-	showSidebar: boolean;
+	showSidebar?: boolean;
 	width?: string;
 	classNames?: string;
 	color?: string;
@@ -23,19 +23,53 @@ const SideBarLayout: React.FC<SideBarLayoutProps> = ({
 	ariaLabel,
 	children
 }) => {
-	
-
+	const [isDrawerOpen, setIsDrawerOpen] = useState(true);
+	const toggleDrawer = () => {
+		setIsDrawerOpen(!isDrawerOpen);
+	};
 	return (
 		<>
-			{showSidebar && (
-				<>
-					<Sidebar id={id} aria-label={ariaLabel} className={classNames} color={color}>
-						{children}
-						<DrawerButton buttonId={'drawer-new-product-button'} drawerTargetId={"drawer-new-product"} label={"New Product"} />
-					</Sidebar>
-					
-				</>
-			)}
+			<Sidebar id={id} aria-label={ariaLabel} className="border-r" color={color}>
+				<Sidebar.Items>
+					<>
+						{sidebar.map((side, i) => (
+							<>
+								<Sidebar.ItemGroup key={i}>
+									{side.group === 'cta' && <SidebarCTA show={true} />}
+									{side.name && (
+										<SidebarItem
+											key={side.name}
+											label={side.name}
+											iconName={side.group}
+											subItems={side.items}
+										/>
+									)}
+									{!side.name && (
+										<>
+											{side.items.length > 0 &&
+												side.items.map((item, k) => (
+													<>
+														{item && typeof item === 'string' && (
+															<SidebarItem key={item} label={item} iconName={'ban'} />
+														)}
+														{item && typeof item === 'object' && (
+															<SidebarItem
+																key={item.slug}
+																label={item.name}
+																iconName={item.icon_name}
+																href={`/admin/${item.slug}`}
+															/>
+														)}
+													</>
+												))}
+										</>
+									)}
+								</Sidebar.ItemGroup>
+							</>
+						))}
+					</>
+				</Sidebar.Items>
+			</Sidebar>
 		</>
 	);
 };

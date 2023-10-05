@@ -1,0 +1,139 @@
+{
+    "fields": [
+        {
+            "name": "paymentMethod",
+            "label": "Payment Method",
+            "type": "radio",
+            "options": [
+                "Credit Card",
+                "PayPal",
+                "Bank Transfer"
+            ],
+            "required": true
+        },
+        {
+            "name": "cardNumber",
+            "label": "Card Number",
+            "type": "text",
+            "placeholder": "Enter your card number",
+            "required": false,
+            "displayCondition": "Credit Card"
+        },
+        {
+            "name": "cardholderName",
+            "label": "Cardholder Name",
+            "type": "text",
+            "placeholder": "Enter the cardholder's name",
+            "required": false,
+            "displayCondition": "Credit Card"
+        },
+        {
+            "name": "expiryDate",
+            "label": "Expiry Date",
+            "type": "text",
+            "placeholder": "MM/YY",
+            "required": false,
+            "displayCondition": "Credit Card"
+        },
+        {
+            "name": "cvv",
+            "label": "CVV",
+            "type": "text",
+            "placeholder": "Enter CVV",
+            "required": false,
+            "displayCondition": "Credit Card"
+        },
+        {
+            "name": "paypalEmail",
+            "label": "PayPal Email",
+            "type": "email",
+            "placeholder": "Enter your PayPal email",
+            "required": false,
+            "displayCondition": "Paypal"
+        },
+        {
+            "name": "bankAccountNumber",
+            "label": "Bank Account Number",
+            "type": "text",
+            "placeholder": "Enter your bank account number",
+            "required": false,
+            "displayCondition": "Bank Transfer"
+        },
+        {
+            "name": "bankRoutingNumber",
+            "label": "Bank Routing Number",
+            "type": "text",
+            "placeholder": "Enter your bank routing number",
+            "required": false,
+            "displayCondition": "Bank Transfer"
+        },
+        {
+            "name": "amount",
+            "label": "Amount",
+            "type": "number",
+            "placeholder": "Enter the payment amount",
+            "required": true
+        },
+        {
+            "name": "currency",
+            "label": "Currency",
+            "type": "select",
+            "options": [
+                "USD",
+                "EUR",
+                "GBP",
+                "JPY"
+            ],
+            "required": true
+        },
+        {
+            "name": "billingAddressStreet",
+            "label": "Street Address",
+            "type": "text",
+            "placeholder": "Enter street address",
+            "required": true
+        },
+        {
+            "name": "billingAddressCity",
+            "label": "City",
+            "type": "text",
+            "placeholder": "Enter city",
+            "required": true
+        },
+        {
+            "name": "billingAddressState",
+            "label": "State/Province",
+            "type": "text",
+            "placeholder": "Enter state/province",
+            "required": true
+        },
+        {
+            "name": "billingAddressPostalCode",
+            "label": "Postal Code",
+            "type": "text",
+            "placeholder": "Enter postal code",
+            "required": true
+        },
+        {
+            "name": "billingAddressCountry",
+            "label": "Country",
+            "type": "text",
+            "placeholder": "Enter country",
+            "required": true
+        },
+        {
+            "name": "email",
+            "label": "Email",
+            "type": "email",
+            "placeholder": "Enter your email address",
+            "required": true
+        },
+        {
+            "name": "phone",
+            "label": "Phone",
+            "type": "tel",
+            "placeholder": "Enter your phone number",
+            "required": true
+        }
+    ]
+}

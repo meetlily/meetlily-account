@@ -36,6 +36,7 @@ model Module {
   externalLink String?
   User         User[]
   Organization Organization[]
+  Subscription Subscription[]
 }
 
 model Newsletter {
@@ -170,6 +171,7 @@ model User {
   Notification   Notification[]
   Device         Device[]
   Applications   Applications[]
+  Subscription   Subscription[]
 }
 
 model Role {
@@ -249,11 +251,18 @@ model Icon {
   icon       String?
   slug       String?
 }
+
 model Resume {
-  id        Int      @id @default(autoincrement())
-  firstName String
-  lastName  String
-  email     String
-  education String
+  id         Int    @id @default(autoincrement())
+  firstName  String
+  lastName   String
+  email      String
+  education  String
   experience String
+}
+
+model Subscription {
+  id     String   @id @default(uuid()) @map("_id") @db.VarChar(36)
+  Module Module[]
+  User   User[]
 }
