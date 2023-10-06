@@ -1,11 +1,11 @@
 'use client';
 
 import { SafeUser } from '@/app/types';
+import databaseData from '@/data/moduleFormFields/database.json';
 import organizationForm from '@/data/moduleFormFields/organization.json';
-import serverData from '@/data/moduleFormFields/server-2.json';
+import serverData from '@/data/moduleFormFields/server.json';
 import accountField from '@/data/moduleFormFields/user.json';
-import resumeData from '@/data/moduleFormValues/resumeFormData.json';
-import { useParams } from 'next/navigation';
+import { useParams, useSearchParams } from 'next/navigation';
 import { useEffect, useState } from 'react';
 import DocumentationPage from './DocumentationPage';
 import PreviewComponent from './PreviewComponent';
@@ -20,36 +20,32 @@ interface ModuleListPageProps {
 }
 const ModuleListPage: React.FC<ModuleListPageProps> = ({ currentUser, showSidebar, data }) => {
 	const params = useParams();
+	const searchParams = useSearchParams();
+	console.log(params, searchParams);
 	const [isLoading, setIsLoading] = useState(false);
-	const [formData, setFormData] = useState();
-	if (data && data?.permissions) {
-		console.log(data.permissions);
-	}
-	if (organizationForm) {
-		console.log(organizationForm, 'organizationForm');
-	}
+	const [formData, setFormData] = useState(data);
+	console.log(formData, 'formData');
 	useEffect(() => {
 		setIsLoading(true);
-		// Fetch the data from the API
-		// fetch(`/api/admin/${params?.slug}`)
-		// .then((response) => response.json())
-		// .then((data) => {
-		//   setFormData(data)
-		// })
-		// .catch((error) => console.error('Error fetching sections:', error))
-		// .finally(() => setIsLoading(false));
-	}, [params]);
+		fetch(`/api/admin/${params?.slug}`)
+			.then((response) => response.json())
+			.then((fData) => {
+				setFormData(fData);
+			})
+			.catch((error) => console.error(`Error fetching  ${params?.slug}`, error))
+			.finally(() => setIsLoading(false));
+	}, [params, setFormData]);
 	return (
 		<>
-			<div className="h-full w-full flex flex-col px-3">
+			<div className="h-full w-full flex flex-col px-0">
 				{params?.slug && params?.slug === 'resume' && (
 					<>
-						<ResumeView formData={resumeData} />
+						<ResumeView formData={formData} />
 					</>
 				)}
 				{params?.slug && params?.slug === 'live_edit' && (
 					<PreviewComponent currentUser={currentUser} showEditor={true}>
-						<ResumeView formData={resumeData} />
+						<ResumeView formData={formData} />
 					</PreviewComponent>
 				)}
 
@@ -78,6 +74,12 @@ const ModuleListPage: React.FC<ModuleListPageProps> = ({ currentUser, showSideba
 						<FormPage data={serverData} />
 					</>
 				)}
+				{params?.slug && params?.slug === 'database' && (
+					<>
+						<FormPage data={databaseData} />
+					</>
+				)}
+
 				{params?.slug && params?.slug === 'code_editor' && (
 					<>
 						<CodeEditorPage />

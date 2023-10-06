@@ -37,6 +37,8 @@ model Module {
   User         User[]
   Organization Organization[]
   Subscription Subscription[]
+  Formdata     Formdata[]
+  Formfield    Formfield[]
 }
 
 model Newsletter {
@@ -172,6 +174,8 @@ model User {
   Device         Device[]
   Applications   Applications[]
   Subscription   Subscription[]
+  Formdata       Formdata[]
+  Formfield      Formfield[]
 }
 
 model Role {
@@ -265,4 +269,23 @@ model Subscription {
   id     String   @id @default(uuid()) @map("_id") @db.VarChar(36)
   Module Module[]
   User   User[]
+}
+
+model Formfield {
+  id       String     @id @default(uuid()) @map("_id") @db.VarChar(36)
+  name     String
+  data     Json?
+  Formdata Formdata[]
+  Module   Module[]
+  User     User[]
+}
+
+model Formdata {
+  id          String     @id @default(uuid()) @map("_id") @db.VarChar(36)
+  name        String
+  data        Json?
+  Module      Module[]
+  User        User[]
+  Formfield   Formfield? @relation(fields: [formfieldId], references: [id])
+  formfieldId String?    @db.VarChar(36)
 }

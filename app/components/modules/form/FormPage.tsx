@@ -3,6 +3,7 @@ import { useParams, useRouter } from 'next/navigation';
 import React, { useState } from 'react';
 import { FieldValues, SubmitHandler, useForm } from 'react-hook-form';
 import ButtonComponent from '../../Button';
+import Heading from '../../Heading';
 import AppIcons from '../../icons/AppIcons';
 import InputSelect from '../../inputs/InputSelect';
 import InputText from '../../inputs/InputText';
@@ -22,6 +23,7 @@ const FormPage: React.FC<FormPageProps> = ({ data }) => {
 	const [selectData, setSelectData] = useState<SelectData>({});
 	const [isLoading, setIsLoading] = useState(false);
 	const [selectedPaymentMethod, setSelectedPaymentMethod] = useState<string>('');
+	const [selectedToggleSwitch, setSelectedToggleSwitch] = useState(false);
 	const router = useRouter();
 	const params = useParams();
 	const slug = params?.slug;
@@ -39,6 +41,16 @@ const FormPage: React.FC<FormPageProps> = ({ data }) => {
 				[name]: value
 			}));
 		}
+	};
+	const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
+		const { name, value } = e.target;
+		setFormData((prevData) => ({
+			...prevData,
+			[name]: value
+		}));
+	};
+	const handleToggleChange = (checked: boolean) => {
+		setSelectedToggleSwitch(checked);
 	};
 	const {
 		register,
@@ -67,13 +79,10 @@ const FormPage: React.FC<FormPageProps> = ({ data }) => {
 			// }
 			return (
 				<div key={field.name} className="flex flex-col md:flex-row items-center justify-start">
-					<label
-						htmlFor={field.name}
-						className="font-semibold w-full md:min-w-[240px] lg:max-w-[200px] xl:max-w-[300px]"
-					>
+					<label htmlFor={field.name} className="font-light text-sm w-full md:min-w-sm">
 						{field.label}
 					</label>
-					<div className="w-full min-w-[340px] lg:max-w-[260px] md:min-w-[340px] lg:min-w-[300px] xl:min-w-[340px] xl:max-w-[340px] my-3">
+					<div className="w-full my-3">
 						{field.type === 'select' ? (
 							<InputSelect
 								id={field.name}
@@ -87,17 +96,34 @@ const FormPage: React.FC<FormPageProps> = ({ data }) => {
 								onChange={handleSelectChange}
 							/>
 						) : (
-							<InputText
-								type={field.type}
-								id={field.name}
-								name={field.name}
-								value={formData[field.name] || ''}
-								placeholder={field.placeholder}
-								required={field.required}
-								register={register}
-								displayCondition={field.displayCondition}
-								errors={errors}
-							/>
+							<>
+								{field.type === 'toggle' ? (
+									<InputText
+										type={field.type}
+										id={field.name}
+										name={field.name}
+										value={formData[field.name] || ''}
+										placeholder={field.placeholder}
+										register={register}
+										displayCondition={field.displayCondition}
+										errors={errors}
+										checked={selectedToggleSwitch}
+									/>
+								) : (
+									<InputText
+										type={field.type}
+										id={field.name}
+										name={field.name}
+										value={formData[field.name] || ''}
+										placeholder={field.placeholder}
+										required={field.required}
+										register={register}
+										displayCondition={field.displayCondition}
+										errors={errors}
+										onChange={handleInputChange}
+									/>
+								)}
+							</>
 						)}
 					</div>
 				</div>
@@ -106,13 +132,22 @@ const FormPage: React.FC<FormPageProps> = ({ data }) => {
 	};
 	return (
 		<form onSubmit={handleSubmit(onSubmit)}>
-			{data?.map((g, i) => (
-				<div key={i} className="w-full space-y-2">
-					<h2 className="text-2xl font-bold">{g.label}</h2>
-					{renderFields(g.fields)}
-				</div>
-			))}
-			<div className="flex flex-row">
+			<div
+				className="
+					grid
+					grid-cols-1
+					md:grid-cols-2
+					gap-0
+				"
+			>
+				{data?.map((g, i) => (
+					<div key={i} className="w-full bg-white">
+						<Heading title={g.label} size="font-normal text-lg mx-4 pb-2 text-gray-900 border-b" />
+						<div className="flex flex-col px-4 h-full">{renderFields(g.fields)}</div>
+					</div>
+				))}
+			</div>
+			<div className="flex flex-row gap-4 px-4">
 				<ButtonComponent
 					isProcessing={isLoading}
 					label={'Continue'}

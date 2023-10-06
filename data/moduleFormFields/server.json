@@ -4,53 +4,111 @@
         "group": "Technical Information",
         "fields": [
             {
-                "label": "Server Name",
                 "name": "serverName",
+                "label": "Server Name",
                 "type": "text",
-                "placeholder": "Enter server name",
-                "value": ""
+                "placeholder": "Enter the server name",
+                "required": true
             },
             {
-                "label": "IP Address",
-                "name": "ipAddress",
-                "type": "text",
-                "placeholder": "Enter IP address",
-                "value": ""
+                "name": "serverType",
+                "label": "Server Type",
+                "type": "select",
+                "options": [
+                    "Shared Hosting",
+                    "VPS Hosting",
+                    "Dedicated Hosting"
+                ],
+                "required": true
             },
             {
-                "label": "Port Number",
-                "name": "portNumber",
-                "type": "number",
-                "placeholder": "Enter port number",
-                "value": ""
-            },
-            {
-                "label": "Operating System",
-                "name": "operatingSystem",
-                "type": "text",
-                "placeholder": "Enter operating system",
-                "value": ""
-            },
-            {
-                "label": "Server Location",
                 "name": "serverLocation",
+                "label": "Server Location",
                 "type": "text",
-                "placeholder": "Enter server location",
-                "value": ""
+                "placeholder": "Enter the server location",
+                "required": true
             },
             {
-                "label": "Server Status",
-                "name": "serverStatus",
-                "type": "text",
-                "placeholder": "Enter server status",
-                "value": ""
+                "name": "serverRAM",
+                "label": "Server RAM (GB)",
+                "type": "number",
+                "placeholder": "Enter the server RAM in gigabytes",
+                "required": true
             },
             {
-                "label": "Last Maintenance Date",
-                "name": "lastMaintenanceDate",
-                "type": "date",
-                "placeholder": "Enter last maintenance date",
-                "value": ""
+                "name": "serverStorage",
+                "label": "Server Storage (GB)",
+                "type": "number",
+                "placeholder": "Enter the server storage capacity in gigabytes",
+                "required": true
+            },
+            {
+                "name": "serverBandwidth",
+                "label": "Server Bandwidth (TB)",
+                "type": "number",
+                "placeholder": "Enter the server bandwidth in terabytes",
+                "required": true
+            },
+            {
+                "name": "serverPrice",
+                "label": "Price (per month)",
+                "type": "number",
+                "placeholder": "Enter the price per month",
+                "required": true
+            },
+            {
+                "name": "serverFeatures",
+                "label": "Server Features",
+                "type": "select",
+                "options": [
+                    "SSL Certificate",
+                    "Daily Backups",
+                    "24/7 Support",
+                    "DDoS Protection",
+                    "Domain Registration"
+                ],
+                "required": false
+            },
+            {
+                "name": "serverDescription",
+                "label": "Server Description",
+                "type": "textarea",
+                "placeholder": "Enter a description of the server",
+                "required": false
+            },
+            {
+                "name": "serverOperatingSystem",
+                "label": "Operating System",
+                "type": "select",
+                "options": [
+                    "Windows Server",
+                    "Linux (Ubuntu)",
+                    "Linux (CentOS)",
+                    "Linux (Debian)",
+                    "Other"
+                ],
+                "required": false
+            },
+            {
+                "name": "serverControlPanel",
+                "label": "Control Panel",
+                "type": "select",
+                "options": [
+                    "cPanel",
+                    "Plesk",
+                    "DirectAdmin",
+                    "Webmin",
+                    "Custom",
+                    "None"
+                ],
+                "required": false
+            },
+            {
+                "name": "serverIP",
+                "label": "Server IP Address",
+                "type": "text",
+                "placeholder": "Enter the server IP address",
+                "required": false
             }
         ]
     },
@@ -143,72 +201,6 @@
                 "name": "serverEndDate",
                 "type": "date",
                 "placeholder": "Enter server end date"
-            }
-        ]
-    },
-    {
-        "label": "Additional Information",
-        "group": "Additional Details",
-        "fields": [
-            {
-                "label": "Project Manager",
-                "name": "projectManager",
-                "type": "text",
-                "placeholder": "Enter the name of the project manager"
-            },
-            {
-                "label": "Project Budget",
-                "name": "projectBudget",
-                "type": "number",
-                "placeholder": "Enter the project budget"
-            },
-            {
-                "label": "Project Start Date",
-                "name": "projectStartDate",
-                "type": "date",
-                "placeholder": "Enter the project start date"
-            },
-            {
-                "label": "Project End Date",
-                "name": "projectEndDate",
-                "type": "date",
-                "placeholder": "Enter the project end date"
-            },
-            {
-                "label": "Number of Team Members",
-                "name": "teamMembers",
-                "type": "number",
-                "placeholder": "Enter the number of team members"
-            },
-            {
-                "label": "Client Name",
-                "name": "clientName",
-                "type": "text",
-                "placeholder": "Enter the client's name"
-            },
-            {
-                "label": "Client Contact",
-                "name": "clientContact",
-                "type": "text",
-                "placeholder": "Enter the client's contact information"
-            },
-            {
-                "label": "Client Email",
-                "name": "clientEmail",
-                "type": "email",
-                "placeholder": "Enter the client's email"
-            },
-            {
-                "label": "Client Address",
-                "name": "clientAddress",
-                "type": "text",
-                "placeholder": "Enter the client's address"
-            },
-            {
-                "label": "Additional Notes",
-                "name": "additionalNotes",
-                "type": "textarea",
-                "placeholder": "Enter any additional notes"
             }
         ]
     }

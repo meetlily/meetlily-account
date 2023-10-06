@@ -4,7 +4,8 @@
     "items": []
   },
   {
-    "group": "dashboard",
+    "group": "admin",
+    "icon_name": "dashboard",
     "items": [
       {
         "name": "Dashboard",
@@ -29,15 +30,17 @@
     ]
   },
   {
-    "group": "myApps",
-    "name": "My Apps",
+    "group": "apps",
+    "icon_name": "myApps",
+    "name": "Applications",
     "collapse": true,
     "items": [
       {
         "name": "Flow",
         "slug": "flow",
         "icon_name": "flow",
-        "module": "Flow"
+        "module": "Flow",
+        "external": "https://flow.meetlily.net"
       },
       {
         "name": "Connect",
@@ -55,12 +58,23 @@
         "name": "MarkEdit",
         "slug": "markEdit",
         "icon_name": "markedit",
-        "module": "MarkEdit"
+        "module": "MarkEdit",
+        "external": "https://notes.meetlily.net"
+      },
+      {
+        "name": "ChatGPT",
+        "slug": "chatgpt",
+        "icon_name": "robot",
+        "module": "ChatGPT",
+        "external": "https://ai.meetlily.net"
       }
     ]
   },
   {
-    "group": "administration",
+    "group": "admin",
+    "icon_name": "admin",
+    "name": "Administration",
+    "collapse": true,
     "items": [
       {
         "name": "Servers",
@@ -154,7 +168,10 @@
     ]
   },
   {
-    "group": "applications",
+    "group": "modules",
+    "name": "Modules",
+    "icon_name": "apps",
+    "collapse": true,
     "items": [
       {
         "name": "Website",
@@ -217,6 +234,9 @@
   },
   {
     "group": "tools",
+    "name": "Tools",
+    "icon_name": "cog",
+    "collapse": true,
     "items": [
       {
         "name": "AI Assistant",
@@ -279,7 +299,8 @@
     ]
   },
   {
-    "group": "miscellaneous",
+    "group": "admin",
+    "icon_name": "miscellaneous",
     "items": [
       {
         "name": "Documentation",
@@ -296,7 +317,7 @@
       {
         "name": "Upgrade",
         "slug": "upgrade",
-        "icon_name": "upgrade",
+        "icon_name": "star",
         "module": "Upgrade"
       }
     ]

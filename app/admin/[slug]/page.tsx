@@ -1,7 +1,7 @@
 import { default as getCurrentUser } from '@/app/actions/getCurrentUser';
 import AdminLayout from '@/app/components/AdminLayout';
 import EmptyPage from '@/app/components/empty/EmptyPage';
-import ModulePage from '@/app/components/modules/ModuleListPage';
+import ModuleListPage from '@/app/components/modules/ModuleListPage';
 
 export default async function AdminModulePage() {
 	const currentUser = await getCurrentUser();
@@ -21,7 +21,7 @@ export default async function AdminModulePage() {
 				showNavbar={true}
 				showNavbarSearch={true}
 			>
-				{isAdmin ? <ModulePage currentUser={currentUser} /> : <EmptyPage />}
+				{isAdmin ? <ModuleListPage currentUser={currentUser} /> : <EmptyPage />}
 			</AdminLayout>
 		</>
 	);

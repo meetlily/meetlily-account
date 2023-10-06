@@ -1,7 +1,7 @@
 'use client';
 
 import { SafeUser } from '@/app/types';
-import serverData from '@/data/moduleFormFields/server-2.json';
+import serverData from '@/data/moduleFormFields/server.json';
 import { useParams } from 'next/navigation';
 import { useState } from 'react';
 import Heading from '../Heading';

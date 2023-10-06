@@ -138,7 +138,8 @@ export default function ${titleCaseToUpperCamelCase(title)}() {${
 const EditOnGithubButton: FC<CodePreviewProps> = ({ githubPage }) => {
 	const pathname = usePathname();
 
-	const githubSrcHref = 'https://github.com/meetlily/docs/flowbite-react/blob/main/src/components/';
+	const githubSrcHref =
+		'https://github.com/meetlily/meetlily-account/flowbite-react/blob/main/src/components/';
 	const page = pathname?.split('/').pop() ?? '';
 	const component = slugToUpperCamelCase(page);
 	const href = `${githubSrcHref}${githubPage ?? `${component}/${component}`}.tsx`;
@@ -148,7 +149,7 @@ const EditOnGithubButton: FC<CodePreviewProps> = ({ githubPage }) => {
 			<a
 				href={href}
 				rel="noreferrer nofollow noopener"
-				className="inline-flex w-fit ml-auto items-end justify-end gap-2 rounded-lg border border-gray-200 bg-white px-3 py-2 text-center text-xs font-medium text-gray-900 hover:bg-gray-100 hover:text-primary-700 focus:text-primary-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:border-gray-600 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white dark:focus:text-white dark:focus:ring-gray-700"
+				className="inline-flex w-fit ml-auto items-end justify-end gap-2 rounded-lg border border-gray-200 bg-white p-2 text-center text-xs font-medium text-gray-800 hover:bg-gray-800 hover:text-white focus:text-cyan-500 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:border-gray-600 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white dark:focus:text-white dark:focus:ring-gray-700"
 			>
 				<svg
 					aria-hidden

@@ -1,6 +1,6 @@
 'use client';
 
-import { Checkbox, FileInput, TextInput, Textarea } from 'flowbite-react';
+import { Checkbox, FileInput, TextInput, Textarea, ToggleSwitch } from 'flowbite-react';
 import { useState } from 'react';
 import { FieldErrors, FieldValues, UseFormRegister } from 'react-hook-form';
 import AppIcons from '../icons/AppIcons';
@@ -20,7 +20,7 @@ interface InputTextProps {
 	errors: FieldErrors;
 	onChange?: (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => void;
 	displayCondition?: string;
-	checked?: boolean;
+	checked?: boolean | false;
 }
 
 const InputText: React.FC<InputTextProps> = ({
@@ -42,7 +42,6 @@ const InputText: React.FC<InputTextProps> = ({
 }) => {
 	let iconMain = '';
 	const [inputValue, setInputValue] = useState(value);
-
 	if (
 		type === 'text' ||
 		type === 'number' ||
@@ -205,6 +204,20 @@ const InputText: React.FC<InputTextProps> = ({
 					placeholder={placeholder}
 					icon={AppIcons['phone']}
 					onChange={onChange}
+				/>
+			</>
+		);
+	} else if (type === 'toggle') {
+		return (
+			<>
+				<ToggleSwitch
+					checked={false}
+					{...register(id, { required })}
+					id={id}
+					disabled={disabled}
+					name={name}
+					placeholder={placeholder}
+					onChange={() => {}}
 				/>
 			</>
 		);

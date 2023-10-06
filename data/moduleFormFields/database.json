@@ -1,0 +1,104 @@
+[
+    {
+        "label": "Database Information",
+        "group": "Technical Information",
+        "fields": [
+            {
+                "name": "databaseName",
+                "label": "Database Name",
+                "type": "text",
+                "placeholder": "Enter the database name",
+                "required": true
+            },
+            {
+                "name": "databaseType",
+                "label": "Database Type",
+                "type": "select",
+                "options": [
+                    "MySQL",
+                    "PostgreSQL",
+                    "MongoDB",
+                    "SQLite",
+                    "Other"
+                ],
+                "required": true
+            },
+            {
+                "name": "databaseVersion",
+                "label": "Database Version",
+                "type": "text",
+                "placeholder": "Enter the database version",
+                "required": false
+            },
+            {
+                "name": "databaseStorage",
+                "label": "Database Storage (GB)",
+                "type": "number",
+                "placeholder": "Enter the database storage capacity in gigabytes",
+                "required": true
+            },
+            {
+                "name": "databaseBackup",
+                "label": "Automated Backup",
+                "type": "toggle",
+                "required": false
+            },
+            {
+                "name": "databasePrice",
+                "label": "Price (per month)",
+                "type": "number",
+                "placeholder": "Enter the price per month",
+                "required": true
+            },
+            {
+                "name": "databaseServices",
+                "label": "Database Services",
+                "type": "select",
+                "options": [
+                    "High Availability",
+                    "Scalability",
+                    "Security Auditing",
+                    "Replication",
+                    "Query Optimization"
+                ],
+                "required": false,
+                "multiple": true
+            },
+            {
+                "name": "databaseDescription",
+                "label": "Database Description",
+                "type": "textarea",
+                "placeholder": "Enter a description of the database",
+                "required": false
+            },
+            {
+                "name": "databaseHostname",
+                "label": "Database Hostname",
+                "type": "text",
+                "placeholder": "Enter the database hostname",
+                "required": false
+            },
+            {
+                "name": "databasePort",
+                "label": "Port",
+                "type": "number",
+                "placeholder": "Enter the database port number",
+                "required": false
+            },
+            {
+                "name": "databaseUsername",
+                "label": "Database Username",
+                "type": "text",
+                "placeholder": "Enter the database username",
+                "required": false
+            },
+            {
+                "name": "databasePassword",
+                "label": "Database Password",
+                "type": "password",
+                "placeholder": "Enter the database password",
+                "required": false
+            }
+        ]
+    }
+]

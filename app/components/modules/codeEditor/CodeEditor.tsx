@@ -18,8 +18,8 @@ const CodeEditor: React.FC<CodeEditorProps> = ({ code, language, onChange }) => 
 
 	return (
 		<div className="relative flex flex-row w-full items-center justify-center h-full">
-			<Card className="relative flex flex-col h-[420px] w-full mt-2">
-				<div className="absolute h-[420px] left-0 top-0 w-full border-1 rounded-0 p-2 bg-gray-100">
+			<Card className="relative flex flex-col min-h-[420px] w-full">
+				<div className="absolute h-full left-0 top-0 w-full">
 					<Editor
 						language={language}
 						theme="vs-dark"

@@ -29,8 +29,8 @@ const SideBarLayout: React.FC<SideBarLayoutProps> = ({
 	};
 	return (
 		<>
-			<Sidebar id={id} aria-label={ariaLabel} className="border-r" color={color}>
-				<Sidebar.Items>
+			<Sidebar id={id} aria-label={ariaLabel} className={classNames} color={color}>
+				<Sidebar.Items className={classNames}>
 					<>
 						{sidebar.map((side, i) => (
 							<>
@@ -40,8 +40,9 @@ const SideBarLayout: React.FC<SideBarLayoutProps> = ({
 										<SidebarItem
 											key={side.name}
 											label={side.name}
-											iconName={side.group}
+											iconName={side.icon_name ? side.icon_name : ''}
 											subItems={side.items}
+											group={side.group}
 										/>
 									)}
 									{!side.name && (
@@ -50,14 +51,14 @@ const SideBarLayout: React.FC<SideBarLayoutProps> = ({
 												side.items.map((item, k) => (
 													<>
 														{item && typeof item === 'string' && (
-															<SidebarItem key={item} label={item} iconName={'ban'} />
+															<SidebarItem key={item} label={item} iconName={'arrow'} />
 														)}
 														{item && typeof item === 'object' && (
 															<SidebarItem
 																key={item.slug}
 																label={item.name}
 																iconName={item.icon_name}
-																href={`/admin/${item.slug}`}
+																href={`/${side.group}/${item.slug}`}
 															/>
 														)}
 													</>

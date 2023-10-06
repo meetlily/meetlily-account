@@ -1,35 +1,21 @@
-'use client'
+'use client';
 
-import { Sidebar } from "flowbite-react"
-import AppIcons from "../icons/AppIcons"
-import SidebarItemGroup from "./SidebarItemGroup"
-import SidebarItem from "./SidebarItem"
-import { useEffect, useState } from "react"
+import { Sidebar } from 'flowbite-react';
 interface SidebarItemsProps {
-    classNames?: string;
-    divider?: boolean;
-    sidebarData: string[];
+	classNames?: string;
+	divider?: boolean;
+	sidebarData: string[];
 }
-const SidebarItems: React.FC<SidebarItemsProps> = ({
-    classNames,
-    divider,
-    sidebarData
-}) => {
-    
-    return (
-        <Sidebar.Items>
-            <>
-    
-            {sidebarData.map((group: any | null)=>{
-                
-                <Sidebar.ItemGroup key={group?.group}/>
+const SidebarItems: React.FC<SidebarItemsProps> = ({ classNames, divider, sidebarData }) => {
+	return (
+		<Sidebar.Items>
+			<>
+				{sidebarData.map((group: any | null) => {
+					<Sidebar.ItemGroup key={group?.group} />;
+				})}
+			</>
 
-          
-              })}
-            
-            </>
-
-        {/* <Sidebar.ItemGroup>
+			{/* <Sidebar.ItemGroup>
             <Sidebar.Item href="#" icon={AppIcons['dashboard']}>
                 <p>Dashboard</p>
             </Sidebar.Item>
@@ -114,8 +100,8 @@ const SidebarItems: React.FC<SidebarItemsProps> = ({
                 <p>Support</p>
             </Sidebar.Item>
         </Sidebar.ItemGroup> */}
-    </Sidebar.Items>
-    )
-}
+		</Sidebar.Items>
+	);
+};
 
 export default SidebarItems;
