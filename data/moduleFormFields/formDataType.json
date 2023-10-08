@@ -1,0 +1,54 @@
+{
+    "text_input": {
+        "type": "text",
+        "label": "Text Input",
+        "placeholder": "Enter text...",
+        "required": true,
+        "icon": "fa fa-font"
+    },
+    "email_input": {
+        "type": "email",
+        "label": "Email",
+        "placeholder": "Enter email...",
+        "required": true,
+        "icon": "fa fa-envelope"
+    },
+    "password_input": {
+        "type": "password",
+        "label": "Password",
+        "placeholder": "Enter password...",
+        "required": true,
+        "icon": "fa fa-lock"
+    },
+    "textarea": {
+        "type": "textarea",
+        "label": "Textarea",
+        "placeholder": "Enter text...",
+        "required": false,
+        "icon": "fa fa-comment"
+    },
+    "select": {
+        "type": "select",
+        "label": "Select",
+        "placeholder": "Enter select options...",
+        "options": [],
+        "required": true,
+        "icon": "fa fa-caret-down"
+    },
+    "radio_group": {
+        "type": "radio",
+        "label": "Radio Group",
+        "placeholder": "Enter radio options...",
+        "options": [],
+        "required": true,
+        "icon": "fa fa-check-circle"
+    },
+    "checkbox_group": {
+        "type": "checkbox",
+        "label": "Checkbox Group",
+        "placeholder": "Enter checkbox options...",
+        "options": [],
+        "required": false,
+        "icon": "fa fa-check-square"
+    }
+}

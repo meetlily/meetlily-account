@@ -24,16 +24,17 @@ const ModuleListPage: React.FC<ModuleListPageProps> = ({ currentUser, showSideba
 	console.log(params, searchParams);
 	const [isLoading, setIsLoading] = useState(false);
 	const [formData, setFormData] = useState(data);
-	console.log(formData, 'formData');
+
 	useEffect(() => {
-		setIsLoading(true);
-		fetch(`/api/admin/${params?.slug}`)
-			.then((response) => response.json())
-			.then((fData) => {
-				setFormData(fData);
-			})
-			.catch((error) => console.error(`Error fetching  ${params?.slug}`, error))
-			.finally(() => setIsLoading(false));
+		//setIsLoading(true);
+		// fetch(`/api/admin/${params?.slug}`)
+		// 	.then((response) => response.json())
+		// 	.then((fData) => {
+		// 		setIsLoading(false);
+		// 		setFormData(fData);
+		// 	})
+		// 	.catch((error) => console.error(`Error fetching  ${params?.slug}`, error))
+		// 	.finally(() => setIsLoading(false));
 	}, [params, setFormData]);
 	return (
 		<>

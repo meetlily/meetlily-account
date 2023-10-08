@@ -10,6 +10,12 @@
                 "placeholder": "Enter first name"
             },
             {
+                "label": "Middle Name",
+                "name": "middleName",
+                "type": "text",
+                "placeholder": "Enter middle name"
+            },
+            {
                 "label": "Last Name",
                 "name": "lastName",
                 "type": "text",
@@ -38,6 +44,12 @@
                 "name": "address",
                 "type": "text",
                 "placeholder": "Enter address"
+            },
+            {
+                "label": "Address2",
+                "name": "address2",
+                "type": "text",
+                "placeholder": "Enter suite, building name, suburban, village..."
             },
             {
                 "label": "City",
@@ -72,92 +84,19 @@
             {
                 "label": "Gender",
                 "name": "gender",
-                "type": "text",
-                "placeholder": "Enter gender"
+                "type": "select",
+                "options": [
+                    "Male",
+                    "Female",
+                    "Prefer not say"
+                ],
+                "placeholder": "Select a gender"
             },
             {
                 "label": "Profile Picture",
                 "name": "profilePicture",
                 "type": "file",
                 "placeholder": "Upload profile picture"
-            }
-        ]
-    },
-    {
-        "label": "Website Information",
-        "group": "Website Details",
-        "fields": [
-            {
-                "label": "Website Name",
-                "name": "websiteName",
-                "type": "text",
-                "placeholder": "Enter website name"
-            },
-            {
-                "label": "Website URL",
-                "name": "websiteUrl",
-                "type": "url",
-                "placeholder": "Enter website URL"
-            },
-            {
-                "label": "Website Description",
-                "name": "websiteDescription",
-                "type": "textarea",
-                "placeholder": "Enter website description"
-            },
-            {
-                "label": "Website Logo",
-                "name": "websiteLogo",
-                "type": "file",
-                "placeholder": "Upload website logo"
-            },
-            {
-                "label": "Website Favicon",
-                "name": "websiteFavicon",
-                "type": "file",
-                "placeholder": "Upload website favicon"
-            },
-            {
-                "label": "Website Theme Color",
-                "name": "websiteThemeColor",
-                "type": "color",
-                "placeholder": "Choose website theme color"
-            },
-            {
-                "label": "Website Language",
-                "name": "websiteLanguage",
-                "type": "text",
-                "placeholder": "Enter website language"
-            },
-            {
-                "label": "Website Timezone",
-                "name": "websiteTimezone",
-                "type": "text",
-                "placeholder": "Enter website timezone"
-            },
-            {
-                "label": "Website Currency",
-                "name": "websiteCurrency",
-                "type": "text",
-                "placeholder": "Enter website currency"
-            },
-            {
-                "label": "Website Analytics Code",
-                "name": "websiteAnalyticsCode",
-                "type": "text",
-                "placeholder": "Enter website analytics code"
-            },
-            {
-                "label": "Website SEO Keywords",
-                "name": "websiteSeoKeywords",
-                "type": "text",
-                "placeholder": "Enter website SEO keywords"
-            },
-            {
-                "label": "Website SEO Description",
-                "name": "websiteSeoDescription",
-                "type": "textarea",
-                "placeholder": "Enter website SEO description"
             }
         ]
     },
@@ -192,7 +131,7 @@
             {
                 "label": "Two Factor Authentication",
                 "name": "twoFactorAuthentication",
-                "type": "checkbox",
+                "type": "toggle",
                 "placeholder": "Enable two factor authentication"
             },
             {
@@ -259,7 +198,7 @@
                 "label": "Card Number",
                 "type": "text",
                 "placeholder": "Enter your card number",
-                "required": false,
+                "required": true,
                 "displayCondition": "Credit Card"
             },
             {
@@ -267,7 +206,7 @@
                 "label": "Cardholder Name",
                 "type": "text",
                 "placeholder": "Enter the cardholder's name",
-                "required": false,
+                "required": true,
                 "displayCondition": "Credit Card"
             },
             {
@@ -275,7 +214,7 @@
                 "label": "Expiry Date",
                 "type": "text",
                 "placeholder": "MM/YY",
-                "required": false,
+                "required": true,
                 "displayCondition": "Credit Card"
             },
             {
@@ -283,7 +222,7 @@
                 "label": "CVV",
                 "type": "text",
                 "placeholder": "Enter CVV",
-                "required": false,
+                "required": true,
                 "displayCondition": "Credit Card"
             },
             {
@@ -291,15 +230,23 @@
                 "label": "PayPal Email",
                 "type": "email",
                 "placeholder": "Enter your PayPal email",
-                "required": false,
+                "required": true,
                 "displayCondition": "Paypal"
+            },
+            {
+                "name": "bankName",
+                "label": "Bank Name",
+                "type": "text",
+                "placeholder": "Enter your bank name",
+                "required": true,
+                "displayCondition": "Bank Transfer"
             },
             {
                 "name": "bankAccountNumber",
                 "label": "Bank Account Number",
                 "type": "text",
                 "placeholder": "Enter your bank account number",
-                "required": false,
+                "required": true,
                 "displayCondition": "Bank Transfer"
             },
             {
@@ -307,7 +254,7 @@
                 "label": "Bank Routing Number",
                 "type": "text",
                 "placeholder": "Enter your bank routing number",
-                "required": false,
+                "required": true,
                 "displayCondition": "Bank Transfer"
             },
             {
@@ -358,10 +305,10 @@
                 "placeholder": "Enter Facebook profile URL"
             },
             {
-                "label": "Twitter Handle",
-                "name": "twitterHandle",
-                "type": "text",
-                "placeholder": "Enter Twitter handle"
+                "label": "Twitter Profile",
+                "name": "twitterProfile",
+                "type": "url",
+                "placeholder": "Enter Twitter profile URL"
             },
             {
                 "label": "LinkedIn Profile",
@@ -370,10 +317,10 @@
                 "placeholder": "Enter LinkedIn profile URL"
             },
             {
-                "label": "Instagram Handle",
-                "name": "instagramHandle",
-                "type": "text",
-                "placeholder": "Enter Instagram handle"
+                "label": "Instagram Profile",
+                "name": "instagramProfile",
+                "type": "url",
+                "placeholder": "Enter Instagram profile URL"
             },
             {
                 "label": "YouTube Channel",
@@ -402,19 +349,19 @@
             {
                 "label": "Newsletter Subscription",
                 "name": "newsletterSubscription",
-                "type": "checkbox",
+                "type": "toggle",
                 "placeholder": "Subscribe to newsletter"
             },
             {
                 "label": "Email Notifications",
                 "name": "emailNotifications",
-                "type": "checkbox",
+                "type": "toggle",
                 "placeholder": "Enable email notifications"
             },
             {
                 "label": "SMS Notifications",
                 "name": "smsNotifications",
-                "type": "checkbox",
+                "type": "toggle",
                 "placeholder": "Enable SMS notifications"
             }
         ]

@@ -111,9 +111,7 @@ const AdminLayout: React.FC<AdminLayoutProps> = ({
 }) => {
 	const [isLoading, setIsLoading] = useState(false);
 	const router = useRouter();
-	if (!currentUser) {
-		router.push('/sign-in');
-	}
+
 	return (
 		<>
 			<Flowbite theme={{ theme: customTheme }}>

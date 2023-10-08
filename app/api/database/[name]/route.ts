@@ -15,7 +15,7 @@ export async function GET(req: any, res: any) {
 		const _filter: string | null = queryParams.get('_filter');
 		const tableData = queryParams.get('_table');
 		const { name } = res.params;
-		console.log(queryParams, 'filter');
+
 		// Check if the user is authenticated
 		if (!currentUser) {
 			// User is not authenticated, return an unauthorized response

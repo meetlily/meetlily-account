@@ -8,13 +8,7 @@ import rolesData from '@/data/roles.json';
 export async function getSession() {
 	return await getServerSession(authOptions);
 }
-export async function getCurrentRoles() {
-	try {
-		const currentUser = await getCurrentUser();
-	} catch (error) {
-		throw error;
-	}
-}
+
 export async function getAccountsByUserId(id: string) {
 	try {
 		const data = await prisma.account.findMany({
