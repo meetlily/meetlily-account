@@ -8,5 +8,7 @@
 		"prismadb",
 		"topbar"
 	],
-	"deepscan.ignoreConfirmWarning": true
+	"deepscan.ignoreConfirmWarning": true,
+	"WillLuke.nextjs.addTypesOnSave": true,
+	"WillLuke.nextjs.hasPrompted": true
 }
