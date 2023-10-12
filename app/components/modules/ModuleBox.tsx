@@ -1,16 +1,17 @@
 'use client';
 
 import { Popover, PopoverInterface, PopoverOptions } from 'flowbite';
-import { Badge } from 'flowbite-react';
+import { Card } from 'flowbite-react';
 import { useParams, useRouter, useSearchParams } from 'next/navigation';
 import qs from 'query-string';
 import { useCallback, useState } from 'react';
 import { IconType } from 'react-icons';
-import AppIcons from '../icons/AppIcons';
+import ButtonIcon from '../ButtonIcon';
 import IconComponent from '../icons/IconComponent';
-import ModuleOptions from './ModuleOptions';
+import ModuleBoxRating from './ModuleBoxRating';
 
 interface ModuleBoxProps {
+	module?: object;
 	label: string;
 	slug: string;
 	description?: string;
@@ -28,9 +29,11 @@ interface ModuleBoxProps {
 	contentId?: string | null;
 	buttonId?: string | null;
 	installed?: boolean;
+	onClick?: () => void;
 }
 
 const ModuleBox: React.FC<ModuleBoxProps> = ({
+	module,
 	label,
 	slug,
 	description,
@@ -47,12 +50,15 @@ const ModuleBox: React.FC<ModuleBoxProps> = ({
 	shadow,
 	contentId,
 	buttonId,
-	installed
+	installed,
+	onClick
 }) => {
 	const router = useRouter();
 	const params = useParams();
 	const paramQuery = useSearchParams();
 	const [isLoading, setIsLoading] = useState(false);
+
+	const m: any = module;
 	if (!contentId) {
 		contentId = 'popoverContent';
 	}
@@ -102,7 +108,7 @@ const ModuleBox: React.FC<ModuleBoxProps> = ({
 	}
 	const handleClickView = useCallback(() => {
 		let currentModule = {};
-		//console.log(params);
+		console.log(module, 'module');
 		if (params) {
 			currentModule = qs.parse(params.toString());
 		}
@@ -111,10 +117,10 @@ const ModuleBox: React.FC<ModuleBoxProps> = ({
 			...currentModule,
 			category: label
 		};
-	}, [params, label]);
+	}, [params, label, module]);
 	return (
 		<>
-			<div
+			<Card
 				id={buttonId}
 				className={`
                 relative
@@ -129,11 +135,11 @@ const ModuleBox: React.FC<ModuleBoxProps> = ({
                 ${outline ? 'border-[1px]' : 'border-none'}
                 ${rounded ? 'rounded-md' : 'rounded-none'}
                 mt-2
-                ${outline ? `border-${fontColor}-500` : 'border-black'}
                 ${shadow ? `shadow` : 'shadow-none'}
                 ${shadow ? `hover:shadow-lg` : 'hover:shadow-none'}
-                ${shadow ? `hover:bg-${fontColor}-500` : `text-gray-700`}
+                ${shadow ? `hover:bg-${fontColor}-500` : ``}
                 transition
+				
             `}
 			>
 				{installed && (
@@ -143,47 +149,24 @@ const ModuleBox: React.FC<ModuleBoxProps> = ({
 				)}
 
 				<div id={`${buttonId}-help`} className="absolute top-1 right-1">
-					<IconComponent
-						iconName="infoCircle"
-						size={18}
-						class_name="text-gray-500 cursor-pointer"
-					/>
+					<IconComponent iconName="infoCircle" size={18} class_name="cursor-pointer" />
 				</div>
-				<div
+				<ButtonIcon
+					label={label}
+					icon={iconName}
+					size={'text-sm'}
+					iconSize={iconSize}
+					showLabel={true}
+					iconPosition="left"
+					id={buttonId}
 					onClick={handleClickView}
-					className="
-                        flex 
-                        flex-col 
-                        items-center 
-                        justify-center 
-                        p-2 
-                        text-gray-600 
-                        cursor-pointer 
-                        hover:text-cyan-500
-                    "
-				>
-					<div className="flex flex-col items-end mx-auto justify-center">
-						<IconComponent
-							size={iconSize ? iconSize : 36}
-							iconName={iconName}
-							class_name={`px-2 py-2  mt-2 w-full transition md:text-sm`}
-						/>
-					</div>
-					<div className="flex flex-col items-center mt-2">
-						<div className="text-sm md:text-md font-semibold">{label}</div>
-						<div className="block text-xs font-light px-2 h-4 overflow-hidden whitespace-no-wrap text-ellipsis max-w-[180px]">
-							{short_desc}
-						</div>
-					</div>
-				</div>
-				<div
-					className={`flex flex-col items-center px-2 border-0 border-t-2 w-full mt-3 rounded-none bg-gray-50 `}
-					role="group"
-				>
-					<ModuleOptions installed={installed} />
-				</div>
-			</div>
-			<div
+					description={m?.short_description}
+				/>
+
+				<ModuleBoxRating />
+				{/* <ModuleOptions installed={installed} /> */}
+			</Card>
+			{/* <div
 				data-popover
 				id={contentId}
 				role="tooltip"
@@ -191,7 +174,7 @@ const ModuleBox: React.FC<ModuleBoxProps> = ({
 			>
 				<div className="relative px-3 py-2 bg-gray-500 border-b border-gray-200 rounded-t-lg dark:border-gray-600 dark:bg-gray-700">
 					<div className="absolute left-2 top-2">
-						<IconComponent iconName={iconName} size={20} class_name="text-gray-50" />
+						<IconComponent iconName={iconName} size={20} />
 					</div>
 					<h2 className="leading-3 inline-flex font-semibold text-gray-50 text-md dark:text-white ml-5">
 						{' '}
@@ -221,12 +204,13 @@ const ModuleBox: React.FC<ModuleBoxProps> = ({
 					</h2>
 				</div>
 				<div className="px-3 py-2">
-					<p>{description}</p>
+					<p>{m?.description}</p>
 				</div>
-				<hr />
+
 				<ModuleOptions installed={installed} />
+
 				<div data-popper-arrow></div>
-			</div>
+			</div> */}
 		</>
 	);
 };

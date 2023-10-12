@@ -1,4 +1,4 @@
-'use client'
+'use client';
 import { ChangeEvent } from 'react';
 import IconComponent from '../icons/IconComponent';
 import FlowInput from '../inputs/FlowInput';
@@ -9,10 +9,17 @@ const ProductForm = () => {
 			<form action="#">
 				<div className="space-y-4">
 					<div>
-                        <FlowInput type={'text'} name={'productName'} showLabel={true} label={'Product Name'} id='product-name' placeholder='Type product name' onChange={function (e: ChangeEvent<HTMLInputElement>): void {
-                            throw new Error('Function not implemented.');
-                        } }/>
-						
+						<FlowInput
+							type={'text'}
+							name={'productName'}
+							showLabel={true}
+							label={'Product Name'}
+							id="product-name"
+							placeholder="Type product name"
+							onChange={function (e: ChangeEvent<HTMLInputElement>): void {
+								throw new Error('Function not implemented.');
+							}}
+						/>
 					</div>
 					<div>
 						<label

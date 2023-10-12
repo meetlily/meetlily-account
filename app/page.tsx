@@ -1,4 +1,4 @@
-import PageLayout from '@/app/layouts/page';
+import PageLayout from '@/app/layouts/PageLayout';
 
 import getCurrentUser from './actions/getCurrentUser';
 import HomeLandingPage from './components/landingpages/HomeLandingPage';

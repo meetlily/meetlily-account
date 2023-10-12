@@ -1,6 +1,220 @@
 {
     "data": [
         {
+            "name": "Organizations",
+            "slug": "organization",
+            "short_description": "Manage and organize groups of users.",
+            "description": "The Organizations module provides tools and functionality for managing and organizing groups of users within an application. It includes features such as creating, editing, and deleting organizations, assigning users to organizations, and managing permissions and roles within organizations. Whether you're building a multi-tenant application, a collaborative platform, or an enterprise system, the Organizations module simplifies the process of managing user groups and their associated settings.",
+            "category": [
+                {
+                    "name": "User Management",
+                    "id": "c8e5b2a2-8c7a-4a9a-9e2c-6c3f3e9f6e1d"
+                }
+            ],
+            "tags": [
+                "Organizations",
+                "User Management",
+                "User Groups",
+                "Permissions",
+                "Roles"
+            ],
+            "icon_name": "organizations",
+            "module": "Administration"
+        },
+        {
+            "name": "Users",
+            "slug": "user",
+            "short_description": "Manage user accounts and profiles.",
+            "description": "The Users module provides tools and functionality for managing user accounts and profiles within an application. It includes features such as user registration, login, authentication, password reset, profile management, and user-related settings. Whether you're building a social networking platform, an e-commerce website, or a content management system, the Users module simplifies the process of handling user-related operations and ensuring a secure and personalized user experience.",
+            "category": [
+                {
+                    "name": "User Management",
+                    "id": "c8e5b2a2-8c7a-4a9a-9e2c-6c3f3e9f6e1d"
+                }
+            ],
+            "tags": [
+                "Users",
+                "User Management",
+                "Authentication",
+                "Profile Management",
+                "Security"
+            ],
+            "icon_name": "users",
+            "module": "Administration"
+        },
+        {
+            "name": "Documentation",
+            "slug": "documentation",
+            "short_description": "Manage user accounts and profiles.",
+            "description": "The Users module provides tools and functionality for managing user accounts and profiles within an application. It includes features such as user registration, login, authentication, password reset, profile management, and user-related settings. Whether you're building a social networking platform, an e-commerce website, or a content management system, the Users module simplifies the process of handling user-related operations and ensuring a secure and personalized user experience.",
+            "category": [
+                {
+                    "name": "User Management",
+                    "id": "c8e5b2a2-8c7a-4a9a-9e2c-6c3f3e9f6e1d"
+                }
+            ],
+            "tags": [
+                "Users",
+                "User Management",
+                "Authentication",
+                "Profile Management",
+                "Security"
+            ],
+            "icon_name": "documentation",
+            "module": "Administration"
+        },
+        {
+            "name": "Account",
+            "slug": "account",
+            "short_description": "Manage user accounts and profiles.",
+            "description": "The Users module provides tools and functionality for managing user accounts and profiles within an application. It includes features such as user registration, login, authentication, password reset, profile management, and user-related settings. Whether you're building a social networking platform, an e-commerce website, or a content management system, the Users module simplifies the process of handling user-related operations and ensuring a secure and personalized user experience.",
+            "category": [
+                {
+                    "name": "User Management",
+                    "id": "c8e5b2a2-8c7a-4a9a-9e2c-6c3f3e9f6e1d"
+                }
+            ],
+            "tags": [
+                "Users",
+                "User Management",
+                "Authentication",
+                "Profile Management",
+                "Security"
+            ],
+            "icon_name": "account",
+            "module": "Administration"
+        },
+        {
+            "name": "Settings",
+            "slug": "settings",
+            "short_description": "Manage application settings and configurations.",
+            "description": "The Settings module provides tools and functionality for managing application settings and configurations. It includes features such as dynamic settings management, configuration files, environment variables, and settings UI. Whether you need to handle global settings, user-specific settings, or application-wide configurations, the Settings module simplifies the process of managing and accessing various settings within your application.",
+            "category": [
+                {
+                    "name": "User Management",
+                    "id": "c8e5b2a2-8c7a-4a9a-9e2c-6c3f3e9f6e1d"
+                }
+            ],
+            "tags": [
+                "Users",
+                "User Management",
+                "Authentication",
+                "Profile Management",
+                "Security"
+            ],
+            "icon_name": "cogs",
+            "module": "Administration"
+        },
+        {
+            "name": "Marketplace",
+            "slug": "marketplace",
+            "short_description": "Manage application settings and configurations.",
+            "description": "The Settings module provides tools and functionality for managing application settings and configurations. It includes features such as dynamic settings management, configuration files, environment variables, and settings UI. Whether you need to handle global settings, user-specific settings, or application-wide configurations, the Settings module simplifies the process of managing and accessing various settings within your application.",
+            "category": [
+                {
+                    "name": "Application Management",
+                    "id": "a3b5f4d6-7e8f-9a0b-c1d2e3f4a5b6"
+                }
+            ],
+            "tags": [
+                "Settings",
+                "Application Management",
+                "Configuration",
+                "Environment Variables",
+                "Settings UI"
+            ],
+            "icon_name": "market",
+            "module": "Administration"
+        },
+        {
+            "name": "Analytics",
+            "slug": "analytics",
+            "short_description": "Track and analyze user behavior and application metrics.",
+            "description": "The Analytics module provides tools and functionality for tracking and analyzing user behavior and application metrics. It includes features such as event tracking, user segmentation, funnel analysis, and performance monitoring. Whether you want to understand how users interact with your application, measure the effectiveness of your marketing campaigns, or identify areas for optimization, the Analytics module simplifies the process of collecting and analyzing data to gain valuable insights.",
+            "category": [
+                {
+                    "name": "Data Analysis",
+                    "id": "d1e2a3d4-5a6n7a8l9y0s"
+                }
+            ],
+            "tags": [
+                "Analytics",
+                "Data Analysis",
+                "User Behavior",
+                "Metrics",
+                "Performance Monitoring"
+            ],
+            "icon_name": "analytics",
+            "module": "Analytics"
+        },
+        {
+            "name": "Integrations",
+            "slug": "integration",
+            "short_description": "Integrate with third-party APIs.",
+            "description": "The API Integrations module provides tools and libraries for integrating with third-party APIs. It includes features such as API clients, authentication mechanisms, request/response handling, and data mapping. Whether you need to connect to social media APIs, payment gateways, geolocation services, or any other external API, the API Integrations module simplifies the process of making API requests, handling authentication, and processing API responses.",
+            "category": [
+                {
+                    "name": "Web Development",
+                    "id": "19000065-9e8b-4b7f-9f6f-7c7d1b6b0c4d"
+                }
+            ],
+            "tags": [
+                "API Integrations",
+                "Web Development",
+                "API Clients",
+                "Authentication",
+                "Request/Response Handling",
+                "Data Mapping"
+            ],
+            "icon_name": "integration",
+            "module": "Administration"
+        },
+        {
+            "name": "Databases",
+            "slug": "database",
+            "short_description": "Manage and interact with databases.",
+            "description": "The Database module provides tools and libraries for managing and interacting with databases. It includes features such as query builders, ORM (Object-Relational Mapping) frameworks, and database migration tools. Whether you're working with SQL databases like MySQL or PostgreSQL, NoSQL databases like MongoDB or Redis, or cloud-based databases like Amazon RDS or Google Cloud Firestore, the Database module simplifies the process of connecting to databases, executing queries, and handling data.",
+            "category": [
+                {
+                    "name": "Web Development",
+                    "id": "19000065-9e8b-4b7f-9f6f-7c7d1b6b0c4d"
+                }
+            ],
+            "tags": [
+                "Database",
+                "Web Development",
+                "SQL",
+                "NoSQL",
+                "ORM",
+                "Query Builder",
+                "Migration"
+            ],
+            "icon_name": "database",
+            "module": "Administration"
+        },
+        {
+            "name": "Servers",
+            "slug": "server",
+            "short_description": "Build scalable and robust server applications.",
+            "description": "The Server module provides tools and libraries for building scalable and robust server applications. It includes features such as routing, middleware, authentication, and database integration. Whether you're building a RESTful API, a web server, or a backend system, the Server module simplifies the process of handling HTTP requests, managing server resources, and interacting with databases. Easily manage your servers and ensure their smooth operation. Monitor server performance, track resource usage, and handle server configurations effortlessly",
+            "category": [
+                {
+                    "name": "Web Development",
+                    "id": "19000065-9e8b-4b7f-9f6f-7c7d1b6b0c4d"
+                }
+            ],
+            "tags": [
+                "Server",
+                "Web Development",
+                "Scalability",
+                "Middleware",
+                "Authentication",
+                "Database Integration"
+            ],
+            "icon_name": "server",
+            "module": "Administration"
+        },
+        {
             "name": "Website",
             "slug": "website",
             "short_description": "Create and manage website.",
@@ -19,6 +233,25 @@
             "icon_name": "website",
             "module": "Website",
             "installed": false
+        },
+        {
+            "name": "Modules",
+            "slug": "module",
+            "short_description": "Create and manage modules.",
+            "description": "Create and manage modules",
+            "category": [
+                {
+                    "name": "Administration",
+                    "id": "19000008-9e8b-4b7f-9f6f-7c7d1b6b0c4d"
+                }
+            ],
+            "tags": [
+                "Module Management",
+                "Content Management"
+            ],
+            "icon_name": "module",
+            "module": "Administration",
+            "installed": true
         },
         {
             "name": "e-Commerce",

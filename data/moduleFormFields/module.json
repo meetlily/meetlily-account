@@ -1,0 +1,93 @@
+[
+    {
+        "label": "Module Information",
+        "group": "General",
+        "fields": [
+            {
+                "name": "slug",
+                "label": "Slug",
+                "type": "text",
+                "placeholder": "Enter the slug name",
+                "required": true
+            },
+            {
+                "name": "name",
+                "label": "Name",
+                "type": "text",
+                "placeholder": "Enter the display name",
+                "required": true
+            },
+            {
+                "name": "enabled",
+                "label": "Enabled",
+                "type": "toggle",
+                "placeholder": "Set this to enable this module",
+                "required": false
+            },
+            {
+                "name": "installed",
+                "label": "Installed",
+                "type": "toggle",
+                "placeholder": "Set this if module is installed",
+                "required": false
+            },
+            {
+                "name": "global",
+                "label": "Global",
+                "type": "toggle",
+                "placeholder": "Set this to enable globally",
+                "required": false
+            },
+            {
+                "name": "externalLink",
+                "label": "External Link",
+                "type": "url",
+                "placeholder": "Set this for external link of this module",
+                "required": false
+            },
+            {
+                "name": "Category",
+                "label": "Category",
+                "type": "select",
+                "options": [],
+                "required": false,
+                "multiple": true
+            },
+            {
+                "name": "Organization",
+                "label": "Organization",
+                "type": "select",
+                "options": [],
+                "required": false,
+                "multiple": true
+            },
+            {
+                "name": "User",
+                "label": "User",
+                "type": "select",
+                "options": [],
+                "required": false,
+                "multiple": true
+            }
+        ],
+        "values": {
+            "slug": "flow",
+            "name": "Flow",
+            "enabled": true,
+            "installed": true,
+            "global": true,
+            "icon_name": "apps",
+            "externalLink": "https://flow.meetlily.net",
+            "User": {
+                "connect": {
+                    "id": "your_currentUser_id_value"
+                }
+            },
+            "Organization": {
+                "connect": {
+                    "id": "your_currentUser_Organization_id_value"
+                }
+            }
+        }
+    }
+]

@@ -33,7 +33,7 @@ const SidebarCTA: React.FC<SidebarCTAProps> = ({
 		<>
 			<Sidebar.CTA
 				color="failure"
-				className={`${isCtaHidden ? 'hidden' : 'block'} border border-gray-200 mb-2 mt-2`}
+				className={`${isCtaHidden ? 'block' : 'hidden'} border border-gray-200 mb-2 mt-2`}
 			>
 				<div className="mb-0 flex items-center">
 					<Badge color="failure">Under Development</Badge>

@@ -1,7 +1,7 @@
 import getCurrentUser from '../actions/getCurrentUser';
-import AdminLayout from '../components/AdminLayout';
 import EmptyPage from '../components/empty/EmptyPage';
 import ModulesTable from '../components/modules/ModulesTable';
+import AdminLayout from '../layouts/AdminLayout';
 
 export default async function ModulesPage() {
 	const currentUser = await getCurrentUser();

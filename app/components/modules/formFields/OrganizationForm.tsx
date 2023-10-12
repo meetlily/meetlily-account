@@ -1,12 +1,9 @@
 'use client';
-import { Button } from 'flowbite-react';
+import { OrganizationFormProps } from '@/app/types';
 import { useState } from 'react';
-import FlowInput from '../../inputs/FlowInput';
 import ButtonComponent from '../../Button';
 import AppIcons from '../../icons/AppIcons';
-import { OrganizationFormProps } from '@/app/types';
-
-
+import FlowInput from '../../inputs/FlowInput';
 
 const OrganizationForm: React.FC<OrganizationFormProps> = ({ formFields, group }) => {
 	const [formData, setFormData] = useState<{ [key: string]: string }>({});
@@ -22,12 +19,12 @@ const OrganizationForm: React.FC<OrganizationFormProps> = ({ formFields, group }
 	};
 
 	return (
-		<form onSubmit={handleSubmit} className='p-4'>
+		<form onSubmit={handleSubmit} className="p-4">
 			{formFields.map((group) => (
 				<div key={group.label}>
-					<h3 className='py-4 font-bold'>{group.label}</h3>
+					<h3 className="py-4 font-bold">{group.label}</h3>
 					{group.fields.map((field) => (
-						<div key={field.name} className='pb-4'>
+						<div key={field.name} className="pb-4">
 							<FlowInput
 								label={field.label}
 								showLabel={true}
@@ -43,7 +40,7 @@ const OrganizationForm: React.FC<OrganizationFormProps> = ({ formFields, group }
 				</div>
 			))}
 			<div className="flex-flex-col my-4">
-				<ButtonComponent icon={AppIcons['signUp']} label='Submit' />
+				<ButtonComponent icon={AppIcons['signUp']} label="Submit" />
 			</div>
 		</form>
 	);

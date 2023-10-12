@@ -1,17 +1,12 @@
 'use client';
 
 import { SafeUser } from '@/app/types';
-import databaseData from '@/data/moduleFormFields/database.json';
-import organizationForm from '@/data/moduleFormFields/organization.json';
-import serverData from '@/data/moduleFormFields/server.json';
-import accountField from '@/data/moduleFormFields/user.json';
 import { useParams, useSearchParams } from 'next/navigation';
 import { useEffect, useState } from 'react';
 import DocumentationPage from './DocumentationPage';
 import PreviewComponent from './PreviewComponent';
 import ResumeView from './ResumeView';
 import CodeEditorPage from './codeEditor/CodeEditorPage';
-import FormPage from './form/FormPage';
 import TerminalComponent from './terminal/Terminal';
 interface ModuleListPageProps {
 	currentUser?: SafeUser | null;
@@ -21,7 +16,7 @@ interface ModuleListPageProps {
 const ModuleListPage: React.FC<ModuleListPageProps> = ({ currentUser, showSidebar, data }) => {
 	const params = useParams();
 	const searchParams = useSearchParams();
-	console.log(params, searchParams);
+
 	const [isLoading, setIsLoading] = useState(false);
 	const [formData, setFormData] = useState(data);
 
@@ -53,31 +48,6 @@ const ModuleListPage: React.FC<ModuleListPageProps> = ({ currentUser, showSideba
 				{params?.slug && params?.slug === 'documentation' && (
 					<>
 						<DocumentationPage nameDoc={'vs_code'} currentUser={currentUser} />
-					</>
-				)}
-				{params?.slug && params?.slug === 'organization' && (
-					<>
-						<FormPage data={organizationForm} />
-					</>
-				)}
-				{params?.slug && params?.slug === 'payment' && (
-					<>
-						<FormPage data={accountField} />
-					</>
-				)}
-				{params?.slug && params?.slug === 'account' && (
-					<>
-						<FormPage data={accountField} />
-					</>
-				)}
-				{params?.slug && params?.slug === 'server' && (
-					<>
-						<FormPage data={serverData} />
-					</>
-				)}
-				{params?.slug && params?.slug === 'database' && (
-					<>
-						<FormPage data={databaseData} />
 					</>
 				)}
 

@@ -1,29 +1,22 @@
 'use client';
-
+import { Sidebar } from 'flowbite-react';
 interface SidebarItemGroupProps {
 	classNames?: string;
 	divider?: boolean;
 	children?: React.ReactNode | null;
 	id?: string;
-	sidebarGroupData?: string[] | null;
+	group?: string;
+	items?: string[];
 }
 const SidebarItemGroup: React.FC<SidebarItemGroupProps> = ({
 	classNames,
 	divider,
 	children,
 	id,
-	sidebarGroupData
+	group,
+	items
 }) => {
-	console.log(sidebarGroupData);
-	return (
-		<>
-			{children}
-
-			{sidebarGroupData?.map((group: any) => {
-				<div>item</div>;
-			})}
-		</>
-	);
+	return <Sidebar.ItemGroup>{children}</Sidebar.ItemGroup>;
 };
 
 export default SidebarItemGroup;

@@ -1,10 +1,16 @@
 import { default as getCurrentUser } from '@/app/actions/getCurrentUser';
-import AdminLayout from '@/app/components/AdminLayout';
+import { getFormData, getFormField, getModuleLists, getUsers } from '@/app/actions/getModuleLists';
 import EmptyPage from '@/app/components/empty/EmptyPage';
-import ModuleListPage from '@/app/components/modules/ModuleListPage';
+import ModuleShow from '@/app/components/modules/ModuleShow';
+import AdminLayout from '@/app/layouts/AdminLayout';
+import { SafeUser } from '@/app/types';
 
 export default async function AdminModulePage() {
-	const currentUser = await getCurrentUser();
+	const currentUser: SafeUser | null = await getCurrentUser();
+	const formFields = await getFormField();
+	const formData = await getFormData();
+	const modules = await getModuleLists();
+	const users = await getUsers();
 	const supAdm = 'Super Administrator';
 	let isAdmin = false;
 	if (currentUser?.Role) {
@@ -21,7 +27,19 @@ export default async function AdminModulePage() {
 				showNavbar={true}
 				showNavbarSearch={true}
 			>
-				{isAdmin ? <ModuleListPage currentUser={currentUser} /> : <EmptyPage />}
+				{isAdmin ? (
+					<>
+						<ModuleShow
+							installed={currentUser?.Module}
+							fields={formFields}
+							modules={modules}
+							currentUser={currentUser}
+							organization={currentUser?.Organization}
+						/>
+					</>
+				) : (
+					<EmptyPage />
+				)}
 			</AdminLayout>
 		</>
 	);

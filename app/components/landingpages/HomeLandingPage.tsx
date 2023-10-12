@@ -1,5 +1,4 @@
 'use client';
-import { SafeUser } from '@/app/types';
 import blogPosts from '@/data/blogs.json' assert { type: 'json' };
 import featuresData from '@/data/features.json' assert { type: 'json' };
 import footerNavigation from '@/data/footer.json' assert { type: 'json' };

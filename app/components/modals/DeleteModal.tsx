@@ -1,6 +1,6 @@
 import ButtonComponent from '@/app/components/Button';
 import AppIcons from '@/app/components/icons/AppIcons';
-import { FormFieldGroup } from '@/app/types';
+import { FormFieldGroup } from '@/app/types/form';
 import { Modal } from 'flowbite-react';
 import { useParams, useRouter } from 'next/navigation';
 import React, { useCallback, useEffect, useState } from 'react';

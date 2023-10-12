@@ -2,8 +2,6 @@
 import sidebar from '@/data/sidebar.json';
 import { Sidebar } from 'flowbite-react';
 import { useState } from 'react';
-import SidebarCTA from './sidebar/SidebarCTA';
-import SidebarItem from './sidebar/SidebarItem';
 
 interface SideBarLayoutProps {
 	showSidebar?: boolean;
@@ -34,38 +32,7 @@ const SideBarLayout: React.FC<SideBarLayoutProps> = ({
 					<>
 						{sidebar.map((side, i) => (
 							<>
-								<Sidebar.ItemGroup key={i}>
-									{side.group === 'cta' && <SidebarCTA show={true} />}
-									{side.name && (
-										<SidebarItem
-											key={side.name}
-											label={side.name}
-											iconName={side.icon_name ? side.icon_name : ''}
-											subItems={side.items}
-											group={side.group}
-										/>
-									)}
-									{!side.name && (
-										<>
-											{side.items.length > 0 &&
-												side.items.map((item, k) => (
-													<>
-														{item && typeof item === 'string' && (
-															<SidebarItem key={item} label={item} iconName={'arrow'} />
-														)}
-														{item && typeof item === 'object' && (
-															<SidebarItem
-																key={item.slug}
-																label={item.name}
-																iconName={item.icon_name}
-																href={`/${side.group}/${item.slug}`}
-															/>
-														)}
-													</>
-												))}
-										</>
-									)}
-								</Sidebar.ItemGroup>
+								<Sidebar.ItemGroup key={i}></Sidebar.ItemGroup>
 							</>
 						))}
 					</>

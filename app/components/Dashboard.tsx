@@ -2,12 +2,14 @@
 
 import { SafeUser } from '@/app/types';
 import administrationData from '@/data/administration.json';
+import sidebar from '@/data/sidebar.json';
 import { useRouter } from 'next/navigation';
 import { useEffect, useRef, useState } from 'react';
 import CardIcon from './CardIcon';
-import Heading from './Heading';
-import Loader from './Loader';
 
+import { Card } from 'flowbite-react';
+import ButtonIcon from './ButtonIcon';
+import Heading from './Heading';
 import ModuleLists from './modules/ModuleLists';
 interface DashboardProps {
 	currentUser?: SafeUser | null;
@@ -38,56 +40,155 @@ const Dashboard: React.FC<DashboardProps> = ({ currentUser }) => {
 
 	return (
 		<>
-			{isLoading && <Loader />}
-			{currentUser && (
+			<div className="flex flex-col mt-2">
+				<Heading title="Dashboard" />
+			</div>
+
+			<div className="flex flex-col lg:flex-row gap-4">
 				<div className="flex flex-col">
-					<div className="px-4 text-md flex flex-col items-center">
-						<Heading
-							title="Administration"
-							size="text-lg text-gray-700 text-center font-semibold"
-						/>
-					</div>
-					<div className="flex flex-col items-center justify-center mx-auto mb-4 p-4">
+					<div
+						className="
+						flex flex-col md:flex-row h-full w-full  gap-4 mt-4
+					"
+					>
 						<div
 							className="
-                                grid
-                                grid-cols-3
-                                md:grid-cols-4
-                                lg:grid-cols-6
-                                xl:grid-cols-8
-                                2xl:grid-cols-11
-                                gap-4
-                                md:gap-5
-                                lg:gap-6
-                                xl:gap-7
-                                max-w-[600px]
-                                md:max-w-[1024px]
-                                lg:max-w-[1280px]
-                                xl:max-w-[1920px]
-                                2xl:max-w-[2500px]
-                            "
+						flex flex-col h-full w-full 
+					"
 						>
-							{administrationData.administration.map((admin, i) => (
-								<CardIcon
-									key={admin.slug}
-									iconSize={iconSize}
-									label={admin.name}
-									iconName={admin.icon_name}
-									buttonId={`${admin.slug}-button`}
-									contentId={`${admin.slug}-content`}
-									description={admin.description}
-									onClick={() => router.push(`/admin/${admin.slug}`)}
+							<Card>
+								<ButtonIcon
+									icon={'organizations'}
+									size={'text-lg lg:text-2xl'}
+									iconSize={80}
+									showLabel
+									label="My Organization"
 								/>
-							))}
+							</Card>
+						</div>
+						<div
+							className="
+						flex flex-col h-full w-full 
+					"
+						>
+							<Card>
+								<ButtonIcon
+									icon={'user'}
+									size={'text-lg lg:text-2xl'}
+									iconSize={80}
+									showLabel
+									label="My Account"
+								/>
+							</Card>
+						</div>
+						<div
+							className="
+						flex flex-col h-full w-full 
+					"
+						>
+							<Card>
+								<ButtonIcon
+									icon={'cog'}
+									size={'text-lg lg:text-2xl'}
+									iconSize={80}
+									showLabel
+									label="My Settings"
+								/>
+							</Card>
 						</div>
 					</div>
-
-					<div className="px-4 text-md flex flex-col items-center bg-gray-50  border-t border-b">
-						<Heading title="Modules" size="text-lg text-gray-700 text-center font-semibold " />
+					<div
+						className="
+						flex flex-col h-full w-full items-center justify-center mt-2
+					"
+					>
+						<Card>
+							<div
+								className="
+				
+						grid
+						grid-cols-3
+						md:grid-cols-6
+						gap-4
+						md:gap-5
+						lg:gap-6
+						xl:gap-7
+						max-w-[600px]
+						md:max-w-[1024px]
+						lg:max-w-[1280px]
+						xl:max-w-[1920px]
+						2xl:max-w-[2500px]"
+							>
+								{administrationData.administration.map((admin, i) => (
+									<>
+										<CardIcon
+											module={admin}
+											key={admin.slug}
+											iconSize={iconSize}
+											label={admin.name}
+											iconName={admin.icon_name}
+											buttonId={`${admin.slug}-button`}
+											contentId={`${admin.slug}-content`}
+											description={admin.description}
+											onClick={() => router.push(`/admin/${admin.slug}`)}
+											showPopover={true}
+										/>
+									</>
+								))}
+							</div>
+						</Card>
 					</div>
-					<ModuleLists />
 				</div>
-			)}
+				<div
+					className="
+						flex flex-col h-full lg:w-1/4 items-center justify-center mt-4
+					"
+				>
+					<Card className="p-2">
+						<div
+							className="
+				
+						grid
+						grid-cols-3
+						md:grid-cols-2
+						gap-4
+						md:gap-5
+						lg:gap-6
+						xl:gap-7
+						max-w-[600px]
+						md:max-w-[1024px]
+						lg:max-w-[1280px]
+						xl:max-w-[1920px]
+						2xl:max-w-[2500px]"
+						>
+							{sidebar.map((admin, i) => (
+								<>
+									<CardIcon
+										module={admin}
+										key={admin.name}
+										iconSize={iconSize}
+										label={admin.name}
+										iconName={admin.icon_name}
+										buttonId={`${admin.name}-button`}
+										contentId={`${admin.name}-content`}
+										onClick={() => router.push(`/admin/${admin.name}`)}
+									/>
+								</>
+							))}
+						</div>
+					</Card>
+				</div>
+			</div>
+			<div
+				className="
+						flex flex-col h-full w-full items-start justify-center mt-4
+					"
+			>
+				<Card className="p-2">
+					<Heading title="Modules" />
+					<ModuleLists />
+				</Card>
+			</div>
 		</>
 	);
 };

@@ -1,7 +1,9 @@
 [
     {
         "label": "Basic Information",
-        "group": "Organization Information",
+        "name": "Basic Information",
+        "module": "Organization",
+        "moduleId": "6afc39a2-0dc5-447f-849a-e26932845306",
         "fields": [
             {
                 "label": "Organization Name",
@@ -78,6 +80,8 @@
     {
         "label": "Contact Information",
         "group": "Organization Information",
+        "module": "Organization",
+        "moduleId": "6afc39a2-0dc5-447f-849a-e26932845306",
         "fields": [
             {
                 "label": "Email Address",
@@ -119,6 +123,8 @@
     {
         "label": "Additional Information",
         "group": "Organization Information",
+        "module": "Organization",
+        "moduleId": "6afc39a2-0dc5-447f-849a-e26932845306",
         "fields": [
             {
                 "label": "Year Established",
@@ -160,6 +166,8 @@
     {
         "label": "Financial Information",
         "group": "Organization Information",
+        "module": "Organization",
+        "moduleId": "6afc39a2-0dc5-447f-849a-e26932845306",
         "fields": [
             {
                 "label": "Bank Name",
@@ -187,6 +195,8 @@
     {
         "label": "Work Information",
         "group": "Employee Information",
+        "module": "Organization",
+        "moduleId": "6afc39a2-0dc5-447f-849a-e26932845306",
         "fields": [
             {
                 "label": "Employee ID",
@@ -228,6 +238,8 @@
     {
         "label": "Salary Information",
         "group": "Employee Information",
+        "module": "Organization",
+        "moduleId": "6afc39a2-0dc5-447f-849a-e26932845306",
         "fields": [
             {
                 "label": "Salary",

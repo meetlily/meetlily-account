@@ -1,0 +1,146 @@
+[
+  {
+    "icon_name": "organizations",
+    "name": "My Organization",
+    "link": "/admin/organization"
+  },
+  {
+    "icon_name": "account",
+    "name": "My Account",
+    "link": "/admin/account"
+  },
+  {
+    "icon_name": "cog",
+    "name": "My Settings",
+    "link": "/admin/settings"
+  },
+  {
+    "icon_name": "apps",
+    "name": "My Modules",
+    "collapse": true,
+    "items": [
+      {
+        "name": "Website",
+        "slug": "website",
+        "short_description": "Create and manage your website.",
+        "description": "Build and customize your website with ease using the Website module of Meetlily Apps. Choose from a variety of templates, add content, and personalize your site. Showcase your products, services, and brand effectively.",
+        "category": [
+          {
+            "name": "Web Development",
+            "id": "19000008-9e8b-4b7f-9f6f-7c7d1b6b0c4d"
+          }
+        ],
+        "tags": [
+          "Website",
+          "Web Development",
+          "Content Management"
+        ],
+        "icon_name": "website",
+        "module": "Website"
+      },
+      {
+        "name": "Projects",
+        "slug": "projects",
+        "short_description": "Manage projects and collaborate with teams.",
+        "description": "Efficiently manage projects and collaborate with teams using the Projects module of Meetlily Apps. Create project plans, assign tasks, and track progress. Enhance team collaboration and deliver successful projects.",
+        "category": [
+          {
+            "name": "Project Management",
+            "id": "19000016-9e8b-4b7f-9f6f-7c7d1b6b0c4d"
+          }
+        ],
+        "tags": [
+          "Projects",
+          "Project Management",
+          "Task Tracking"
+        ],
+        "icon_name": "projects",
+        "module": "Projects"
+      },
+      {
+        "name": "Point of Sale",
+        "slug": "point-of-sale",
+        "short_description": "Efficiently manage sales transactions.",
+        "description": "Streamline your sales process and manage transactions with the Point of Sale module of Meetlily Apps. Handle customer orders, process payments, and generate sales reports. Improve your retail operations.",
+        "category": [
+          {
+            "name": "Sales Management",
+            "id": "19000007-9e8b-4b7f-9f6f-7c7d1b6b0c4d"
+          }
+        ],
+        "tags": [
+          "Point of Sale",
+          "Sales Management",
+          "Retail"
+        ],
+        "icon_name": "pos",
+        "module": "Point of Sale"
+      }
+    ]
+  },
+  {
+    "icon_name": "repair",
+    "name": "My Tools",
+    "collapse": true,
+    "items": [
+      {
+        "name": "AI Assistant",
+        "slug": "ai-assistant",
+        "short_description": "Get assistance and automate tasks with our AI-powered assistant.",
+        "description": "Get assistance and automate tasks with our AI-powered assistant. Interact with our intelligent virtual assistant to get answers to your questions, perform actions, and streamline your workflow. Our AI assistant module leverages the power of artificial intelligence to enhance your productivity and provide personalized support.",
+        "category": [
+          {
+            "name": "Productivity",
+            "id": "19000060-9e8b-4b7f-9f6f-7c7d1b6b0c4d"
+          }
+        ],
+        "tags": [
+          "AI Assistant",
+          "Virtual Assistant",
+          "Productivity"
+        ],
+        "icon_name": "aiAssistant",
+        "module": "AI Assistant"
+      },
+      {
+        "name": "Music",
+        "slug": "music",
+        "short_description": "Discover and listen to your favorite music.",
+        "description": "Discover and listen to your favorite music with the Music module of Meetlily Apps. Explore a vast library of songs, create playlists, and enjoy personalized recommendations. Enhance your music experience and enjoy seamless streaming on any device.",
+        "category": [
+          {
+            "name": "Entertainment",
+            "id": "19000054-9e8b-4b7f-9f6f-7c7d1b6b0c4d"
+          }
+        ],
+        "tags": [
+          "Music",
+          "Streaming",
+          "Entertainment"
+        ],
+        "icon_name": "music",
+        "module": "Music"
+      },
+      {
+        "name": "Movies",
+        "slug": "movies",
+        "short_description": "Discover and watch your favorite movies and TV shows.",
+        "description": "Discover and watch your favorite movies and TV shows with the Movies module of Meetlily Apps. Browse a vast collection of films, explore genres, and enjoy personalized recommendations. Immerse yourself in the world of entertainment and enjoy seamless streaming on any device.",
+        "category": [
+          {
+            "name": "Entertainment",
+            "id": "19000054-9e8b-4b7f-9f6f-7c7d1b6b0c4d"
+          }
+        ],
+        "tags": [
+          "Movies",
+          "TV Shows",
+          "Streaming",
+          "Entertainment"
+        ],
+        "icon_name": "movies",
+        "module": "Movies"
+      }
+    ]
+  }
+]

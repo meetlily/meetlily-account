@@ -1,11 +1,9 @@
 'use client';
 
-import organizationForm from '@/data/moduleFormFields/user.json';
 import { ChangeEvent, useState } from 'react';
 import { FieldValues, SubmitHandler, useForm } from 'react-hook-form';
 import IconComponent from '../icons/IconComponent';
 import FlowInput from '../inputs/FlowInput';
-import FormModal from './form/FormModal';
 
 const ModulesHeader = () => {
 	const [openModal, setOpenModal] = useState<string | undefined>('default');
@@ -69,7 +67,7 @@ const ModulesHeader = () => {
 				</form>
 			</div>
 			<div className="w-full md:w-auto flex flex-col md:flex-row space-y-2 md:space-y-0 items-stretch md:items-center justify-end md:space-x-3 flex-shrink-0">
-				<FormModal data={organizationForm} fData={fData} size="7xl" />
+				{/* <FormModal data={organizationForm} fData={fData} size="7xl" /> */}
 				{/* <FlowModal
 					modalBody={<FormModal data={organizationForm} />}
 					modalId="productModal"
@@ -83,6 +81,7 @@ const ModulesHeader = () => {
 					onSubmit={handleSubmit(onSubmit)}
 					modalFooterSecondaryAction={() => {}}
 				/> */}
+
 				<div className="flex items-center space-x-3 w-full md:w-auto">
 					<button
 						id="actionsDropdownButton"

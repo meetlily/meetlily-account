@@ -13,14 +13,15 @@ interface InputTextProps {
 	iconName?: string | 'ban';
 	helperText?: string;
 	placeholder?: string;
-	value?: string | number;
+	value?: any;
 	disabled?: boolean;
 	required?: boolean;
 	register: UseFormRegister<FieldValues>;
 	errors: FieldErrors;
 	onChange?: (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => void;
 	displayCondition?: string;
-	checked?: boolean | false;
+	checked?: boolean;
+	onToggle?: (checked: boolean, name: string) => void;
 }
 
 const InputText: React.FC<InputTextProps> = ({
@@ -38,10 +39,15 @@ const InputText: React.FC<InputTextProps> = ({
 	register,
 	onChange,
 	checked,
+	onToggle,
 	displayCondition
 }) => {
-	let iconMain = '';
-	const [inputValue, setInputValue] = useState(value);
+	const [toggleVal, setToggleVal] = useState(checked);
+	const handleChange = (checked: boolean) => {
+		register(name, { value: checked });
+		setToggleVal(checked);
+		onToggle?.(checked, name);
+	};
 	if (
 		type === 'text' ||
 		type === 'number' ||
@@ -65,6 +71,7 @@ const InputText: React.FC<InputTextProps> = ({
 						type={type}
 						required={required}
 						name={name}
+						value={value}
 						placeholder={placeholder}
 						icon={AppIcons[iconName]}
 						onChange={onChange}
@@ -81,6 +88,7 @@ const InputText: React.FC<InputTextProps> = ({
 						type={type}
 						required={required}
 						name={name}
+						value={value}
 						placeholder={placeholder}
 						onChange={onChange}
 					/>
@@ -159,6 +167,7 @@ const InputText: React.FC<InputTextProps> = ({
 					required={required}
 					disabled={disabled}
 					name={name}
+					value={value}
 					placeholder={placeholder}
 					icon={AppIcons['website']}
 					onChange={onChange}
@@ -180,6 +189,7 @@ const InputText: React.FC<InputTextProps> = ({
 					required={required}
 					disabled={disabled}
 					name={name}
+					value={value}
 					placeholder={placeholder}
 					icon={AppIcons['email']}
 					onChange={onChange}
@@ -201,6 +211,7 @@ const InputText: React.FC<InputTextProps> = ({
 					required={required}
 					disabled={disabled}
 					name={name}
+					value={value}
 					placeholder={placeholder}
 					icon={AppIcons['phone']}
 					onChange={onChange}
@@ -211,14 +222,17 @@ const InputText: React.FC<InputTextProps> = ({
 		return (
 			<>
 				<ToggleSwitch
-					checked={false}
-					{...register(id, { required })}
 					id={id}
-					disabled={disabled}
-					name={name}
-					placeholder={placeholder}
-					onChange={() => {}}
+					{...register(id, { required })}
+					onChange={handleChange}
+					checked={toggleVal ? toggleVal : false}
 				/>
+			</>
+		);
+	} else if (type === 'hidden') {
+		return (
+			<>
+				<input type={type} value={value} {...register(id, { required })} />
 			</>
 		);
 	}

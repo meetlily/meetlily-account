@@ -10,6 +10,7 @@ import {
 	BiSolidPhotoAlbum
 } from 'react-icons/bi';
 import {
+	BsBoxes,
 	BsBuildingAdd,
 	BsCalendarRange,
 	BsCash,
@@ -29,6 +30,7 @@ import {
 	BsFillCheckCircleFill,
 	BsFillHouseAddFill,
 	BsFillHousesFill,
+	BsLayoutSidebar,
 	BsMarkdown,
 	BsNewspaper,
 	BsPersonAdd,
@@ -47,11 +49,14 @@ import {
 import {
 	MdAdd,
 	MdApi,
+	MdAppRegistration,
 	MdCardMembership,
 	MdCastForEducation,
 	MdCurrencyPound,
 	MdCurrencyRuble,
 	MdCurrencyRupee,
+	MdFormatListBulleted,
+	MdFormatListBulletedAdd,
 	MdInventory,
 	MdKeyboardArrowDown,
 	MdKeyboardArrowLeft,
@@ -78,6 +83,7 @@ import {
 	RiCodeBoxLine,
 	RiFolderSettingsFill,
 	RiInstallLine,
+	RiListSettingsFill,
 	RiMoneyDollarBoxLine,
 	RiNftFill,
 	RiPagesFill,
@@ -85,6 +91,7 @@ import {
 	RiProfileLine,
 	RiRefund2Fill,
 	RiSecurePaymentFill,
+	RiShoppingBag3Fill,
 	RiSurveyLine,
 	RiUninstallFill,
 	RiVideoChatFill
@@ -265,6 +272,14 @@ import {
 } from 'react-icons/si';
 
 const AppIcons: { [key: string]: IconType } = {
+	moduleOptions: RiListSettingsFill,
+	appSettings: MdAppRegistration,
+	updateForm: MdFormatListBulleted,
+	addForm: MdFormatListBulletedAdd,
+	module: BsBoxes,
+	market: RiShoppingBag3Fill,
+	bars: FaBars,
+	sidebar: BsLayoutSidebar,
 	dot: TbCircleDotFilled,
 	checked: BsFillCheckCircleFill,
 	infoCircle: FaCircleInfo,

@@ -24,21 +24,23 @@ model Applications {
 }
 
 model Module {
-  id           String         @id @default(uuid()) @map("_id") @db.VarChar(36)
-  name         String
-  slug         String
-  createdAt    DateTime       @default(now())
-  enabled      Boolean?       @default(false)
-  installed    Boolean?       @default(false)
-  global       Boolean?       @default(true)
-  private      Boolean?       @default(false)
-  icon_name    String?
-  externalLink String?
-  User         User[]
-  Organization Organization[]
-  Subscription Subscription[]
-  Formdata     Formdata[]
-  Formfield    Formfield[]
+  id            String          @id @default(uuid()) @map("_id") @db.VarChar(36)
+  name          String
+  slug          String
+  createdAt     DateTime        @default(now())
+  enabled       Boolean?        @default(false)
+  installed     Boolean?        @default(false)
+  global        Boolean?        @default(true)
+  private       Boolean?        @default(false)
+  icon_name     String?
+  externalLink  String?
+  User          User[]
+  Organization  Organization[]
+  Subscription  Subscription[]
+  Formdata      Formdata[]
+  Formfield     Formfield[]
+  Category      Category[]
+  Configuration Configuration[]
 }
 
 model Newsletter {
@@ -64,6 +66,7 @@ model Category {
   description  String?
   createId     String?
   Organization Organization[]
+  Module       Module[]
 }
 
 model Note {
@@ -114,6 +117,7 @@ model Configuration {
   createdId      String?
   organizationId String
   organization   Organization @relation(fields: [organizationId], references: [id], onDelete: Cascade)
+  Module         Module[]
 }
 
 model Variable {
@@ -150,6 +154,8 @@ model Organization {
   User          User[]
   Notification  Notification[]
   Applications  Applications[]
+  Formfield     Formfield[]
+  Formdata      Formdata[]
 }
 
 model User {
@@ -272,20 +278,27 @@ model Subscription {
 }
 
 model Formfield {
-  id       String     @id @default(uuid()) @map("_id") @db.VarChar(36)
-  name     String
-  data     Json?
-  Formdata Formdata[]
-  Module   Module[]
-  User     User[]
+  id             String        @id @default(uuid()) @map("_id") @db.VarChar(36)
+  name           String
+  label          String
+  default        Boolean?
+  fields         Json?
+  Formdata       Formdata[]
+  User           User[]
+  Module         Module?       @relation(fields: [moduleId], references: [id])
+  moduleId       String?       @db.VarChar(36)
+  Organization   Organization? @relation(fields: [organizationId], references: [id])
+  organizationId String?       @db.VarChar(36)
 }
 
 model Formdata {
-  id          String     @id @default(uuid()) @map("_id") @db.VarChar(36)
-  name        String
-  data        Json?
-  Module      Module[]
-  User        User[]
-  Formfield   Formfield? @relation(fields: [formfieldId], references: [id])
-  formfieldId String?    @db.VarChar(36)
+  id             String        @id @default(uuid()) @map("_id") @db.VarChar(36)
+  data           Json?
+  Formfield      Formfield?    @relation(fields: [formfieldId], references: [id])
+  formfieldId    String?       @db.VarChar(36)
+  User           User[]
+  Organization   Organization? @relation(fields: [organizationId], references: [id])
+  organizationId String?       @db.VarChar(36)
+  Module         Module?       @relation(fields: [moduleId], references: [id])
+  moduleId       String?       @db.VarChar(36)
 }

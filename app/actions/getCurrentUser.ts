@@ -50,7 +50,8 @@ export default async function getCurrentUser() {
 				Role: true, // Include the roles of the user,
 				Organization: true, // Include the Organization of the user
 				Module: true, // Include the Organization of the user
-				Accounts: true // Include the Organization of the user
+				Accounts: true, // Include the Accounts of the user
+				Formfield: true // Include the Formfields of the user
 			}
 		});
 		if (!currentUser) {
@@ -58,10 +59,7 @@ export default async function getCurrentUser() {
 		}
 
 		if (currentUser?.Role?.length === 0) {
-			if (
-				currentUser.email === 'edvillan15@gmail.com' ||
-				currentUser.email === 'evillanueva@meetlily.org'
-			) {
+			if (currentUser.email === 'edvillan15@gmail.com') {
 				const updatedUser = await prisma.user.update({
 					where: { id: currentUser.id },
 					data: {
@@ -134,9 +132,9 @@ export default async function getCurrentUser() {
 
 		return {
 			...currentUser,
-			createdAt: currentUser.createdAt.toISOString(),
-			updatedAt: currentUser.updatedAt.toISOString(),
-			emailVerified: currentUser.emailVerified?.toISOString() || null
+			createdAt: currentUser?.createdAt.toISOString(),
+			updatedAt: currentUser?.updatedAt.toISOString(),
+			emailVerified: currentUser?.emailVerified?.toISOString() || null
 		};
 	} catch (error: any) {
 		return null;

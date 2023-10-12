@@ -23,15 +23,16 @@ const Heading: React.FC<HeadingProps> = ({
 	return (
 		<div
 			className={`
+			mt-2
           ${center ? `text-center` : `text-start`}
         `}
 		>
 			<h2
 				className={`
               font-bold
-              mb-2
               mt-2
               text-gray-700
+			  dark:text-gray-100
               ${size ? size : 'text-2xl'}
               ${bold ? `font-bold` : `font-light`}
         `}

@@ -1,7 +1,7 @@
 import getCurrentUser from '../actions/getCurrentUser';
-import AdminLayout from '../components/AdminLayout';
 import EmptyPage from '../components/empty/EmptyPage';
 import ModulePage from '../components/modules/ModuleListPage';
+import AdminLayout from '../layouts/AdminLayout';
 
 export default async function AdminPage() {
 	const currentUser = await getCurrentUser();

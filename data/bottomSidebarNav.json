@@ -1,0 +1,23 @@
+{
+    "right": [
+        {
+            "icon_name": "close",
+            "name": "Close"
+        },
+        {
+            "icon_name": "signOut",
+            "name": "Logout"
+        }
+    ],
+    "left": [
+        {
+            "icon_name": "documentation",
+            "name": "Docs",
+            "link": "/admin/documentation"
+        },
+        {
+            "icon_name": "close",
+            "name": "Close"
+        }
+    ]
+}

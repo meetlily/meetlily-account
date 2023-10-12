@@ -1,3 +1,4 @@
+'use client';
 import { Guide } from '@/app/types';
 import { Badge } from 'flowbite-react';
 import { FC, useState } from 'react';

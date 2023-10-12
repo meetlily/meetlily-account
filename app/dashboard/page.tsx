@@ -1,6 +1,6 @@
 import getCurrentUser from '../actions/getCurrentUser';
-import AdminLayout from '../components/AdminLayout';
 import Dashboard from '../components/Dashboard';
+import AdminLayout from '../layouts/AdminLayout';
 
 export default async function DashboardPage() {
 	const currentUser = await getCurrentUser();

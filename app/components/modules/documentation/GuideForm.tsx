@@ -1,3 +1,4 @@
+'use client';
 import { Guide, Step } from '@/app/types';
 import { ChangeEvent, FC, useState } from 'react';
 

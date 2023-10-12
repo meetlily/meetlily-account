@@ -1,8 +1,8 @@
 'use client';
 
+import useFormModal from '@/app/hooks/useFormModal';
 import modules from '@/data/modules.json';
 import { Badge, Button, Checkbox, Table } from 'flowbite-react';
-import Link from 'next/link';
 import { useParams } from 'next/navigation';
 import { useEffect, useState } from 'react';
 import IconComponent from '../icons/IconComponent';
@@ -12,7 +12,9 @@ interface FormData {
 }
 export default function ModulesTable() {
 	const params = useParams();
+	const formModal = useFormModal();
 	const [isLoading, setIsLoading] = useState(false);
+	const [showFormModal, setShowFormModal] = useState(false);
 
 	const [checkInstall, setCheckInstall] = useState<FormData>({});
 	useEffect(() => {
@@ -36,6 +38,11 @@ export default function ModulesTable() {
 		}));
 
 		console.log(name, value);
+	};
+	const handleClick = (e: any) => {
+		const { name, value } = e.target;
+		setShowFormModal(true);
+		formModal.onOpen();
 	};
 	const toggleCheckInstall = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
 		const { name, value } = e.target;
@@ -113,26 +120,28 @@ export default function ModulesTable() {
 										</Table.Cell>
 										<Table.Cell>
 											<Button.Group color="dark" className="hover:bg-transparent gap-0">
-												<Link
+												{/* <Button
 													color=""
 													className="bg-white  text-gray-800 hover:bg-transparent hover:text-cyan-500"
-													href={`/modules/${item.slug}/add`}
+													onClick={handleClick}
 												>
 													<IconComponent iconName="add" />
-												</Link>
-												<Link
-													color=""
-													className="bg-white  text-gray-800 hover:bg-transparent hover:text-cyan-500"
-													href={`/modules/${item.slug}/edit`}
-												>
-													<IconComponent iconName="edit" />
-												</Link>
+												</Button>
 												<Button
 													color=""
-													className="bg-white  text-red-800 hover:bg-transparent hover:text-red-500"
-													size="xs"
+													className="bg-white  text-gray-800 hover:bg-transparent hover:text-cyan-500"
+													onClick={handleClick}
 												>
-													<IconComponent iconName="close" />
+													<IconComponent iconName="edit" />
+												</Button> */}
+												<Button
+													color=""
+													className="bg-white  text-gray-800 hover:bg-transparent hover:text-gray-500"
+													onClick={handleClick}
+													size="xs"
+													title="Configure"
+												>
+													<IconComponent iconName="cog" size={22} />
 												</Button>
 											</Button.Group>
 										</Table.Cell>

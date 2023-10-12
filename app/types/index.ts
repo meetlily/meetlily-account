@@ -1,6 +1,7 @@
-import { Organization, User, Variable } from '@prisma/client';
+import { Module, Organization, Role, User, Variable } from '@prisma/client';
+import { JsonValue } from '@prisma/client/runtime/library';
 import { type Message } from 'ai';
-
+import { FormFieldGroup } from './form';
 export interface Chat extends Record<string, any> {
 	id: string;
 	title: string;
@@ -10,30 +11,58 @@ export interface Chat extends Record<string, any> {
 	messages: Message[];
 	sharePath?: string;
 }
-export type Role = { id: string; name: string; description: string | null };
+export type SafeJSONValue = { id: string; name: string; data: JsonValue[] };
+
+export type SafeRole = Omit<Role, 'createdAt'> & {
+	id: string;
+	name: string;
+	createdAt: string;
+	description: string | null;
+};
+export type SafeOrganization = Omit<Organization, 'createdAt' | 'updatedAt'> & {
+	createdAt: string;
+	updatedAt?: string | null;
+};
+export type SafeModule = Omit<Module, 'createdAt'> & {
+	id: string;
+	name: string;
+	slug: string;
+	createdAt: string;
+	enabled: boolean | null;
+	installed: boolean | null;
+	global: boolean | null;
+	private: boolean | null;
+	icon_name: string | null;
+	externalLink: string | null;
+};
+
+export type OrganizationType = Omit<Organization, 'createdAt' | 'updatedAt'> & {
+	createdAt: string;
+	updatedAt?: string | null;
+};
 export type SafeUser = Omit<User, 'createdAt' | 'updatedAt' | 'emailVerified' | 'image'> & {
 	name: string | null;
 	createdAt: string;
 	updatedAt: string;
-	emailVerified: string | null;
-	image: string | null;
-	Role: Role[];
-};
-export type OrganizationType = Omit<Organization, 'createdAt' | 'updatedAt'> & {
-	createdAt: string;
-	updatedAt: string;
+	emailVerified?: string | null;
+	image?: string | null;
+	Role?: Role[];
+	Organization?: Organization[];
+	Module?: Module[];
 };
 
 export type ModuleType = {
 	name: string;
 	slug: string;
-	short_description: string;
-	description: string;
-	category: { name: string; id: string }[];
-	tags: string[];
-	icon_name: string;
-	module: string;
+	short_description?: string;
+	description?: string;
+	category?: { name: string; id: string }[];
+	tags?: string[];
+	icon_name?: string;
+	module?: string;
+	installed?: boolean;
 };
+
 export type VariableType = Omit<Variable, 'createdAt'> & {
 	id: string;
 	createdAt: string;
@@ -53,22 +82,6 @@ export type AccountType = {
 	type: string | 'credentials';
 	provider: string;
 	providerAccountId: string;
-};
-export type FormField = {
-	name: string;
-	label: string;
-	type: string;
-	value?: string | number;
-	placeholder?: string;
-	required?: boolean;
-	displayCondition?: string;
-	options?: string[];
-};
-
-export type FormFieldGroup = {
-	label: string;
-	group: string;
-	fields: FormField[];
 };
 
 export type OrganizationFormProps = {

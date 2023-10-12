@@ -1,4 +1,5 @@
-import { FormFieldGroup } from '@/app/types';
+'use client';
+import { FormFieldGroup } from '@/app/types/form';
 import { useParams } from 'next/navigation';
 import React, { useState } from 'react';
 

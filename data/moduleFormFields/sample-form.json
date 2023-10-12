@@ -1,0 +1,37 @@
+[
+    {
+        "label": "Accounting Information",
+        "name": "Basic Information",
+        "Module": [
+            {
+                "id": "6afc39a2-0dc5-447f-849a-e26932845306",
+                "name": "Organization"
+            }
+        ],
+        "fields": [
+            {
+                "label": "Organization Name",
+                "name": "organizationName",
+                "type": "text",
+                "placeholder": "Enter Organization Name",
+                "helperText": "This is a helper text for type input text",
+                "required": true
+            },
+            {
+                "label": "Slug",
+                "name": "slug",
+                "type": "text",
+                "placeholder": "Enter Slug",
+                "helperText": "This is a helper text for type input text",
+                "required": false
+            },
+            {
+                "label": "Phone Number",
+                "name": "phoneNumber",
+                "type": "tel",
+                "placeholder": "Enter phone number",
+                "value": ""
+            }
+        ]
+    }
+]
