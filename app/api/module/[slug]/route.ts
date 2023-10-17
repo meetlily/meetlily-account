@@ -36,6 +36,7 @@ export async function GET(request: any, response: any) {
 		}
 
 		const result = await prisma.module.findMany();
+		console.log(result, 'result getModule');
 		return NextResponse.json(result);
 	} catch (error) {
 		const errorMessage = 'An error occurred while fetching data';

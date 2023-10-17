@@ -5,7 +5,7 @@ import AdminLayout from '@/app/layouts/AdminLayout';
 
 export default async function ModulesPage() {
 	const currentUser = await getCurrentUser();
-	console.log(currentUser);
+
 	const supAdm = 'Super Administrator';
 	let isAdmin = false;
 	if (currentUser?.Role) {

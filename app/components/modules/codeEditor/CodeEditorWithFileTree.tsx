@@ -6,6 +6,7 @@ import React, { useState } from 'react';
 import ButtonGroup from 'flowbite-react/lib/esm/components/Button/ButtonGroup';
 import { useParams } from 'next/navigation';
 import ButtonIcon from '../../ButtonIcon';
+import FileDirectory from '../../files/FileDirectory';
 import CodeEditor from './CodeEditor';
 //const CodeEditor = dynamic(() => import(CodeEditor));
 interface CodeEditorWithFileTreeProps {
@@ -103,15 +104,15 @@ const CodeEditorWithFileTree: React.FC<CodeEditorWithFileTreeProps> = ({ files }
 							</div>
 						</Card>
 					</div>
-					<div className="grid grid-cols-1 gap-0 ">
-						{/* <div className="flex  h-200 w-[200px] ">
+					<div className="flex flex-row gap-0 item-start justify-start">
+						<div className="flex  w-full max-w-[280px] ">
 							<Card className="w-full">
-								<div className="overflow-y-scroll">
+								<div className="overflow-y-scroll w-full h-200 max-h-[880px] overflow-hidden">
 									<FileDirectory directory={fileTree} onChange={handleFileChange} />
 								</div>
 							</Card>
-						</div> */}
-						<div className="flex h-screen max-h-[900px] w-screen max-w-md xs:max-w-md sm:max-w-lg md:max-w-xl lg:max-w-3xl  xl:max-w-5xl 2xl:max-w-7xl">
+						</div>
+						<div className="flex h-screen max-h-[900px]  w-screen max-w-md xs:max-w-md sm:max-w-lg md:max-w-xl lg:max-w-3xl  xl:max-w-5xl 2xl:max-w-7xl">
 							<Card className="flex w-full h-full overflow-scroll">
 								<div className="flex flex-col items-center justify-center w-full h-full overflow-hidden">
 									<CodeEditor

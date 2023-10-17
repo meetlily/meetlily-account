@@ -4,6 +4,7 @@ import { authOptions } from '@/pages/api/auth/[...nextauth]';
 
 import prisma from '@/app/libs/prismadb';
 import rolesData from '@/data/roles.json';
+import { randomUUID } from 'crypto';
 
 export async function getSession() {
 	return await getServerSession(authOptions);
@@ -129,10 +130,11 @@ export default async function getCurrentUser() {
 				}
 			}
 		}
+
 		if (getOrg.length === 0) {
 			await prisma.organization.create({
 				data: {
-					slug: 'meetlily-advertising',
+					slug: 'meetlily',
 					name: 'Meetlily Advertising',
 					User: {
 						connect: {
@@ -144,7 +146,7 @@ export default async function getCurrentUser() {
 		} else if (currentUser.Organization.length === 0) {
 			const getCOrg = await prisma.organization.findUnique({
 				where: {
-					slug: 'meetlily-advertising'
+					slug: 'meetlily'
 				}
 			});
 			if (getCOrg) {
@@ -175,9 +177,11 @@ export default async function getCurrentUser() {
 				};
 			}
 		}
+
 		if (!currentUser.defaultId) {
-			await prisma.default.create({
+			const createDef = await prisma.default.create({
 				data: {
+					id: randomUUID(),
 					data: {
 						organizationId: currentUser.Organization[0].id,
 						roleId: currentUser.Role[0].id
@@ -189,7 +193,11 @@ export default async function getCurrentUser() {
 					}
 				}
 			});
+			if (createDef) {
+				console.log(createDef);
+			}
 		}
+
 		//console.log(currentUser, 'currentUser');
 		// if (currentUser && currentUser.Role.length > 0) {
 		// 	currentUser.Role.map((role, i) => {

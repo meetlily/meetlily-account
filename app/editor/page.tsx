@@ -19,7 +19,7 @@ export default async function ModulesPage() {
 	const handleChange = (newCode: any) => {
 		console.log(newCode, 'handleChange page');
 	};
-	console.log(files);
+
 	return (
 		<>
 			<AdminLayout

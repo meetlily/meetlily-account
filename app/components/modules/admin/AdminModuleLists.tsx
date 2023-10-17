@@ -27,7 +27,7 @@ interface SafeFormFields {
 	organizationId: string | null;
 }
 
-interface AdminModuleUsersProps {
+interface AdminModuleListsProps {
 	installed?: Module[];
 	fields?: Formfield[];
 	modules?: LocalModule[];
@@ -36,7 +36,7 @@ interface AdminModuleUsersProps {
 	organization?: any;
 }
 
-const AdminModuleUsers: React.FC<AdminModuleUsersProps> = ({
+const AdminModuleLists: React.FC<AdminModuleListsProps> = ({
 	installed,
 	fields,
 	modules,
@@ -53,10 +53,10 @@ const AdminModuleUsers: React.FC<AdminModuleUsersProps> = ({
 	const deleteModal = useDeleteModal();
 
 	const moduleView = {
-		id: null,
 		name: null,
-		email: null
+		slug: null
 	};
+
 	const paths = pathName?.split('/');
 	const primaryActionClick = useCallback((item: any) => {
 		setData(item);
@@ -71,7 +71,7 @@ const AdminModuleUsers: React.FC<AdminModuleUsersProps> = ({
 	const deleteModalActionClick = useCallback(
 		(item: any) => {
 			axios
-				.delete(`/api/users/${item.id}`)
+				.delete(`/api/${params?.slug}/${item.id}`)
 				.then(() => {
 					toast.success(`${item.name} successfully deleted!`);
 					router.refresh();
@@ -81,7 +81,7 @@ const AdminModuleUsers: React.FC<AdminModuleUsersProps> = ({
 					toast.error(`Error deleting ${item.name}!`);
 				});
 		},
-		[router, deleteModal]
+		[router, params, deleteModal]
 	);
 	if (params?.slug) {
 		const foundModule = currentUser?.Module?.find((item: any) => item.slug === params?.slug);
@@ -106,7 +106,7 @@ const AdminModuleUsers: React.FC<AdminModuleUsersProps> = ({
 				<div className="flex flex-col h-full w-full  gap-4 ">
 					<TableLists
 						moduleView={moduleView}
-						fields={users}
+						fields={fields}
 						primaryAction={primaryActionClick}
 						secondaryAction={secondaryActionClick}
 					/>
@@ -121,4 +121,4 @@ const AdminModuleUsers: React.FC<AdminModuleUsersProps> = ({
 	}
 };
 
-export default AdminModuleUsers;
+export default AdminModuleLists;

@@ -12,7 +12,7 @@ import { useParams, usePathname, useRouter } from 'next/navigation';
 import ButtonIcon from '../../ButtonIcon';
 import Heading from '../../Heading';
 import InstallModuleModal from '../../modals/InstallModuleModal';
-import AdminModuleUsers from './AdminModuleUsers';
+import AdminModuleLists from './AdminModuleLists';
 
 interface FormData {
 	[fieldName: string]: string | number;
@@ -34,6 +34,7 @@ interface AdminModuleProps {
 	users?: any[];
 	currentUser?: SafeUser | null;
 	organization?: any;
+	dbModules?: any;
 }
 
 const AdminModule: React.FC<AdminModuleProps> = ({
@@ -42,7 +43,8 @@ const AdminModule: React.FC<AdminModuleProps> = ({
 	modules,
 	users,
 	currentUser,
-	organization
+	organization,
+	dbModules
 }) => {
 	const router = useRouter();
 	const params = useParams();
@@ -54,9 +56,14 @@ const AdminModule: React.FC<AdminModuleProps> = ({
 	if (params?.slug) {
 		const foundModule = currentUser?.Module?.find((item: any) => item.slug === params?.slug);
 		const foundLocalModule = modules?.find((item: any) => item.slug === params?.slug);
-
+		if (params?.slug === 'module') {
+			return <AdminModuleLists currentUser={currentUser} fields={dbModules} />;
+		}
+		if (params?.slug === 'organization') {
+			return <AdminModuleLists currentUser={currentUser} modules={modules} fields={organization} />;
+		}
 		if (params?.slug === 'user') {
-			return <AdminModuleUsers currentUser={currentUser} modules={modules} users={users} />;
+			return <AdminModuleLists currentUser={currentUser} modules={modules} fields={users} />;
 		}
 		//console.log(foundLocalModule, foundModule);
 		if (!foundModule) {
@@ -111,7 +118,11 @@ const AdminModule: React.FC<AdminModuleProps> = ({
 	return (
 		<>
 			<div className="flex flex-col w-full">
-				<Heading title={`${foundMe ? 'My ' : ''}${params?.slug || ''}`} showOptionButton />
+				<Heading
+					title={`${foundMe ? 'My ' : ''}${params?.slug || ''}`}
+					showOptionButton
+					showAddButton
+				/>
 			</div>
 		</>
 	);

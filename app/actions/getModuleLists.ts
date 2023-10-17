@@ -5,6 +5,18 @@ import { getServerSession } from 'next-auth';
 export async function getSession() {
 	return await getServerSession(authOptions);
 }
+export async function getOrganizations() {
+	try {
+		const data = await prisma.organization.findMany({
+			include: {
+				Module: true
+			}
+		});
+		return data;
+	} catch (error) {
+		throw error;
+	}
+}
 export async function getFormField() {
 	try {
 		const data = await prisma.formfield.findMany({
@@ -124,6 +136,22 @@ export async function getModuleLists() {
 		return data;
 	} catch (error) {
 		console.error(error);
+		throw error;
+	}
+}
+export async function getDatabaseModuleLists() {
+	try {
+		const data = await prisma.module.findMany({
+			include: {
+				Organization: true,
+				Category: true,
+				Configuration: true,
+				Formdata: true,
+				Formfield: true
+			}
+		});
+		return data;
+	} catch (error) {
 		throw error;
 	}
 }

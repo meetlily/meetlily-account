@@ -28,7 +28,7 @@ export async function GET(request: any, response: any) {
 		const currentUser = await getCurrentUser();
 		const queryParams = new URL(request.url).searchParams;
 		const pathF: string | null = queryParams.get('path');
-		console.log(pathF);
+
 		// Check if the user is authenticated
 		if (!currentUser) {
 			// User is not authenticated, return an unauthorized response
@@ -40,7 +40,7 @@ export async function GET(request: any, response: any) {
 			return NextResponse.json({ content: fileContent });
 		}
 		const directoryPath = process.cwd(); // Get the current working directory
-		console.log(directoryPath);
+
 		// Function to recursively get the file tree of a directory
 		const getFileTree = (dir: string) => {
 			const files = fs.readdirSync(dir);

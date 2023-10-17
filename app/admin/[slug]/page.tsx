@@ -1,5 +1,12 @@
 import { default as getCurrentUser } from '@/app/actions/getCurrentUser';
-import { getFormData, getFormField, getModuleLists, getUsers } from '@/app/actions/getModuleLists';
+import {
+	getDatabaseModuleLists,
+	getFormData,
+	getFormField,
+	getModuleLists,
+	getOrganizations,
+	getUsers
+} from '@/app/actions/getModuleLists';
 import EmptyPage from '@/app/components/empty/EmptyPage';
 import AdminModule from '@/app/components/modules/admin/AdminModule';
 import AdminLayout from '@/app/layouts/AdminLayout';
@@ -10,6 +17,8 @@ export default async function AdminModulePage() {
 	const formFields = await getFormField();
 	const formData = await getFormData();
 	const modules = await getModuleLists();
+	const dbModules = await getDatabaseModuleLists();
+	const organizations = await getOrganizations();
 	const users = await getUsers();
 	const supAdm = 'Super Administrator';
 	let isAdmin = false;
@@ -30,8 +39,10 @@ export default async function AdminModulePage() {
 				<AdminModule
 					currentUser={currentUser}
 					modules={modules}
+					dbModules={dbModules}
 					fields={formFields}
 					users={users}
+					organization={organizations}
 				/>
 			) : (
 				<EmptyPage />
