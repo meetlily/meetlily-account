@@ -84,9 +84,11 @@ const ButtonIcon: React.FC<ButtonIconProps> = ({
 			id={id}
 			onClick={onClick}
 			className={`
+			rounded
+			transition
+			focus:outline-none focus:ring-4 focus:ring-gray-500 hover:bg-gray-100 dark:hover:bg-gray-700 dark:focus:ring-gray-100 hover:cursor-pointer
 				flex
 				flex-${c}
-				cursor-pointer
 				relative
 				items-center
 				justify-center

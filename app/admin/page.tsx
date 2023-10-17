@@ -1,6 +1,6 @@
 import getCurrentUser from '../actions/getCurrentUser';
+import Dashboard from '../components/Dashboard';
 import EmptyPage from '../components/empty/EmptyPage';
-import ModulesTable from '../components/modules/ModulesTable';
 import AdminLayout from '../layouts/AdminLayout';
 
 export default async function AdminPage() {
@@ -15,13 +15,8 @@ export default async function AdminPage() {
 	}
 	return (
 		<>
-			<AdminLayout
-				currentUser={currentUser}
-				showSidebar={true}
-				showNavbar={true}
-				showNavbarSearch={true}
-			>
-				{isAdmin ? <ModulesTable /> : <EmptyPage />}
+			<AdminLayout showNavbar currentUser={currentUser}>
+				{isAdmin ? <Dashboard currentUser={currentUser} /> : <EmptyPage />}
 			</AdminLayout>
 		</>
 	);

@@ -28,6 +28,7 @@ module.exports = {
     extend: {
       borderColor: ['focus-visible'],
       opacity: ['disabled'],
+      width: ['w-7xl']
     }
   },
   theme: {
@@ -47,6 +48,7 @@ module.exports = {
       serif: ['Merriweather', 'serif'],
     },
     extend: {
+      
       colors: {
         primary: {"50":"#eff6ff","100":"#dbeafe","200":"#bfdbfe","300":"#93c5fd","400":"#60a5fa","500":"#3b82f6","600":"#2563eb","700":"#1d4ed8","800":"#1e40af","900":"#1e3a8a","950":"#172554"}
       },
@@ -56,7 +58,9 @@ module.exports = {
       },
       borderRadius: {
         '4xl': '2rem',
-      }
+      },
+      width: {'7xl': '120rem'},
+      maxWidth: {'7xl': '120rem','6xl': '100rem','5xl': '80rem','4xl': '60rem'},
     }
   },
   plugins: [

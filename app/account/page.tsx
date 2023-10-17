@@ -1,9 +1,9 @@
 import getCurrentUser from '../actions/getCurrentUser';
 import EmptyPage from '../components/empty/EmptyPage';
-import ModulePage from '../components/modules/ModuleListPage';
+import AccountModule from '../components/modules/account/AccountModule';
 import AdminLayout from '../layouts/AdminLayout';
 
-export default async function AdminPage() {
+export default async function AccountPage() {
 	const currentUser = await getCurrentUser();
 	const supAdm = 'Super Administrator';
 	let isAdmin = false;
@@ -15,13 +15,8 @@ export default async function AdminPage() {
 	}
 	return (
 		<>
-			<AdminLayout
-				currentUser={currentUser}
-				showSidebar={true}
-				showNavbar={true}
-				showNavbarSearch={true}
-			>
-				{isAdmin ? <ModulePage currentUser={currentUser} /> : <EmptyPage />}
+			<AdminLayout currentUser={currentUser} showNavbar showSidebar>
+				{isAdmin ? <AccountModule currentUser={currentUser} /> : <EmptyPage />}
 			</AdminLayout>
 		</>
 	);

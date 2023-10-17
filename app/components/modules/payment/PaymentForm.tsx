@@ -44,7 +44,6 @@ const PaymentModule: React.FC = () => {
 	};
 
 	const handlePaymentMethodChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-		console.log(e.target.value);
 		setSelectedPaymentMethod(e.target.value);
 	};
 

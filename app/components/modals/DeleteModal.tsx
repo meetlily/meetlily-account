@@ -1,10 +1,11 @@
+'use client';
 import ButtonComponent from '@/app/components/Button';
 import AppIcons from '@/app/components/icons/AppIcons';
-import { FormFieldGroup } from '@/app/types/form';
+import useDeleteModal from '@/app/hooks/useDeleteModal';
 import { Modal } from 'flowbite-react';
 import { useParams, useRouter } from 'next/navigation';
 import React, { useCallback, useEffect, useState } from 'react';
-import { FieldValues, SubmitHandler, useForm } from 'react-hook-form';
+import IconComponent from '../icons/IconComponent';
 
 interface FormData {
 	[fieldName: string]: string | number;
@@ -13,12 +14,14 @@ interface SelectData {
 	[fieldName: string]: string | number;
 }
 interface DeleteModalProps {
-	data: FormFieldGroup[] | null;
+	data: any;
 	isOpen?: boolean;
 	disabled?: boolean;
 	size?: string;
 	id?: string;
 	label?: string;
+	deleteAction: (item: any) => void;
+	cancelAction?: () => void;
 }
 
 const DeleteModal: React.FC<DeleteModalProps> = ({
@@ -26,86 +29,77 @@ const DeleteModal: React.FC<DeleteModalProps> = ({
 	isOpen,
 	disabled,
 	size,
-
 	id,
-	label
+	label,
+	deleteAction,
+	cancelAction
 }) => {
-	const [selectData, setSelectData] = useState<SelectData>({});
+	const [selectData, setSelectData] = useState();
 	const [isLoading, setIsLoading] = useState(false);
 	const [selectedPaymentMethod, setSelectedPaymentMethod] = useState<string>('');
 	const router = useRouter();
 	const params = useParams();
+	const deleteModal = useDeleteModal();
 	const slug = params?.slug;
-
 	const [showModal, setShowModal] = useState(isOpen);
+	const [hasData, setHasData] = useState<any>({});
 	useEffect(() => {
-		setShowModal(isOpen);
-	}, [isOpen]);
+		setHasData(data);
+	}, [setHasData, data]);
 	const handleClose = useCallback(() => {
 		if (disabled) {
 			return;
 		}
-		setShowModal(false);
-	}, [disabled]);
-	const {
-		register,
-		reset,
-		handleSubmit,
-		formState: { errors }
-	} = useForm<FieldValues>({
-		defaultValues: {}
-	});
-	const onSubmit: SubmitHandler<FieldValues> = (data) => {
-		console.log(data);
-	};
+		deleteModal.onClose();
+	}, [disabled, deleteModal]);
 
+	const deleteData = useCallback(
+		(item: any) => {
+			//console.log(item);
+			deleteAction(item);
+		},
+		[deleteAction]
+	);
 	return (
-		<Modal id={id} size={size} show={showModal} onClose={handleClose}>
-			<Modal.Header>Delete</Modal.Header>
-			<Modal.Body>
-				<div className="p-6 text-center">
-					<svg
-						aria-hidden="true"
-						className="mx-auto mb-4 text-gray-400 w-14 h-14 dark:text-gray-200"
-						fill="none"
-						stroke="currentColor"
-						xmlns="http://www.w3.org/2000/svg"
-					>
-						<path
-							stroke-linecap="round"
-							stroke-linejoin="round"
-							stroke-width="2"
-							d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-						/>
-					</svg>
-					<h3 className="mb-5 text-lg font-normal text-gray-500 dark:text-gray-400">
-						Are you sure you want to delete {label}?
+		<Modal
+			id={id}
+			size={size}
+			show={deleteModal.isOpen}
+			onClose={deleteModal.onClose}
+			className="rounded-lg"
+			position={'top-center'}
+		>
+			<Modal.Body className="rounded-lg p-4">
+				<div className="p-6 my-2 text-center flex flex-row items-center justify-center">
+					<div className="w-20 text-red-500">
+						<IconComponent iconName="trash" size={60} />
+					</div>
+					<h3 className="text-lg font-normal text-red-500 dark:text-red-400">
+						Are you sure you want to delete {data?.name}?
 					</h3>
 				</div>
-			</Modal.Body>
-			<Modal.Footer>
-				<div className="flex flex-row gap-2">
+				<div className="flex flex-row gap-6 px-10 py-6">
 					<ButtonComponent
 						isProcessing={isLoading}
 						label={'Yes, I am sure'}
-						onClick={handleSubmit(onSubmit)}
-						classNames="w-full px-4 pl-2"
-						color="dark"
-						size="sm"
-						icon={AppIcons['add']}
+						onClick={() => deleteData(hasData)}
+						classNames="text-white py-4 w-full bg-red-500 hover:bg-red-600  border border-orange-700 hover:border-orange-800 px-4 pl-2"
+						color="orange"
+						size="lg"
+						icon={AppIcons['trash']}
 						iconSize={24}
 					/>
 					<ButtonComponent
 						label={'No, cancel'}
-						onClick={() => setShowModal(false)}
-						classNames="w-full px-4 pl-2 text-gray-600"
+						onClick={() => handleClose()}
+						classNames="w-full py-4  px-4 pl-2 text-gray-600 dark:bg-gray-600"
 						color="gray"
-						size="sm"
+						size="lg"
 						icon={AppIcons['close']}
 						iconSize={24}
 					/>
 				</div>
-			</Modal.Footer>
+			</Modal.Body>
 		</Modal>
 	);
 };

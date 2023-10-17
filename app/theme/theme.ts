@@ -3,7 +3,7 @@ import { CustomFlowbiteTheme } from 'flowbite-react';
 const customTheme: CustomFlowbiteTheme = {
 	navbar: {
 		root: {
-			base: 'fixed w-full bg-gray-800 px-2 dark:border-gray-700 dark:bg-gray-800 sm:px-4 z-50  border-b',
+			base: 'fixed left-0 top-0 w-full bg-gray-800 px-2 dark:border-b dark:border-gray-600 dark:bg-gray-800 sm:px-4 z-50  ',
 			rounded: {
 				on: 'rounded',
 				off: ''
@@ -50,7 +50,7 @@ const customTheme: CustomFlowbiteTheme = {
 	sidebar: {
 		root: {
 			base: 'h-full mb-10',
-			inner: 'h-full overflow-y-auto overflow-x-hidden rounded-0 dark:text-white dark:bg-gray-900'
+			inner: 'h-full rounded-0 dark:text-white dark:bg-gray-900'
 		},
 		collapse: {
 			button:
@@ -121,7 +121,7 @@ const customTheme: CustomFlowbiteTheme = {
 	},
 	card: {
 		root: {
-			base: 'flex flex-col mt-2 rounded-sm border border-gray-200 bg-white shadow-md dark:border-gray-700 dark:bg-gray-800',
+			base: 'flex flex-col rounded-sm border border-gray-200 bg-white shadow-md dark:border-gray-700 dark:bg-gray-800',
 			children: 'flex h-full flex-col justify-center gap-4 p-2',
 			horizontal: {
 				off: 'flex-col',
@@ -139,7 +139,7 @@ const customTheme: CustomFlowbiteTheme = {
 	},
 	modal: {
 		root: {
-			base: 'fixed top-0 right-0 left-0 z-50 h-modal h-screen overflow-y-auto overflow-x-hidden md:inset-0 md:h-full',
+			base: 'fixed top-0 right-0 left-0 z-50 h-modal rounded-lg h-screen overflow-y-auto overflow-x-hidden md:inset-0 md:h-full',
 			show: {
 				on: 'flex bg-gray-900 bg-opacity-70 dark:bg-opacity-90',
 				off: 'hidden'
@@ -169,11 +169,11 @@ const customTheme: CustomFlowbiteTheme = {
 			}
 		},
 		content: {
-			base: 'relative h-full w-full p-4 md:h-auto',
-			inner: 'relative rounded-md bg-white shadow dark:bg-gray-700 flex flex-col max-h-[90vh]'
+			base: 'relative h-full w-full p-4 md:h-auto ',
+			inner: 'relative bg-white shadow dark:bg-gray-700 flex flex-col max-h-[90vh] rounded-lg'
 		},
 		body: {
-			base: 'p-4 flex-1 overflow-auto bg-gray-50 dark:bg-gray-800',
+			base: 'p-0 flex-1 overflow-auto bg-gray-100 dark:bg-gray-800  ',
 			popup: 'pt-0'
 		},
 		header: {
@@ -188,6 +188,37 @@ const customTheme: CustomFlowbiteTheme = {
 		footer: {
 			base: 'flex items-center space-x-2 rounded-b border-gray-200 px-4 py-3 dark:border-gray-700',
 			popup: 'border-t'
+		}
+	},
+	accordion: {
+		root: {
+			base: 'divide-y text-sm divide-gray-200 overflow-y-scroll border-gray-200 dark:divide-gray-700 dark:border-gray-700',
+			flush: {
+				off: 'border',
+				on: 'border-b'
+			}
+		},
+		content: {
+			base: 'py-2 px-2 dark:bg-gray-900 overflow-y-auto'
+		},
+		title: {
+			arrow: {
+				base: 'h-6 w-6 shrink-0',
+				open: {
+					off: '',
+					on: 'rotate-180'
+				}
+			},
+			base: 'flex w-full items-center justify-between py-2 px-2 text-left font-medium text-gray-500 dark:text-gray-400',
+			flush: {
+				off: 'hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 dark:hover:bg-gray-800 dark:focus:ring-gray-800',
+				on: 'bg-transparent dark:bg-transparent'
+			},
+			heading: '',
+			open: {
+				off: '',
+				on: 'text-gray-900 bg-gray-100 dark:bg-gray-800 dark:text-white'
+			}
 		}
 	},
 	button: {

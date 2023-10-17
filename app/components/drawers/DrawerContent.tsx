@@ -1,33 +1,52 @@
 'use client';
-import React, { useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 
 interface DrawerContentProps {
 	isOpen: boolean;
 	onClose?: () => void;
 	onOpen?: () => void;
-	children: React.ReactNode; // Add the children prop
+	id?: string;
+	title?: string;
+	subtitle?: string;
+	header?: React.ReactElement;
+	body?: React.ReactElement;
+	footer?: React.ReactElement;
+	primaryActionLabel?: string;
+	primaryAction?: () => void;
+	secondaryAction?: () => void;
+	secondaryActionLabel?: string;
 	color?: string;
 	xPosition?: string;
 	yPosition?: string;
-	id?: string;
-	label?: string;
-	width?: number;
+	width?: string;
 	overlay?: boolean;
+	className?: string;
+	disabled?: boolean;
 }
 const DrawerContent: React.FC<DrawerContentProps> = ({
 	isOpen,
 	onClose,
 	onOpen,
+	title,
+	subtitle,
+	header,
+	body,
+	footer,
 	id,
-	label,
+	primaryAction,
+	primaryActionLabel,
+	secondaryAction,
+	secondaryActionLabel,
+	color,
 	xPosition,
 	yPosition,
-	color,
-	children,
 	width,
-	overlay
+	overlay,
+	className,
+	disabled
 }) => {
 	const [showDrawer, setShowDrawer] = useState(isOpen);
+
 	useEffect(() => {
 		setShowDrawer(isOpen);
 	}, [isOpen, setShowDrawer]);
@@ -37,46 +56,68 @@ const DrawerContent: React.FC<DrawerContentProps> = ({
 	if (!yPosition) {
 		yPosition = 'top';
 	}
-	if (!width) {
-		width = 60;
-	}
 	if (!color) {
 		color = 'white';
 	}
 	let borderPos = 'border-r';
-	let translate = '-translate-x-full';
+	let translate = `-translate-x-full`;
 	if (xPosition === 'right') {
 		borderPos = 'border-l';
 		translate = 'translate-x-full';
+		// if (width) {
+		// 	translate = `translate-x-${width}`;
+		// }
 	}
+	const handlePrimaryAction = useCallback(() => {
+		if (disabled || !primaryAction) {
+			return;
+		}
+		primaryAction();
+	}, [disabled, primaryAction]);
+	const handleSecondaryAction = useCallback(() => {
+		if (disabled || !secondaryAction) {
+			return;
+		}
+		secondaryAction();
+	}, [disabled, secondaryAction]);
 	return (
-		<div
-			className={`
-			fixed 
+		<>
+			<div
+				className={`
 			${yPosition}-0
 			${xPosition}-0 
-			z-40 
+			${width}
+			bg-${color}
+			${borderPos}
+			${showDrawer ? 'translate-x-0' : translate} 
+			fixed 
+			z-[42]
 			rounded-0
 			h-screen 
-			w-${width}
-			transform
 			transition-transform 
-			bg-${color}
-			${borderPos}	
 		    py-10	
 			border-gray-200 
 			dark:bg-gray-800 
 			dark:border-gray-700 
 			duration-300 
 			ease-in-out
-			${showDrawer ? 'translate-x-0' : translate} 
 			
 			`}
-			aria-label={label}
-			id={id}
-		>
-			{children}
-		</div>
+				aria-label={title}
+				id={id}
+			>
+				{header && <div className="flex absolute top-0 left-0 w-full">{header}</div>}
+				{body && <div className="overflow-y-auto h-full">{body}</div>}
+				{footer && <div className="flex absolute bottom-0 left-0 w-full">{footer}</div>}
+			</div>
+			{overlay && (
+				<div
+					className="bg-gray-900 bg-opacity-50 dark:bg-opacity-80 fixed inset-0 z-40"
+					hidden={!showDrawer}
+					onClick={onClose}
+				></div>
+			)}
+		</>
 	);
 };
 

@@ -1,102 +1,104 @@
-'use client';
-import { FormFieldGroup } from '@/app/types/form';
-import { Card } from 'flowbite-react';
-import { useParams } from 'next/navigation';
-import React, { useState } from 'react';
+// OrganizationForm.tsx
 
-interface OrganizationFormProps {
-	groups: FormFieldGroup[];
+import { ChangeEvent, useState } from 'react';
+
+interface FormData {
+	[key: string]: string | boolean | number | string[]; // Define the types you expect for form fields
 }
 
-const OrganizationForm: React.FC<OrganizationFormProps> = ({ groups }) => {
-	const [formData, setformData] = useState(groups);
-	const [isLoading, setIsLoading] = useState(false);
-	const params = useParams();
-	const slug = params?.slug;
+const initialFormData: FormData = {};
+// Define types for form fields
+interface FormField {
+	label: string;
+	name: string;
+	type: 'text' | 'textarea' | 'checkbox' | 'number' | 'multiselect';
+	value?: string | boolean | number | string[];
+	required?: boolean;
+	options?: string[];
+}
+
+// Define the type for the onSubmit function
+type SubmitHandler = (formData: Record<string, any>) => void;
+
+const OrganizationForm: React.FC<{ formFields: FormField[]; onSubmit: SubmitHandler }> = ({
+	formFields,
+	onSubmit
+}) => {
+	const [formData, setFormData] = useState<FormData>(initialFormData);
+
+	const handleChange = (e: ChangeEvent<any>) => {
+		const { name, value, type, checked, options, multiple } = e.target;
+		const newValue =
+			type === 'checkbox' ? checked : multiple ? [...options].map((o) => o.value) : value;
+
+		setFormData((prevFormData) => ({
+			...prevFormData,
+			[name]: newValue
+		}));
+	};
+
+	const handleSubmit = (e: React.FormEvent) => {
+		e.preventDefault();
+		onSubmit(formData);
+	};
 
 	return (
-		<div className="p-8 space-y-4">
-			<Card className="bg-gray-50">
-				<div className="flex flex-col items-center justify-center mx-auto mb-4 p-4">
-					<div
-						className="
-                                grid
-                                grid-cols-1
-                                lg:grid-cols-2
-                                gap-6
-                            "
-					>
-						{formData.map((g, i) => (
-							<div key={i} className="w-full space-y-2">
-								<h2 className="text-2xl font-bold">{g.label}</h2>
-								{g.fields?.map((f, index) => (
-									<div key={index} className="flex flex-col md:flex-row items-center justify-start">
-										<div className="font-semibold w-full md:min-w-[240px] lg:max-w-[200px] xl:max-w-[300px]">
-											{f.label}
-										</div>
-										<div className="w-full min-w-[340px] lg:max-w-[260px] md:min-w-[340px] lg:min-w-[300px] xl:min-w-[340px] xl:max-w-[340px] my-3">
-											{f.type === 'text' && (
-												<input
-													className="w-full rounded-md border-gray-300 focus:border-cyan-500 focus:ring-cyan-500"
-													type={f.type}
-													name={f.name}
-													value={f.value}
-													placeholder={f.placeholder}
-												/>
-											)}
-											{f.type === 'email' && (
-												<input
-													className="w-full rounded-md border-gray-300 focus:border-cyan-500 focus:ring-cyan-500"
-													type={f.type}
-													name={f.name}
-													value={f.value}
-													placeholder={f.placeholder}
-												/>
-											)}
-											{f.type === 'number' && (
-												<input
-													className="w-full rounded-md border-gray-300 focus:border-cyan-500 focus:ring-cyan-500"
-													type={f.type}
-													name={f.name}
-													value={f.value}
-													placeholder={f.placeholder}
-												/>
-											)}
-											{f.type === 'tel' && (
-												<input
-													className="w-full rounded-md border-gray-300 focus:border-cyan-500 focus:ring-cyan-500"
-													type={f.type}
-													name={f.name}
-													value={f.value}
-													placeholder={f.placeholder}
-												/>
-											)}
-											{f.type === 'date' && (
-												<input
-													className="w-full rounded-md border-gray-300 focus:border-cyan-500 focus:ring-cyan-500"
-													type={f.type}
-													name={f.name}
-													value={f.value}
-													placeholder={f.placeholder}
-												/>
-											)}
-											{f.type === 'textarea' && (
-												<textarea
-													className="w-full rounded-md border-gray-300 focus:border-cyan-500 focus:ring-cyan-500"
-													name={f.name}
-													value={f.value}
-													placeholder={f.placeholder}
-												/>
-											)}
-										</div>
-									</div>
-								))}
-							</div>
-						))}
-					</div>
+		<form onSubmit={handleSubmit}>
+			{formFields.map((field, index) => (
+				<div key={index}>
+					<label>{field.label}</label>
+					{field.type === 'text' && (
+						<input
+							type="text"
+							name={field.name}
+							value={formData[field.name] as string}
+							onChange={handleChange}
+							required={field.required}
+						/>
+					)}
+					{field.type === 'textarea' && (
+						<textarea
+							name={field.name}
+							value={formData[field.name] as string}
+							onChange={handleChange}
+						/>
+					)}
+					{field.type === 'checkbox' && (
+						<input
+							type="checkbox"
+							name={field.name}
+							checked={formData[field.name] as boolean}
+							onChange={handleChange}
+						/>
+					)}
+					{field.type === 'number' && (
+						<input
+							type="number"
+							name={field.name}
+							value={formData[field.name] as number}
+							onChange={handleChange}
+							required={field.required}
+						/>
+					)}
+					{field.type === 'multiselect' && (
+						<select
+							name={field.name}
+							multiple
+							value={formData[field.name] as string[]}
+							onChange={handleChange}
+							required={field.required}
+						>
+							{field.options?.map((option, optionIndex) => (
+								<option key={optionIndex} value={option}>
+									{option}
+								</option>
+							))}
+						</select>
+					)}
 				</div>
-			</Card>
-		</div>
+			))}
+			<button type="submit">Submit</button>
+		</form>
 	);
 };
 

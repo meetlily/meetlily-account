@@ -13,7 +13,14 @@ const Logo: React.FC<LogoProps> = ({ color, onClick, height, width }) => {
 	const router = useRouter();
 	return (
 		<div className="flex flex-wrap justify-between lg:-ml-2 cursor-pointer">
-			<Image className="" src={logo} alt="Meetlily Dashboard" width={width} height={height} />
+			<Image
+				className=""
+				src={logo}
+				alt="Meetlily Dashboard"
+				width={width}
+				height={height}
+				onClick={onClick}
+			/>
 		</div>
 	);
 };

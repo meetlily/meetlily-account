@@ -2,11 +2,12 @@ export type FormField = {
 	name: string;
 	label: string;
 	type: string;
-	value?: string | number;
+	value?: any;
 	placeholder?: string;
 	required?: boolean;
 	displayCondition?: string;
 	options?: string[];
+	fields?: FormField[];
 };
 
 export type FormFieldGroup = {
@@ -14,3 +15,5 @@ export type FormFieldGroup = {
 	group: string;
 	fields: FormField[];
 };
+
+export default FormField;

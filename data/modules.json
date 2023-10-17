@@ -19,7 +19,8 @@
                 "Roles"
             ],
             "icon_name": "organizations",
-            "module": "Administration"
+            "module": "Administration",
+            "installed": true
         },
         {
             "name": "Users",
@@ -102,7 +103,7 @@
                 "Profile Management",
                 "Security"
             ],
-            "icon_name": "cogs",
+            "icon_name": "cog",
             "module": "Administration"
         },
         {
@@ -1848,7 +1849,8 @@
                 "Development"
             ],
             "icon_name": "coding",
-            "module": "Coding"
+            "module": "Coding",
+            "installed": true
         },
         {
             "name": "Diagrams",

@@ -1,7 +1,7 @@
 'use client';
 
 import { ChangeEvent, useState } from 'react';
-import { FieldValues, SubmitHandler, useForm } from 'react-hook-form';
+import { FieldValues, useForm } from 'react-hook-form';
 import IconComponent from '../icons/IconComponent';
 import FlowInput from '../inputs/FlowInput';
 
@@ -26,20 +26,6 @@ const ModulesHeader = () => {
 	} = useForm<FieldValues>({
 		defaultValues: {}
 	});
-	const onSubmit: SubmitHandler<FieldValues> = (data) => {
-		console.log(data);
-		// axios.post('/api/register', data)
-		//     .then(() => {
-		//         registerModal.onClose()
-		//     })
-		//     .catch((error) => {
-		//         toast.error("Something went wrong.")
-		//     })
-		//     .finally(() => {
-		//         reset();
-		//         setIsLoading(false);
-		//     })
-	};
 
 	return (
 		<div className="flex flex-col md:flex-row items-center justify-between space-y-3 md:space-y-0 md:space-x-4 p-4">
@@ -67,21 +53,6 @@ const ModulesHeader = () => {
 				</form>
 			</div>
 			<div className="w-full md:w-auto flex flex-col md:flex-row space-y-2 md:space-y-0 items-stretch md:items-center justify-end md:space-x-3 flex-shrink-0">
-				{/* <FormModal data={organizationForm} fData={fData} size="7xl" /> */}
-				{/* <FlowModal
-					modalBody={<FormModal data={organizationForm} />}
-					modalId="productModal"
-					size={'3xl'}
-					modalHeader={<Heading title="Add Product" />}
-					modalHeaderTitle="Add Product"
-					modalHeaderIcon={<IconComponent size={24} iconName="shop" />}
-					label="Add Product"
-					modalFooter={true}
-					onClose={() => {}}
-					onSubmit={handleSubmit(onSubmit)}
-					modalFooterSecondaryAction={() => {}}
-				/> */}
-
 				<div className="flex items-center space-x-3 w-full md:w-auto">
 					<button
 						id="actionsDropdownButton"

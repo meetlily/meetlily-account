@@ -1,12 +1,13 @@
 'use client';
 
-import { Checkbox, FileInput, TextInput, Textarea, ToggleSwitch } from 'flowbite-react';
+import { FileInput, TextInput, Textarea, ToggleSwitch } from 'flowbite-react';
 import { useState } from 'react';
 import { FieldErrors, FieldValues, UseFormRegister } from 'react-hook-form';
 import AppIcons from '../icons/AppIcons';
 
 interface InputTextProps {
 	id: string;
+	label?: string;
 	className?: string;
 	name: string;
 	type: string;
@@ -26,6 +27,7 @@ interface InputTextProps {
 
 const InputText: React.FC<InputTextProps> = ({
 	id,
+	label,
 	className,
 	name,
 	type,
@@ -48,13 +50,7 @@ const InputText: React.FC<InputTextProps> = ({
 		setToggleVal(checked);
 		onToggle?.(checked, name);
 	};
-	if (
-		type === 'text' ||
-		type === 'number' ||
-		type === 'password' ||
-		type === 'color' ||
-		type === 'date'
-	) {
+	if (type === 'text' || type === 'number' || type === 'password' || type === 'date') {
 		return (
 			<>
 				{iconName ? (
@@ -62,7 +58,7 @@ const InputText: React.FC<InputTextProps> = ({
 						{...register(id, { required })}
 						className={`
 							${errors[id] ? 'border border-red-500' : 'border-neutral-300'}
-							${errors[id] ? 'focus:border-red-500' : 'focus:border-cyan-500'}
+							${errors[id] ? 'focus:border-red-500' : 'focus:border-orange-500'}
 						`}
 						color={`
 
@@ -80,9 +76,9 @@ const InputText: React.FC<InputTextProps> = ({
 					<TextInput
 						{...register(id, { required })}
 						className={`
-						rounded-lg
+						rounded-lg flex flex-col w-full
 						${errors[id] ? 'border border-red-500' : 'border-neutral-300'}
-						${errors[id] ? 'focus:border-red-500' : 'focus:border-cyan-500'}}
+						${errors[id] ? 'focus:border-red-500' : 'focus:border-orange-500'}}
 						`}
 						id={id}
 						type={type}
@@ -101,9 +97,9 @@ const InputText: React.FC<InputTextProps> = ({
 				<Textarea
 					{...register(id, { required })}
 					className={`
-					rounded-lg
+					rounded-lg flex flex-col w-full
 					${errors[id] ? 'border border-red-500' : 'border-neutral-300'}
-					${errors[id] ? 'focus:border-red-500' : 'focus:border-cyan-500'}
+					${errors[id] ? 'focus:border-red-500' : 'focus:border-orange-500'}
 					`}
 					id={id}
 					required={required}
@@ -121,7 +117,7 @@ const InputText: React.FC<InputTextProps> = ({
 					helperText={helperText}
 					className={`
 						${errors[id] ? 'border-red-500' : 'border-neutral-300'}
-						${errors[id] ? 'focus:border-red-500' : 'focus:border-cyan-500'}
+						${errors[id] ? 'focus:border-red-500' : 'focus:border-orange-500'}
 					`}
 					id={id}
 					required={required}
@@ -135,12 +131,18 @@ const InputText: React.FC<InputTextProps> = ({
 	} else if (type === 'checkbox') {
 		return (
 			<>
-				<Checkbox
+				<ToggleSwitch
+					id={id}
+					{...register(id, { required })}
+					onChange={handleChange}
+					checked={toggleVal ? toggleVal : false}
+				/>
+				{/* <Checkbox
 					{...register(id, { required })}
 					className={`
-					rounded-lg
+					rounded-lg flex flex-col w-full
 					${errors[id] ? 'border border-red-500' : 'border-neutral-300'}
-					${errors[id] ? 'focus:border-red-500' : 'focus:border-cyan-500'}
+					${errors[id] ? 'focus:border-red-500' : 'focus:border-orange-500'}
 					`}
 					id={id}
 					required={required}
@@ -149,7 +151,7 @@ const InputText: React.FC<InputTextProps> = ({
 					placeholder={placeholder}
 					onChange={onChange}
 					checked={checked}
-				/>
+				/> */}
 			</>
 		);
 	} else if (type === 'url') {
@@ -158,9 +160,9 @@ const InputText: React.FC<InputTextProps> = ({
 				<TextInput
 					{...register(id, { required })}
 					className={`
-					rounded-lg
+					rounded-lg flex flex-col w-full
 					${errors[id] ? 'border border-red-500' : 'border-neutral-300'}
-					${errors[id] ? 'focus:border-red-500' : 'focus:border-cyan-500'}
+					${errors[id] ? 'focus:border-red-500' : 'focus:border-orange-500'}
 					`}
 					id={id}
 					type={type}
@@ -180,9 +182,9 @@ const InputText: React.FC<InputTextProps> = ({
 				<TextInput
 					{...register(id, { required })}
 					className={`
-					rounded-lg
+					rounded-lg flex flex-col w-full
 					${errors[id] ? 'border border-red-500' : 'border-neutral-300'}
-					${errors[id] ? 'focus:border-red-500' : 'focus:border-cyan-500'}
+					${errors[id] ? 'focus:border-red-500' : 'focus:border-orange-500'}
 					`}
 					id={id}
 					type={type}
@@ -202,9 +204,9 @@ const InputText: React.FC<InputTextProps> = ({
 				<TextInput
 					{...register(id, { required })}
 					className={`
-					rounded-lg
+					rounded-lg flex flex-col w-full
 					${errors[id] ? 'border border-red-500' : 'border-neutral-300'}
-					${errors[id] ? 'focus:border-red-500' : 'focus:border-cyan-500'}
+					${errors[id] ? 'focus:border-red-500' : 'focus:border-orange-500'}
 					`}
 					id={id}
 					type={type}
@@ -233,6 +235,25 @@ const InputText: React.FC<InputTextProps> = ({
 		return (
 			<>
 				<input type={type} value={value} {...register(id, { required })} />
+			</>
+		);
+	} else if (type === 'color') {
+		return (
+			<>
+				<TextInput
+					{...register(id, { required })}
+					className={`
+						${errors[id] ? 'border border-red-500' : 'border-neutral-300'}
+						${errors[id] ? 'focus:border-red-500' : 'focus:border-orange-500'}}
+						`}
+					id={id}
+					type={type}
+					required={required}
+					name={name}
+					value={value}
+					placeholder={placeholder}
+					onChange={onChange}
+				/>
 			</>
 		);
 	}

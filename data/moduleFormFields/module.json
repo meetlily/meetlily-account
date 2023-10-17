@@ -6,8 +6,7 @@
             {
                 "name": "slug",
                 "label": "Slug",
-                "type": "text",
-                "placeholder": "Enter the slug name",
+                "type": "hidden",
                 "required": true
             },
             {
@@ -18,8 +17,15 @@
                 "required": true
             },
             {
-                "name": "enabled",
-                "label": "Enabled",
+                "name": "description",
+                "label": "Description",
+                "type": "textarea",
+                "placeholder": "Enter the description",
+                "required": true
+            },
+            {
+                "name": "allowMembers",
+                "label": "Allow Members",
                 "type": "toggle",
                 "placeholder": "Set this to enable this module",
                 "required": false
@@ -49,23 +55,10 @@
                 "name": "Category",
                 "label": "Category",
                 "type": "select",
-                "options": [],
-                "required": false,
-                "multiple": true
-            },
-            {
-                "name": "Organization",
-                "label": "Organization",
-                "type": "select",
-                "options": [],
-                "required": false,
-                "multiple": true
-            },
-            {
-                "name": "User",
-                "label": "User",
-                "type": "select",
-                "options": [],
+                "options": [
+                    "Administration",
+                    "Applications"
+                ],
                 "required": false,
                 "multiple": true
             }
@@ -76,7 +69,7 @@
             "enabled": true,
             "installed": true,
             "global": true,
-            "icon_name": "apps",
+            "Category": "Applications",
             "externalLink": "https://flow.meetlily.net",
             "User": {
                 "connect": {

@@ -5,24 +5,24 @@
 html,
 body,
 :root {
-  height: 100%;
-  background: #fff;
+	height: 100%;
+	background: #fff;
 }
 .navProfileDropdown > ul {
-  padding-bottom: 0 !important;
-  padding-top: 0 !important;
+	padding-bottom: 0 !important;
+	padding-top: 0 !important;
 }
 .navProfileDropdown > ul > .h-px {
-  margin-bottom: 0 !important;
-  margin-top: 0 !important;
-  padding-bottom: 0 !important;
-  padding-top: 0 !important;
+	margin-bottom: 0 !important;
+	margin-top: 0 !important;
+	padding-bottom: 0 !important;
+	padding-top: 0 !important;
 }
 .token.plain {
-  padding: 0;
-  width: 0 !important;
+	padding: 0;
+	width: 0 !important;
 }
 .prism-code {
-  --tw-bg-opacity: 1;
-    background-color: rgb(31 41 55 / var(--tw-bg-opacity)) !important;
+	--tw-bg-opacity: 1;
+	background-color: rgb(31 41 55 / var(--tw-bg-opacity)) !important;
 }

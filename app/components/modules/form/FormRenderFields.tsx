@@ -1,6 +1,7 @@
 'use  client';
 import useFormModal from '@/app/hooks/useFormModal';
 import axios from 'axios';
+import { useRouter } from 'next/navigation';
 import { useState } from 'react';
 import { FieldValues, SubmitHandler, useForm } from 'react-hook-form';
 import toast from 'react-hot-toast';
@@ -13,15 +14,27 @@ interface FormData {
 }
 interface FormRenderFieldsProps {
 	fields: any;
-	values: any;
+	values?: any;
+	fixed?: boolean;
+	type?: string;
+	module?: any;
 }
-const FormRenderFields: React.FC<FormRenderFieldsProps> = ({ fields, values }) => {
+const FormRenderFields: React.FC<FormRenderFieldsProps> = ({
+	fields,
+	values,
+	type,
+	module,
+	fixed
+}) => {
+	console.log(fields);
 	// const foundData = formData?.find(
 	// 	(d: { formfieldId: string | undefined }) => d.formfieldId === fields?.id
 	// );
 
+	const vData: FormData = values;
+	const router = useRouter();
 	const [isLoading, setIsLoading] = useState(false);
-	const [formData, setFormData] = useState<FormData>(values.data);
+	const [formData, setFormData] = useState<FormData>(vData);
 	const [formField, setFormField] = useState(fields);
 	const [selectedPaymentMethod, setSelectedPaymentMethod] = useState<string>('');
 	const formModal = useFormModal();
@@ -66,9 +79,13 @@ const FormRenderFields: React.FC<FormRenderFieldsProps> = ({ fields, values }) =
 		handleSubmit,
 		formState: { errors }
 	} = useForm<FieldValues>({
-		defaultValues: {}
+		defaultValues: vData
 	});
 	const onSubmit: SubmitHandler<FieldValues> = (d) => {
+		let endpoint = '/api/formdata';
+		if (type && type === 'module_config') {
+			endpoint = `/api/configuration`;
+		}
 		if (!values.id) {
 			const data = {
 				data: d,
@@ -77,13 +94,14 @@ const FormRenderFields: React.FC<FormRenderFieldsProps> = ({ fields, values }) =
 				organizationId: formField.organizationId
 			};
 			return axios
-				.post(`/api/formdata`, data)
+				.post(`${endpoint}`, data)
 				.then((callback) => {
 					return callback.data;
 				})
 				.then((res) => {
 					console.log(res);
 					toast.success('Success!');
+					router.refresh();
 					reset();
 					setTimeout(() => {
 						formModal.onClose();
@@ -101,7 +119,7 @@ const FormRenderFields: React.FC<FormRenderFieldsProps> = ({ fields, values }) =
 				organizationId: formField.organizationId
 			};
 			return axios
-				.put(`/api/formdata`, data)
+				.put(`${endpoint}`, data)
 				.then((callback) => {
 					return callback.data;
 				})
@@ -109,6 +127,7 @@ const FormRenderFields: React.FC<FormRenderFieldsProps> = ({ fields, values }) =
 					console.log(res);
 					toast.success('Updated!');
 					reset();
+					router.refresh();
 					setTimeout(() => {
 						formModal.onClose();
 					}, 100);
@@ -120,13 +139,19 @@ const FormRenderFields: React.FC<FormRenderFieldsProps> = ({ fields, values }) =
 	};
 	return (
 		<>
-			<form onSubmit={handleSubmit(onSubmit)}>
-				{fields?.fields?.map((field: any, i: any) => (
-					<div key={i} className="flex flex-col md:flex-row w-full items-center mb-4">
-						<label htmlFor={field.name} className="text-sm text-gray-800 dark:text-gray-50 w-1/2">
+			<div className="flex flex-col w-full h-full items-start justify-start min-h-[300px] pt-4 pb-14">
+				{fields?.map((field: any, i: any) => (
+					<div
+						key={i}
+						className="px-4 mb-4 flex flex-col md:flex-row items-center justify-start w-full"
+					>
+						<label
+							htmlFor={field.name}
+							className="flex flex-col text-sm w-full text-gray-800 dark:text-gray-50"
+						>
 							{field.label}
 						</label>
-						<div className="w-full">
+						<div className="flex flex-col w-full">
 							{field.type === 'select' ? (
 								<InputSelect
 									id={field.name}
@@ -157,37 +182,34 @@ const FormRenderFields: React.FC<FormRenderFieldsProps> = ({ fields, values }) =
 										<InputText
 											type={field.type}
 											id={field.name}
-											name={field.name}
-											placeholder={field.placeholder}
+											disabled={isLoading}
 											required={field.required}
-											value={formData[field.name] || ''}
 											register={register}
 											errors={errors}
+											value={formData[field.name] || ''}
+											label={field.label}
+											placeholder={field.placeholder}
 											onChange={handleInputChange}
+											name={field.name}
 										/>
 									)}
 								</>
 							)}
 						</div>
 					</div>
-					// <RenderField field={field} data={formData} key={i} onSubmit={onSubmit} />
-					// <div className="w-full" key={group.label}>
-					// 	<Heading title={group.label} size="font-normal text-lg pb-2" />
-					// 	<div className="flex flex-col items-center justify-center gap-4">
-					// 		<>
-					// 			{group?.fields?.map((field: JsonValue | JsonObject | JsonArray, i: any) => (
-
-					// 			))}
-					// 		</>
-					// 	</div>
-					// </div>
 				))}
-				<div className="flex flex-row gap-4">
+				<div
+					className={`${
+						fixed
+							? 'relative'
+							: 'absolute bottom-0 left-0 right-0 px-6 py-2 bg-white border-gray-200 border-t dark:bg-gray-700 dark:border-gray-600'
+					} z-50  flex flex-row gap-4 mt-2 `}
+				>
 					<ButtonComponent
 						isProcessing={isLoading}
 						label={'Continue'}
 						onClick={handleSubmit(onSubmit)}
-						classNames="w-full px-4 pl-2"
+						classNames="px-4 pl-2"
 						color="dark"
 						size="sm"
 						icon={AppIcons['signIn']}
@@ -196,14 +218,14 @@ const FormRenderFields: React.FC<FormRenderFieldsProps> = ({ fields, values }) =
 					<ButtonComponent
 						label={'Cancel'}
 						onClick={formModal.onClose}
-						classNames="w-full px-4 pl-2 text-gray-600"
+						classNames="px-4 pl-2 bg-gray-50 text-gray-600"
 						color="gray"
 						size="sm"
 						icon={AppIcons['close']}
 						iconSize={24}
 					/>
 				</div>
-			</form>
+			</div>
 		</>
 	);
 };

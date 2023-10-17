@@ -1,7 +1,9 @@
 'use client';
 import { signIn } from 'next-auth/react';
 import { redirect, useRouter } from 'next/navigation';
-import { useState } from 'react';
+import NProgress from 'nprogress';
+import 'nprogress/nprogress.css';
+import { useEffect, useState } from 'react';
 import { FieldValues, SubmitHandler, useForm } from 'react-hook-form';
 import toast from 'react-hot-toast';
 import ButtonComponent from '../Button';
@@ -19,28 +21,13 @@ const RegisterForm: React.FC<RegisterFormProps> = ({ currentUser }) => {
 	if (currentUser) {
 		redirect('/dashboard');
 	}
+	useEffect(() => {
+		NProgress.done();
 
-	const onSubmitProvider = (provider: string) => {
-		signIn(provider)
-			.then((callback) => {
-				if (callback?.ok) {
-					setTimeout(() => {
-						toast.success('Logged in');
-					}, 3000);
-				}
-				if (callback?.error) {
-					toast.error(callback.error);
-				}
-			})
-			.catch((error) => {
-				toast.error('Something went wrong.');
-			})
-			.finally(() => {
-				setTimeout(() => {
-					router.push('/');
-				}, 3000);
-			});
-	};
+		return () => {
+			NProgress.start();
+		};
+	}, []);
 
 	const {
 		register,
@@ -55,6 +42,7 @@ const RegisterForm: React.FC<RegisterFormProps> = ({ currentUser }) => {
 		}
 	});
 	const onSubmit: SubmitHandler<FieldValues> = (data, provider: any) => {
+		NProgress.start();
 		signIn('credentials', {
 			...data,
 			redirect: false
@@ -64,6 +52,7 @@ const RegisterForm: React.FC<RegisterFormProps> = ({ currentUser }) => {
 					setTimeout(() => {
 						reset();
 						toast.success('Logged in');
+						NProgress.done();
 					}, 3000);
 				}
 				if (callback?.error) {
@@ -72,10 +61,12 @@ const RegisterForm: React.FC<RegisterFormProps> = ({ currentUser }) => {
 			})
 			.catch((error) => {
 				toast.error('Something went wrong.');
+				NProgress.done();
 			})
 			.finally(() => {
 				setTimeout(() => {
-					router.push('/');
+					router.push('/dashboard');
+					NProgress.done();
 				}, 3000);
 			});
 	};
@@ -150,7 +141,7 @@ const RegisterForm: React.FC<RegisterFormProps> = ({ currentUser }) => {
                     "
 					>
 						<div className="mx-auto">
-							<Logo color="black" width={180} height={180} onClick={() => {}} />
+							<Logo color="black" width={180} height={180} onClick={() => router.push('/')} />
 						</div>
 						<div className="form-wrapper pb-20 pt-8">
 							<h2

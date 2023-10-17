@@ -3,6 +3,8 @@
 import { Popover, PopoverInterface, PopoverOptions } from 'flowbite';
 import { Card } from 'flowbite-react';
 import { useParams, useRouter, useSearchParams } from 'next/navigation';
+import NProgress from 'nprogress';
+import 'nprogress/nprogress.css';
 import qs from 'query-string';
 import { useCallback, useState } from 'react';
 import { IconType } from 'react-icons';
@@ -108,7 +110,6 @@ const ModuleBox: React.FC<ModuleBoxProps> = ({
 	}
 	const handleClickView = useCallback(() => {
 		let currentModule = {};
-		console.log(module, 'module');
 		if (params) {
 			currentModule = qs.parse(params.toString());
 		}
@@ -117,7 +118,11 @@ const ModuleBox: React.FC<ModuleBoxProps> = ({
 			...currentModule,
 			category: label
 		};
-	}, [params, label, module]);
+		if (slug) {
+			NProgress.start();
+			router.push(`/admin/${slug}`);
+		}
+	}, [params, label, router, slug]);
 	return (
 		<>
 			<Card

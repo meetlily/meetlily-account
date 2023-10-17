@@ -1,9 +1,13 @@
 'use client';
 
 import useMainDrawer from '@/app/hooks/useMainDrawer';
+import useModuleOptionDrawer from '@/app/hooks/useModuleOptionDrawer';
 import useSidebarDrawer from '@/app/hooks/useSidebarDrawer';
 import { signOut } from 'next-auth/react';
 import { useRouter } from 'next/navigation';
+import NProgress from 'nprogress';
+import 'nprogress/nprogress.css';
+import { useCallback, useEffect } from 'react';
 import ButtonIcon from '../ButtonIcon';
 interface SidebarBottomSettingsProps {
 	show: boolean;
@@ -14,22 +18,37 @@ const SidebarBottomSettings: React.FC<SidebarBottomSettingsProps> = ({ show, ite
 	const router = useRouter();
 	const mainDrawer = useMainDrawer();
 	const sidebarDrawer = useSidebarDrawer();
-	const handleClick = (item: any) => {
-		console.log(item.target, 'handleClick');
-		if (item.target.innerText === 'Close') {
-			console.log(sidebarDrawer.isOpen);
-			if (sidebarDrawer.isOpen || mainDrawer.isOpen) {
-				sidebarDrawer.onClose();
-				mainDrawer.onClose();
+	const moduleDrawer = useModuleOptionDrawer();
+	useEffect(() => {
+		NProgress.done();
+
+		return () => {
+			NProgress.start();
+		};
+	}, []);
+	const handleClickDrawer = useCallback(
+		(item: any) => {
+			if (item.name === 'Close') {
+				if (item.drawer === 'main-drawer') {
+					mainDrawer.onClose();
+				} else if (item.drawer === 'sidebar-drawer') {
+					sidebarDrawer.onClose();
+				} else if (item.drawer === 'module-drawer') {
+					moduleDrawer.onClose();
+				}
+			} else if (item.name === 'Logout') {
+				NProgress.start();
+				signOut().then((res) => {
+					router.push('/sign-in');
+				});
+			} else if (item.name === 'Docs') {
+				NProgress.start();
+				router.push('/documentation');
 			}
-		} else if (item.target.innerText === 'Logout') {
-			signOut().then((res) => {
-				router.push('/sign-in');
-			});
-		} else if (item.target.innerText === 'Docs') {
-			router.push('/admin/documentation');
-		}
-	};
+		},
+		[sidebarDrawer, mainDrawer, router, moduleDrawer]
+	);
+
 	return (
 		<>
 			<div className="absolute bottom-0 left-0 flex-col justify-center w-full lg:flex z-20">
@@ -39,6 +58,7 @@ const SidebarBottomSettings: React.FC<SidebarBottomSettingsProps> = ({ show, ite
 						{items?.map((item: any) => (
 							<>
 								<ButtonIcon
+									key={item.name}
 									label={item.name}
 									icon={item?.icon_name}
 									size={'text-md'}
@@ -46,7 +66,7 @@ const SidebarBottomSettings: React.FC<SidebarBottomSettingsProps> = ({ show, ite
 									showLabel={true}
 									drawer={drawer}
 									inline
-									onClick={handleClick}
+									onClick={() => handleClickDrawer(item)}
 								/>
 							</>
 						))}

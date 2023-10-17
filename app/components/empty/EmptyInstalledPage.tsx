@@ -2,10 +2,18 @@
 
 import { Card } from 'flowbite-react';
 
-const EmptyInstalledPage = () => {
+interface EmptyInstalledPageProps {
+	message?: React.ReactNode;
+}
+
+const EmptyInstalledPage: React.FC<EmptyInstalledPageProps> = ({ message }) => {
 	return (
 		<>
-			<Card></Card>
+			<Card className="mt-8 mb-12 py-6">
+				<div className="flex flex-col items-center justify-center w-full text-center text-md">
+					{message}
+				</div>
+			</Card>
 		</>
 	);
 };

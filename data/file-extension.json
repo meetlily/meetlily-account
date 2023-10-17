@@ -1,0 +1,138 @@
+[
+    {
+        "language": "JavaScript",
+        "extensions": [
+            "js",
+            "jsx"
+        ]
+    },
+    {
+        "language": "TypeScript",
+        "extensions": [
+            "ts",
+            "tsx"
+        ]
+    },
+    {
+        "language": "Python",
+        "extensions": [
+            "py"
+        ]
+    },
+    {
+        "language": "Java",
+        "extensions": [
+            "java"
+        ]
+    },
+    {
+        "language": "C",
+        "extensions": [
+            "c"
+        ]
+    },
+    {
+        "language": "C++",
+        "extensions": [
+            "cpp",
+            "cc",
+            "h",
+            "hpp"
+        ]
+    },
+    {
+        "language": "C#",
+        "extensions": [
+            "cs"
+        ]
+    },
+    {
+        "language": "Ruby",
+        "extensions": [
+            "rb"
+        ]
+    },
+    {
+        "language": "PHP",
+        "extensions": [
+            "php"
+        ]
+    },
+    {
+        "language": "Swift",
+        "extensions": [
+            "swift"
+        ]
+    },
+    {
+        "language": "Kotlin",
+        "extensions": [
+            "kt",
+            "kts"
+        ]
+    },
+    {
+        "language": "Go",
+        "extensions": [
+            "go"
+        ]
+    },
+    {
+        "language": "Rust",
+        "extensions": [
+            "rs"
+        ]
+    },
+    {
+        "language": "Dart",
+        "extensions": [
+            "dart"
+        ]
+    },
+    {
+        "language": "HTML",
+        "extensions": [
+            "html",
+            "htm"
+        ]
+    },
+    {
+        "language": "CSS",
+        "extensions": [
+            "css"
+        ]
+    },
+    {
+        "language": "SQL",
+        "extensions": [
+            "sql"
+        ]
+    },
+    {
+        "language": "Ruby on Rails",
+        "extensions": [
+            "rb",
+            "rhtml"
+        ]
+    },
+    {
+        "language": "Shell",
+        "extensions": [
+            "sh",
+            "bash"
+        ]
+    },
+    {
+        "language": "Markdown",
+        "extensions": [
+            "md",
+            "markdown"
+        ]
+    },
+    {
+        "language": "Json",
+        "extensions": [
+            "json"
+        ]
+    }
+]

@@ -1,0 +1,124 @@
+{
+    "module": "Organization",
+    "description": "Manage and view organization details",
+    "settings": {
+        "allowMembers": true,
+        "allowTeams": true,
+        "allowDepartments": true,
+        "maxMembersPerTeam": 50
+    },
+    "permissions": {
+        "view": [
+            "admin",
+            "member"
+        ],
+        "edit": [
+            "admin"
+        ],
+        "delete": [
+            "admin"
+        ]
+    },
+    "dataSources": {
+        "organizations": "https://api.example.com/organizations",
+        "members": "https://api.example.com/members",
+        "teams": "https://api.example.com/teams",
+        "departments": "https://api.example.com/departments"
+    },
+    "metadata": {
+        "author": "Your Name",
+        "version": "1.0",
+        "createdAt": "2023-01-15"
+    },
+    "features": {
+        "analytics": true,
+        "notifications": true,
+        "search": true
+    },
+    "customization": {
+        "logoUrl": "https://example.com/organization-logo.png",
+        "themeColor": "#3498db",
+        "customFields": [
+            {
+                "label": "Website",
+                "type": "text"
+            },
+            {
+                "label": "Address",
+                "type": "text"
+            }
+        ],
+        "alerts": [
+            {
+                "type": "info",
+                "message": "Welcome to the organization module!"
+            },
+            {
+                "type": "warning",
+                "message": "Please complete your organization profile."
+            }
+        ],
+        "userRoles": [
+            {
+                "name": "Admin",
+                "permissions": [
+                    "view",
+                    "edit",
+                    "delete"
+                ]
+            },
+            {
+                "name": "Member",
+                "permissions": [
+                    "view"
+                ]
+            }
+        ],
+        "modules": [
+            {
+                "name": "Calendar",
+                "enabled": true,
+                "permissions": {
+                    "view": [
+                        "admin",
+                        "member"
+                    ],
+                    "edit": [
+                        "admin"
+                    ],
+                    "delete": [
+                        "admin"
+                    ]
+                }
+            },
+            {
+                "name": "Documents",
+                "enabled": true,
+                "permissions": {
+                    "view": [
+                        "admin",
+                        "member"
+                    ],
+                    "edit": [
+                        "admin"
+                    ],
+                    "delete": [
+                        "admin"
+                    ]
+                }
+            }
+        ],
+        "integrations": [
+            {
+                "name": "Slack",
+                "enabled": true,
+                "apiKey": "your-slack-api-key"
+            },
+            {
+                "name": "Google Drive",
+                "enabled": true,
+                "apiKey": "your-google-drive-api-key"
+            }
+        ]
+    }
+}

@@ -9,7 +9,6 @@ interface AvatarTextProps {
 	rounded?: boolean;
 }
 const AvatarText: React.FC<AvatarTextProps> = ({ image, currentUser, size, rounded }) => {
-	console.log(currentUser, 'c');
 	return (
 		<>
 			<Avatar size={size} rounded={rounded} img={image}>

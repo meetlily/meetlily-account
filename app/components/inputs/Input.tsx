@@ -7,21 +7,29 @@ interface InputProps {
 	id: string;
 	label: string;
 	type?: string;
+	helperText?: string;
+	placeholder?: string;
 	disabled?: boolean;
 	formatPrice?: boolean;
 	required?: boolean;
+	value?: string | number | readonly string[] | undefined;
 	register: UseFormRegister<FieldValues>;
 	errors: FieldErrors;
+	onChange?: (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => void;
 }
 const Input: React.FC<InputProps> = ({
 	id,
 	label,
 	type,
+	placeholder,
+	helperText,
 	disabled,
 	formatPrice,
 	required,
+	value,
 	register,
-	errors
+	errors,
+	onChange
 }) => {
 	return (
 		<div className="w-full relative">
@@ -29,7 +37,7 @@ const Input: React.FC<InputProps> = ({
 				<BiDollar
 					size={24}
 					className="
-              text-neutral-700
+              text-neutral-800
               absolute
               top-5
               left-2
@@ -40,19 +48,23 @@ const Input: React.FC<InputProps> = ({
 				id={id}
 				disabled={disabled}
 				{...register(id, { required })}
-				placeholder=" "
+				placeholder={placeholder}
 				type={type}
+				value={value}
+				onChange={onChange}
 				className={`
              peer
              w-full
-             p-4
-             pt-6
+             px-1
+			 pb-1
+             pt-7
              font-light
-           bg-white
-             border 
-           border-gray-300
-             rounded-md
-             outline-none
+           bg-transparent 
+            outline-none
+             border-1
+				border-t-0
+				border-l-0
+				border-r-0
              transition
              disabled:opacity-70
              disabled:cursor-not-allowed
@@ -78,7 +90,7 @@ const Input: React.FC<InputProps> = ({
               peer-focus:-translate-y-4
               peer-placeholder-shown:font-sans
               peer-placeholder-shown:font-light
-              ${errors[id] ? 'text-rose-500' : 'text-zinc-400'}
+              ${errors[id] ? 'text-rose-500' : 'text-zinc-500'}
         `}
 			>
 				{label}

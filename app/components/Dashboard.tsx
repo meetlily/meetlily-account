@@ -4,7 +4,7 @@ import { SafeUser } from '@/app/types';
 import administrationData from '@/data/administration.json';
 import sidebar from '@/data/sidebar.json';
 import { useRouter } from 'next/navigation';
-import { useEffect, useRef, useState } from 'react';
+import { useRef } from 'react';
 import CardIcon from './CardIcon';
 
 import { Card } from 'flowbite-react';
@@ -17,7 +17,7 @@ interface DashboardProps {
 
 const Dashboard: React.FC<DashboardProps> = ({ currentUser }) => {
 	const router = useRouter();
-	const [isLoading, setIsLoading] = useState(false);
+
 	const iconSize = 36;
 	const scrollRef = useRef<HTMLDivElement>(null);
 	if (!currentUser) {
@@ -28,20 +28,11 @@ const Dashboard: React.FC<DashboardProps> = ({ currentUser }) => {
 			scrollRef.current.scrollTop = scrollRef.current.scrollHeight;
 		}
 	};
-	useEffect(() => {
-		// Simulating an asynchronous operation
-		setIsLoading(true);
-		// Scroll to the bottom when the component mounts or when the content changes
-		scrollToBottom();
-		setTimeout(() => {
-			setIsLoading(false);
-		}, 2000);
-	}, []);
 
 	return (
 		<>
 			<div className="flex flex-col mt-2">
-				<Heading title="Dashboard" />
+				<Heading title="Dashboard" showOptionButton iconName="dashboard" enableSearch />
 			</div>
 
 			<div className="flex flex-col lg:flex-row gap-4">

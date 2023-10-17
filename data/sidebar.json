@@ -5,28 +5,16 @@
     "link": "/dashboard"
   },
   {
-    "icon_name": "organizations",
-    "name": "Organizations",
-    "link": "/admin/organization"
+    "icon_name": "crm",
+    "name": "CRM",
+    "link": "/admin/crm",
+    "module": "admin"
   },
   {
-    "name": "Users",
-    "link": "/admin/user",
-    "category": [
-      {
-        "name": "User Management",
-        "id": "c8e5b2a2-8c7a-4a9a-9e2c-6c3f3e9f6e1d"
-      }
-    ],
-    "tags": [
-      "Users",
-      "User Management",
-      "Authentication",
-      "Profile Management",
-      "Security"
-    ],
-    "icon_name": "users",
-    "module": "Users"
+    "name": "Projects",
+    "link": "/admin/projects",
+    "icon_name": "project",
+    "module": "admin"
   },
   {
     "icon_name": "myApps",
@@ -34,36 +22,68 @@
     "collapse": false,
     "items": [
       {
+        "name": "Coding",
+        "slug": "coding",
+        "link": "/applications/coding",
+        "short_description": "Write, edit, and debug code with our coding module.",
+        "description": "Write, edit, and debug code with our coding module. Benefit from syntax highlighting, code completion, and debugging tools to streamline your development process. Whether you're a beginner or an experienced programmer, our coding module provides a powerful environment to write clean and efficient code.",
+        "category": [
+          {
+            "name": "Development",
+            "id": "19000059-9e8b-4b7f-9f6f-7c7d1b6b0c4d"
+          }
+        ],
+        "tags": [
+          "Coding",
+          "Programming",
+          "Development"
+        ],
+        "icon_name": "coding",
+        "module": "applications"
+      },
+      {
         "name": "Flow",
         "slug": "flow",
+        "link": "/applications/flow",
         "icon_name": "flow",
-        "module": "Flow",
+        "module": "applications",
         "external": "https://flow.meetlily.net"
       },
       {
         "name": "Connect",
         "slug": "connect",
+        "link": "/applications/connect",
         "icon_name": "connect",
-        "module": "Connect"
+        "module": "applications"
+      },
+      {
+        "name": "Terminal",
+        "slug": "terminal",
+        "link": "/applications/terminal",
+        "icon_name": "terminal",
+        "module": "applications"
       },
       {
         "name": "Blocks",
         "slug": "blocks",
+        "link": "/applications/blocks",
         "icon_name": "blocks",
-        "module": "Blocks"
+        "module": "applications"
       },
       {
         "name": "MarkEdit",
         "slug": "markEdit",
+        "link": "/applications/markEdit",
         "icon_name": "markedit",
-        "module": "MarkEdit",
-        "external": "https://notes.meetlily.net"
+        "module": "applications",
+        "external": "https://notes.d8me.live/"
       },
       {
         "name": "ChatGPT",
         "slug": "chatgpt",
+        "link": "/applications/chatgpt",
         "icon_name": "robot",
-        "module": "ChatGPT",
+        "module": "applications",
         "external": "https://ai.meetlily.net"
       }
     ]
@@ -74,8 +94,35 @@
     "collapse": true,
     "items": [
       {
+        "icon_name": "organizations",
+        "name": "Organizations",
+        "slug": "organization",
+        "link": "/admin/organization"
+      },
+      {
+        "name": "Users",
+        "slug": "user",
+        "link": "/admin/user",
+        "category": [
+          {
+            "name": "User Management",
+            "id": "c8e5b2a2-8c7a-4a9a-9e2c-6c3f3e9f6e1d"
+          }
+        ],
+        "tags": [
+          "Users",
+          "User Management",
+          "Authentication",
+          "Profile Management",
+          "Security"
+        ],
+        "icon_name": "users",
+        "module": "Users"
+      },
+      {
         "name": "Servers",
         "slug": "server",
+        "link": "/admin/server",
         "short_description": "Build scalable and robust server applications.",
         "description": "The Server module provides tools and libraries for building scalable and robust server applications. It includes features such as routing, middleware, authentication, and database integration. Whether you're building a RESTful API, a web server, or a backend system, the Server module simplifies the process of handling HTTP requests, managing server resources, and interacting with databases. Easily manage your servers and ensure their smooth operation. Monitor server performance, track resource usage, and handle server configurations effortlessly",
         "category": [
@@ -98,6 +145,7 @@
       {
         "name": "Databases",
         "slug": "database",
+        "link": "/admin/database",
         "short_description": "Manage and interact with databases.",
         "description": "The Database module provides tools and libraries for managing and interacting with databases. It includes features such as query builders, ORM (Object-Relational Mapping) frameworks, and database migration tools. Whether you're working with SQL databases like MySQL or PostgreSQL, NoSQL databases like MongoDB or Redis, or cloud-based databases like Amazon RDS or Google Cloud Firestore, the Database module simplifies the process of connecting to databases, executing queries, and handling data.",
         "category": [
@@ -121,6 +169,7 @@
       {
         "name": "Integration",
         "slug": "integration",
+        "link": "/admin/integration",
         "short_description": "Enhance your development workflow.",
         "description": "The Development module provides tools and utilities to enhance your development workflow. It includes features such as code editors, debugging tools, version control integration, task automation, and testing frameworks. Whether you're a frontend developer, backend developer, or full-stack developer, the Development module helps you write, test, and deploy your code more efficiently.",
         "category": [
@@ -144,6 +193,7 @@
       {
         "name": "Modules",
         "slug": "module",
+        "link": "/admin/module",
         "short_description": "Enhance your development workflow.",
         "description": "The Development module provides tools and utilities to enhance your development workflow. It includes features such as code editors, debugging tools, version control integration, task automation, and testing frameworks. Whether you're a frontend developer, backend developer, or full-stack developer, the Development module helps you write, test, and deploy your code more efficiently.",
         "category": [
@@ -167,6 +217,7 @@
       {
         "name": "Marketplace",
         "slug": "marketplace",
+        "link": "/admin/marketplace",
         "short_description": "Enhance your development workflow.",
         "description": "The Development module provides tools and utilities to enhance your development workflow. It includes features such as code editors, debugging tools, version control integration, task automation, and testing frameworks. Whether you're a frontend developer, backend developer, or full-stack developer, the Development module helps you write, test, and deploy your code more efficiently.",
         "icon_name": "market",

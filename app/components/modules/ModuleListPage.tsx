@@ -6,8 +6,6 @@ import { useEffect, useState } from 'react';
 import DocumentationPage from './DocumentationPage';
 import PreviewComponent from './PreviewComponent';
 import ResumeView from './ResumeView';
-import CodeEditorPage from './codeEditor/CodeEditorPage';
-import TerminalComponent from './terminal/Terminal';
 interface ModuleListPageProps {
 	currentUser?: SafeUser | null;
 	showSidebar?: boolean;
@@ -48,17 +46,6 @@ const ModuleListPage: React.FC<ModuleListPageProps> = ({ currentUser, showSideba
 				{params?.slug && params?.slug === 'documentation' && (
 					<>
 						<DocumentationPage nameDoc={'vs_code'} currentUser={currentUser} />
-					</>
-				)}
-
-				{params?.slug && params?.slug === 'code_editor' && (
-					<>
-						<CodeEditorPage />
-					</>
-				)}
-				{params?.slug && params?.slug === 'terminal' && (
-					<>
-						<TerminalComponent />
 					</>
 				)}
 			</div>

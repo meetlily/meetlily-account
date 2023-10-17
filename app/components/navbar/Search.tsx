@@ -1,6 +1,8 @@
 'use client';
+import { useParams } from 'next/navigation';
 import IconComponent from '../icons/IconComponent';
 const Search = () => {
+	const params = useParams();
 	return (
 		<div
 			className="
@@ -8,11 +10,13 @@ const Search = () => {
         w-full
         md:w-auto
         py-2
+        px-4
         rounded-full
         shadow-sm
         hover:shadow-md
         transition
         cursor-pointer
+        bg-gray-50
       "
 		>
 			<div
@@ -23,7 +27,7 @@ const Search = () => {
                 justify-between
             "
 			>
-				<div
+				{/* <div
 					className="
                         text-sm
                         font-semibold
@@ -45,7 +49,7 @@ const Search = () => {
                     "
 				>
 					Any Week
-				</div>
+				</div> */}
 				<div
 					className="
                         text-sm
@@ -58,7 +62,7 @@ const Search = () => {
                         gap-3
                     "
 				>
-					<div className="hidden sm:block">Add Guests</div>
+					<div className="hidden sm:block">Search {params?.slug || ''}</div>
 					<div className="p-1 rounded-full text-white">
 						<IconComponent iconName="search" class_name="text-black" />
 					</div>

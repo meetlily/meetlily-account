@@ -11,7 +11,7 @@ import IconComponent from '../icons/IconComponent';
 import AvatarNav from './AvatarNav';
 import Logo from './Logo';
 import AddItem from './apps/AddItem';
-import Notification from './notification/Notification';
+
 interface ContentData {
 	id: string;
 	name: string;
@@ -52,8 +52,6 @@ const MainNavbar: React.FC<MainNavbarProps> = ({ currentUser }) => {
 					<div className="flex md:order-2 gap-4 pr-2">
 						{tabData && currentUser && (
 							<>
-								<Notification currentUser={currentUser} />
-
 								<Dropdown
 									className="overflow-hidden w-[320px] py-0 rounded-xl justify-start z-50 my-4 max-w-sm text-base list-none bg-white divide-y divide-gray-100 shadow-lg dark:divide-gray-700 dark:bg-gray-800"
 									placement="bottom"

@@ -1,6 +1,5 @@
 'use client';
 import React, { useState } from 'react';
-import FormRenderFields from './FormRenderFields';
 
 interface FormData {
 	[fieldName: string]: string | number;
@@ -15,10 +14,10 @@ interface FormPageProps {
 
 const FormPage: React.FC<FormPageProps> = ({ formfields, values }) => {
 	const [isLoading, setIsLoading] = useState(false);
-
+	console.log(values);
 	return (
-		<div className="flex flex-col gap-4 px-4">
-			<FormRenderFields fields={formfields} values={values} />
+		<div className="flex flex-col gap-4 px-4 h-screen relative">
+			{/* <FormRenderFields fields={formfields} values={values} fixed={true} /> */}
 		</div>
 	);
 };

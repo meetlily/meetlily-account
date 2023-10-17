@@ -38,4 +38,6 @@ export type Formfield = {
 	id: string;
 	name: string;
 	data: JsonValue;
+	value?: any;
+	fields?: string[];
 };

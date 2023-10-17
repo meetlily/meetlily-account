@@ -13,8 +13,8 @@ const TerminalComponent: React.FC = () => {
 
 		if (containerRef.current) {
 			term.open(containerRef.current);
-			term.writeln('Welcome to the interactive JavaScript terminal!');
-			term.writeln('Enter some JavaScript to execute it.');
+			term.writeln('Welcome to interactive terminal!');
+			term.writeln('Enter some  to execute it.');
 		}
 
 		term.onKey(({ key, domEvent }) => {

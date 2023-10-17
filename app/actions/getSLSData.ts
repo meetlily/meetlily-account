@@ -49,7 +49,17 @@ export async function getSLSRoomsByType(type: string): Promise<string> {
 		return '';
 	}
 }
+export async function getSLSMessages(): Promise<string> {
+	try {
+		const response = await axios.get(`${process.env.SLS_API_URL}/messages?token=${SLS_API_KEY}`);
+		const data = response.data[0];
 
+		return data;
+	} catch (error) {
+		console.error('Error retrieving public IP:', error);
+		return '';
+	}
+}
 export async function getSLSRoomsById(roomId: string): Promise<string> {
 	try {
 		const response = await axios.get(

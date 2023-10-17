@@ -2,17 +2,17 @@
   {
     "icon_name": "organizations",
     "name": "My Organization",
-    "link": "/admin/organization"
+    "link": "/admin/organization/me"
   },
   {
     "icon_name": "account",
     "name": "My Account",
-    "link": "/admin/account"
+    "link": "/admin/account/me"
   },
   {
     "icon_name": "cog",
     "name": "My Settings",
-    "link": "/admin/settings"
+    "link": "/admin/settings/me"
   },
   {
     "icon_name": "apps",
@@ -22,6 +22,7 @@
       {
         "name": "Website",
         "slug": "website",
+        "link": "/admin/website/me",
         "short_description": "Create and manage your website.",
         "description": "Build and customize your website with ease using the Website module of Meetlily Apps. Choose from a variety of templates, add content, and personalize your site. Showcase your products, services, and brand effectively.",
         "category": [
@@ -41,6 +42,7 @@
       {
         "name": "Projects",
         "slug": "projects",
+        "link": "/admin/projects/me",
         "short_description": "Manage projects and collaborate with teams.",
         "description": "Efficiently manage projects and collaborate with teams using the Projects module of Meetlily Apps. Create project plans, assign tasks, and track progress. Enhance team collaboration and deliver successful projects.",
         "category": [
@@ -60,6 +62,7 @@
       {
         "name": "Point of Sale",
         "slug": "point-of-sale",
+        "link": "/admin/point-of-sale/me",
         "short_description": "Efficiently manage sales transactions.",
         "description": "Streamline your sales process and manage transactions with the Point of Sale module of Meetlily Apps. Handle customer orders, process payments, and generate sales reports. Improve your retail operations.",
         "category": [
@@ -86,6 +89,7 @@
       {
         "name": "AI Assistant",
         "slug": "ai-assistant",
+        "link": "/admin/ai-assistant/me",
         "short_description": "Get assistance and automate tasks with our AI-powered assistant.",
         "description": "Get assistance and automate tasks with our AI-powered assistant. Interact with our intelligent virtual assistant to get answers to your questions, perform actions, and streamline your workflow. Our AI assistant module leverages the power of artificial intelligence to enhance your productivity and provide personalized support.",
         "category": [
@@ -105,6 +109,7 @@
       {
         "name": "Music",
         "slug": "music",
+        "link": "/admin/music/me",
         "short_description": "Discover and listen to your favorite music.",
         "description": "Discover and listen to your favorite music with the Music module of Meetlily Apps. Explore a vast library of songs, create playlists, and enjoy personalized recommendations. Enhance your music experience and enjoy seamless streaming on any device.",
         "category": [
@@ -124,6 +129,7 @@
       {
         "name": "Movies",
         "slug": "movies",
+        "link": "/admin/movies/me",
         "short_description": "Discover and watch your favorite movies and TV shows.",
         "description": "Discover and watch your favorite movies and TV shows with the Movies module of Meetlily Apps. Browse a vast collection of films, explore genres, and enjoy personalized recommendations. Immerse yourself in the world of entertainment and enjoy seamless streaming on any device.",
         "category": [

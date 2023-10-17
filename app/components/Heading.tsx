@@ -1,14 +1,26 @@
 'use client';
 
+import ButtonGroup from 'flowbite-react/lib/esm/components/Button/ButtonGroup';
+import { useCallback, useEffect, useState } from 'react';
+import useModuleOptionDrawer from '../hooks/useModuleOptionDrawer';
+import ButtonIcon from './ButtonIcon';
+import IconComponent from './icons/IconComponent';
+import Search from './navbar/Search';
+
 interface HeadingProps {
-	title: string;
+	title: any;
 	headerTitle?: string;
 	subtitle?: string;
 	center?: boolean;
 	fontColor?: string;
 	bold?: boolean;
 	size?: string;
-	icon?: React.ReactElement;
+	iconName?: string;
+	iconSize?: number;
+	options?: React.ReactElement;
+	showAsCard?: boolean;
+	showOptionButton?: boolean;
+	enableSearch?: boolean;
 }
 const Heading: React.FC<HeadingProps> = ({
 	title,
@@ -18,17 +30,40 @@ const Heading: React.FC<HeadingProps> = ({
 	fontColor,
 	bold,
 	size,
-	icon
+	iconName,
+	iconSize,
+	options,
+	showAsCard,
+	showOptionButton,
+	enableSearch
 }) => {
+	if (!iconName) {
+		iconName = 'module';
+	}
+	if (!iconSize) {
+		iconSize = 26;
+	}
+	const moduleOptionDrawer = useModuleOptionDrawer();
+	const [showModuleDrawer, setShowModuleDrawer] = useState(false);
+
+	useEffect(() => {
+		//setShowModuleDrawer(moduleOptionDrawer.isOpen);
+	}, [moduleOptionDrawer, setShowModuleDrawer]);
+	const handleConfigClick = useCallback(
+		(title: string) => {
+			console.log(moduleOptionDrawer);
+			moduleOptionDrawer.onOpen();
+			//setShowModuleDrawer()
+		},
+		[moduleOptionDrawer]
+	);
 	return (
-		<div
-			className={`
-			mt-2
-          ${center ? `text-center` : `text-start`}
-        `}
-		>
-			<h2
+		<>
+			<div
 				className={`
+			flex
+			flex-col
+			w-full
               font-bold
               mt-2
               text-gray-700
@@ -37,28 +72,58 @@ const Heading: React.FC<HeadingProps> = ({
               ${bold ? `font-bold` : `font-light`}
         `}
 			>
-				<div className="flex flex-row">
-					{icon && (
-						<>
-							<div className="mr-4">{icon}</div>
-						</>
-					)}
-					{title}
+				<div
+					className={`${
+						showAsCard
+							? ' bg-white border border-gray-200 shadow dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700'
+							: ''
+					} p-2 mb-[2px] items-start flex flex-col w-full`}
+				>
+					<div className="flex flex-row w-full items-center">
+						<div className="flex flex-col w-full items-start">
+							<ButtonGroup className="flex gap-4">
+								{title && (
+									<>
+										<div className="flex">
+											<>
+												<IconComponent iconName={iconName} size={iconSize} />
+											</>
+										</div>
+										<div className="flex capitalize">{title}</div>
+									</>
+								)}
+							</ButtonGroup>
+						</div>
+
+						<div className="flex flex-col  w-full items-end"></div>
+						<div className="flex flex-col  w-full items-end">
+							<div className="flex flex-row gap-4">
+								{enableSearch && <Search />}
+								<>
+									{options ? (
+										{ options }
+									) : (
+										<>
+											{showOptionButton && (
+												<ButtonGroup className="flex gap-4">
+													<ButtonIcon
+														icon={'moduleOptions'}
+														iconSize={26}
+														label="Settings"
+														inline
+														onClick={() => handleConfigClick(title)}
+													/>
+												</ButtonGroup>
+											)}
+										</>
+									)}
+								</>
+							</div>
+						</div>
+					</div>
 				</div>
-			</h2>
-			<p
-				className={`
-            max-w-sm 
-            mb-0
-            font-sans 
-            font-light 
-            text-sm
-            text-gray-500
-          `}
-			>
-				{subtitle}
-			</p>
-		</div>
+			</div>
+		</>
 	);
 };
 

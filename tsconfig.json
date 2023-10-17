@@ -18,10 +18,11 @@
         "name": "next"
       }
     ],
+    "types": ["react", "react-dom"],
     "paths": {
       "@/*": ["./*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "react-json-editor-viewer.d.ts"],
   "exclude": ["node_modules"]
 }

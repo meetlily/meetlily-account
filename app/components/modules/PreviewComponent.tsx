@@ -38,7 +38,7 @@ import Preview from '../Preview';
 import AppIcons from '../icons/AppIcons';
 import IconComponent from '../icons/IconComponent';
 import DocumentationPage from './DocumentationPage';
-import ModulePreview from './ModulePreview';
+
 import ModulesHeader from './ModulesHeader';
 import ModulesTable from './ModulesTable';
 import ResumeView from './ResumeView';
@@ -57,7 +57,7 @@ const PreviewComponent: React.FC<PreviewComponentProps> = ({
 	const scope = {
 		formStructure,
 		Dashboard,
-		ModulePreview,
+
 		ModulesTable,
 		ModulesHeader,
 		Card,

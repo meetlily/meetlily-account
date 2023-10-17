@@ -42,6 +42,7 @@ export default async function getCurrentUser() {
 		if (!session) {
 			return null;
 		}
+
 		const currentUser = await prisma.user.findUnique({
 			where: {
 				email: session?.user?.email as string
@@ -51,63 +52,145 @@ export default async function getCurrentUser() {
 				Organization: true, // Include the Organization of the user
 				Module: true, // Include the Organization of the user
 				Accounts: true, // Include the Accounts of the user
-				Formfield: true // Include the Formfields of the user
+				Formfield: true, // Include the Formfields of the user
+				Default: true // Include the Default of the user
 			}
 		});
+
 		if (!currentUser) {
 			return null;
 		}
 
+		const getOrg = await prisma.organization.findMany();
+
 		if (currentUser?.Role?.length === 0) {
-			if (currentUser.email === 'edvillan15@gmail.com') {
+			if (currentUser.email === process.env.ORGANIZATION_EMAIL) {
+				const getRole = await prisma.role.findUnique({
+					where: {
+						name: 'Super Administrator'
+					}
+				});
+				if (getRole) {
+					const updatedUser = await prisma.user.update({
+						where: { id: currentUser.id },
+						data: {
+							Role: {
+								connect: getRole
+							}
+						},
+						include: {
+							Organization: true,
+							Role: true,
+							Accounts: true,
+							Module: true,
+							Formfield: true, // Include the Formfields of the user
+							Default: true // Include the Default of the user
+						}
+					});
+					return {
+						...currentUser,
+						updatedUser,
+						createdAt: currentUser.createdAt.toISOString(),
+						updatedAt: currentUser.updatedAt.toISOString(),
+						emailVerified: currentUser.emailVerified?.toISOString() || null
+					};
+				}
+			} else {
+				const getRole = await prisma.role.findUnique({
+					where: {
+						name: 'Authenticated'
+					}
+				});
+
+				if (getRole) {
+					const updatedUser = await prisma.user.update({
+						where: { id: currentUser.id },
+						data: {
+							Role: {
+								connect: getRole
+							}
+						},
+						include: {
+							Organization: true,
+							Role: true,
+							Accounts: true,
+							Module: true,
+							Formfield: true, // Include the Formfields of the user
+							Default: true // Include the Default of the user
+						}
+					});
+					return {
+						...currentUser,
+						updatedUser,
+						createdAt: currentUser?.createdAt.toISOString(),
+						updatedAt: currentUser?.updatedAt.toISOString(),
+						emailVerified: currentUser?.emailVerified?.toISOString() || null
+					};
+				}
+			}
+		}
+		if (getOrg.length === 0) {
+			await prisma.organization.create({
+				data: {
+					slug: 'meetlily-advertising',
+					name: 'Meetlily Advertising',
+					User: {
+						connect: {
+							id: currentUser.id
+						}
+					}
+				}
+			});
+		} else if (currentUser.Organization.length === 0) {
+			const getCOrg = await prisma.organization.findUnique({
+				where: {
+					slug: 'meetlily-advertising'
+				}
+			});
+			if (getCOrg) {
 				const updatedUser = await prisma.user.update({
 					where: { id: currentUser.id },
 					data: {
-						Role: {
+						Organization: {
 							connect: {
-								name: 'Super Administrator'
+								id: getCOrg.id
 							}
 						}
+					},
+					include: {
+						Organization: true,
+						Role: true,
+						Accounts: true,
+						Module: true,
+						Formfield: true, // Include the Formfields of the user
+						Default: true // Include the Default of the user
 					}
 				});
-				if (updatedUser) {
-					await prisma.role.create({
-						data: {
-							name: 'Super Administrator' as string,
-							User: {
-								connect: {
-									id: currentUser.id
-								}
-							}
-						}
-					});
-				}
 				return {
 					...currentUser,
 					updatedUser,
-					createdAt: currentUser.createdAt.toISOString(),
-					updatedAt: currentUser.updatedAt.toISOString(),
-					emailVerified: currentUser.emailVerified?.toISOString() || null
+					createdAt: currentUser?.createdAt.toISOString(),
+					updatedAt: currentUser?.updatedAt.toISOString(),
+					emailVerified: currentUser?.emailVerified?.toISOString() || null
 				};
-			} else {
-				await prisma.user.update({
-					where: { id: currentUser.id },
-					data: {
-						Role: {
-							connect: {
-								name: 'Authenticated'
-							}
-						},
-						Accounts: {
-							connect: {
-								id: currentUser.id
-							}
-						}
-					}
-				});
 			}
 		}
-
+		if (!currentUser.defaultId) {
+			await prisma.default.create({
+				data: {
+					data: {
+						organizationId: currentUser.Organization[0].id,
+						roleId: currentUser.Role[0].id
+					},
+					User: {
+						connect: {
+							id: currentUser.id
+						}
+					}
+				}
+			});
+		}
+		//console.log(currentUser, 'currentUser');
 		// if (currentUser && currentUser.Role.length > 0) {
 		// 	currentUser.Role.map((role, i) => {
 		// 		const noSpaceRole = role.name.replace(/\s/g, '');

@@ -40,3 +40,32 @@ export async function GET(request: any, response: any) {
 		return new NextResponse(errorMessage, { status: 500 });
 	}
 }
+export async function DELETE(request: any, response: any) {
+	try {
+		//const client = await pool.connect();
+
+		const currentUser = await getCurrentUser();
+		const { id } = response.params;
+		//const body = await request.json();
+
+		// Check if the user is authenticated
+		if (!currentUser) {
+			// User is not authenticated, return an unauthorized response
+			return new NextResponse('Unauthorized', { status: 401 });
+		}
+		//const { id, slug } = body;
+		const foundSupAdmin = currentUser?.Role.find((obj) => obj.name === 'Super Administrator');
+		if (foundSupAdmin) {
+			const result = await prisma.user.delete({
+				where: {
+					id: id
+				}
+			});
+			return NextResponse.json(result);
+		}
+	} catch (error) {
+		const errorMessage = 'An error occurred while fetching data';
+		//return new NextResponse(errorMessage, { status: 500 });
+		return NextResponse.json({ error: error, status: 500 });
+	}
+}

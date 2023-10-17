@@ -1,7 +1,7 @@
 import { default as getCurrentUser } from '@/app/actions/getCurrentUser';
 import { getFormData, getFormField, getModuleLists, getUsers } from '@/app/actions/getModuleLists';
 import EmptyPage from '@/app/components/empty/EmptyPage';
-import ModuleShow from '@/app/components/modules/ModuleShow';
+import AdminModule from '@/app/components/modules/admin/AdminModule';
 import AdminLayout from '@/app/layouts/AdminLayout';
 import { SafeUser } from '@/app/types';
 
@@ -20,27 +20,22 @@ export default async function AdminModulePage() {
 		}
 	}
 	return (
-		<>
-			<AdminLayout
-				currentUser={currentUser}
-				showSidebar={true}
-				showNavbar={true}
-				showNavbarSearch={true}
-			>
-				{isAdmin ? (
-					<>
-						<ModuleShow
-							installed={currentUser?.Module}
-							fields={formFields}
-							modules={modules}
-							currentUser={currentUser}
-							organization={currentUser?.Organization}
-						/>
-					</>
-				) : (
-					<EmptyPage />
-				)}
-			</AdminLayout>
-		</>
+		<AdminLayout
+			currentUser={currentUser}
+			showSidebar={true}
+			showNavbar={true}
+			showNavbarSearch={true}
+		>
+			{isAdmin ? (
+				<AdminModule
+					currentUser={currentUser}
+					modules={modules}
+					fields={formFields}
+					users={users}
+				/>
+			) : (
+				<EmptyPage />
+			)}
+		</AdminLayout>
 	);
 }

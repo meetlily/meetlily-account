@@ -1,8 +1,8 @@
-import PageLayout from '@/app/layouts/PageLayout';
-
+import NextTopLoader from 'nextjs-toploader';
 import getCurrentUser from './actions/getCurrentUser';
 import HomeLandingPage from './components/landingpages/HomeLandingPage';
-import PageNavbar from './components/navbar/PageNavbar';
+import RootLayout from './layout';
+import PageLayout from './layouts/PageLayout';
 
 export default async function Home() {
 	const currentUser = await getCurrentUser();
@@ -10,20 +10,18 @@ export default async function Home() {
 		title: 'Dashboard',
 		subtitle: 'Welcome, Guest!'
 	};
-	if (currentUser) {
-		metaData.subtitle = `Welcome back, ${currentUser.name}!`;
-	}
+
 	return (
 		<>
-			<PageNavbar currentUser={currentUser} />
-			<div className="fluid flex flex-col items-center mx-auto justify-center bg-gray-50 h-full">
-				<PageLayout metadata={metaData} showSidebar={false} hideNavbar={true}>
+			<NextTopLoader />
+
+			<RootLayout>
+				<PageLayout showSidebar={false} hideNavbar={false}>
 					<div className="flex flex-col w-full h-full">
-						<HomeLandingPage currentUser={currentUser} />
-						{/* <Dashboard currentUser={currentUser}/> */}
+						<HomeLandingPage />
 					</div>
 				</PageLayout>
-			</div>
+			</RootLayout>
 		</>
 	);
 }

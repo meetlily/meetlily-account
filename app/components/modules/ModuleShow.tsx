@@ -1,23 +1,18 @@
 'use client';
 
+import useDeleteModal from '@/app/hooks/useDeleteModal';
 import useFormModal from '@/app/hooks/useFormModal';
+import useModuleOptionDrawer from '@/app/hooks/useModuleOptionDrawer';
 import { ModuleType, OrganizationType, SafeUser } from '@/app/types';
 import { LocalModule } from '@/app/types/module';
 import { Formfield, Module } from '@prisma/client';
 import { JsonValue } from '@prisma/client/runtime/library';
 import axios from 'axios';
-import { Card, Table } from 'flowbite-react';
+import { Card } from 'flowbite-react';
 import { useParams, useRouter, useSearchParams } from 'next/navigation';
 import { useCallback, useEffect, useState } from 'react';
 import toast from 'react-hot-toast';
-import ButtonIcon from '../ButtonIcon';
 import Heading from '../Heading';
-import IconComponent from '../icons/IconComponent';
-import AlertUI from '../ui/Alert';
-import ModuleShowDropDownButton from './ModuleShowDropDownButton';
-import ModulesTable from './ModulesTable';
-import FormModal from './form/FormModal';
-import FormRenderFields from './form/FormRenderFields';
 
 interface FormData {
 	[fieldName: string]: string | number;
@@ -53,11 +48,13 @@ const ModuleShow: React.FC<ModuleShowProps> = ({
 	const params = useParams();
 	const searchParams = useSearchParams();
 	const formModal = useFormModal();
+	const deleteModal = useDeleteModal();
+	const moduleOptionDrawer = useModuleOptionDrawer();
 	const [currentOrg, setCurrentOrg] = useState({});
 	const [formModalHeader, setFormModalHeader] = useState('');
 	const [formModalBody, setFormModalBody] = useState<React.ReactNode>(<></>);
 	const [formModalId, setFormModalId] = useState('');
-	const [formModalSize, setFormModalSize] = useState('');
+	const [formModalSize, setFormModalSize] = useState('xl');
 	const [moduleObj, setModuleObj] = useState<LocalModule>();
 	const [moduleInstalled, setModuleInstalled] = useState<ModuleType>();
 	const [formFields, setformFields] = useState<SafeFormFields>();
@@ -129,8 +126,8 @@ const ModuleShow: React.FC<ModuleShowProps> = ({
 			setcurrentFormFieldData(e);
 			setFormModalId(`modal-${e?.id}`);
 			setTimeout(() => {
-				setFormModalSize(`2xl`);
-				setFormModalHeader(`Update ${e?.data?.slug}`);
+				setFormModalSize(`xl`);
+				setFormModalHeader(`Update`);
 				formModal.onOpen();
 			}, 100);
 		},
@@ -151,6 +148,7 @@ const ModuleShow: React.FC<ModuleShowProps> = ({
 					}
 
 					toast.success('Deleted!');
+					deleteModal.onClose();
 					router.refresh();
 				})
 				.catch((error) => {
@@ -158,12 +156,35 @@ const ModuleShow: React.FC<ModuleShowProps> = ({
 					toast.error('Error deleting data!');
 				});
 		},
-		[setcurrentFormFieldData, router]
+		[setcurrentFormFieldData, router, deleteModal]
+	);
+	const openModuleOptionsDrawer = useCallback(
+		(item: any) => {
+			if (moduleOptionDrawer.isOpen) {
+				moduleOptionDrawer.onClose();
+			} else {
+				moduleOptionDrawer.onOpen();
+			}
+		},
+		[moduleOptionDrawer]
 	);
 	const handleClickInstall = () => {
 		router.push(`/admin/${params?.slug}/install`);
 	};
 
+	const handleConfirmDelete = useCallback(
+		(e: any) => {
+			setcurrentFormFieldData(e);
+			deleteModal.onOpen();
+		},
+		[deleteModal]
+	);
+	const handleDeleteAction = useCallback(
+		(e: any) => {
+			handleModalFormDataDelete(e);
+		},
+		[handleModalFormDataDelete]
+	);
 	const handleCreate = useCallback(
 		(e: any) => {
 			const d = {
@@ -176,8 +197,8 @@ const ModuleShow: React.FC<ModuleShowProps> = ({
 			setcurrentFormFieldData(e);
 			setFormModalId(`create-modal-${params?.slug}`);
 			setTimeout(() => {
-				setFormModalSize(`2xl`);
-				setFormModalHeader(`Create an ${params?.slug}`);
+				setFormModalSize(`xl`);
+				setFormModalHeader(`Create ${params?.slug}`);
 				formModal.onOpen();
 			}, 100);
 		},
@@ -200,25 +221,19 @@ const ModuleShow: React.FC<ModuleShowProps> = ({
 		setFormModalHeader(`Configure ${params?.slug}`);
 	};
 
-	if (!foundLocalModule) {
-		return (
-			<AlertUI
-				header={`${params?.slug} module is not installed.`}
-				icon_name={moduleObj?.icon_name || 'ban'}
-				primaryAction={handleClickInstall}
-			/>
-		);
-	}
+	// if (params?.slug === 'coding') {
+	// 	return <CodeEditorWithFileTree />;
+	// }
+	// if (params?.slug === 'terminal') {
+	// 	return <TerminalPage params={params} />;
+	// }
 
+	console.log(moduleObj);
 	return (
 		<>
-			<div className="flex flex-row ">
-				<div className="flex flex-col items-start justify-start w-full">
-					<Heading
-						title={moduleObj?.name || ''}
-						icon={<IconComponent iconName={`${moduleObj?.icon_name || 'add'}`} size={30} />}
-					/>
-				</div>
+			<div className="flex flex-col ">
+				<Heading title={moduleObj?.name || ''} iconName={`${moduleObj?.icon_name || 'add'}`} />
+				{/* <div className="flex flex-col items-start justify-start w-full"></div>
 				<div className="flex flex-row gap-2 items-end justify-end w-full">
 					<ButtonIcon
 						onClick={() => handleCreate(currentFormFieldData)}
@@ -234,10 +249,10 @@ const ModuleShow: React.FC<ModuleShowProps> = ({
 						shadow
 						classNames="h-8 w-8"
 					/>
-					{/* <ButtonIcon
-						onClick={() => handleGetFormField(formFields)}
+					<ButtonIcon
+						onClick={() => openModuleOptionsDrawer(currentFormFieldData)}
 						label="Manage"
-						icon="cog"
+						icon="moduleOptions"
 						size={'text-sm'}
 						iconSize={20}
 						color={'gray'}
@@ -247,77 +262,107 @@ const ModuleShow: React.FC<ModuleShowProps> = ({
 						shadow
 						inline
 						classNames="h-8 w-8"
-					/> */}
-					<ModuleShowDropDownButton />
-				</div>
-			</div>
-			<div className="flex flex-col mt-4">
-				<Card>
-					{params?.slug === 'module' ? (
-						<ModulesTable />
-					) : (
-						<Table>
-							<Table.Head>
-								<Table.HeadCell className="w-[200px]">id</Table.HeadCell>
-								{moduleView &&
-									Object.keys(moduleView).map((list) => (
-										<Table.HeadCell key={list}>
-											{list && <span className="list">{list}</span>}
-										</Table.HeadCell>
-									))}
-								<Table.HeadCell></Table.HeadCell>
-							</Table.Head>
-							<Table.Body className="divide-y">
-								{formFieldData?.map((d: any) => (
-									<Table.Row key={d.id} className="bg-white dark:border-gray-700 dark:bg-gray-800">
-										<Table.Cell>{d.id}</Table.Cell>
-										{moduleView &&
-											Object.keys(moduleView).map((list) => (
-												<Table.Cell key={list}>{d.data[list]}</Table.Cell>
-											))}
+					/>
 
-										<Table.Cell>
-											<div className="flex flex-row items-end justify-end gap-2">
-												<ButtonIcon
-													onClick={() => handleModalFormDataUpdate(d)}
-													label="Update"
-													icon="edit"
-													size={'text-sm'}
-													iconSize={22}
-													color={'gray'}
-													inline
-													disabled
-													data={d}
-												/>
-												<ButtonIcon
-													onClick={() => handleModalFormDataDelete(d)}
-													label="Delete"
-													icon="close"
-													size={'text-sm'}
-													iconSize={22}
-													color={'red'}
-													inline
-													disabled
-													data={d}
-												/>
-											</div>
-										</Table.Cell>
-									</Table.Row>
-								))}
-							</Table.Body>
-						</Table>
-					)}
-				</Card>
+				</div> */}
 			</div>
-			<FormModal
+			<div className="flex flex-col mt-4 w-full">
+				{foundLocalModule && (
+					<Card>Test</Card>
+
+					// <Card color={`${foundFormFields ? 'warning' : ''}`}>
+					// 	{params?.slug === 'module' ? (
+					// 		<ModulesTable />
+					// 	) : (
+					// 		<Table className={`${foundFormFields ? '' : 'hidden'}`}>
+					// 			<Table.Head>
+					// 				<Table.HeadCell className="w-[200px]">id</Table.HeadCell>
+					// 				{moduleView &&
+					// 					Object.keys(moduleView).map((list) => (
+					// 						<Table.HeadCell key={list}>
+					// 							{list && <span className="list">{list}</span>}
+					// 						</Table.HeadCell>
+					// 					))}
+					// 				<Table.HeadCell></Table.HeadCell>
+					// 			</Table.Head>
+					// 			<Table.Body className="divide-y">
+					// 				{formFieldData?.map((d: any) => (
+					// 					<Table.Row
+					// 						key={d.id}
+					// 						className="bg-white dark:border-gray-700 dark:bg-gray-800"
+					// 					>
+					// 						<Table.Cell>{d.id}</Table.Cell>
+					// 						{moduleView &&
+					// 							Object.keys(moduleView).map((list) => (
+					// 								<Table.Cell key={list}>{d.data[list]}</Table.Cell>
+					// 							))}
+
+					// 						<Table.Cell>
+					// 							<div className="flex flex-row items-end justify-end gap-2">
+					// 								<ButtonIcon
+					// 									onClick={() => handleModalFormDataUpdate(d)}
+					// 									label="Update"
+					// 									icon="edit"
+					// 									size={'text-sm'}
+					// 									iconSize={22}
+					// 									color={'gray'}
+					// 									inline
+					// 									disabled
+					// 									data={d}
+					// 								/>
+					// 								<ButtonIcon
+					// 									onClick={() => handleConfirmDelete(d)}
+					// 									label="Delete"
+					// 									icon="close"
+					// 									size={'text-sm'}
+					// 									iconSize={22}
+					// 									color={'red'}
+					// 									inline
+					// 									disabled
+					// 									data={d}
+					// 								/>
+					// 							</div>
+					// 						</Table.Cell>
+					// 					</Table.Row>
+					// 				))}
+					// 			</Table.Body>
+					// 		</Table>
+					// 	)}
+					// </Card>
+				)}
+			</div>
+			{/* <FormModal
 				id={formModalId}
-				size={formModalSize}
+				size={'3xl'}
 				fields={formFields}
 				values={currentFormFieldData}
 				isOpen={formModal.isOpen}
 				header={formModalHeader}
 				body={<FormRenderFields fields={formFields} values={currentFormFieldData} />}
 			/>
+			<DeleteModal
+				id="delete-modal-confirmation"
+				isOpen={deleteModal.isOpen}
+				data={currentFormFieldData}
+				deleteAction={() => handleDeleteAction(currentFormFieldData)}
+			/>
+			<DrawerContent
+				id={'module-option-drawer-content'}
+				isOpen={moduleOptionDrawer.isOpen}
+				onClose={moduleOptionDrawer.onClose}
+				xPosition="right"
+				yPosition="top"
+				width={'w-[360px]'}
+				body={<ModuleSettings fields={formFields} values={currentFormFieldData} />}
+				footer={
+					<SidebarBottomSettings
+						show={true}
+						items={bottomSideNav.module}
+						drawer={'module-drawer'}
+					/>
+				}
+				overlay
+			/> */}
 		</>
 	);
 };
