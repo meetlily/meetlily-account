@@ -8,5 +8,4 @@ const nextConfig = {
         domains: ['avatars.githubusercontent.com','lh3.googleusercontent.com', 'tailwindui.com', 'images.unsplash.com'],
     }
 }
-
 module.exports = nextConfig

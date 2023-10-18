@@ -1,10 +1,11 @@
-## Meetlily Apps (ERP) - Business Suite Applications
+## Meetlily Apps (ERP)
 
-<img src="screenshot-2.png" alt="Meetlily Apps" />
+<img src="screenshot-2.png" alt="Meetlily" />
 
 Meetlily Apps (ERP) is a comprehensive suite of business applications built on top of React, Next.js, Prisma, and PostgreSQL. It is designed to streamline and optimize various aspects of your business operations, providing you with powerful tools to manage different departments and processes.
 
 **Key Technologies:**
+
 
 - React: Meetlily Apps (ERP) leverages the power of React, a popular JavaScript library for building user interfaces. React allows for efficient rendering and seamless updates, providing a smooth and responsive user experience.
 
@@ -22,12 +23,12 @@ Meetlily Apps (ERP) is a comprehensive suite of business applications built on t
 
 Meetlily Apps (ERP) is currently undergoing heavy development, with a focus on continuously improving and expanding its features. The applications are hosted on Vercel, a cloud platform for static and serverless deployments. Vercel offers scalability, reliability, and seamless deployment workflows, ensuring that your applications are always available to your users.
 
-
 ## Features
 
 With Meetlily Apps (ERP), you can streamline your business operations, improve efficiency, and gain valuable insights into your company's performance. Whether it's managing inventory, tracking sales, or analyzing financial data, Meetlily Apps (ERP) provides a comprehensive suite of applications to meet your business needs.
 
 ### Administration
+
 <img src="screenshot-administration.png" />
 
 - Servers: Easily manage your servers and ensure their smooth operation. Monitor server performance, track resource usage, and handle server configurations effortlessly.
@@ -230,7 +231,6 @@ Manage your hosting services, including virtual, dedicated, cloud servers, web, 
 Create and manage custom forms and surveys with the Forms module of Meetlily Apps (ERP). Collect data, analyze responses, and gain insights into customer preferences. Streamline data collection processes.
 
 With Meetlily Apps (ERP), you can leverage a wide range of business applications to streamline your operations, enhance productivity, and drive business growth. From accounting and sales to marketing campaigns and employee management, Meetlily Apps (ERP) offers a comprehensive suite of applications to meet your unique business needs.
-
 
 ### Tools and Utilities
 

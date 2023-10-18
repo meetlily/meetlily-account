@@ -1,7 +1,7 @@
 'use client';
+import IconComponent from '@/app/components/icons/IconComponent';
 import { useParams } from 'next/navigation';
-import IconComponent from '../icons/IconComponent';
-const Search = () => {
+const CodeEditorSearch = () => {
 	const params = useParams();
 	return (
 		<div
@@ -15,6 +15,7 @@ const Search = () => {
         rounded-full
         shadow-sm
         hover:shadow-md
+        hover:bg-gray-900
         transition
         cursor-pointer
         bg-black
@@ -31,29 +32,6 @@ const Search = () => {
 				<div
 					className="
                         text-sm
-                        font-semibold
-                        px-6
-                    "
-				>
-					Anywhere
-				</div>
-				<div
-					className="
-                        hidden
-                        sm:block
-                        text-sm
-                        font-semibold
-                        px-6
-                        border-x-[1px]
-                        flex-1
-                        text-center
-                    "
-				>
-					Any Week
-				</div>
-				<div
-					className="
-                        text-sm
                         pl-6
                         pr-2
                         text-gray-50
@@ -65,7 +43,7 @@ const Search = () => {
 				>
 					<div className="hidden sm:block">Search {params?.slug || ''}</div>
 					<div className="p-1 rounded-full text-white">
-						<IconComponent iconName="search" class_name="text-white" />
+						<IconComponent iconName="search" class_name="text-white" size={20} />
 					</div>
 				</div>
 			</div>
@@ -73,4 +51,4 @@ const Search = () => {
 	);
 };
 
-export default Search;
+export default CodeEditorSearch;

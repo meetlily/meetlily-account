@@ -1,6 +1,6 @@
 import getCurrentUser from '@/app/actions/getCurrentUser';
+import CodeEditorWithFileTree from '@/app/components/applications/codeEditor/CodeEditorWithFileTree';
 import EmptyPage from '@/app/components/empty/EmptyPage';
-import CodeEditorWithFileTree from '@/app/components/modules/codeEditor/CodeEditorWithFileTree';
 import AdminLayout from '@/app/layouts/AdminLayout';
 
 export default async function ModulesPage() {

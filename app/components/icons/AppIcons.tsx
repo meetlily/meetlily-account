@@ -53,7 +53,9 @@ import {
 	BsNewspaper,
 	BsPersonAdd,
 	BsShieldLock,
-	BsTerminalFill
+	BsTerminalFill,
+	BsThreeDots,
+	BsThreeDotsVertical
 } from 'react-icons/bs';
 import { GiCash, GiLovers, GiVideoConference } from 'react-icons/gi';
 import { HiHomeModern } from 'react-icons/hi2';
@@ -148,8 +150,26 @@ import {
 	TbRobot,
 	TbServer2,
 	TbSquareLetterB,
+	TbToml,
 	TbTools
 } from 'react-icons/tb';
+import {
+	VscArrowLeft,
+	VscArrowRight,
+	VscCollapseAll,
+	VscFilter,
+	VscGithub,
+	VscJson,
+	VscLayoutPanel,
+	VscLayoutSidebarLeftOff,
+	VscLayoutSidebarRightOff,
+	VscNewFile,
+	VscNewFolder,
+	VscPreview,
+	VscRefresh,
+	VscSave,
+	VscSettingsGear
+} from 'react-icons/vsc';
 
 import {
 	FaAddressCard,
@@ -188,6 +208,7 @@ import {
 	FaDesktop,
 	FaDiagramProject,
 	FaDiceD6,
+	FaDocker,
 	FaDollarSign,
 	FaDownload,
 	FaEnvelope,
@@ -587,6 +608,7 @@ const AppIcons: { [key: string]: IconType } = {
 	png: BsFiletypePng,
 	txt: BsFiletypeTxt,
 	gitignore: SiGitignoredotio,
+	git: SiGitignoredotio,
 	mdx: BsFiletypeMdx,
 	php: BsFiletypePhp,
 	pdf: BsFiletypePdf,
@@ -594,7 +616,28 @@ const AppIcons: { [key: string]: IconType } = {
 	node: FaNodeJs,
 	ico: BiImage,
 	svg: BsFiletypeSvg,
-	jpg: BsFiletypeJpg
+	jpg: BsFiletypeJpg,
+	toml: TbToml,
+	dockerignore: FaDocker,
+	docker: FaDocker,
+	Dockerfile: FaDocker,
+	h3Dots: BsThreeDots,
+	v3Dots: BsThreeDotsVertical,
+	layoutSideLeft: VscLayoutSidebarLeftOff,
+	layoutSideRight: VscLayoutSidebarRightOff,
+	layoutPanel: VscLayoutPanel,
+	filter: VscFilter,
+	VscArrowLeft: VscArrowLeft,
+	VscArrowRight: VscArrowRight,
+	newFile: VscNewFile,
+	newFolder: VscNewFolder,
+	collapseAll: VscCollapseAll,
+	VscRefresh: VscRefresh,
+	VscSettings: VscSettingsGear,
+	VscJson: VscJson,
+	VscGithub: VscGithub,
+	preview: VscPreview,
+	save: VscSave
 };
 
 export default AppIcons;

@@ -26,7 +26,6 @@ const FormRenderFields: React.FC<FormRenderFieldsProps> = ({
 	module,
 	fixed
 }) => {
-	console.log(fields);
 	// const foundData = formData?.find(
 	// 	(d: { formfieldId: string | undefined }) => d.formfieldId === fields?.id
 	// );
@@ -99,7 +98,6 @@ const FormRenderFields: React.FC<FormRenderFieldsProps> = ({
 					return callback.data;
 				})
 				.then((res) => {
-					console.log(res);
 					toast.success('Success!');
 					router.refresh();
 					reset();

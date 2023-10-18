@@ -1,5 +1,6 @@
 import prisma from '@/app/libs/prismadb';
 import modules from '@/data/modules.json';
+import mainModules from '@/data/modules/main.json';
 import { authOptions } from '@/pages/api/auth/[...nextauth]';
 import { getServerSession } from 'next-auth';
 export async function getSession() {
@@ -152,6 +153,16 @@ export async function getDatabaseModuleLists() {
 		});
 		return data;
 	} catch (error) {
+		throw error;
+	}
+}
+export async function getMainModuleLists() {
+	try {
+		//const data = await axios.get('./data/modules.json');
+		const data = mainModules;
+		return data;
+	} catch (error) {
+		console.error(error);
 		throw error;
 	}
 }

@@ -1,6 +1,6 @@
 import getCurrentUser from '../actions/getCurrentUser';
+import CodeEditorWithFileTree from '../components/applications/codeEditor/CodeEditorWithFileTree';
 import EmptyPage from '../components/empty/EmptyPage';
-import CodeEditorWithFileTree from '../components/modules/codeEditor/CodeEditorWithFileTree';
 import useFiles from '../hooks/useFiles';
 import AdminLayout from '../layouts/AdminLayout';
 

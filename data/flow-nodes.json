@@ -1,0 +1,324 @@
+[
+    {
+        "id": "1",
+        "type": "Modules",
+        "data": {
+            "id": "1",
+            "name": "Human Resources",
+            "description": "Manage human resource operations, employee data, and HR processes",
+            "icon_name": "hr"
+        },
+        "position": {
+            "x": 240,
+            "y": 0
+        }
+    },
+    {
+        "id": "2",
+        "type": "Modules",
+        "data": {
+            "id": "2",
+            "name": "Finance and Accounting",
+            "description": "Handle financial transactions, accounting, and financial reporting",
+            "icon_name": "accounting"
+        },
+        "position": {
+            "x": 480,
+            "y": 0
+        }
+    },
+    {
+        "id": "3",
+        "type": "Modules",
+        "data": {
+            "id": "3",
+            "name": "Sales and Marketing",
+            "description": "Plan and execute sales and marketing strategies",
+            "icon_name": "marketing"
+        },
+        "position": {
+            "x": 720,
+            "y": 0
+        }
+    },
+    {
+        "id": "4",
+        "type": "Modules",
+        "data": {
+            "id": "4",
+            "name": "Customer Relationship Management (CRM)",
+            "description": "Manage customer interactions and relationships",
+            "icon_name": "crm"
+        },
+        "position": {
+            "x": 960,
+            "y": 0
+        }
+    },
+    {
+        "id": "5",
+        "type": "Modules",
+        "data": {
+            "id": "5",
+            "name": "Inventory Management",
+            "description": "Track and manage inventory and stock levels",
+            "icon_name": "inventory"
+        },
+        "position": {
+            "x": 1200,
+            "y": 0
+        }
+    },
+    {
+        "id": "6",
+        "type": "Modules",
+        "data": {
+            "id": "6",
+            "name": "Supply Chain and Logistics",
+            "description": "Optimize supply chain operations and logistics",
+            "icon_name": "supplychain"
+        },
+        "position": {
+            "x": 1440,
+            "y": 0
+        }
+    },
+    {
+        "id": "7",
+        "type": "Modules",
+        "data": {
+            "id": "7",
+            "name": "Quality Assurance and Compliance",
+            "description": "Ensure product and process quality and compliance with standards",
+            "icon_name": "quality"
+        },
+        "position": {
+            "x": 1680,
+            "y": 0
+        }
+    },
+    {
+        "id": "8",
+        "type": "Modules",
+        "data": {
+            "id": "8",
+            "name": "Project and Task Management",
+            "description": "Plan, execute, and monitor projects and tasks",
+            "icon_name": "project"
+        },
+        "position": {
+            "x": 1920,
+            "y": 0
+        }
+    },
+    {
+        "id": "9",
+        "type": "Modules",
+        "data": {
+            "id": "9",
+            "name": "Knowledge and Document Management",
+            "description": "Organize and access knowledge and documents",
+            "icon_name": "knowledge"
+        },
+        "position": {
+            "x": 2160,
+            "y": 0
+        }
+    },
+    {
+        "id": "10",
+        "type": "Modules",
+        "data": {
+            "id": "10",
+            "name": "Communication and Collaboration",
+            "description": "Facilitate team communication and collaboration",
+            "icon_name": "communication"
+        },
+        "position": {
+            "x": 2400,
+            "y": 0
+        }
+    },
+    {
+        "id": "11",
+        "type": "Modules",
+        "data": {
+            "id": "11",
+            "name": "Facility and Space Management",
+            "description": "Optimize the use of physical spaces and facilities",
+            "icon_name": "facility"
+        },
+        "position": {
+            "x": 2640,
+            "y": 0
+        }
+    },
+    {
+        "id": "12",
+        "type": "Modules",
+        "data": {
+            "id": "12",
+            "name": "Vendor and Supplier Management",
+            "description": "Manage vendor relationships and procurement processes",
+            "icon_name": "vendor"
+        },
+        "position": {
+            "x": 2880,
+            "y": 0
+        }
+    },
+    {
+        "id": "13",
+        "type": "Modules",
+        "data": {
+            "id": "13",
+            "name": "Asset and Equipment Management",
+            "description": "Track and maintain organizational assets and equipment",
+            "icon_name": "asset"
+        },
+        "position": {
+            "x": 3120,
+            "y": 0
+        }
+    },
+    {
+        "id": "14",
+        "type": "Modules",
+        "data": {
+            "id": "14",
+            "name": "Time and Attendance Tracking",
+            "description": "Monitor employee work hours and attendance",
+            "icon_name": "attendance"
+        },
+        "position": {
+            "x": 3360,
+            "y": 0
+        }
+    },
+    {
+        "id": "15",
+        "type": "Modules",
+        "data": {
+            "id": "15",
+            "name": "Employee Training and Development",
+            "description": "Plan and oversee employee training and skill development",
+            "icon_name": "training"
+        },
+        "position": {
+            "x": 3600,
+            "y": 0
+        }
+    },
+    {
+        "id": "16",
+        "type": "Modules",
+        "data": {
+            "id": "16",
+            "name": "Legal and Contract Management",
+            "description": "Handle legal documents and contract management",
+            "icon_name": "legal"
+        },
+        "position": {
+            "x": 3840,
+            "y": 0
+        }
+    },
+    {
+        "id": "17",
+        "type": "Modules",
+        "data": {
+            "id": "17",
+            "name": "Customer Support and Helpdesk",
+            "description": "Provide customer support and manage helpdesk services",
+            "icon_name": "helpdesk"
+        },
+        "position": {
+            "x": 4080,
+            "y": 0
+        }
+    },
+    {
+        "id": "18",
+        "type": "Modules",
+        "data": {
+            "id": "18",
+            "name": "Sustainability and Environmental Management",
+            "description": "Monitor and improve sustainability and environmental practices",
+            "icon_name": "sustainability"
+        },
+        "position": {
+            "x": 4320,
+            "y": 0
+        }
+    },
+    {
+        "id": "19",
+        "type": "Modules",
+        "data": {
+            "id": "19",
+            "name": "Research and Development (R&D)",
+            "description": "Manage innovation and research projects",
+            "icon_name": "research"
+        },
+        "position": {
+            "x": 4560,
+            "y": 0
+        }
+    },
+    {
+        "id": "20",
+        "type": "Modules",
+        "data": {
+            "id": "20",
+            "name": "Performance and KPI Management",
+            "description": "Measure and improve organizational performance",
+            "icon_name": "performance"
+        },
+        "position": {
+            "x": 4800,
+            "y": 0
+        }
+    },
+    {
+        "id": "21",
+        "type": "Modules",
+        "data": {
+            "id": "21",
+            "name": "Business Continuity and Disaster Recovery",
+            "description": "Plan for business continuity and disaster recovery",
+            "icon_name": "businesscontinuity"
+        },
+        "position": {
+            "x": 5040,
+            "y": 0
+        }
+    },
+    {
+        "id": "22",
+        "type": "Modules",
+        "data": {
+            "id": "22",
+            "name": "Intellectual Property Management",
+            "description": "Manage intellectual property assets and rights",
+            "icon_name": "ipmanagement"
+        },
+        "position": {
+            "x": 5280,
+            "y": 0
+        }
+    },
+    {
+        "id": "23",
+        "type": "Modules",
+        "data": {
+            "id": "23",
+            "name": "Social and Community Engagement",
+            "description": "Engage with the community and social responsibility initiatives",
+            "icon_name": "community"
+        },
+        "position": {
+            "x": 5520,
+            "y": 0
+        }
+    }
+]

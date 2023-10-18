@@ -122,7 +122,7 @@ const customTheme: CustomFlowbiteTheme = {
 	card: {
 		root: {
 			base: 'flex flex-col rounded-sm border border-gray-200 bg-white shadow-md dark:border-gray-700 dark:bg-gray-800',
-			children: 'flex h-full flex-col justify-center gap-4 p-2',
+			children: 'flex h-full flex-col justify-center gap-2 p-1',
 			horizontal: {
 				off: 'flex-col',
 				on: 'flex-col md:max-w-xl md:flex-row'

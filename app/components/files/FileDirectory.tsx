@@ -47,7 +47,6 @@ const FileDirectory: React.FC<FileDirectoryProps> = ({
 		}
 	};
 	const handleFileChange = (e: any) => {
-		console.log(e);
 		onChange(e);
 		//setFileContent(newCode);
 	};
@@ -61,7 +60,7 @@ const FileDirectory: React.FC<FileDirectoryProps> = ({
 					<li key={item.path}>
 						{item.isDirectory ? (
 							<div
-								className={`flex flex-row items-center justify-start cursor-pointer transition text-gray-700 dark:text-gray-50 hover:text-cyan-500 dark:hover:text-cyan-400 ${
+								className={`flex flex-row items-center justify-start cursor-pointer transition text-gray-50 dark:text-gray-50 hover:text-cyan-500 dark:hover:text-cyan-400 ${
 									clickedElements.has(item.name) ? 'expanded' : ''
 								}`}
 								onClick={() => handleFolderClick(item.name)}
@@ -82,7 +81,7 @@ const FileDirectory: React.FC<FileDirectoryProps> = ({
 							</div>
 						) : (
 							<div
-								className="flex flex-row items-center justify-start ml-5 cursor-pointer transition text-gray-700 dark:text-gray-50 hover:text-cyan-500 dark:hover:text-cyan-400"
+								className="flex flex-row items-center justify-start ml-5 cursor-pointer transition text-gray-50 dark:text-gray-50 hover:text-cyan-500 dark:hover:text-cyan-400"
 								onClick={() => onChange(item)}
 							>
 								<div className="flex mr-2 ">
@@ -102,7 +101,11 @@ const FileDirectory: React.FC<FileDirectoryProps> = ({
 			</ul>
 		);
 	};
-	return <div className="ml-1">{renderFileTree(directoryFiles)}</div>;
+	if (Array.isArray(directoryFiles)) {
+		return <div className="ml-1">{renderFileTree(directoryFiles)}</div>;
+	} else {
+		return <div className="ml-1">{renderFileTree([directoryFiles])}</div>;
+	}
 };
 
 export default FileDirectory;

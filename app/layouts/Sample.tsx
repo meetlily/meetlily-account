@@ -1,5 +1,5 @@
 import HTMLToJSXConverter from '../components/HTMLToJSXConverter';
-import { CodePreview } from '../components/modules/codeEditor/CodePreview';
+import { CodePreview } from '../components/applications/codeEditor/CodePreview';
 const htmlString = `<section className="bg-gray-50 dark:bg-gray-900 p-3 sm:p-5 antialiased">
 <div className="mx-auto max-w-screen-2xl px-4 lg:px-12">
     <div className="bg-white dark:bg-gray-800 relative shadow-md sm:rounded-lg overflow-hidden">

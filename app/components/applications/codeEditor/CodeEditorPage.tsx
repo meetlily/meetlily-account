@@ -13,11 +13,16 @@ const CodeEditorPage: React.FC<CodeEditorPageProps> = ({ code, language, onChang
 		setCodeData(newCode);
 		onChange(newCode);
 	};
-
+	const handleCodeMount = (newCode: string) => {};
 	return (
 		<div className="flex flex-row">
 			<CodeEditorWithFileTree />
-			<CodeEditor code={code} language={language} onChange={handleCodeChange} />
+			<CodeEditor
+				code={code}
+				language={language}
+				onChange={handleCodeChange}
+				onMount={handleCodeMount}
+			/>
 		</div>
 	);
 };

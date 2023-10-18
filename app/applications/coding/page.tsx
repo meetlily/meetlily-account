@@ -1,6 +1,6 @@
 import getCurrentUser from '@/app/actions/getCurrentUser';
+import CodeEditorWithFileTree from '@/app/components/applications/codeEditor/CodeEditorWithFileTree';
 import EmptyPage from '@/app/components/empty/EmptyPage';
-import CodeEditorWithFileTree from '@/app/components/modules/codeEditor/CodeEditorWithFileTree';
 import useFiles from '@/app/hooks/useFiles';
 import AdminLayout from '@/app/layouts/AdminLayout';
 
@@ -24,9 +24,13 @@ export default async function ApplicationPage() {
 				showSidebar={true}
 				showNavbar={true}
 				showNavbarSearch={true}
+				fluid={true}
 			>
 				{isAdmin ? (
-					<CodeEditorWithFileTree files={files.getAll}></CodeEditorWithFileTree>
+					<CodeEditorWithFileTree
+						files={files.getAll}
+						refresh={files.getAll}
+					></CodeEditorWithFileTree>
 				) : (
 					<EmptyPage />
 				)}

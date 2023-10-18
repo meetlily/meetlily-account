@@ -1,5 +1,6 @@
 'use client';
 
+import { Tooltip } from 'flowbite-react';
 import Link from 'next/link';
 import { OrganizationType } from '../types';
 import IconComponent from './icons/IconComponent';
@@ -79,11 +80,16 @@ const ButtonIcon: React.FC<ButtonIconProps> = ({
 	if (inline) {
 		c = 'row';
 	}
+	if (!label) {
+		label = 'no label';
+	}
 	return (
-		<button
-			id={id}
-			onClick={onClick}
-			className={`
+		<Tooltip content={label}>
+			<button
+				id={id}
+				onClick={onClick}
+				disabled={disabled}
+				className={`
 			rounded
 			transition
 			focus:outline-none focus:ring-4 focus:ring-gray-500 hover:bg-gray-100 dark:hover:bg-gray-700 dark:focus:ring-gray-100 hover:cursor-pointer
@@ -102,44 +108,46 @@ const ButtonIcon: React.FC<ButtonIconProps> = ({
 						: ''
 				}
 				${rounded ? 'rounded' : 'rounded-0'}
-				${disabled ? 'disabled' : ''}
+				
 				${isProcessing ? 'loading' : ''}
 				${shadow ? 'shadow' : 'shadow-none'}
 				${color && pill ? `text-${color}-50 bg-${color}-800 hover:bg-${color}-400` : ''}
 			`}
-		>
-			{icon && (
-				<div
-					className={`
+			>
+				{icon && (
+					<div
+						className={`
 					${inline && showLabel ? 'mr-2' : 'mr-0'}
 					button-icon 
 					${iconPosition}-1
 				`}
-				>
-					<IconComponent iconName={icon} size={iconSize} />
-				</div>
-			)}
-			{showLabel && (
-				<div
-					className={`
+					>
+						<IconComponent iconName={icon} size={iconSize} />
+					</div>
+				)}
+				{showLabel && (
+					<div
+						className={`
 				${inline ? 'mt-0 pr-2' : 'mt-1'}
 				font-semibold
+				capitalize
 				${color && pill ? `text-${color}-100 hover:text-${color}-800 hover:text-${color}-400` : ''}
 			`}
-					aria-hidden
-				>
-					{label}
-				</div>
-			)}
-			{description && (
-				<div
-					className="h-4 overflow-hidden  text-neutral-400 text-xs text-ellipsis text-center dark:text-neutral-500"
-					aria-hidden
-				>
-					{description}
-				</div>
-			)}
-		</button>
+						aria-hidden
+					>
+						{label}
+					</div>
+				)}
+				{description && (
+					<div
+						className="h-4 overflow-hidden  text-neutral-400 text-xs text-ellipsis text-center dark:text-neutral-500"
+						aria-hidden
+					>
+						{description}
+					</div>
+				)}
+			</button>
+		</Tooltip>
 	);
 };
 

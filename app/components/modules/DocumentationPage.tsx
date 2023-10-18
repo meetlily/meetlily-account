@@ -4,7 +4,7 @@ import { SafeUser } from '@/app/types';
 import documentationsData from '@/data/docs/documentation';
 import { useParams } from 'next/navigation';
 import { useState } from 'react';
-import { CodePreview } from './codeEditor/CodePreview';
+import { CodePreview } from '../applications/codeEditor/CodePreview';
 import GuidePage from './documentation/GuidePage';
 
 interface DocumentationPageProps {
