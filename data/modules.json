@@ -24,7 +24,7 @@
         },
         {
             "name": "Users",
-            "slug": "user",
+            "slug": "users",
             "short_description": "Manage user accounts and profiles.",
             "description": "The Users module provides tools and functionality for managing user accounts and profiles within an application. It includes features such as user registration, login, authentication, password reset, profile management, and user-related settings. Whether you're building a social networking platform, an e-commerce website, or a content management system, the Users module simplifies the process of handling user-related operations and ensuring a secure and personalized user experience.",
             "category": [

@@ -1,10 +1,12 @@
 'use  client';
+import useFlowNodeConfig from '@/app/hooks/useFlowNodeConfig';
 import useFormModal from '@/app/hooks/useFormModal';
 import axios from 'axios';
 import { useRouter } from 'next/navigation';
 import { useState } from 'react';
 import { FieldValues, SubmitHandler, useForm } from 'react-hook-form';
 import toast from 'react-hot-toast';
+import { ActionMeta, SingleValue } from 'react-select';
 import ButtonComponent from '../../Button';
 import AppIcons from '../../icons/AppIcons';
 import InputSelect from '../../inputs/InputSelect';
@@ -18,13 +20,15 @@ interface FormRenderFieldsProps {
 	fixed?: boolean;
 	type?: string;
 	module?: any;
+	showActionButton?: boolean;
 }
 const FormRenderFields: React.FC<FormRenderFieldsProps> = ({
 	fields,
 	values,
 	type,
 	module,
-	fixed
+	fixed,
+	showActionButton
 }) => {
 	// const foundData = formData?.find(
 	// 	(d: { formfieldId: string | undefined }) => d.formfieldId === fields?.id
@@ -37,25 +41,28 @@ const FormRenderFields: React.FC<FormRenderFieldsProps> = ({
 	const [formField, setFormField] = useState(fields);
 	const [selectedPaymentMethod, setSelectedPaymentMethod] = useState<string>('');
 	const formModal = useFormModal();
-
-	const handleSelectChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
-		const { name, value } = e.target;
-		if (name === 'paymentMethod') {
-			setSelectedPaymentMethod(e.target.value);
-			setFormData((prevData) => ({
-				...prevData,
-				[name]: value
-			}));
-		} else {
-			setFormData((prevData) => ({
-				...prevData,
-				[name]: value
-			}));
-		}
+	const nodeConfig = useFlowNodeConfig();
+	const handleSelectChange = (
+		newValue: SingleValue<string | number>,
+		actionMeta: ActionMeta<string | number>
+	) => {
+		console.log(newValue, actionMeta);
+		// const { name, value } = e.target;
+		// if (name === 'paymentMethod') {
+		// 	setSelectedPaymentMethod(e.target.value);
+		// 	setFormData((prevData) => ({
+		// 		...prevData,
+		// 		[name]: value
+		// 	}));
+		// } else {
+		// 	setFormData((prevData) => ({
+		// 		...prevData,
+		// 		[name]: value
+		// 	}));
+		// }
 	};
 	const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
-		const { name, value, type } = e.target;
-
+		const { name, value } = e.target;
 		setFormData((prevData) => ({
 			...prevData,
 			[name]: value
@@ -76,6 +83,7 @@ const FormRenderFields: React.FC<FormRenderFieldsProps> = ({
 		register,
 		reset,
 		handleSubmit,
+		setValue,
 		formState: { errors }
 	} = useForm<FieldValues>({
 		defaultValues: vData
@@ -135,32 +143,37 @@ const FormRenderFields: React.FC<FormRenderFieldsProps> = ({
 				});
 		}
 	};
+	const setCustomValue = (id: string, value: any) => {
+		setFormData((prevData) => ({
+			...prevData,
+			[id]: value
+		}));
+		setValue(id, value, { shouldValidate: true, shouldDirty: true, shouldTouch: true });
+	};
 	return (
 		<>
-			<div className="flex flex-col w-full h-full items-start justify-start min-h-[300px] pt-4 pb-14">
+			<div className="flex flex-col w-full h-full items-start justify-start min-h-[200px] pt-4 pb-4">
 				{fields?.map((field: any, i: any) => (
 					<div
 						key={i}
 						className="px-4 mb-4 flex flex-col md:flex-row items-center justify-start w-full"
 					>
 						<label
+							hidden={field.type === 'hidden'}
 							htmlFor={field.name}
-							className="flex flex-col text-sm w-full text-gray-800 dark:text-gray-50"
+							className={`${
+								field.type === 'hidden'
+									? 'hidden'
+									: 'flex flex-col text-sm w-full max-w-[80px] text-gray-800 dark:text-gray-50'
+							}`}
 						>
 							{field.label}
 						</label>
 						<div className="flex flex-col w-full">
 							{field.type === 'select' ? (
 								<InputSelect
-									id={field.name}
-									label={field.label}
-									name={field.name}
-									options={field.options}
-									register={register}
-									value={formData[field.name] || ''}
-									errors={errors}
-									required={field.required}
-									onChange={handleSelectChange}
+									value={field.value}
+									onChange={(value) => setCustomValue(field.name, value)}
 								/>
 							) : (
 								<>
@@ -171,10 +184,9 @@ const FormRenderFields: React.FC<FormRenderFieldsProps> = ({
 											name={field.name}
 											placeholder={field.placeholder}
 											register={register}
-											value={formData[field.name] || ''}
+											value={formData[field.name] || field.value}
 											errors={errors}
 											onChange={handleInputChange}
-											onToggle={handleToggleChange}
 										/>
 									) : (
 										<InputText
@@ -184,8 +196,7 @@ const FormRenderFields: React.FC<FormRenderFieldsProps> = ({
 											required={field.required}
 											register={register}
 											errors={errors}
-											value={formData[field.name] || ''}
-											label={field.label}
+											value={formData[field.name] || field.value}
 											placeholder={field.placeholder}
 											onChange={handleInputChange}
 											name={field.name}
@@ -201,7 +212,9 @@ const FormRenderFields: React.FC<FormRenderFieldsProps> = ({
 						fixed
 							? 'relative'
 							: 'absolute bottom-0 left-0 right-0 px-6 py-2 bg-white border-gray-200 border-t dark:bg-gray-700 dark:border-gray-600'
-					} z-50  flex flex-row gap-4 mt-2 `}
+					} z-50   gap-4 mt-2 
+					${showActionButton ? 'flex flex-row' : 'hidden'}
+					`}
 				>
 					<ButtonComponent
 						isProcessing={isLoading}
@@ -215,7 +228,7 @@ const FormRenderFields: React.FC<FormRenderFieldsProps> = ({
 					/>
 					<ButtonComponent
 						label={'Cancel'}
-						onClick={formModal.onClose}
+						onClick={nodeConfig.onClose}
 						classNames="px-4 pl-2 bg-gray-50 text-gray-600"
 						color="gray"
 						size="sm"

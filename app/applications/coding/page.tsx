@@ -3,7 +3,7 @@ import CodeEditorWithFileTree from '@/app/components/applications/codeEditor/Cod
 import EmptyPage from '@/app/components/empty/EmptyPage';
 import useFiles from '@/app/hooks/useFiles';
 import AdminLayout from '@/app/layouts/AdminLayout';
-
+import EditorConfig from './config';
 export default async function ApplicationPage() {
 	const currentUser = await getCurrentUser();
 	const files = useFiles();
@@ -28,6 +28,7 @@ export default async function ApplicationPage() {
 			>
 				{isAdmin ? (
 					<CodeEditorWithFileTree
+						config={EditorConfig}
 						files={files.getAll}
 						refresh={files.getAll}
 					></CodeEditorWithFileTree>

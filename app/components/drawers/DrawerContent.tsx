@@ -3,6 +3,7 @@ import React, { useCallback, useEffect, useState } from 'react';
 
 interface DrawerContentProps {
 	isOpen: boolean;
+	dismissable?: boolean;
 	onClose?: () => void;
 	onOpen?: () => void;
 	id?: string;
@@ -25,6 +26,7 @@ interface DrawerContentProps {
 }
 const DrawerContent: React.FC<DrawerContentProps> = ({
 	isOpen,
+	dismissable,
 	onClose,
 	onOpen,
 	title,
@@ -68,6 +70,11 @@ const DrawerContent: React.FC<DrawerContentProps> = ({
 		// 	translate = `translate-x-${width}`;
 		// }
 	}
+	const handleClose = () => {
+		if (dismissable) {
+			//setShowDrawer(false);
+		}
+	};
 	const handlePrimaryAction = useCallback(() => {
 		if (disabled || !primaryAction) {
 			return;
@@ -91,14 +98,14 @@ const DrawerContent: React.FC<DrawerContentProps> = ({
 			${borderPos}
 			${showDrawer ? 'translate-x-0' : translate} 
 			fixed 
-			z-[42]
+			z-[51]
 			rounded-0
-			h-screen 
+			h-full 
 			transition-transform 
 		    py-10	
 			border-gray-200 
-			dark:bg-gray-800 
-			dark:border-gray-700 
+			dark:bg-gray-900 
+			dark:border-gray-800 
 			duration-300 
 			ease-in-out
 			
@@ -106,7 +113,7 @@ const DrawerContent: React.FC<DrawerContentProps> = ({
 				aria-label={title}
 				id={id}
 			>
-				{header && <div className="flex absolute top-0 left-0 w-full">{header}</div>}
+				{header && <div className="flex absolute top-0 left-0 w-full bg-gray-800">{header}</div>}
 				{body && <div className="overflow-y-auto h-full">{body}</div>}
 				{footer && <div className="flex absolute bottom-0 left-0 w-full">{footer}</div>}
 			</div>

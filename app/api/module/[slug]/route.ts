@@ -67,7 +67,7 @@ export async function POST(request: Request) {
 				name,
 				description,
 				enabled,
-				settings,
+
 				externalLink,
 				User: {
 					connect: {
@@ -90,12 +90,76 @@ export async function POST(request: Request) {
 			name,
 			description,
 			enabled,
-			settings,
+
 			externalLink,
 
 			User: {
 				connect: {
 					id: currentUser.id
+				}
+			}
+		}
+	});
+	return NextResponse.json(mod);
+}
+export async function PUT(request: any, response: any) {
+	const body = await request.json();
+	const currentUser = await getCurrentUser();
+	if (!currentUser) {
+		// User is not authenticated, return an unauthorized response
+		return new NextResponse('Unauthorized', { status: 401 });
+	}
+	// const { ide } = response.params;
+	// const b = {
+	// 	...body,
+	// 	id: ide
+	// };
+	if (!body.id) {
+		body.id = randomUUID();
+		const { id, slug, name, description, enabled, settings, externalLink } = body;
+		const mod = await prisma.module.create({
+			data: {
+				id,
+				slug,
+				name,
+				description,
+				enabled,
+				externalLink,
+				User: {
+					connect: {
+						id: currentUser.id
+					}
+				},
+				Organization: {
+					connect: {
+						id: currentUser.Organization[0].id
+					}
+				}
+			}
+		});
+		return NextResponse.json(mod);
+	}
+	const { id, slug, name, description, enabled, settings, externalLink } = body;
+	const mod = await prisma.module.update({
+		where: {
+			id: id
+		},
+		data: {
+			id,
+			slug,
+			name,
+			description,
+			enabled,
+
+			externalLink,
+			User: {
+				connect: {
+					id: currentUser.id
+				}
+			},
+			Organization: {
+				connect: {
+					id: currentUser.Organization[0].id
 				}
 			}
 		}

@@ -56,6 +56,8 @@ const NewsletterForm = () => {
 						register={register}
 						errors={errors}
 						required
+						name={'to'}
+						onChange={() => {}}
 					/>
 				</div>
 				<div className="mt-0 sm:mt-0 mb-3 sm:ml-3">

@@ -159,7 +159,7 @@ export const authOptions: AuthOptions = {
 						Module: false // Include the Organization of the user
 					}
 				});
-				console.log(user, 'user credentials');
+
 				if (!user || !user?.hashedPassword) {
 					throw new Error('Invalid credentials');
 				}

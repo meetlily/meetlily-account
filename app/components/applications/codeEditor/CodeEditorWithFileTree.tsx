@@ -16,8 +16,13 @@ import MarkdownPreviewer from './MarkdownPreviewer';
 interface CodeEditorWithFileTreeProps {
 	files?: any;
 	refresh?: () => void;
+	config?: any;
 }
-const CodeEditorWithFileTree: React.FC<CodeEditorWithFileTreeProps> = ({ files, refresh }) => {
+const CodeEditorWithFileTree: React.FC<CodeEditorWithFileTreeProps> = ({
+	files,
+	refresh,
+	config
+}) => {
 	const [fileTree, setFileTree] = useState<any[]>(files);
 	const [file, setFile] = useState<any>({});
 	const [hasChange, setHasChange] = useState(false);
@@ -241,6 +246,7 @@ const CodeEditorWithFileTree: React.FC<CodeEditorWithFileTreeProps> = ({ files, 
 							<div className="flex w-full h-full bg-black overflow-scroll p-1 border border-gray-700">
 								<div className="flex flex-col items-center justify-center w-full h-full overflow-hidden">
 									<CodeEditor
+										options={config}
 										className={`h-full w-full`}
 										code={fileContent}
 										language={language}

@@ -11,6 +11,12 @@ export async function POST(request: Request) {
 			// User is not authenticated, return an unauthorized response
 			return new NextResponse('Unauthorized', { status: 401 });
 		}
+		const queryParams = new URL(request.url).searchParams;
+		const f: string | null = queryParams.get('fields');
+		if (f) {
+			const allowedFields = prisma.role.fields;
+			return NextResponse.json(allowedFields);
+		}
 		if (typeof body === 'object') {
 			const role = await prisma.role.create({ data: body });
 			return NextResponse.json(role);

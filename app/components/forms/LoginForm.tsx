@@ -40,7 +40,7 @@ const LoginForm: React.FC<LoginFormProps> = ({ currentUser }) => {
 			password: ''
 		}
 	});
-	const onSubmit: SubmitHandler<FieldValues> = (data, provider: any) => {
+	const onSubmit: SubmitHandler<FieldValues> = (data) => {
 		NProgress.start();
 		signIn('credentials', {
 			...data,
@@ -76,7 +76,16 @@ const LoginForm: React.FC<LoginFormProps> = ({ currentUser }) => {
                 gap-4
             "
 		>
-			<Input id="email" type="email" label="Email" register={register} errors={errors} required />
+			<Input
+				id="email"
+				type="email"
+				label="Email"
+				register={register}
+				errors={errors}
+				required
+				name={'email'}
+				onChange={() => {}}
+			/>
 			<Input
 				id="password"
 				type="password"
@@ -84,6 +93,8 @@ const LoginForm: React.FC<LoginFormProps> = ({ currentUser }) => {
 				register={register}
 				errors={errors}
 				required
+				name={'password'}
+				onChange={() => {}}
 			/>
 		</div>
 	);

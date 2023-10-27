@@ -49,11 +49,10 @@ export async function getUsers() {
 	try {
 		const data = await prisma.user.findMany({
 			include: {
-				Module: true,
-				Formdata: true,
-				Formfield: true,
+				Accounts: true,
+				Role: true,
 				Organization: true,
-				Accounts: true
+				Module: true
 			}
 		});
 		return data;

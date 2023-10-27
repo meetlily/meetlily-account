@@ -62,7 +62,7 @@ const DatabaseConfiguration: React.FC = () => {
 						type={field.type}
 						name={field.name}
 						value={formData[field.name] || ''}
-						onChange={handleChange}
+						//onChange={handleChange}
 						required={field.required || false}
 					/>
 				))}

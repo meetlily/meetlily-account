@@ -12,31 +12,33 @@ export type CountrySelectValue = {
 };
 
 interface CountrySelectProps {
-	value?: CountrySelectValue;
+	value: CountrySelectValue;
 	onChange: (value: CountrySelectValue) => void;
+	className?: string;
 }
 
-const CountrySelect: React.FC<CountrySelectProps> = ({ value, onChange }) => {
+const CountrySelect: React.FC<CountrySelectProps> = ({ value, onChange, className }) => {
 	const { getAll } = useCountries();
 
 	return (
 		<div>
 			<Select
-				placeholder="Anywhere"
+				placeholder="Select Country"
+				className={className}
 				isClearable
 				options={getAll()}
 				value={value}
 				onChange={(value) => onChange(value as CountrySelectValue)}
 				formatOptionLabel={(option: any) => (
-					<div className="flex flex-row items-center gap-3">
-						<div>{option.label}</div>
+					<div className="flex flex-row items-center gap-3 w-full">
+						<div>{option.flag}</div>
 						<div>
 							{option.label},<span className="text-neutral-500 ml-1">{option.region}</span>
 						</div>
 					</div>
 				)}
 				classNames={{
-					control: () => 'p-3 border-2',
+					control: () => 'p-1 border-2',
 					input: () => 'text-lg',
 					option: () => 'text-lg'
 				}}

@@ -1,187 +1,168 @@
 'use client';
+import { Metadata } from 'next';
 
-import { SafeUser } from '@/app/types';
-import administrationData from '@/data/administration.json';
-import sidebar from '@/data/sidebar.json';
-import { useRouter } from 'next/navigation';
-import { useRef } from 'react';
-import CardIcon from './CardIcon';
+import { CalendarDateRangePicker } from '@/app/dashboard/components/date-range-picker';
+import { MainNav } from '@/app/dashboard/components/main-nav';
+import { Overview } from '@/app/dashboard/components/overview';
+import { Search } from '@/app/dashboard/components/search';
+import TeamSwitcher from '@/app/dashboard/components/team-switcher';
+import { UserNav } from '@/app/dashboard/components/user-nav';
+import { CardContent, CardDescription, CardHeader, CardTitle } from '@/registry/new-york/ui/card';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/registry/new-york/ui/tabs';
+import { Button, Card } from '@radix-ui/themes';
 
-import { Card } from 'flowbite-react';
-import ButtonIcon from './ButtonIcon';
-import Heading from './Heading';
-import ModuleLists from './modules/ModuleLists';
-interface DashboardProps {
-	currentUser?: SafeUser | null;
+import { RecentMembers } from '@/app/dashboard/components/recent-members';
+import IconComponent from './icons/IconComponent';
+
+export const metadata: Metadata = {
+	title: 'Dashboard',
+	description: 'Example dashboard app built using the components.'
+};
+interface DashboardPageProps {
+	currentUser: any;
+	analytics?: any;
 }
 
-const Dashboard: React.FC<DashboardProps> = ({ currentUser }) => {
-	const router = useRouter();
-
-	const iconSize = 36;
-	const scrollRef = useRef<HTMLDivElement>(null);
-	if (!currentUser) {
-		router.push('/sign-in');
-	}
-	const scrollToBottom = () => {
-		if (scrollRef.current) {
-			scrollRef.current.scrollTop = scrollRef.current.scrollHeight;
-		}
-	};
-
+export default function DashboardPage({ currentUser, analytics }: DashboardPageProps) {
+	console.log(analytics);
 	return (
 		<>
-			<div className="flex flex-col mt-2">
-				<Heading title="Dashboard" showOptionButton iconName="dashboard" enableSearch />
-			</div>
-
-			<div className="flex flex-col lg:flex-row gap-4">
-				<div className="flex flex-col">
-					<div
-						className="
-						flex flex-col md:flex-row h-full w-full  gap-4 mt-4
-					"
-					>
-						<div
-							className="
-						flex flex-col h-full w-full 
-					"
-						>
-							<Card>
-								<ButtonIcon
-									icon={'organizations'}
-									size={'text-lg lg:text-2xl'}
-									iconSize={80}
-									showLabel
-									label="My Organization"
-								/>
-							</Card>
-						</div>
-						<div
-							className="
-						flex flex-col h-full w-full 
-					"
-						>
-							<Card>
-								<ButtonIcon
-									icon={'user'}
-									size={'text-lg lg:text-2xl'}
-									iconSize={80}
-									showLabel
-									label="My Account"
-								/>
-							</Card>
-						</div>
-						<div
-							className="
-						flex flex-col h-full w-full 
-					"
-						>
-							<Card>
-								<ButtonIcon
-									icon={'cog'}
-									size={'text-lg lg:text-2xl'}
-									iconSize={80}
-									showLabel
-									label="My Settings"
-								/>
-							</Card>
+			<div className="hidden flex-col md:flex ">
+				<div className="border-b dark:border-gray-700">
+					<div className="flex h-16 items-center px-4">
+						<TeamSwitcher currentUser={currentUser} />
+						<MainNav className="mx-6" />
+						<div className="ml-auto flex items-center space-x-4">
+							<Search />
+							<UserNav currentUser={currentUser} />
 						</div>
 					</div>
-					<div
-						className="
-						flex flex-col h-full w-full items-center justify-center mt-2
-					"
-					>
-						<Card>
-							<div
-								className="
-				
-						grid
-						grid-cols-3
-						md:grid-cols-6
-						gap-4
-						md:gap-5
-						lg:gap-6
-						xl:gap-7
-						max-w-[600px]
-						md:max-w-[1024px]
-						lg:max-w-[1280px]
-						xl:max-w-[1920px]
-						2xl:max-w-[2500px]"
-							>
-								{administrationData.administration.map((admin, i) => (
-									<>
-										<CardIcon
-											module={admin}
-											key={admin.slug}
-											iconSize={iconSize}
-											label={admin.name}
-											iconName={admin.icon_name}
-											buttonId={`${admin.slug}-button`}
-											contentId={`${admin.slug}-content`}
-											description={admin.description}
-											onClick={() => router.push(`/admin/${admin.slug}`)}
-											showPopover={true}
-										/>
-									</>
-								))}
+				</div>
+				<div className="flex-1 space-y-4 p-8">
+					<div className="flex items-center justify-between space-y-2">
+						<h2 className="text-3xl font-bold tracking-tight">Dashboard</h2>
+						<div className="flex items-center space-x-2 ">
+							<CalendarDateRangePicker />
+							<Button variant="soft">Download</Button>
+						</div>
+					</div>
+					<Tabs color="soft" defaultValue="overview" className="space-y-4">
+						<TabsList>
+							<TabsTrigger value="overview">Overview</TabsTrigger>
+							<TabsTrigger value="analytics" disabled>
+								Analytics
+							</TabsTrigger>
+							<TabsTrigger value="reports" disabled>
+								Reports
+							</TabsTrigger>
+							<TabsTrigger value="notifications" disabled>
+								Notifications
+							</TabsTrigger>
+						</TabsList>
+						<TabsContent value="overview" className="space-y-4">
+							<div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+								<Card variant="classic" className="relative">
+									<CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+										<CardTitle className="text-sm font-medium">Total Sessions</CardTitle>
+										<div className="flex absolute top-10 right-6 w-1/2 h-full">
+											<IconComponent iconName="group" size={70} />
+										</div>
+									</CardHeader>
+									<CardContent>
+										<div className="text-7xl font-bold">12</div>
+										<p className="text-xs text-muted-foreground">+20.1% from last month</p>
+									</CardContent>
+								</Card>
+								<Card>
+									<CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+										<CardTitle className="text-sm font-medium">Subscriptions</CardTitle>
+										<svg
+											xmlns="http://www.w3.org/2000/svg"
+											viewBox="0 0 24 24"
+											fill="none"
+											stroke="currentColor"
+											strokeLinecap="round"
+											strokeLinejoin="round"
+											strokeWidth="2"
+											className="h-4 w-4 text-muted-foreground"
+										>
+											<path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
+											<circle cx="9" cy="7" r="4" />
+											<path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75" />
+										</svg>
+									</CardHeader>
+									<CardContent>
+										<div className="text-2xl font-bold">+2350</div>
+										<p className="text-xs text-muted-foreground">+180.1% from last month</p>
+									</CardContent>
+								</Card>
+								<Card>
+									<CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+										<CardTitle className="text-sm font-medium">Members</CardTitle>
+										<svg
+											xmlns="http://www.w3.org/2000/svg"
+											viewBox="0 0 24 24"
+											fill="none"
+											stroke="currentColor"
+											strokeLinecap="round"
+											strokeLinejoin="round"
+											strokeWidth="2"
+											className="h-4 w-4 text-muted-foreground"
+										>
+											<rect width="20" height="14" x="2" y="5" rx="2" />
+											<path d="M2 10h20" />
+										</svg>
+									</CardHeader>
+									<CardContent>
+										<div className="text-2xl font-bold">+12,234</div>
+										<p className="text-xs text-muted-foreground">+19% from last month</p>
+									</CardContent>
+								</Card>
+								<Card>
+									<CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+										<CardTitle className="text-sm font-medium">Active Now</CardTitle>
+										<svg
+											xmlns="http://www.w3.org/2000/svg"
+											viewBox="0 0 24 24"
+											fill="none"
+											stroke="currentColor"
+											strokeLinecap="round"
+											strokeLinejoin="round"
+											strokeWidth="2"
+											className="h-4 w-4 text-muted-foreground"
+										>
+											<path d="M22 12h-4l-3 9L9 3l-3 9H2" />
+										</svg>
+									</CardHeader>
+									<CardContent>
+										<div className="text-2xl font-bold">+573</div>
+										<p className="text-xs text-muted-foreground">+201 since last hour</p>
+									</CardContent>
+								</Card>
 							</div>
-						</Card>
-					</div>
+							<div className="grid gap-4 md:grid-cols-2 lg:grid-cols-7">
+								<Card className="col-span-4">
+									<CardHeader>
+										<CardTitle>Overview</CardTitle>
+									</CardHeader>
+									<CardContent className="pl-2">
+										<Overview analytics={analytics} />
+									</CardContent>
+								</Card>
+								<Card className="col-span-3">
+									<CardHeader>
+										<CardTitle>New Members</CardTitle>
+										<CardDescription>265 new members this month</CardDescription>
+									</CardHeader>
+									<CardContent>
+										<RecentMembers />
+									</CardContent>
+								</Card>
+							</div>
+						</TabsContent>
+					</Tabs>
 				</div>
-				<div
-					className="
-						flex flex-col h-full lg:w-1/4 items-center justify-center mt-4
-					"
-				>
-					<Card className="p-2">
-						<div
-							className="
-				
-						grid
-						grid-cols-3
-						md:grid-cols-2
-						gap-4
-						md:gap-5
-						lg:gap-6
-						xl:gap-7
-						max-w-[600px]
-						md:max-w-[1024px]
-						lg:max-w-[1280px]
-						xl:max-w-[1920px]
-						2xl:max-w-[2500px]"
-						>
-							{sidebar.map((admin, i) => (
-								<>
-									<CardIcon
-										module={admin}
-										key={admin.name}
-										iconSize={iconSize}
-										label={admin.name}
-										iconName={admin.icon_name}
-										buttonId={`${admin.name}-button`}
-										contentId={`${admin.name}-content`}
-										onClick={() => router.push(`/admin/${admin.name}`)}
-									/>
-								</>
-							))}
-						</div>
-					</Card>
-				</div>
-			</div>
-			<div
-				className="
-						flex flex-col h-full w-full items-start justify-center mt-4
-					"
-			>
-				<Card className="p-2">
-					<Heading title="Modules" />
-					<ModuleLists />
-				</Card>
 			</div>
 		</>
 	);
-};
-
-export default Dashboard;
+}

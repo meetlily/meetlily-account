@@ -1,13 +1,6 @@
 'use client';
 
-import { Avatar, Badge } from 'flowbite-react';
-import {
-	JSXElementConstructor,
-	PromiseLikeOfReactNode,
-	ReactElement,
-	ReactNode,
-	ReactPortal
-} from 'react';
+import { Avatar } from 'flowbite-react';
 interface AvatarOrganizationProps {
 	image?: string;
 	organization?: any;
@@ -22,33 +15,18 @@ const AvatarOrganization: React.FC<AvatarOrganizationProps> = ({
 }) => {
 	return (
 		<>
-			<Avatar size={size} rounded={rounded} img={'https://www.meetlily.net/favicon.ico'}>
-				<div className="space-y-0 font-medium dark:text-white">
-					<div>Meetlily Advertising</div>
-					<div className="text-sm text-gray-500 dark:text-gray-400">Software Company</div>
+			{organization?.Organization &&
+				organization?.Organization.map((org: any) => (
 					<>
-						{organization?.Role &&
-							organization?.Role.map(
-								(role: {
-									name:
-										| string
-										| number
-										| boolean
-										| ReactElement<any, string | JSXElementConstructor<any>>
-										| Iterable<ReactNode>
-										| ReactPortal
-										| PromiseLikeOfReactNode
-										| null
-										| undefined;
-								}) => {
-									<Badge>
-										<p>{role?.name}</p>
-									</Badge>;
-								}
-							)}
+						{organization.Default.data.organizationId === org.id && (
+							<Avatar size={size} rounded={rounded} img={org?.logo}>
+								<div className="space-y-0 font-medium dark:text-white"></div>
+								<div className="text-lg">{org?.name}</div>
+								<div className="text-sm text-gray-500 dark:text-gray-400">{org?.industry}</div>
+							</Avatar>
+						)}
 					</>
-				</div>
-			</Avatar>
+				))}
 		</>
 	);
 };

@@ -16,6 +16,10 @@ export async function GET(request: any, response: any) {
 		const data = await prisma.user.findUnique({
 			where: {
 				id: id
+			},
+			include: {
+				Role: true,
+				Organization: true
 			}
 		});
 		if (currentUser && currentUser?.Role.length > 0) {
@@ -68,4 +72,25 @@ export async function DELETE(request: any, response: any) {
 		//return new NextResponse(errorMessage, { status: 500 });
 		return NextResponse.json({ error: error, status: 500 });
 	}
+}
+export async function PUT(request: any, response: any) {
+	const body = await request.json();
+	const currentUser = await getCurrentUser();
+	if (!currentUser) {
+		// User is not authenticated, return an unauthorized response
+		return new NextResponse('Unauthorized', { status: 401 });
+	}
+	const { id } = response.params;
+	// const b = {
+	// 	...body,
+	// 	id: ide
+	// };
+
+	const mod = await prisma.user.update({
+		where: {
+			id: id
+		},
+		data: body
+	});
+	return NextResponse.json(mod);
 }

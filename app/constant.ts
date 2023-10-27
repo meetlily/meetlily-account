@@ -9,3 +9,6 @@ export enum Path {
 export enum SlotID {
 	AppBody = 'app-body'
 }
+export enum CONFIG {
+	NumList = 6
+}

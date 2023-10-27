@@ -24,7 +24,6 @@ const SidebarNav: React.FC<SidebarNavProps> = ({ currentUser, data }) => {
 	const [isActive, setIsActive] = useState();
 	useEffect(() => {
 		//NProgress.done();
-		console.log(pathname, 'pathname');
 		return () => {
 			//NProgress.start();
 		};
@@ -45,7 +44,7 @@ const SidebarNav: React.FC<SidebarNavProps> = ({ currentUser, data }) => {
 	return (
 		<>
 			<Sidebar aria-label="Sidebar Navigation">
-				<div className="py-4 mb-2 border-b w-full bg-gray-50 dark:border-gray-700 dark:bg-gray-800">
+				<div className="absolute top-0 left-0 py-4 mb-2 border-b w-full bg-gray-50 dark:border-gray-700 dark:bg-gray-800">
 					<AvatarOrganization
 						organization={currentUser}
 						image={currentUser?.image || '/images/placeholder.jpg'}

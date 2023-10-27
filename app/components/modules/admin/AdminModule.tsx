@@ -1,17 +1,15 @@
 'use client';
 
 import useInstallModuleModal from '@/app/hooks/useInstallModuleModal';
-import useModuleOptionDrawer from '@/app/hooks/useModuleOptionDrawer';
 import { SafeUser } from '@/app/types';
 import { LocalModule } from '@/app/types/module';
 import { Formfield, Module } from '@prisma/client';
 import { JsonValue } from '@prisma/client/runtime/library';
-import { Card } from 'flowbite-react';
-import ButtonGroup from 'flowbite-react/lib/esm/components/Button/ButtonGroup';
-import { useParams, usePathname, useRouter } from 'next/navigation';
-import ButtonIcon from '../../ButtonIcon';
-import Heading from '../../Heading';
-import InstallModuleModal from '../../modals/InstallModuleModal';
+import axios from 'axios';
+import { useParams, usePathname } from 'next/navigation';
+import NProgress from 'nprogress';
+import 'nprogress/nprogress.css';
+import { useEffect, useState } from 'react';
 import AdminModuleLists from './AdminModuleLists';
 
 interface FormData {
@@ -35,6 +33,7 @@ interface AdminModuleProps {
 	currentUser?: SafeUser | null;
 	organization?: any;
 	dbModules?: any;
+	rapid?: any;
 }
 
 const AdminModule: React.FC<AdminModuleProps> = ({
@@ -44,88 +43,41 @@ const AdminModule: React.FC<AdminModuleProps> = ({
 	users,
 	currentUser,
 	organization,
-	dbModules
+	dbModules,
+	rapid
 }) => {
-	const router = useRouter();
 	const params = useParams();
-	const pathName = usePathname();
-	const moduleOptionDrawer = useModuleOptionDrawer();
-	const installModuleModal = useInstallModuleModal();
-	//console.log(params, 'params');
-	const paths = pathName?.split('/');
-	if (params?.slug) {
-		const foundModule = currentUser?.Module?.find((item: any) => item.slug === params?.slug);
-		const foundLocalModule = modules?.find((item: any) => item.slug === params?.slug);
-		if (params?.slug === 'module') {
-			return <AdminModuleLists currentUser={currentUser} fields={dbModules} />;
-		}
-		if (params?.slug === 'organization') {
-			return <AdminModuleLists currentUser={currentUser} modules={modules} fields={organization} />;
-		}
-		if (params?.slug === 'user') {
-			return <AdminModuleLists currentUser={currentUser} modules={modules} fields={users} />;
-		}
-		//console.log(foundLocalModule, foundModule);
-		if (!foundModule) {
-			return (
-				<>
-					<div className="flex flex-col items-center justify-center">
-						<Card className="mt-10 p-6 w-1/4 mx-auto rounded-lg">
-							<h2 className="text-lg my-4">
-								Would you like to install{' '}
-								<span className="capitalize">{foundLocalModule?.name}</span> module?
-							</h2>
-							<ButtonGroup className="gap-4">
-								<ButtonIcon
-									icon="install"
-									iconSize={26}
-									size="text-lg"
-									showLabel
-									label="Install"
-									inline
-									outline
-									rounded
-									pill
-									shadow
-									onClick={installModuleModal.onOpen}
-									classNames="bg-red-500 text-white hover:bg-red-600 px-6 py-4"
-								/>
-								<ButtonIcon
-									icon="close"
-									iconSize={26}
-									size="text-lg"
-									showLabel
-									label="Cancel"
-									inline
-									rounded
-									outline
-									shadow
-									onClick={() => router.back()}
-									classNames="bg-gray-50 text-black px-6 py-4"
-								/>
-							</ButtonGroup>
-						</Card>
-					</div>
+	const [data, setData] = useState<any>();
 
-					<InstallModuleModal module={foundLocalModule} />
-				</>
-			);
-		}
+	const installModuleModal = useInstallModuleModal();
+	const pathName = usePathname();
+	const paths = pathName?.split('/');
+	const endpoint = `/api/${params?.slug}`;
+	useEffect(() => {
+		axios
+			.get(endpoint)
+			.then((response) => {
+				setData(response.data);
+			})
+			.catch((err) => err);
+		NProgress.done();
+		return () => {
+			NProgress.start();
+		};
+	}, [endpoint]);
+
+	if (!params?.slug) {
+		return null;
 	}
 
+	const foundModule = currentUser?.Module?.find((item: any) => item.slug === params?.slug);
 	const foundMe = paths?.find((item: string) => item === 'me');
 
-	return (
-		<>
-			<div className="flex flex-col w-full">
-				<Heading
-					title={`${foundMe ? 'My ' : ''}${params?.slug || ''}`}
-					showOptionButton
-					showAddButton
-				/>
-			</div>
-		</>
-	);
+	// if (!data) {
+	// 	return <ModuleInstall modules={modules} />;
+	// }
+
+	return <>{data && <AdminModuleLists loadData={data} />}</>;
 };
 
 export default AdminModule;

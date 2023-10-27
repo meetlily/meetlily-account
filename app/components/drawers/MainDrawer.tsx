@@ -36,7 +36,7 @@ const MainDrawer: React.FC<MainDrawerProps> = ({ currentUser, data }) => {
 	);
 	return (
 		<Sidebar aria-label="Account Navigation">
-			<div className="py-4 mb-2 border-b w-full bg-gray-50 dark:border-gray-700 dark:bg-gray-800">
+			<div className="absolute top-0 left-0 py-4 mb-2 border-b w-full bg-gray-50 dark:border-gray-700 dark:bg-gray-800">
 				<AvatarText
 					currentUser={currentUser}
 					image={currentUser?.image || '/images/placeholder.jpg'}

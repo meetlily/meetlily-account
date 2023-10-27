@@ -10,18 +10,6 @@ export async function getSession() {
 	return await getServerSession(authOptions);
 }
 
-export async function getAccountsByUserId(id: string) {
-	try {
-		const data = await prisma.account.findMany({
-			where: {
-				userId: id as string
-			}
-		});
-		return data;
-	} catch (error) {
-		throw error;
-	}
-}
 export async function getUserProfileByUserId(id: string) {
 	try {
 		const data = await prisma.user.findMany({
@@ -135,7 +123,7 @@ export default async function getCurrentUser() {
 			await prisma.organization.create({
 				data: {
 					slug: 'meetlily',
-					name: 'Meetlily Advertising',
+					name: 'Meetlily',
 					User: {
 						connect: {
 							id: currentUser.id

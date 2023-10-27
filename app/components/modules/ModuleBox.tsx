@@ -31,7 +31,7 @@ interface ModuleBoxProps {
 	contentId?: string | null;
 	buttonId?: string | null;
 	installed?: boolean;
-	onClick?: () => void;
+	onClick?: (item: any) => void;
 }
 
 const ModuleBox: React.FC<ModuleBoxProps> = ({

@@ -26,12 +26,37 @@ body,
 	--tw-bg-opacity: 1;
 	background-color: rgb(31 41 55 / var(--tw-bg-opacity)) !important;
 }
+
 .dot-bg {
-	--bg-color: #000;
-	--line-color-1: #ccc;
-	--line-color-2: #f5f5f5;
+	--tw-bg-opacity: 1;
+	--bg-color: #ccc;
+	--line-color-1: rgb(249 250 251 / var(--tw-bg-opacity));
+	--line-color-2: rgb(209 213 219 / var(--tw-bg-opacity));
 
 	background-color: var(--bg-color);
-	background-image: radial-gradient(var(--line-color-1) 1px, var(--line-color-2) 1px);
-	background-size: 4px 4px;
+	background-image: radial-gradient(var(--line-color-2) 1px, var(--line-color-1) 1px);
+	background-size: 5px 5px;
+}
+.dark.dot-bg,
+.dark .dot-bg {
+	--tw-bg-opacity: 1;
+	--bg-color: #ccc;
+	--line-color-1: rgb(17 24 39 / var(--tw-bg-opacity));
+	--line-color-2: rgb(31 41 55 / var(--tw-bg-opacity));
+
+	background-color: var(--bg-color);
+	background-image: radial-gradient(var(--line-color-2) 1px, var(--line-color-1) 1px);
+	background-size: 5px 5px;
+}
+/* .react-flow__minimap {
+	border: 1px solid #999;
+	border-radius: 10px;
+} */
+.react-flow__attribution {
+	display: none;
+}
+.bg-popover {
+	--tw-bg-opacity: 1;
+	--line-color-1: rgb(17 24 39 / var(--tw-bg-opacity));
+	background-color: rgb(17 24 39 / var(--tw-bg-opacity));
 }

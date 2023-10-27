@@ -1,27 +1,15 @@
 'use client';
 
-import { FieldErrors, FieldValues, UseFormRegister } from 'react-hook-form';
+import { InputProps } from '@/app/types/form';
 import { BiDollar } from 'react-icons/bi';
 
-interface InputProps {
-	id: string;
-	label: string;
-	type?: string;
-	helperText?: string;
-	placeholder?: string;
-	disabled?: boolean;
-	formatPrice?: boolean;
-	required?: boolean;
-	value?: string | number | readonly string[] | undefined;
-	register: UseFormRegister<FieldValues>;
-	errors: FieldErrors;
-	onChange?: (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => void;
-}
 const Input: React.FC<InputProps> = ({
 	id,
 	label,
+	name,
 	type,
 	placeholder,
+	iconName,
 	helperText,
 	disabled,
 	formatPrice,
@@ -29,7 +17,12 @@ const Input: React.FC<InputProps> = ({
 	value,
 	register,
 	errors,
-	onChange
+	onChange,
+	displayCondition,
+	checked,
+	rounded,
+	transparent,
+	borderLine
 }) => {
 	return (
 		<div className="w-full relative">
@@ -44,6 +37,7 @@ const Input: React.FC<InputProps> = ({
             "
 				/>
 			)}
+
 			<input
 				id={id}
 				disabled={disabled}
@@ -51,28 +45,29 @@ const Input: React.FC<InputProps> = ({
 				placeholder={placeholder}
 				type={type}
 				value={value}
-				onChange={onChange}
+				//onChange={onChange}
 				className={`
              peer
              w-full
              px-1
-			 pb-1
+			 pb-4
              pt-7
              font-light
-           bg-transparent 
-            outline-none
-             border-1
-				border-t-0
-				border-l-0
-				border-r-0
+             text-sm
+             outline-none
              transition
+	
              disabled:opacity-70
              disabled:cursor-not-allowed
              ${formatPrice ? 'pl-9' : 'pl-4'}
              ${errors[id] ? 'border-rose-500' : 'border-neutral-300'}
              ${errors[id] ? 'focus:border-rose-500' : 'focus:border-cyan-500'}
+			 rounded-0
+				bg-transparent
+				border-b-1 border-t-0 border-l-0 border-r-0
           `}
 			/>
+
 			<label
 				htmlFor={id}
 				className={`
@@ -90,7 +85,9 @@ const Input: React.FC<InputProps> = ({
               peer-focus:-translate-y-4
               peer-placeholder-shown:font-sans
               peer-placeholder-shown:font-light
-              ${errors[id] ? 'text-rose-500' : 'text-zinc-500'}
+			  capitalize
+              ${errors[id] ? 'text-rose-500' : 'text-cyan-500'}
+			  ${type === 'hidden' ? 'hidden' : ''}
         `}
 			>
 				{label}

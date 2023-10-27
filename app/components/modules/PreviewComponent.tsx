@@ -41,8 +41,6 @@ import DocumentationPage from './DocumentationPage';
 
 import ModulesHeader from './ModulesHeader';
 import ModulesTable from './ModulesTable';
-import ResumeView from './ResumeView';
-import Resumes from './Resumes';
 
 interface PreviewComponentProps {
 	children?: React.ReactNode;
@@ -63,8 +61,7 @@ const PreviewComponent: React.FC<PreviewComponentProps> = ({
 		Card,
 		Button,
 		IconComponent,
-		Resumes,
-		ResumeView,
+
 		Breadcrumb,
 		AppIcons,
 		Avatar,

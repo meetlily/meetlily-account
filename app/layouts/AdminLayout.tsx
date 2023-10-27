@@ -4,18 +4,19 @@ import useSidebarDrawer from '@/app/hooks/useSidebarDrawer';
 import accountNav from '@/data/accountNav.json';
 import bottomSideNav from '@/data/bottomSidebarNav.json';
 import sidebars from '@/data/sidebar.json';
+import { Theme } from '@radix-ui/themes';
 import { Flowbite } from 'flowbite-react';
+import { ThemeProvider } from 'next-themes';
 import { redirect, useParams, usePathname, useSearchParams } from 'next/navigation';
 import NProgress from 'nprogress';
 import 'nprogress/nprogress.css';
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import Container from '../components/Container';
 import DefaultStickyBanner from '../components/DefaultStickyBanner';
 import DrawerContent from '../components/drawers/DrawerContent';
 import MainDrawer from '../components/drawers/MainDrawer';
 import ModuleSettings from '../components/modules/ModuleSettings';
 import AdminNavbar from '../components/navbar/AdminNavbar';
-import AdminNavbarBottom from '../components/navbar/AdminNavbarBottom';
 import ToasterProvider from '../components/providers/ToasterProvider';
 import SidebarNav from '../components/sidebar/SidebarNav';
 import useDeleteModal from '../hooks/useDeleteModal';
@@ -63,48 +64,62 @@ const AdminLayout: React.FC<AdminLayoutProps> = ({
 			NProgress.start();
 		};
 	}, [currentUser]);
+	const handleDrawerClose = useCallback((isOpen: boolean, drawer: any) => {
+		if (isOpen) {
+			drawer.isOpen = false;
+			drawer.onClose();
+		}
+	}, []);
 	return (
 		<>
-			<div className=" text-gray-600 antialiased bg-gray-100  dark:text-gray-50 dark:bg-gray-900 h-screen  max-h-screen overflow-scroll">
-				<Flowbite theme={{ theme: customTheme }}>
-					<ToasterProvider />
-					<DefaultStickyBanner show={false} />
-					{showNavbar && <AdminNavbar currentUser={currentUser} showSearch={false} />}
-					<AdminNavbarBottom />
-					<main className="relative z-0 flex flex-col w-full overflow-auto">
-						<Container fluid={fluid}>{children}</Container>
-					</main>
+			<ThemeProvider attribute="class">
+				<Theme appearance="dark">
+					<div className=" antialiased h-screen  max-h-screen overflow-scroll">
+						<Flowbite theme={{ theme: customTheme }}>
+							<ToasterProvider />
+							<DefaultStickyBanner show={false} />
+							{showNavbar && (
+								<AdminNavbar currentUser={currentUser} showSearch={false} breadcrumbs={true} />
+							)}
 
-					<DrawerContent
-						id={'main-drawer'}
-						isOpen={mainDrawer.isOpen}
-						onClose={mainDrawer.onClose}
-						xPosition="right"
-						yPosition="top"
-						overlay
-						body={<MainDrawer currentUser={currentUser} data={accountNav} />}
-					/>
-					<DrawerContent
-						id={'sidebar-drawer'}
-						isOpen={sidebarDrawer.isOpen}
-						onClose={sidebarDrawer.onClose}
-						xPosition="left"
-						yPosition="top"
-						overlay
-						body={<SidebarNav currentUser={currentUser} data={sidebars} />}
-					/>
-					<DrawerContent
-						id={'module-option-drawer'}
-						isOpen={moduleOptionDrawer.isOpen}
-						onClose={moduleOptionDrawer.onClose}
-						xPosition="right"
-						yPosition="top"
-						overlay
-						width="w-[500px]"
-						body={<ModuleSettings />}
-					/>
-				</Flowbite>
-			</div>
+							<main className="relative z-0 flex top-8 flex-col w-full overflow-auto">
+								<Container fluid={fluid}>{children}</Container>
+							</main>
+
+							<DrawerContent
+								dismissable={true}
+								id={'main-drawer'}
+								isOpen={mainDrawer.isOpen}
+								onClose={() => handleDrawerClose(mainDrawer.isOpen, mainDrawer)}
+								xPosition="right"
+								yPosition="top"
+								overlay
+								body={<MainDrawer currentUser={currentUser} data={accountNav} />}
+							/>
+							<DrawerContent
+								dismissable={true}
+								id={'sidebar-drawer'}
+								isOpen={sidebarDrawer.isOpen}
+								onClose={() => handleDrawerClose(sidebarDrawer.isOpen, sidebarDrawer)}
+								xPosition="left"
+								yPosition="top"
+								overlay
+								body={<SidebarNav currentUser={currentUser} data={sidebars} />}
+							/>
+							<DrawerContent
+								id={'module-option-drawer'}
+								isOpen={moduleOptionDrawer.isOpen}
+								onClose={() => handleDrawerClose(moduleOptionDrawer.isOpen, moduleOptionDrawer)}
+								xPosition="right"
+								yPosition="top"
+								overlay
+								width="w-[500px]"
+								body={<ModuleSettings />}
+							/>
+						</Flowbite>
+					</div>
+				</Theme>
+			</ThemeProvider>
 		</>
 	);
 };

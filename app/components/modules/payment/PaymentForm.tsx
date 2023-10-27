@@ -79,7 +79,7 @@ const PaymentModule: React.FC = () => {
 							id={field.name}
 							name={field.name}
 							value={paymentData[field.name] || ''}
-							onChange={handleInputChange}
+							//onChange={handleInputChange}
 							placeholder={field.placeholder}
 							required={field.required}
 						/>

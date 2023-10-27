@@ -63,6 +63,8 @@ const ContactForm = () => {
 							register={register}
 							errors={errors}
 							required
+							name={'to'}
+							onChange={() => {}}
 						/>
 
 						<div className="py-3">
@@ -73,6 +75,8 @@ const ContactForm = () => {
 								register={register}
 								errors={errors}
 								required
+								name={'subject'}
+								onChange={() => {}}
 							/>
 						</div>
 						<div className="py3">
@@ -83,6 +87,8 @@ const ContactForm = () => {
 								register={register}
 								errors={errors}
 								required
+								name={'text'}
+								onChange={() => {}}
 							/>
 						</div>
 						<ButtonComponent

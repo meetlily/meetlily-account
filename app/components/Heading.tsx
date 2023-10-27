@@ -22,6 +22,7 @@ interface HeadingProps {
 	showOptionButton?: boolean;
 	showAddButton?: boolean;
 	enableSearch?: boolean;
+	addButtonAction?: (item: any) => void;
 }
 const Heading: React.FC<HeadingProps> = ({
 	title,
@@ -37,7 +38,8 @@ const Heading: React.FC<HeadingProps> = ({
 	showAsCard,
 	showOptionButton,
 	enableSearch,
-	showAddButton
+	showAddButton,
+	addButtonAction
 }) => {
 	if (!iconName) {
 		iconName = 'module';
@@ -106,7 +108,7 @@ const Heading: React.FC<HeadingProps> = ({
 										{ options }
 									) : (
 										<>
-											{showAddButton && (
+											{showAddButton && addButtonAction && (
 												<ButtonGroup className="flex gap-4">
 													<ButtonIcon
 														icon={'add'}
@@ -115,7 +117,7 @@ const Heading: React.FC<HeadingProps> = ({
 														inline
 														shadow
 														showLabel
-														onClick={() => handleConfigClick(title)}
+														onClick={() => addButtonAction(title)}
 													/>
 												</ButtonGroup>
 											)}

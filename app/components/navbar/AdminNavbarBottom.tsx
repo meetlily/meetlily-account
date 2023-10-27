@@ -37,7 +37,7 @@ const AdminNavbarBottom: React.FC<AdminNavbarBottomProps> = ({ currentUser, show
 
 	return (
 		<>
-			<div className="flex flex-col items-center p-2 border-b bg-gray-50">
+			<div className="flex flex-col w-full mt-10  items-center p-2 z-40 ">
 				<Breadcrumb aria-label="breadcrumb" className="uppercase">
 					<Breadcrumb.Item href="/dashboard" icon={HiHome}>
 						<p>Dashboard</p>

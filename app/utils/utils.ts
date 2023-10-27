@@ -1,45 +1,6 @@
-import { clsx, type ClassValue } from 'clsx';
-import { parse, serialize } from 'cookie';
-import fs from 'fs';
+//import { clsx, type ClassValue } from 'clsx';
 import { customAlphabet } from 'nanoid';
-import { NextApiRequest, NextApiResponse } from 'next';
-import { twMerge } from 'tailwind-merge';
-
-interface CookieOptions {
-	maxAge?: number;
-	expires?: Date;
-	path?: string;
-	domain?: string;
-	secure?: boolean;
-	sameSite?: 'strict' | 'lax' | 'none';
-}
-
-export function setCookie(
-	res: NextApiResponse,
-	name: string,
-	value: string | object,
-	options: CookieOptions = {}
-) {
-	const stringValue = typeof value === 'object' ? 'j:' + JSON.stringify(value) : String(value);
-
-	if (options.maxAge !== undefined) {
-		options.expires = new Date(Date.now() + options.maxAge);
-		options.maxAge /= 1000;
-	}
-
-	res.setHeader('Set-Cookie', serialize(name, String(stringValue), options));
-}
-
-export function parseCookies(req: NextApiRequest) {
-	if (!req.headers.cookie) {
-		return {};
-	}
-
-	return parse(req.headers.cookie);
-}
-export function cn(...inputs: ClassValue[]) {
-	return twMerge(clsx(inputs));
-}
+//import { NextApiRequest, NextApiResponse } from 'next';
 
 export const nanoid = customAlphabet(
 	'0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz',
@@ -74,17 +35,17 @@ export function formatDate(input: string | number | Date): string {
 	});
 }
 
-export function writeJsonToFile(jsonData: any, path: string): string {
-	fs.writeFileSync(path, JSON.stringify(jsonData, null, 2));
-	return jsonData;
-}
-export function readJsonFile(path: fs.PathOrFileDescriptor | undefined) {
-	let jsonData;
-	if (path) {
-		jsonData = JSON.parse(fs.readFileSync(path, 'utf-8'));
-	}
-	return jsonData;
-}
+// export function writeJsonToFile(jsonData: any, path: string): string {
+// 	fs.writeFileSync(path, JSON.stringify(jsonData, null, 2));
+// 	return jsonData;
+// }
+// export function readJsonFile(path: fs.PathOrFileDescriptor | undefined) {
+// 	let jsonData;
+// 	if (path) {
+// 		jsonData = JSON.parse(fs.readFileSync(path, 'utf-8'));
+// 	}
+// 	return jsonData;
+// }
 interface SidebarItem {
 	name: string;
 	group: string;
@@ -118,7 +79,24 @@ export function sidebarAddItems(sidebarData: any, administrationData: any) {
 export function capitalizeFirstLetter(str: string): string {
 	return str.charAt(0).toUpperCase() + str.slice(1);
 }
+export function sluggify(str: string): string {
+	if (str) {
+		return str.toLowerCase().replace(/ /g, '-');
+	}
+	return str;
+}
 // export async function isAdmin(user: SafeUser): Promise<boolean> {
 // 	const foundSupAdmin = user?.Role.find((obj) => obj.name === 'Super Administrator');
 // 	return str.charAt(0).toUpperCase() + str.slice(1);
 // }
+export function generateRandomString(length: number): string {
+	const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+	let result = '';
+
+	for (let i = 0; i < length; i++) {
+		const randomIndex = Math.floor(Math.random() * characters.length);
+		result += characters.charAt(randomIndex);
+	}
+
+	return result;
+}

@@ -19,7 +19,6 @@ interface GroupsFormProps {
 
 const FormField: React.FC<GroupsFormProps> = ({ groups }) => {
 	const [formState, setFormState] = useState(groups);
-	console.log(groups, 'groups');
 	return (
 		<>
 			{groups.map((group, index) => {

@@ -4,7 +4,7 @@ import useFormModal from '@/app/hooks/useFormModal';
 import modules from '@/data/modules.json';
 import { Badge, Button, Checkbox, Table } from 'flowbite-react';
 import { useParams } from 'next/navigation';
-import NextTopLoader from 'nextjs-toploader';
+
 import { useEffect, useState } from 'react';
 import IconComponent from '../icons/IconComponent';
 import ModulesHeader from './ModulesHeader';
@@ -56,7 +56,6 @@ export default function ModulesTable() {
 	};
 	return (
 		<>
-			<NextTopLoader />
 			<div className="relative w-full h-full flex flex-col">
 				<div className="flex flex-col bg-white">
 					<ModulesHeader />
@@ -87,7 +86,6 @@ export default function ModulesTable() {
 											<Checkbox
 												id={`${item.slug}-moduleInstalled`}
 												name={`${item.slug}-moduleInstalled`}
-												onChange={handleCheckInstall}
 											/>
 										</Table.Cell>
 										<Table.Cell>{item.name}</Table.Cell>

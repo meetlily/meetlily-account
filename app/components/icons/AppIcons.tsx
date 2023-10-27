@@ -77,6 +77,7 @@ import {
 	MdCurrencyRuble,
 	MdCurrencyRupee,
 	MdErrorOutline,
+	MdFactCheck,
 	MdFormatListBulleted,
 	MdFormatListBulletedAdd,
 	MdInventory,
@@ -91,6 +92,7 @@ import {
 	MdOutlineCurrencyFranc,
 	MdOutlineCurrencyLira,
 	MdOutlineDesignServices,
+	MdOutlineForest,
 	MdOutlineKeyboardArrowDown,
 	MdOutlineKeyboardArrowRight,
 	MdOutlineLocalGroceryStore,
@@ -98,9 +100,12 @@ import {
 	MdOutlineMapsHomeWork,
 	MdOutlineMeetingRoom,
 	MdOutlinePunchClock,
+	MdOutlineScreenSearchDesktop,
+	MdOutlineVideoLibrary,
 	MdOutlineWeb,
 	MdSupport,
 	MdSwitchAccessShortcutAdd,
+	MdVideocam,
 	MdWorkspacePremium
 } from 'react-icons/md';
 import {
@@ -160,6 +165,7 @@ import {
 	VscFilter,
 	VscGithub,
 	VscJson,
+	VscLaw,
 	VscLayoutPanel,
 	VscLayoutSidebarLeftOff,
 	VscLayoutSidebarRightOff,
@@ -181,6 +187,7 @@ import {
 	FaBook,
 	FaBots,
 	FaBoxArchive,
+	FaBuilding,
 	FaBuildingColumns,
 	FaBusinessTime,
 	FaCalendar,
@@ -437,7 +444,8 @@ const AppIcons: { [key: string]: IconType } = {
 	notification: FaRegBell,
 	icons: FaIcons,
 	fonts: FaFonticons,
-	video: FaInfo,
+	video: MdVideocam,
+	player: MdOutlineVideoLibrary,
 	about: FaInfo,
 	info: BiSolidBusiness,
 	connectVideo: RiVideoChatFill,
@@ -637,7 +645,12 @@ const AppIcons: { [key: string]: IconType } = {
 	VscJson: VscJson,
 	VscGithub: VscGithub,
 	preview: VscPreview,
-	save: VscSave
+	save: VscSave,
+	building: FaBuilding,
+	forest: MdOutlineForest,
+	quality: MdFactCheck,
+	law: VscLaw,
+	research: MdOutlineScreenSearchDesktop
 };
 
 export default AppIcons;

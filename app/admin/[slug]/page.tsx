@@ -21,6 +21,7 @@ export default async function AdminModulePage() {
 	const organizations = await getOrganizations();
 	const users = await getUsers();
 	const supAdm = 'Super Administrator';
+
 	let isAdmin = false;
 	if (currentUser?.Role) {
 		const foundSupAdmin = currentUser.Role.find((obj) => obj.name === supAdm);

@@ -90,9 +90,14 @@ const ButtonIcon: React.FC<ButtonIconProps> = ({
 				onClick={onClick}
 				disabled={disabled}
 				className={`
-			rounded
-			transition
-			focus:outline-none focus:ring-4 focus:ring-gray-500 hover:bg-gray-100 dark:hover:bg-gray-700 dark:focus:ring-gray-100 hover:cursor-pointer
+			    transition
+			    focus:outline-none 
+			    focus:ring-4 
+			  focus:ring-cyan-500
+			  hover:text-cyan-500 
+			  dark:hover:text-cyan-700 
+			  dark:focus:ring-cyan-100 
+			    hover:cursor-pointer
 				flex
 				flex-${c}
 				relative
@@ -108,8 +113,8 @@ const ButtonIcon: React.FC<ButtonIconProps> = ({
 						: ''
 				}
 				${rounded ? 'rounded' : 'rounded-0'}
-				
 				${isProcessing ? 'loading' : ''}
+				${disabled ? 'disabled:opacity-30 disabled:cursor-no-drop disabled:hover:text-base' : ``}
 				${shadow ? 'shadow' : 'shadow-none'}
 				${color && pill ? `text-${color}-50 bg-${color}-800 hover:bg-${color}-400` : ''}
 			`}

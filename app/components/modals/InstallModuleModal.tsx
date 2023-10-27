@@ -54,10 +54,10 @@ const InstallModuleModal: React.FC<InstallModuleModalProps> = ({ module }) => {
 			<div className="py-8 px-4 mx-auto max-w-screen-xl sm:py-16 lg:px-6">
 				<div className="max-w-screen-md">
 					<h2 className="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">
-						{module.name}
+						{module?.name}
 					</h2>
 					<p className=" font-light text-gray-500 sm:text-xl dark:text-gray-400">
-						{module.description}
+						{module?.description}
 					</p>
 
 					<Badge>
@@ -129,7 +129,7 @@ const InstallModuleModal: React.FC<InstallModuleModalProps> = ({ module }) => {
 			onClose={installModuleModal.onClose}
 			position={'top-center'}
 		>
-			<Modal.Header>Install {module.name} Module</Modal.Header>
+			<Modal.Header>Install {module?.name} Module</Modal.Header>
 			<Modal.Body>{bodyContent}</Modal.Body>
 			<Modal.Footer>
 				<ButtonGroup className="gap-6">

@@ -78,7 +78,16 @@ const RegisterForm: React.FC<RegisterFormProps> = ({ currentUser }) => {
                 gap-4
             "
 		>
-			<Input id="email" type="email" label="Email" register={register} errors={errors} required />
+			<Input
+				id="email"
+				type="email"
+				label="Email"
+				register={register}
+				errors={errors}
+				required
+				name={'email'}
+				onChange={() => {}}
+			/>
 			<Input
 				id="password"
 				type="password"
@@ -86,6 +95,8 @@ const RegisterForm: React.FC<RegisterFormProps> = ({ currentUser }) => {
 				register={register}
 				errors={errors}
 				required
+				name={'password'}
+				onChange={() => {}}
 			/>
 		</div>
 	);

@@ -7,6 +7,7 @@ export default async function AdminPage() {
 	const currentUser = await getCurrentUser();
 	const supAdm = 'Super Administrator';
 	let isAdmin = false;
+
 	if (currentUser?.Role) {
 		const foundSupAdmin = currentUser.Role.find((obj) => obj.name === supAdm);
 		if (foundSupAdmin) {

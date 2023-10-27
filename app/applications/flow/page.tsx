@@ -12,6 +12,7 @@ import MeetlilyFlow from '@/app/components/applications/flow/MeetlilyFlow';
 import EmptyPage from '@/app/components/empty/EmptyPage';
 import useFiles from '@/app/hooks/useFiles';
 import AdminLayout from '@/app/layouts/AdminLayout';
+import flowData from '@/flow/main.json';
 
 export default async function ApplicationFlowPage() {
 	const currentUser = await getCurrentUser();
@@ -44,11 +45,13 @@ export default async function ApplicationFlowPage() {
 			>
 				<div className="flex flex-col h-full w-full">
 					{isAdmin ? (
-						<MeetlilyFlow
-							files={files.getByValue('data')}
-							modules={modules}
-							mainModules={mainModules}
-						/>
+						<>
+							<MeetlilyFlow
+								files={files.getByValue('flow')}
+								modules={modules}
+								mainModules={flowData}
+							/>
+						</>
 					) : (
 						<EmptyPage />
 					)}

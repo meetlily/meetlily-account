@@ -1,6 +1,5 @@
 import getCurrentUser from '@/app/actions/getCurrentUser';
 import prisma from '@/app/libs/prismadb';
-import { capitalizeFirstLetter } from '@/app/utils/utils';
 import { randomUUID } from 'crypto';
 import { NextResponse } from 'next/server';
 async function createTable(tableName: string) {
@@ -12,16 +11,21 @@ export async function GET(request: any, response: any) {
 		//const client = await pool.connect();
 
 		const currentUser = await getCurrentUser();
-		const { slug } = response.params;
-		let u = capitalizeFirstLetter(slug);
+
 		// Check if the user is authenticated
 		if (!currentUser) {
 			// User is not authenticated, return an unauthorized response
 			return new NextResponse('Unauthorized', { status: 401 });
 		}
+		const queryParams = new URL(request.url).searchParams;
+		const f: string | null = queryParams.get('fields');
+		if (f) {
+			const allowedFields = prisma.formfield.fields;
+			return NextResponse.json(allowedFields);
+		}
 		const result = await prisma.formfield.findMany({
 			where: {
-				moduleId: slug
+				Organization: currentUser.Organization[0]
 			}
 		});
 

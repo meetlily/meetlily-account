@@ -4,8 +4,7 @@ import { SafeUser } from '@/app/types';
 import { useParams, useSearchParams } from 'next/navigation';
 import { useEffect, useState } from 'react';
 import DocumentationPage from './DocumentationPage';
-import PreviewComponent from './PreviewComponent';
-import ResumeView from './ResumeView';
+
 interface ModuleListPageProps {
 	currentUser?: SafeUser | null;
 	showSidebar?: boolean;
@@ -32,17 +31,6 @@ const ModuleListPage: React.FC<ModuleListPageProps> = ({ currentUser, showSideba
 	return (
 		<>
 			<div className="h-full w-full flex flex-col px-0">
-				{params?.slug && params?.slug === 'resume' && (
-					<>
-						<ResumeView formData={formData} />
-					</>
-				)}
-				{params?.slug && params?.slug === 'live_edit' && (
-					<PreviewComponent currentUser={currentUser} showEditor={true}>
-						<ResumeView formData={formData} />
-					</PreviewComponent>
-				)}
-
 				{params?.slug && params?.slug === 'documentation' && (
 					<>
 						<DocumentationPage nameDoc={'vs_code'} currentUser={currentUser} />

@@ -11,12 +11,15 @@ export async function GET(request: any, response: any) {
 			// User is not authenticated, return an unauthorized response
 			return new NextResponse('Unauthorized', { status: 401 });
 		}
-
 		const { id } = response.params;
 
 		const data = await prisma.organization.findUnique({
 			where: {
 				id: id
+			},
+			include: {
+				User: true,
+				Module: true
 			}
 		});
 		if (currentUser && currentUser?.Role.length > 0) {
@@ -41,38 +44,6 @@ export async function GET(request: any, response: any) {
 		return new NextResponse(errorMessage, { status: 500 });
 	}
 }
-export async function PUT(request: any, response: any) {
-	const body = await request.json();
-	const currentUser = await getCurrentUser();
-	if (!currentUser) {
-		// User is not authenticated, return an unauthorized response
-		return new NextResponse('Unauthorized', { status: 401 });
-	}
-	const { ide } = response.params;
-	const b = {
-		...body,
-		id: ide
-	};
-	const { id, name, slug, description } = b;
-	const mod = await prisma.organization.update({
-		where: {
-			id: id
-		},
-		data: {
-			id,
-			name,
-			slug,
-			description,
-			User: {
-				connect: {
-					id: currentUser.id
-				}
-			}
-		}
-	});
-	return NextResponse.json(mod);
-}
-
 export async function DELETE(request: any, response: any) {
 	try {
 		//const client = await pool.connect();
@@ -101,4 +72,21 @@ export async function DELETE(request: any, response: any) {
 		//return new NextResponse(errorMessage, { status: 500 });
 		return NextResponse.json({ error: error, status: 500 });
 	}
+}
+export async function PUT(request: any, response: any) {
+	const body = await request.json();
+	const currentUser = await getCurrentUser();
+	if (!currentUser) {
+		// User is not authenticated, return an unauthorized response
+		return new NextResponse('Unauthorized', { status: 401 });
+	}
+	const { id } = response.params;
+
+	const mod = await prisma.organization.update({
+		where: {
+			id: id
+		},
+		data: body
+	});
+	return NextResponse.json(mod);
 }

@@ -12,6 +12,7 @@ model Applications {
   name         String
   description  String?
   createdAt    DateTime       @default(now())
+  updatedAt    DateTime       @updatedAt
   enabled      Boolean?       @default(false)
   global       Boolean?       @default(true)
   private      Boolean?       @default(false)
@@ -29,14 +30,11 @@ model Module {
   slug          String
   description   String?
   createdAt     DateTime        @default(now())
+  updatedAt     DateTime        @updatedAt
   enabled       Boolean?        @default(false)
-  settings      Json?
-  permissions   Json?
-  dataSources   Json?
-  metadata      Json?
-  features      Json?
   externalLink  String?
-  logUrl        String?
+  logo          String?
+  icon          String?
   Formdata      Formdata[]
   Formfield     Formfield[]
   Category      Category[]      @relation("CategoryToModule")
@@ -51,6 +49,7 @@ model Category {
   name         String
   slug         String         @unique
   createdAt    DateTime       @default(now())
+  updatedAt    DateTime       @updatedAt
   icon         String?
   description  String?
   createId     String?
@@ -62,6 +61,7 @@ model Newsletter {
   id        String   @id @default(uuid()) @map("_id") @db.VarChar(36)
   email     String   @unique
   createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
 }
 
 model Contact {
@@ -70,6 +70,7 @@ model Contact {
   subject   String
   message   String
   createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
 }
 
 model Note {
@@ -115,6 +116,7 @@ model Configuration {
   id             String        @id @default(uuid()) @map("_id") @db.VarChar(36)
   name           String
   createdAt      DateTime      @default(now())
+  updatedAt      DateTime      @updatedAt
   data           Json?
   global         Boolean?      @default(true)
   organizationId String?
@@ -128,6 +130,7 @@ model Variable {
   name      String
   code      Int      @unique
   createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
   global    Boolean? @default(true)
   type      String?
   message   String?
@@ -147,6 +150,8 @@ model Organization {
   id            String          @id @default(uuid()) @map("_id") @db.VarChar(36)
   name          String
   slug          String?         @unique
+  logo          String?
+  industry      String?
   description   String?
   createdAt     DateTime        @default(now())
   updatedAt     DateTime?       @updatedAt
@@ -164,6 +169,7 @@ model Organization {
 model Default {
   id        String   @id @default(uuid()) @map("_id") @db.VarChar(36)
   createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
   User      User[]
   data      Json?
 }
@@ -178,7 +184,7 @@ model User {
   image          String?
   avatar         String?
   hashedPassword String?
-  favoriteIds    String[]
+  country        Json?
   Accounts       Account[]
   Note           Note[]
   Page           Page[]
@@ -201,6 +207,8 @@ model Role {
   id           String         @id @default(uuid()) @map("_id") @db.VarChar(36)
   name         String         @unique
   description  String?
+  createdAt    DateTime       @default(now())
+  updatedAt    DateTime       @updatedAt
   Organization Organization[] @relation("OrganizationToRole")
   User         User[]         @relation("RoleToUser")
 }
@@ -208,6 +216,7 @@ model Role {
 model Notification {
   id           String         @id @default(uuid()) @map("_id") @db.VarChar(36)
   createdAt    DateTime       @default(now())
+  updatedAt    DateTime       @updatedAt
   json         Json?
   status       String?
   type         String
@@ -218,6 +227,7 @@ model Notification {
 model Device {
   id        String   @id @default(uuid()) @map("_id") @db.VarChar(36)
   createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
   json      Json?
   user      User[]   @relation("DeviceToUser")
 }
@@ -242,44 +252,51 @@ model Account {
 
 /// This model contains row level security and requires additional setup for migrations. Visit https://pris.ly/d/row-level-security for more info.
 model Logs {
-  id         String   @id @default(dbgenerated("gen_random_uuid()")) @db.VarChar(36)
-  created_at DateTime @default(now()) @db.Timestamptz(6)
-  log        String?
-  type       String?
-  json       Json?    @db.Json
+  id        String   @id @default(dbgenerated("gen_random_uuid()")) @db.VarChar(36)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  log       String?
+  type      String?
+  json      Json?    @db.Json
 }
 
 model Template {
-  created_at DateTime @default(now()) @db.Timestamptz(6)
-  id         String   @id @default(uuid()) @map("_id") @db.VarChar(36)
-  jsx        String?
-  name       String?
-  type       String?
-  slug       String?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  id        String   @id @default(uuid()) @map("_id") @db.VarChar(36)
+  jsx       String?
+  name      String?
+  type      String?
+  slug      String?
 }
 
 model Icon {
-  id         String   @id @default(uuid()) @map("_id") @db.VarChar(36)
-  created_at DateTime @default(now()) @db.Timestamptz(6)
-  name       String?
-  type       String?
-  icon       String?
-  slug       String?
+  id        String   @id @default(uuid()) @map("_id") @db.VarChar(36)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  name      String?
+  type      String?
+  icon      String?
+  slug      String?
 }
 
 model Resume {
-  id         Int    @id @default(autoincrement())
+  id         Int      @id @default(autoincrement())
   firstName  String
   lastName   String
   email      String
   education  String
   experience String
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
 }
 
 model Subscription {
-  id     String   @id @default(uuid()) @map("_id") @db.VarChar(36)
-  Module Module[] @relation("ModuleToSubscription")
-  User   User[]   @relation("SubscriptionToUser")
+  id        String   @id @default(uuid()) @map("_id") @db.VarChar(36)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  Module    Module[] @relation("ModuleToSubscription")
+  User      User[]   @relation("SubscriptionToUser")
 }
 
 model Formfield {
@@ -289,6 +306,8 @@ model Formfield {
   fields         Json?
   moduleId       String?       @db.VarChar(36)
   organizationId String?       @db.VarChar(36)
+  createdAt      DateTime      @default(now())
+  updatedAt      DateTime      @updatedAt
   default        Boolean?
   Formdata       Formdata[]
   Module         Module?       @relation(fields: [moduleId], references: [id])
@@ -302,6 +321,8 @@ model Formdata {
   formfieldId    String?       @db.VarChar(36)
   moduleId       String?       @db.VarChar(36)
   organizationId String?       @db.VarChar(36)
+  createdAt      DateTime      @default(now())
+  updatedAt      DateTime      @updatedAt
   Formfield      Formfield?    @relation(fields: [formfieldId], references: [id])
   Module         Module?       @relation(fields: [moduleId], references: [id])
   Organization   Organization? @relation(fields: [organizationId], references: [id])

@@ -50,7 +50,10 @@ const CustomFlow = () => {
 	const [nodes, setNodes, onNodesChange] = useNodesState(initNodes);
 	const [edges, setEdges, onEdgesChange] = useEdgesState(initEdges);
 
-	const onConnect = useCallback((params: any) => setEdges((eds) => addEdge(params, eds)), []);
+	const onConnect = useCallback(
+		(params: any) => setEdges((eds) => addEdge(params, eds)),
+		[setEdges]
+	);
 
 	return (
 		<ReactFlow

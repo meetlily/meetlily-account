@@ -2,6 +2,7 @@
 
 import { Table } from 'flowbite-react';
 
+import { getFieldsKeys } from '../../inputs/InputComponent';
 import TableHead from './TableHead';
 import TableRow from './TableRow';
 interface LoaderProps {
@@ -22,22 +23,25 @@ const TableLists: React.FC<LoaderProps> = ({
 	primaryAction,
 	secondaryAction
 }) => {
+	const md = getFieldsKeys(fields);
+
 	return (
 		<>
 			<Table>
-				<TableHead moduleView={moduleView} />
+				<TableHead moduleView={md} />
 
 				<Table.Body className="divide-y">
 					{fields.map((item: any) => (
 						<TableRow
 							key={item.id}
 							item={item}
-							moduleView={moduleView}
+							moduleView={md}
 							primaryAction={primaryAction}
 							secondaryAction={secondaryAction}
 						/>
 					))}
 				</Table.Body>
+				<TableHead moduleView={md} />
 			</Table>
 		</>
 	);

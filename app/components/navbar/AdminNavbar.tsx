@@ -3,9 +3,11 @@ import useMainDrawer from '@/app/hooks/useMainDrawer';
 import useSidebarDrawer from '@/app/hooks/useSidebarDrawer';
 import { SafeUser } from '@/app/types';
 import { Navbar } from 'flowbite-react';
+import { useParams } from 'next/navigation';
 import { useCallback, useEffect, useState } from 'react';
 import LoginButton from '../LoginButton';
 import ThemeToggle from '../ThemeToggle';
+import TopBreadcrumb from '../TopBreadcrumb';
 import IconComponent from '../icons/IconComponent';
 import AvatarNav from './AvatarNav';
 import Logo from './Logo';
@@ -21,8 +23,10 @@ interface ContentData {
 interface AdminNavbarProps {
 	currentUser?: SafeUser | null;
 	showSearch?: boolean;
+	breadcrumbs?: boolean;
 }
-const AdminNavbar: React.FC<AdminNavbarProps> = ({ currentUser, showSearch }) => {
+const AdminNavbar: React.FC<AdminNavbarProps> = ({ currentUser, showSearch, breadcrumbs }) => {
+	const params = useParams();
 	const mainDrawer = useMainDrawer();
 	const sidebarDrawer = useSidebarDrawer();
 	const [tabContent, setTabContent] = useState<ContentData[]>([]);
@@ -49,12 +53,18 @@ const AdminNavbar: React.FC<AdminNavbarProps> = ({ currentUser, showSearch }) =>
 	}, [sidebarDrawer]);
 	return (
 		<>
-			<Navbar>
-				<div className="flex md:order-0 gap-4 pr-2">
+			<Navbar
+				className={`${
+					currentUser
+						? 'bg-gray-50 dark:bg-gray-900 border-b dark:border-gray-700'
+						: 'bg-transparent py-2'
+				} `}
+			>
+				<div className={`flex md:order-0 gap-4 pr-2`}>
 					{currentUser && (
 						<div
 							onClick={toggle}
-							className="p-2 mr-2 cursor-pointer hover:text-gray-50 dark:focus:bg-gray-700 dark:focus:ring-gray-700 dark:text-gray-400 dark:hover:text-white"
+							className="p-2 mr-2 cursor-pointer dark:focus:bg-gray-700 dark:focus:ring-gray-700 dark:text-gray-400 dark:hover:text-white"
 						>
 							<span className="sr-only">Toggle sidebar</span>
 							<p>
@@ -63,9 +73,10 @@ const AdminNavbar: React.FC<AdminNavbarProps> = ({ currentUser, showSearch }) =>
 						</div>
 					)}
 
-					<Navbar.Brand href="/dashboard" className="gap-4 pl-2  w-[120px] md:w-[280px]">
+					<Navbar.Brand href="/dashboard" className="gap-4 pl-2">
 						<Logo color={'white'} onClick={() => {}} height={120} width={120} />
 					</Navbar.Brand>
+					{breadcrumbs && <TopBreadcrumb />}
 					{showSearch && <NavSearch />}
 				</div>
 
