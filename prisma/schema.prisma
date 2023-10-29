@@ -24,6 +24,86 @@ model Applications {
   User         User[]         @relation("ApplicationsToUser")
 }
 
+model Group {
+  id           String         @id @default(uuid()) @map("_id") @db.VarChar(36)
+  slug         String         @unique
+  name         String
+  description  String?
+  private      Boolean?
+  createdAt    DateTime       @default(now())
+  updatedAt    DateTime       @updatedAt
+  Organization Organization[]
+  User         User[]
+  Conversation Conversation[]
+}
+
+model Conversation {
+  id           String         @id @default(uuid()) @map("_id") @db.VarChar(36)
+  createdAt    DateTime       @default(now())
+  updatedAt    DateTime       @updatedAt
+  private      Boolean?
+  Group        Group[]
+  Message      Message[]
+  User         User[]
+  Organization Organization[]
+}
+
+model Message {
+  id               String          @id @default(uuid()) @map("_id") @db.VarChar(36)
+  status           String?
+  message          String
+  createdAt        DateTime        @default(now())
+  updatedAt        DateTime        @updatedAt
+  User             User?           @relation(fields: [userId], references: [id])
+  userId           String?         @db.VarChar(36)
+  Conversation     Conversation    @relation(fields: [conversationId], references: [id])
+  conversationId   String          @db.VarChar(36)
+  SwingerProfile   SwingerProfile? @relation(fields: [swingerProfileId], references: [id])
+  swingerProfileId String?         @db.VarChar(36)
+}
+
+model Swinger {
+  id                   String               @id @default(uuid()) @map("_id") @db.VarChar(36)
+  slsId                String               @unique
+  apiId                String?
+  username             String
+  contactInformationId String?              @db.VarChar(36)
+  swingerProfileId     String?              @db.VarChar(36)
+  createdAt            DateTime             @default(now())
+  updatedAt            DateTime             @updatedAt
+  ContactInformation   ContactInformation[]
+  SwingerProfile       SwingerProfile?
+  User                 User[]
+}
+
+model SwingerProfile {
+  id           String         @id @default(uuid()) @map("_id") @db.VarChar(36)
+  profile      Json?
+  Swinger      Swinger?       @relation(fields: [swingerId], references: [id])
+  swingerId    String?        @unique @db.VarChar(36)
+  createdAt    DateTime       @default(now())
+  updatedAt    DateTime       @updatedAt
+  Message      Message[]
+  Subscription Subscription[]
+}
+
+model ContactInformation {
+  id        String   @id @default(uuid()) @map("_id") @db.VarChar(36)
+  name      String
+  type      String?
+  address1  String?
+  address2  String?
+  city      String?
+  state     String?
+  country   String?
+  postal    String?
+  phone     String?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  Swinger   Swinger? @relation(fields: [swingerId], references: [id])
+  swingerId String?  @db.VarChar(36)
+}
+
 model Module {
   id            String          @id @default(uuid()) @map("_id") @db.VarChar(36)
   name          String
@@ -74,28 +154,27 @@ model Contact {
 }
 
 model Note {
-  id        String   @id @default(uuid()) @map("_id") @db.VarChar(36)
-  title     String
-  body      String
-  slug      String   @unique
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
-  userId    String
-  User      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  id          String   @id @default(uuid()) @map("_id") @db.VarChar(36)
+  name        String
+  description String
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  userId      String
+  User        User     @relation(fields: [userId], references: [id], onDelete: Cascade)
 }
 
 model Page {
-  id             String   @id @default(uuid()) @map("_id") @db.VarChar(36)
-  title          String
-  content        String
-  slug           String   @unique
-  createdAt      DateTime @default(now())
-  updatedAt      DateTime @updatedAt
-  userId         String
-  type           String
-  global         Boolean? @default(true)
-  organizationId String?
-  user           User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  id           String         @id @default(uuid()) @map("_id") @db.VarChar(36)
+  title        String
+  content      String
+  slug         String         @unique
+  createdAt    DateTime       @default(now())
+  updatedAt    DateTime       @updatedAt
+  userId       String
+  type         String
+  global       Boolean?       @default(true)
+  Organization Organization[]
+  user         User           @relation(fields: [userId], references: [id], onDelete: Cascade)
 }
 
 model Post {
@@ -164,6 +243,9 @@ model Organization {
   Notification  Notification[]  @relation("NotificationToOrganization")
   Role          Role[]          @relation("OrganizationToRole")
   User          User[]          @relation("OrganizationToUser")
+  Group         Group[]
+  Conversation  Conversation[]
+  Page          Page[]
 }
 
 model Default {
@@ -190,7 +272,7 @@ model User {
   Page           Page[]
   Post           Post[]
   Applications   Applications[]  @relation("ApplicationsToUser")
-  Device         Device[]        @relation("DeviceToUser")
+  Device         Device[]
   Formdata       Formdata[]      @relation("FormdataToUser")
   Formfield      Formfield[]     @relation("FormfieldToUser")
   Module         Module[]        @relation("ModuleToUser")
@@ -199,8 +281,12 @@ model User {
   Role           Role[]          @relation("RoleToUser")
   Subscription   Subscription[]  @relation("SubscriptionToUser")
   Configuration  Configuration[]
+  Swinger        Swinger[]
+  Message        Message[]
   Default        Default?        @relation(fields: [defaultId], references: [id])
   defaultId      String?         @db.VarChar(36)
+  Conversation   Conversation[]
+  Group          Group[]
 }
 
 model Role {
@@ -229,7 +315,8 @@ model Device {
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
   json      Json?
-  user      User[]   @relation("DeviceToUser")
+  User      User?    @relation(fields: [userId], references: [id])
+  userId    String?  @db.VarChar(36)
 }
 
 model Account {
@@ -292,11 +379,12 @@ model Resume {
 }
 
 model Subscription {
-  id        String   @id @default(uuid()) @map("_id") @db.VarChar(36)
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
-  Module    Module[] @relation("ModuleToSubscription")
-  User      User[]   @relation("SubscriptionToUser")
+  id             String           @id @default(uuid()) @map("_id") @db.VarChar(36)
+  createdAt      DateTime         @default(now())
+  updatedAt      DateTime         @updatedAt
+  Module         Module[]         @relation("ModuleToSubscription")
+  User           User[]           @relation("SubscriptionToUser")
+  SwingerProfile SwingerProfile[]
 }
 
 model Formfield {
